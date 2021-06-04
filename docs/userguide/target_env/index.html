@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="ja" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.82.0" />
+    <meta content="" name="description">
+
+
+    <link rel="icon" href="../../images/favicon.png" type="image/png">
+
+    <title>ターゲット環境 :: WebLogic Deploy Tooling</title>
+
+    
+    <link href="../../css/nucleus.css?1620686566" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1620686566" rel="stylesheet">
+    <link href="../../css/hybrid.css?1620686566" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1620686566" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1620686566" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1620686566" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1620686566" rel="stylesheet">
+    <link href="../../css/theme.css?1620686566" rel="stylesheet">
+    <link href="../../css/tabs.css?1620686566" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1620686566" rel="stylesheet">
+    
+    
+
+    <script src="../../js/jquery-3.3.1.min.js?1620686566"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  <meta HTTP-EQUIV="Content-Type" Content="text/html; charset=utf-8"></head>
+  <style type="text/css"> <!-- .merged:hover {text-decoration: underline;} --> </style>
+<body class="" data-url="/weblogic-deploy-tooling/userguide/target_env/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <span class="merged" id="index.4PFeG6" title="原文 :  Deploy Tooling "><a href="https://oracle.github.io/weblogic-deploy-tooling" id="logo"><img height="60" src="../../images/logo.png"><br />ツールのデプロイ</a></span>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../js/lunr.min.js?1620686566"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1620686566"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/oracle.github.io\/weblogic-deploy-tooling";
+    
+</script>
+<script type="text/javascript" src="../../js/search.js?1620686566"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+      <li><span class="merged" id="index.4CNnKm"  title="原文:: Home"><a class="padding" href="https://oracle.github.io/weblogic-deploy-tooling">ホーム</a></span></li>
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/concepts/" title=" 概念">
+      <span class="merged" id="index.3RAvK8" title="原文 :  1. Concepts "><a href="../../concepts/index.html"> <b>1. </b>概要 </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/concepts/model/" title="メタデータ・モデル">
+        <span class="merged" id="index.3FgEMZ" title="原文 :  Metadata Model "><a href="../../concepts/model/index.html">メタデータ・モデル</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/concepts/archive/" title="アーカイブ・ファイル">
+        <span class="merged" id="index.3Eh8K0"  title="原文::  Archive File "><a href="../../concepts/archive/index.html"> アーカイブ・ファイル </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        parent
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/" title="ユーザー・ガイド">
+      <span class="merged" id="index.3oIk6b" title="原文 :  2. User Guide "><a href="../index.html"> <b>2. </b>ユーザー・ガイド </a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/install/" title="WDTのインストール">
+        <span class="merged" id="index.4Ba9at" title="原文 :  Install WDT "><a href="../install/index.html">WDTのインストール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/tools/" title="WDTツール">
+      <span class="merged" id="index.OZKPj" title="原文 :  WDT Tools "><a href="../tools/index.html"> <b> </b>WDTツール </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/create/" title="ドメインの作成ツール">
+        <span class="merged" id="index.3qElVa" title="原文 :  Create Domain Tool "><a href="../tools/create/index.html">ドメインの作成ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/update/" title="ドメインの更新ツール">
+        <span class="merged" id="index.Z91Rr" title="原文 :  Update Domain Tool "><a href="../tools/update/index.html">ドメインの更新ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/deploy/" title="Deploy Applications Tool">
+        <span class="merged" id="index.23oYHX" title="原文 :  Deploy Applications Tool "><a href="../tools/deploy/index.html"> Deploy Applications Tool </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/discover/" title="ドメインの検出ツール">
+        <span class="merged" id="index.2OUSFx" title="原文 :  Discover Domain Tool "><a href="../tools/discover/index.html">ドメインの検出ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/encrypt/" title="モデルの暗号化ツール">
+        <span class="merged" id="index.1JUYE4" title="原文 :  Encrypt Model Tool "><a href="../tools/encrypt/index.html">モデルの暗号化ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/validate/" title="モデルの検証ツール">
+        <span class="merged" id="index.1DWuYg" title="原文 :  Validate Model Tool "><a href="../tools/validate/index.html">モデルの検証ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/compare/" title="モデルの比較ツール">
+        <span class="merged" id="index.3gFqjV" title="原文 :  Compare Model Tool "><a href="../tools/compare/index.html">モデルの比較ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/prepare/" title="モデルの準備ツール">
+        <span class="merged" id="index.8dZ7C" title="原文 :  Prepare Model Tool "><a href="../tools/prepare/index.html">モデルの準備ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/kubernetes/" title="ドメイン・リソースの抽出ツール">
+        <span class="merged" id="index.2rN2ju" title="原文 :  Extract Domain Resource Tool "><a href="../tools/kubernetes/index.html">ドメイン・リソースの抽出ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/variable_injection/" title="変数インジェクタ・ツール">
+        <span class="merged" id="index.3xFUt1" title="原文 :  Variable Injector Tool "><a href="../tools/variable_injection/index.html">変数インジェクタ・ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/model_help/" title="モデル・ヘルプ・ツール">
+        <span class="merged" id="index.TcKRZ" title="原文 :  Model Help Tool "><a href="../tools/model_help/index.html">モデル・ヘルプ・ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item active" data-nav-id="/weblogic-deploy-tooling/userguide/target_env/" title="ターゲット環境">
+        <span class="merged" id="index.1umieI" title="原文 :  Target environments "><a href="index.html">ターゲット環境</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/" title="ツール構成">
+      <span class="merged" id="index.31A3as" title="原文 :  Tools configuration "><a href="../tools-config/index.html">ツール構成</a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/model_filters/" title="モデル・フィルタ">
+        <span class="merged" id="index.GiPA9" title="原文 :  Model filters "><a href="../tools-config/model_filters/index.html">モデル・フィルタ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/domain_def/" title="ドメイン・タイプ定義">
+        <span class="merged" id="index.DYnvN" title="原文 :  Domain type definitions "><a href="../tools-config/domain_def/index.html">ドメイン・タイプ定義</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/custom_config/" title="カスタム構成">
+        <span class="merged" id="index.3KNODj"  title="原文::  Custom configuration "><a href="../tools-config/custom_config/index.html"> カスタム構成 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/tool_prop/" title="ツールのプロパティ・ファイル">
+        <span class="merged" id="index.3w0gso" title="原文 :  Tool property file "><a href="../tools-config/tool_prop/index.html">ツールのプロパティ・ファイル</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/samples/" title="サンプル">
+      <span class="merged" id="index.14e0I8" title="原文 :  3. Samples "><a href="../../samples/index.html"> <b>3. </b>サンプル</a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/adminserver-model/" title="管理サーバーのカスタマイズ">
+        <span class="merged" id="index.27EApP" title="原文 :  Customizing the Administration Server "><a href="../../samples/adminserver-model/index.html">管理サーバーのカスタマイズ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/cluster-model/" title="構成済クラスタのモデル化">
+        <span class="merged" id="index.U7h3V" title="原文 :  Modeling a configured cluster "><a href="../../samples/cluster-model/index.html">構成済クラスタのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/jdbc-model/" title="JDBCデータ・ソースのモデル化">
+        <span class="merged" id="index.135gUV" title="原文 :  Modeling a JDBC data source "><a href="../../samples/jdbc-model/index.html">JDBCデータ・ソースのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/workmanager-model/" title="ワーク・マネージャのモデリング">
+        <span class="merged" id="index.4GSQvZ" title="原文 :  Modeling a Work Manager "><a href="../../samples/workmanager-model/index.html">ワーク・マネージャのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/securityproviders-model/" title="セキュリティ・プロバイダのモデル化">
+        <span class="merged" id="index.25mENq" title="原文 :  Modeling security providers "><a href="../../samples/securityproviders-model/index.html">セキュリティ・プロバイダのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/usersgroups-model/" title="WebLogicのユーザー、グループおよびロールのモデリング">
+        <span class="merged" id="index.TXu3c" title="原文 :  Modeling WebLogic users, groups, and roles "><a href="../../samples/usersgroups-model/index.html">WebLogicのユーザー、グループおよびロールのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/pwcredentialmap-model/" title="WebLogicユーザー・パスワード資格証明マッピングのモデリング">
+        <span class="merged" id="index.1h3kLw" title="原文 :  Modeling WebLogic user password credential mapping "><a href="../../samples/pwcredentialmap-model/index.html">WebLogicユーザー・パスワード資格証明マッピングのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/odl-model/" title="Oracle Diagnostic Loggingの構成">
+        <span class="merged" id="index.1fH5ax" title="原文 :  Configuring Oracle Diagnostic Logging "><a href="../../samples/odl-model/index.html">Oracle Diagnostic Loggingの構成</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/ohs-model/" title="Oracle HTTP Serverの構成">
+        <span class="merged" id="index.BxjK0"  title="原文:  Configuring Oracle HTTP Server "><a href="../../samples/ohs-model/index.html"> Oracle HTTP Serverの構成 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/targetservers-model/" title="サーバー・グループのターゲット指定">
+        <span class="merged" id="index.2DoWDm" title="原文 :  Targeting server groups "><a href="../../samples/targetservers-model/index.html">サーバー・グループのターゲット指定</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/wko-model/" title="WebLogic Kubernetes OperatorでのWDTの使用">
+        <span class="merged" id="index.424dCP" title="原文 :  Using WDT with WebLogic Kubernetes Operator "><a href="../../samples/wko-model/index.html">WebLogic Kubernetes OperatorでのWDTの使用</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/developer/" title="開発者ガイド">
+      <span class="merged" id="index.OWGnU" title="原文 :  4. Developer Guide "><a href="../../developer/index.html"> <b>4. </b>開発者ガイド </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/project-structure/" title="プロジェクト体系">
+        <span class="merged" id="index.1LPiAs" title="原文 :  Project structure "><a href="../../developer/project-structure/index.html">プロジェクト体系</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/feature-impl/" title="機能の実装">
+        <span class="merged" id="index.2xzYPV" title="原文 :  Feature implementation "><a href="../../developer/feature-impl/index.html">機能の実装</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/alias-definitions/" title="別名定義">
+        <span class="merged" id="index.3RFNSM" title="原文 :  Alias definitions "><a href="../../developer/alias-definitions/index.html">別名定義</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/buildwdt/" title="WebLogic Deploy Toolのビルド">
+        <span class="merged" id="index.MJXck" title="原文 :  Build WebLogic Deploy Tool "><a href="../../developer/buildwdt/index.html">WebLogic Deploy Toolのビルド</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/releaseprocess/" title="WDTプロジェクト・リリース・プロセス">
+        <span class="merged" id="index.2cWjev" title="原文 :  WDT project release process "><a href="../../developer/releaseprocess/index.html">WDTプロジェクト・リリース・プロセス</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/contribute/" title="WDTにコントリビュート">
+        <span class="merged" id="index.4arIYc" title="原文 :  Contribute to WDT "><a href="../../developer/contribute/index.html">WDTにコントリビュート</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+      <li><span class="merged" id="index.2BBM2L"  title="原文:: Release Notes"><a class="padding" href="../../release-notes">リリース・ノート</a></span></li>
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p><span class="merged" id="index.4behA5" title="原文 : Created with from Oracle"><a href="https://www.oracle.com">Oracle</a>から<i class="fas fa-heart"></i>を使用して作成</span></p>
+<p><span class="merged" id="index.1OQYZy"  title="原文:: &nbsp">&nbsp</span></p>
+<p><span class="merged" id="index.msaKb" title="原文 :  GitHub repo"><a href="https://github.com/oracle/weblogic-deploy-tooling"><i class="fab fa-github"></i>GitHubレポ</a></span></p>
+<p><span class="merged" id="index.rjNGa" title="原文 :  Public Slack #weblogic"><a href="https://weblogic-slack-inviter.herokuapp.com/"><i class="fab fa-slack"></i> Public Slack #weblogic</a></span></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span class="merged" id="index.2UlWrZ" title="原文 :  &gt; User Guide &gt; Target environments "><span id="sidebar-toggle-span"><a data-sidebar-toggle="" href="index.html#" id="sidebar-toggle"><i class="fas fa-bars"></i></a></span> <span id="toc-menu"><i class="fas fa-list-alt"></i></span> <span class="links"><a href='../../index.html'></a> > <a href='../index.html'>ユーザー・ガイド</a>&nbsp;>&nbsp;ターゲット環境</span></span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><span class="merged" id="index.1BtSph" title="原文 : Specifying a target environment"><a href="index.html#specifying-a-target-environment">ターゲット環境の指定</a></span></li>
+        <li><span class="merged" id="index.1vMfAQ" title="原文 : The target configuration file"><a href="index.html#the-target-configuration-file">ターゲット構成ファイル</a></span></li>
+        <li><span class="merged" id="index.13TTt" title="原文 : Pre-configured target environments"><a href="index.html#pre-configured-target-environments">事前構成済のターゲット環境</a></span></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              <span class="merged" id="index.2jieSj" title="原文 : Target environments">ターゲット環境</span>
+            </h1>
+          
+
+        
+
+
+<p><span class="merged" id="index.dOExk.spl1" title="原文 : The Discover Domain and Prepare Model Tools allow you to customize the model and other files produced to be compatible with a specific target environment."><a href="../tools/discover/index.html">「ドメインの検出」</a>および<a href="../tools/prepare/index.html">「モデルの準備」</a> Toolsを使用すると、特定のターゲット環境と互換性を持つように作成されたモデルおよびその他のファイルをカスタマイズできます。</span> <span class="merged" id="index.dOExk.spl2" title="原文 : Options for a target environment may include:">ターゲット環境のオプションには、次のものがあります:</span> </p>
+<ul>
+<li><span class="merged" id="index.40owTM.spl1" title="原文 : Using model tokens for some attributes in the model.">モデル内の一部の属性に対するモデル・トークンの使用。</span> <span class="merged" id="index.40owTM.spl2" title="原文 : See Model tokens."><a href="../../concepts/model/index.html#model-tokens">「モデル・トークン」</a>を参照してください。</span> </li>
+<li><span class="merged" id="index.3efoxN" title="原文 : Using Kubernetes secrets for credentials in the model.">モデル内の資格証明にKubernetesシークレットを使用します。</span></li>
+<li><span class="merged" id="index.2HdL45.spl1" title="原文 : Applying filters to the model.">モデルへのフィルタの適用。</span> <span class="merged" id="index.2HdL45.spl2" title="原文 : See Model filters."><a href="../tools-config/model_filters/index.html">「モデル・フィルタ」</a>を参照してください。</span> </li>
+<li><span class="merged" id="index.Npfa8" title="原文 : Creating additional configuration files for the target system.">ターゲット・システムの追加構成ファイルの作成。</span></li>
+</ul>
+<h3 id="specifying-a-target-environment"><span class="merged" id="index.2bJwpA" title="原文 : Specifying a target environment">ターゲット環境の指定</span></h3>
+<p><span class="merged" id="index.3UZPOL.spl1" title="原文 : Each tool specifies a target environment using the command-line argument -target &lt;target-name&gt;, where &lt;target-name&gt; refers to a pre-configured target environment, or a user-defined environment.">各ツールでは、コマンドライン引数<code>-target &lt;target-name></code>を使用してターゲット環境を指定します。ここで、<code>&lt;target-name></code>は事前構成済のターゲット環境またはユーザー定義環境を参照します。</span> <span class="merged" id="index.3UZPOL.spl2" title="原文 : In addition, the -output_dir &lt;output-directory&gt; argument specifies where the files for the target environment will be stored.">また、<code>-output_dir &lt;output-directory></code>引数では、ターゲット環境のファイルの格納場所を指定します。</span> </p>
+<p><span class="merged" id="index.1e2s4L" title="原文 : This command line shows how these arguments can be used with the Discover Domain Tool:">このコマンドラインは、ドメインの検出ツールでこれらの引数を使用する方法を示しています:</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"> <span style="color:#ae81ff">$ $WLSDEPLOY_HOME/bin/discoverDomain.sh ... -target k8s -output_dir /etc/files</span>
+</code></pre></div><p><span class="merged" id="index.2hnpsX" title="原文 : This example would apply the k8s target type to the discovery result, and place those files in /etc/files.">この例では、<code>k8s</code>ターゲット・タイプを検出結果に適用し、それらのファイルを<code>/etc/files</code>に配置します。</span></p>
+<p><span class="merged" id="index.38DLh5.spl1" title="原文 : If a variable file is specified on the tool&rsquo;s command line using the -variable_file argument, any injected variables will be added to that file."><code>-variable_file</code>引数を使用してツールのコマンドラインで変数ファイルを指定すると、注入された変数がそのファイルに追加されます。</span> <span class="merged" id="index.38DLh5.spl2" title="原文 : If no variable file is specified, injected variables will be written to the file &lt;output-directory&gt;/&lt;target_name&gt;_variable.properties.">変数ファイルが指定されていない場合、注入された変数はファイル<code>&lt;output-directory>/&lt;target_name>_variable.properties</code>に書き込まれます。</span> </p>
+<h3 id="the-target-configuration-file"><span class="merged" id="index.4CvjK7" title="原文 : The target configuration file">ターゲット構成ファイル</span></h3>
+<p><span class="merged" id="index.iLcp2" title="原文 : A target environment is configured in a JSON file at this location:">ターゲット環境は、次のロケーションにあるJSONファイルで構成されます:</span></p>
+<pre><code>$WLSDEPLOY_HOME/lib/target/&lt;target-name&gt;/target.json
+</code></pre><p><span class="merged" id="index.h2hOw.spl1" title="原文 : The &lt;target-name&gt; value corresponds to the value of the -target argument on the tool&rsquo;s command line."><code>&lt;target-name></code>値は、ツールのコマンドラインの<code>-target</code>引数の値に対応します。</span> <span class="merged" id="index.h2hOw.spl2" title="原文 : The WLS installation includes two pre-defined targets:">WLSインストールには、次の2つの事前定義済ターゲットが含まれています:</span> </p>
+<ul>
+<li><span class="merged" id="index.PV5bs" title="原文 : Weblogic Kubernetes Operator (named k8s)"><a href="index.html#the-weblogic-kubernetes-operator-target">Weblogic Kubernetes Operator</a> (named <code>k8s</code>)</span></li>
+<li><span class="merged" id="index.GBBW0" title="原文 : Verrazzano (named vz)"><a href="index.html#the-verrazzano-target">Verrazzano</a> (named <code>vz</code>)</span></li>
+</ul>
+<p><span class="merged" id="index.3nTSfn" title="原文 : You can define a new or extended target environment with a new target-name in the above location, or using a Custom configuration directory, such as $WDT_CUSTOM_CONFIG/target/&lt;my-target-name&gt;/target.json.">新しいターゲット環境または拡張ターゲット環境は、前述のロケーションにある新しい<code>target-name</code>を使用するか、<code>$WDT_CUSTOM_CONFIG/target/&lt;my-target-name>/target.json</code>などの<a href="../tools-config/custom_config/index.html">「カスタム構成」</a>ディレクトリを使用して定義できます。</span></p>
+<p><span class="merged" id="index.2ksyzc" title="原文 : Here is an example of a target environment file:">ターゲット環境ファイルの例を次に示します:</span></p>
+<pre><code>{
+  &quot;model_filters&quot; : {
+        &quot;discover&quot;: [
+          { &quot;name&quot;: &quot;k8s_prep&quot;, &quot;path&quot;: &quot;@@TARGET_CONFIG_DIR@@/k8s_operator_filter.py&quot; }
+        ]
+      },
+  &quot;variable_injectors&quot; : {&quot;PORT&quot;: {},&quot;HOST&quot;: {},&quot;URL&quot;: {}},
+  &quot;validation_method&quot; : &quot;lax&quot;,
+  &quot;credentials_method&quot; : &quot;secrets&quot;,
+  &quot;wls_credentials_name&quot; : &quot;__weblogic-credentials__&quot;,
+  &quot;additional_output&quot; : &quot;binding.yaml,model.yaml&quot;
+}
+</code></pre><p><span class="merged" id="index.1hDtGr" title="原文 : Each of the fields in this example is optional, and can be customized.">この例の各フィールドはオプションで、カスタマイズできます。</span></p>
+<h4 id="model_filters"><span class="merged" id="index.2VE21J"  title="原文: model_filters"><code>model_filters</code></span></h4>
+<p><span class="merged" id="index.1luxZD.spl1" title="原文 : This field specifies the filters to be applied to the resulting model.">このフィールドでは、結果のモデルに適用されるフィルタを指定します。</span> <span class="merged" id="index.1luxZD.spl2" title="原文 : This follows the same format and rules as the Model filters configuration.">これは、<a href="../tools-config/model_filters/index.html">「モデル・フィルタ」</a>構成と同じ形式およびルールに従います。</span> <span class="merged" id="index.1luxZD.spl3" title="原文 : The discover type should always be used here.">ここでは、常に<code>discover</code>タイプを使用する必要があります。</span> </p>
+<p><span class="merged" id="index.2qXPd" title="原文 : The @@TARGET_CONFIG_DIR@@ token can be used to indicate that the specified filter is in the same directory as the target configuration file."><code>@@TARGET_CONFIG_DIR@@</code>トークンを使用して、指定したフィルタがターゲット構成ファイルと同じディレクトリにあることを示すことができます。</span></p>
+<h4 id="variable_injectors"><span class="merged" id="index.2ZQmik"  title="原文: variable_injectors"><code>variable_injectors</code></span></h4>
+<p><span class="merged" id="index.1lDuP0.spl1" title="原文 : This field specifies the variable injectors to be applied to the resulting model.">このフィールドでは、結果のモデルに適用される変数インジェクタを指定します。</span> <span class="merged" id="index.1lDuP0.spl2" title="原文 : This follows the same format and rules as the Variable injectors configuration.">これは、<a href="../tools/variable_injection/index.html">「可変インジェクタ」</a>構成と同じ形式およびルールに従います。</span> </p>
+<h4 id="validation_method"><span class="merged" id="index.3xprps"  title="原文: validation_method"><code>validation_method</code></span></h4>
+<p><span class="merged" id="index.1pkx2a.spl1" title="原文 : This field can be used to set the validation level for the resulting model.">このフィールドを使用して、結果モデルの検証レベルを設定できます。</span> <span class="merged" id="index.1pkx2a.spl2" title="原文 : Only the value laxis currently supported.">値<code>lax</code>のみが現在サポートされています。</span> <span class="merged" id="index.1pkx2a.spl3" title="原文 : With lax validation, variables and Kubernetes secrets referenced in the resulting model do not need to be available when the model is created."><code>lax</code>検証では、結果のモデルで参照される変数およびKubernetesシークレットは、モデルの作成時に使用可能である必要はありません。</span> </p>
+<h4 id="credentials_method"><span class="merged" id="index.7J6Ru"  title="原文: credentials_method"><code>credentials_method</code></span></h4>
+<p><span class="merged" id="index.480XCt.spl1" title="原文 : This field specifies how credentials in the model should be handled.">このフィールドでは、モデル内の資格証明の処理方法を指定します。</span> <span class="merged" id="index.480XCt.spl2" title="原文 : There are two values available:">次の2つの値を使用できます:</span> </p>
+<ul>
+<li><span class="merged" id="index.9N4K1" title="原文 : secrets - the credentials in the model are replaced with references to Kubernetes secrets, and a UNIX script to create those secrets is produced."><code>secrets</code> - モデル内の資格証明がKubernetesシークレットへの参照に置き換えられ、それらのシークレットを作成するUNIXスクリプトが生成されます。</span></li>
+<li><span class="merged" id="index.4Wa6h1" title="原文 : config_override_secrets - the credentials in the model are replaced with placeholder values, such as password1, and a UNIX script to create corresponding Kubernetes secrets is produced."><code>config_override_secrets</code> - モデル内の資格証明が<code>password1</code>などのプレースホルダー値に置き換えられ、対応するKubernetesシークレットを作成するUNIXスクリプトが生成されます。</span></li>
+</ul>
+<p><span class="merged" id="index.1BvFEB.spl1" title="原文 : In both these cases, the script to create the Kubernetes secrets is written to &lt;output-directory&gt;/create_k8s_secrets.sh.">どちらの場合も、Kubernetesシークレットを作成するスクリプトは<code>&lt;output-directory>/create_k8s_secrets.sh</code>に書き込まれます。</span> <span class="merged" id="index.1BvFEB.spl2" title="原文 : You will need to update this script with credential values before executing">実行する前に、このスクリプトを資格証明の値で更新する必要があります</span> </p>
+<h4 id="wls_credentials_name"><span class="merged" id="index.2yX5oB"  title="原文: wls_credentials_name"><code>wls_credentials_name</code></span></h4>
+<p><span class="merged" id="index.3jqbZv.spl1" title="原文 : This field specifies a name for use with the WDT_MODEL_SECRETS_NAME_DIR_PAIRS environment variable to identify administration credential Secrets for the domain.">このフィールドでは、ドメインの管理資格証明シークレットを識別するためにWDT_MODEL_SECRETS_NAME_DIR_PAIRS環境変数で使用する名前を指定します。</span> <span class="merged" id="index.3jqbZv.spl2" title="原文 : This is useful when those Secrets are stored in a directory that does not follow the &lt;directory&gt;/&lt;name&gt;/&lt;key&gt; convention.">これは、これらのシークレットが<code>&lt;directory>/&lt;name>/&lt;key></code>の規則に従っていないディレクトリに格納されている場合に便利です。</span> <span class="merged" id="index.3jqbZv.spl3" title="原文 : For more information about using the WDT_MODEL_SECRETS_NAME_DIR_PAIRS environment variable, see Model tokens.">WDT_MODEL_SECRETS_NAME_DIR_PAIRS環境変数の使用方法の詳細は、<a href="../../concepts/model/index.html#model-tokens">「モデル・トークン」</a>を参照してください。</span> </p>
+<h4 id="additional_output"><span class="merged" id="index.15Vsuv"  title="原文: additional_output"><code>additional_output</code></span></h4>
+<p><span class="merged" id="index.1n6eeg.spl1" title="原文 : This field can be used to create additional output for use in the target environment.">このフィールドを使用して、ターゲット環境で使用する追加出力を作成できます。</span> <span class="merged" id="index.1n6eeg.spl2" title="原文 : The value is a comma-separated list of template files in the $WLSDEPLOY_HOME/lib/target/&lt;target-name&gt; directory.">この値は、<code>$WLSDEPLOY_HOME/lib/target/&lt;target-name></code>ディレクトリ内のテンプレート・ファイルのカンマ区切りリストです。</span> <span class="merged" id="index.1n6eeg.spl3" title="原文 : These templates are populated with information derived from the model, and written to a file with the same name in the specified output directory.">これらのテンプレートには、モデルから導出された情報が移入され、指定された出力ディレクトリに同じ名前のファイルに書き込まれます。</span> </p>
+<p><span class="merged" id="index.9BaeA.spl1" title="原文 : Template files can be customized for specific environments.">テンプレート・ファイルは、特定の環境に合せてカスタマイズできます。</span> <span class="merged" id="index.9BaeA.spl2" title="原文 : The recommended method is to copy the original template to a custom configuration directory as described above, such as $WDT_CUSTOM_CONFIG/target/&lt;target-name&gt;/model.yaml.">推奨されるメソッドは、前述のように、元のテンプレートをカスタム構成ディレクトリ(<code>$WDT_CUSTOM_CONFIG/target/&lt;target-name>/model.yaml</code>など)にコピーすることです。</span> <span class="merged" id="index.9BaeA.spl3" title="原文 : The copied file can then be edited as needed, while maintaining the original for reference.">コピーしたファイルは、参照用に元のファイルを保持しながら、必要に応じて編集できます。</span> </p>
+<h3 id="pre-configured-target-environments"><span class="merged" id="index.1aNDlE" title="原文 : Pre-configured target environments">事前構成済のターゲット環境</span></h3>
+<p><span class="merged" id="index.2Y5JpO" title="原文 : These target environment configurations are included in the WebLogic Deploy Tooling installation.">これらのターゲット環境構成は、WebLogic Deploy Toolingインストールに含まれています。</span></p>
+<h4 id="the-weblogic-kubernetes-operator-target"><span class="merged" id="index.2UKtoO" title="原文 : The WebLogic Kubernetes Operator target">WebLogic Kubernetes Operatorターゲット</span></h4>
+<p><span class="merged" id="index.2EiDes.spl1" title="原文 : This target environment can be applied by providing the command-line argument -target wko.">このターゲット環境は、コマンドライン引数<code>-target wko</code>を指定することで適用できます。</span> <span class="merged" id="index.2EiDes.spl2" title="原文 : It will provide this additional processing:">次の追加処理が提供されます:</span> </p>
+<ul>
+<li><span class="merged" id="index.46QRrO" title="原文 : The wko_operator_filter.py filter will be applied to remove model elements that are not compatible with the Kubernetes environment"><code>wko_operator_filter.py</code>フィルタは、Kubernetes環境と互換性のないモデル要素を削除するために適用されます</span></li>
+<li><span class="merged" id="index.1marN7" title="原文 : Variables will be injected into the model for port, host, and URL attributes">変数は、ポート、ホストおよびURL属性のモデルに注入されます</span></li>
+<li><span class="merged" id="index.4GiAyP" title="原文 : lax validation will be applied for the resulting model">結果のモデルに<code>lax</code>検証が適用されます</span></li>
+<li><span class="merged" id="index.42fAW9" title="原文 : Credentials in the model will be replaced with references to Kubernetes secrets, and a script to create those secrets will be produced">モデル内の資格証明はKubernetesシークレットへの参照に置き換えられ、それらのシークレットを作成するスクリプトが生成されます</span></li>
+<li><span class="merged" id="index.3s6u1E" title="原文 : An additional Kubernetes resource file, model.yaml, will be produced, with cluster and naming information derived from the model">モデルから導出されたクラスタおよびネーミング情報とともに、追加のKubernetesリソース・ファイル<code>model.yaml</code>が生成されます</span></li>
+</ul>
+<h4 id="the-verrazzano-target"><span class="merged" id="index.3eHwai" title="原文 : The Verrazzano target">ベラッツァーノのターゲット</span></h4>
+<p><span class="merged" id="index.4LG5UO.spl1" title="原文 : This target environment can be applied by providing the command-line argument -target vz.">このターゲット環境は、コマンドライン引数<code>-target vz</code>を指定することで適用できます。</span> <span class="merged" id="index.4LG5UO.spl2" title="原文 : It will provide this additional processing:">次の追加処理が提供されます:</span> </p>
+<ul>
+<li><span class="merged" id="index.inuzu" title="原文 : The vz_filter.py filter will be applied to remove model elements that are not compatible with the Kubernetes environment"><code>vz_filter.py</code>フィルタは、Kubernetes環境と互換性のないモデル要素を削除するために適用されます</span></li>
+<li><span class="merged" id="index.1marN7.1" title="原文 : Variables will be injected into the model for port, host, and URL attributes">変数は、ポート、ホストおよびURL属性のモデルに注入されます</span></li>
+<li><span class="merged" id="index.4GiAyP.1" title="原文 : lax validation will be applied for the resulting model">結果のモデルに<code>lax</code>検証が適用されます</span></li>
+<li><span class="merged" id="index.279eLc" title="原文 : Credentials in the model will be replaced with placeholder values, and a script to create corresponding secrets will be produced">モデル内の資格証明はプレースホルダー値に置き換えられ、対応するシークレットを作成するスクリプトが生成されます</span></li>
+<li><span class="merged" id="index.31bewP" title="原文 : Two additional Kubernetes resource files, model.yaml and binding.yaml, will be produced, with cluster and data source information derived from the model">モデルから導出されたクラスタおよびデータ・ソース情報を使用して、<code>model.yaml</code>および<code>binding.yaml</code>という追加のKubernetesリソース・ファイルが生成されます</span></li>
+</ul>
+<h4 id="generic-kubernetes-target"><span class="merged" id="index.33zsq8" title="原文 : Generic Kubernetes target">汎用Kubernetesターゲット</span></h4>
+<p><span class="merged" id="index.4CJSrB.spl1" title="原文 : This target environment can be applied by providing the command-line argument -target k8s.">このターゲット環境は、コマンドライン引数<code>-target k8s</code>を指定することで適用できます。</span> <span class="merged" id="index.4CJSrB.spl2" title="原文 : It will provide this additional processing:">次の追加処理が提供されます:</span> </p>
+<ul>
+<li><span class="merged" id="index.35KX38" title="原文 : The k8s_operator_filter.py filter will be applied to remove model elements that are not compatible with the Kubernetes environment"><code>k8s_operator_filter.py</code>フィルタは、Kubernetes環境と互換性のないモデル要素を削除するために適用されます</span></li>
+<li><span class="merged" id="index.1marN7.2" title="原文 : Variables will be injected into the model for port, host, and URL attributes">変数は、ポート、ホストおよびURL属性のモデルに注入されます</span></li>
+<li><span class="merged" id="index.4GiAyP.2" title="原文 : lax validation will be applied for the resulting model">結果のモデルに<code>lax</code>検証が適用されます</span></li>
+<li><span class="merged" id="index.42fAW9.1" title="原文 : Credentials in the model will be replaced with references to Kubernetes secrets, and a script to create those secrets will be produced">モデル内の資格証明はKubernetesシークレットへの参照に置き換えられ、それらのシークレットを作成するスクリプトが生成されます</span></li>
+</ul>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../tools/model_help/index.html" > <i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="../tools-config/index.html" style="margin-right: 0px;" ><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../js/clipboard.min.js?1620686566"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1620686566"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1620686566"></script>
+    <script src="../../js/jquery.sticky.js?1620686566"></script>
+    <script src="../../js/featherlight.min.js?1620686566"></script>
+    <script src="../../js/highlight.pack.js?1620686566"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1620686566"></script>
+    <script src="../../js/learn.js?1620686566"></script>
+    <script src="../../js/hugo-learn.js?1620686566"></script>
+    
+        
+            <script src="../../mermaid/mermaid.js?1620686566"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>

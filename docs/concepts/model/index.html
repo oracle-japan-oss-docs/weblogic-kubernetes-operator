@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="ja" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.82.0" />
+    <meta content="" name="description">
+
+
+    <link rel="icon" href="../../images/favicon.png" type="image/png">
+
+    <title>メタデータ・モデル :: WebLogic Deploy Tooling</title>
+
+    
+    <link href="../../css/nucleus.css?1620686566" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1620686566" rel="stylesheet">
+    <link href="../../css/hybrid.css?1620686566" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1620686566" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1620686566" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1620686566" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1620686566" rel="stylesheet">
+    <link href="../../css/theme.css?1620686566" rel="stylesheet">
+    <link href="../../css/tabs.css?1620686566" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1620686566" rel="stylesheet">
+    
+    
+
+    <script src="../../js/jquery-3.3.1.min.js?1620686566"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  <meta HTTP-EQUIV="Content-Type" Content="text/html; charset=utf-8"></head>
+  <style type="text/css"> <!-- .merged:hover {text-decoration: underline;} --> </style>
+<body class="" data-url="/weblogic-deploy-tooling/concepts/model/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <span class="merged" id="index.4PFeG6" title="原文 :  Deploy Tooling "><a href="https://oracle.github.io/weblogic-deploy-tooling" id="logo"><img height="60" src="../../images/logo.png"><br />ツールのデプロイ</a></span>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../js/lunr.min.js?1620686566"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1620686566"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/oracle.github.io\/weblogic-deploy-tooling";
+    
+</script>
+<script type="text/javascript" src="../../js/search.js?1620686566"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+      <li><span class="merged" id="index.4CNnKm"  title="原文:: Home"><a class="padding" href="https://oracle.github.io/weblogic-deploy-tooling">ホーム</a></span></li>
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        parent
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/concepts/" title=" 概念">
+      <span class="merged" id="index.krEyx" title="原文 :  1. Concepts "><a href="../index.html"> <b>1. </b>概要 </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item active" data-nav-id="/weblogic-deploy-tooling/concepts/model/" title="メタデータ・モデル">
+        <span class="merged" id="index.3sFyrW" title="原文 :  Metadata Model "><a href="index.html">メタデータ・モデル</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/concepts/archive/" title="アーカイブ・ファイル">
+        <span class="merged" id="index.3zshJg"  title="原文::  Archive File "><a href="../archive/index.html"> アーカイブ・ファイル </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/" title="ユーザー・ガイド">
+      <span class="merged" id="index.1eLzcq" title="原文 :  2. User Guide "><a href="../../userguide/index.html"> <b>2. </b>ユーザー・ガイド </a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/install/" title="WDTのインストール">
+        <span class="merged" id="index.3Pb0Tg" title="原文 :  Install WDT "><a href="../../userguide/install/index.html">WDTのインストール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/tools/" title="WDTツール">
+      <span class="merged" id="index.323BSm" title="原文 :  WDT Tools "><a href="../../userguide/tools/index.html"> <b> </b>WDTツール </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/create/" title="ドメインの作成ツール">
+        <span class="merged" id="index.CkJU" title="原文 :  Create Domain Tool "><a href="../../userguide/tools/create/index.html">ドメインの作成ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/update/" title="ドメインの更新ツール">
+        <span class="merged" id="index.3n4OMb" title="原文 :  Update Domain Tool "><a href="../../userguide/tools/update/index.html">ドメインの更新ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/deploy/" title="Deploy Applications Tool">
+        <span class="merged" id="index.2thXzY" title="原文 :  Deploy Applications Tool "><a href="../../userguide/tools/deploy/index.html"> Deploy Applications Tool </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/discover/" title="ドメインの検出ツール">
+        <span class="merged" id="index.4ODeG" title="原文 :  Discover Domain Tool "><a href="../../userguide/tools/discover/index.html">ドメインの検出ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/encrypt/" title="モデルの暗号化ツール">
+        <span class="merged" id="index.vKDp8" title="原文 :  Encrypt Model Tool "><a href="../../userguide/tools/encrypt/index.html">モデルの暗号化ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/validate/" title="モデルの検証ツール">
+        <span class="merged" id="index.4GtaWA" title="原文 :  Validate Model Tool "><a href="../../userguide/tools/validate/index.html">モデルの検証ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/compare/" title="モデルの比較ツール">
+        <span class="merged" id="index.3SFn9n" title="原文 :  Compare Model Tool "><a href="../../userguide/tools/compare/index.html">モデルの比較ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/prepare/" title="モデルの準備ツール">
+        <span class="merged" id="index.25a9jA" title="原文 :  Prepare Model Tool "><a href="../../userguide/tools/prepare/index.html">モデルの準備ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/kubernetes/" title="ドメイン・リソースの抽出ツール">
+        <span class="merged" id="index.2eurP5" title="原文 :  Extract Domain Resource Tool "><a href="../../userguide/tools/kubernetes/index.html">ドメイン・リソースの抽出ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/variable_injection/" title="変数インジェクタ・ツール">
+        <span class="merged" id="index.47AXAt" title="原文 :  Variable Injector Tool "><a href="../../userguide/tools/variable_injection/index.html">変数インジェクタ・ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/model_help/" title="モデル・ヘルプ・ツール">
+        <span class="merged" id="index.22nv7T" title="原文 :  Model Help Tool "><a href="../../userguide/tools/model_help/index.html">モデル・ヘルプ・ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/target_env/" title="ターゲット環境">
+        <span class="merged" id="index.4PzZE0" title="原文 :  Target environments "><a href="../../userguide/target_env/index.html">ターゲット環境</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/" title="ツール構成">
+      <span class="merged" id="index.3pmNjw" title="原文 :  Tools configuration "><a href="../../userguide/tools-config/index.html">ツール構成</a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/model_filters/" title="モデル・フィルタ">
+        <span class="merged" id="index.3uQ5V6" title="原文 :  Model filters "><a href="../../userguide/tools-config/model_filters/index.html">モデル・フィルタ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/domain_def/" title="ドメイン・タイプ定義">
+        <span class="merged" id="index.wFMIn" title="原文 :  Domain type definitions "><a href="../../userguide/tools-config/domain_def/index.html">ドメイン・タイプ定義</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/custom_config/" title="カスタム構成">
+        <span class="merged" id="index.2aeh9b"  title="原文::  Custom configuration "><a href="../../userguide/tools-config/custom_config/index.html"> カスタム構成 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/tool_prop/" title="ツールのプロパティ・ファイル">
+        <span class="merged" id="index.1a1qYY" title="原文 :  Tool property file "><a href="../../userguide/tools-config/tool_prop/index.html">ツールのプロパティ・ファイル</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/samples/" title="サンプル">
+      <span class="merged" id="index.14e0I8" title="原文 :  3. Samples "><a href="../../samples/index.html"> <b>3. </b>サンプル</a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/adminserver-model/" title="管理サーバーのカスタマイズ">
+        <span class="merged" id="index.27EApP" title="原文 :  Customizing the Administration Server "><a href="../../samples/adminserver-model/index.html">管理サーバーのカスタマイズ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/cluster-model/" title="構成済クラスタのモデル化">
+        <span class="merged" id="index.U7h3V" title="原文 :  Modeling a configured cluster "><a href="../../samples/cluster-model/index.html">構成済クラスタのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/jdbc-model/" title="JDBCデータ・ソースのモデル化">
+        <span class="merged" id="index.135gUV" title="原文 :  Modeling a JDBC data source "><a href="../../samples/jdbc-model/index.html">JDBCデータ・ソースのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/workmanager-model/" title="ワーク・マネージャのモデリング">
+        <span class="merged" id="index.4GSQvZ" title="原文 :  Modeling a Work Manager "><a href="../../samples/workmanager-model/index.html">ワーク・マネージャのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/securityproviders-model/" title="セキュリティ・プロバイダのモデル化">
+        <span class="merged" id="index.25mENq" title="原文 :  Modeling security providers "><a href="../../samples/securityproviders-model/index.html">セキュリティ・プロバイダのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/usersgroups-model/" title="WebLogicのユーザー、グループおよびロールのモデリング">
+        <span class="merged" id="index.TXu3c" title="原文 :  Modeling WebLogic users, groups, and roles "><a href="../../samples/usersgroups-model/index.html">WebLogicのユーザー、グループおよびロールのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/pwcredentialmap-model/" title="WebLogicユーザー・パスワード資格証明マッピングのモデリング">
+        <span class="merged" id="index.1h3kLw" title="原文 :  Modeling WebLogic user password credential mapping "><a href="../../samples/pwcredentialmap-model/index.html">WebLogicユーザー・パスワード資格証明マッピングのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/odl-model/" title="Oracle Diagnostic Loggingの構成">
+        <span class="merged" id="index.1fH5ax" title="原文 :  Configuring Oracle Diagnostic Logging "><a href="../../samples/odl-model/index.html">Oracle Diagnostic Loggingの構成</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/ohs-model/" title="Oracle HTTP Serverの構成">
+        <span class="merged" id="index.BxjK0"  title="原文:  Configuring Oracle HTTP Server "><a href="../../samples/ohs-model/index.html"> Oracle HTTP Serverの構成 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/targetservers-model/" title="サーバー・グループのターゲット指定">
+        <span class="merged" id="index.2DoWDm" title="原文 :  Targeting server groups "><a href="../../samples/targetservers-model/index.html">サーバー・グループのターゲット指定</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/wko-model/" title="WebLogic Kubernetes OperatorでのWDTの使用">
+        <span class="merged" id="index.424dCP" title="原文 :  Using WDT with WebLogic Kubernetes Operator "><a href="../../samples/wko-model/index.html">WebLogic Kubernetes OperatorでのWDTの使用</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/developer/" title="開発者ガイド">
+      <span class="merged" id="index.OWGnU" title="原文 :  4. Developer Guide "><a href="../../developer/index.html"> <b>4. </b>開発者ガイド </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/project-structure/" title="プロジェクト体系">
+        <span class="merged" id="index.1LPiAs" title="原文 :  Project structure "><a href="../../developer/project-structure/index.html">プロジェクト体系</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/feature-impl/" title="機能の実装">
+        <span class="merged" id="index.2xzYPV" title="原文 :  Feature implementation "><a href="../../developer/feature-impl/index.html">機能の実装</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/alias-definitions/" title="別名定義">
+        <span class="merged" id="index.3RFNSM" title="原文 :  Alias definitions "><a href="../../developer/alias-definitions/index.html">別名定義</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/buildwdt/" title="WebLogic Deploy Toolのビルド">
+        <span class="merged" id="index.MJXck" title="原文 :  Build WebLogic Deploy Tool "><a href="../../developer/buildwdt/index.html">WebLogic Deploy Toolのビルド</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/releaseprocess/" title="WDTプロジェクト・リリース・プロセス">
+        <span class="merged" id="index.2cWjev" title="原文 :  WDT project release process "><a href="../../developer/releaseprocess/index.html">WDTプロジェクト・リリース・プロセス</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/contribute/" title="WDTにコントリビュート">
+        <span class="merged" id="index.4arIYc" title="原文 :  Contribute to WDT "><a href="../../developer/contribute/index.html">WDTにコントリビュート</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+      <li><span class="merged" id="index.2BBM2L"  title="原文:: Release Notes"><a class="padding" href="../../release-notes">リリース・ノート</a></span></li>
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p><span class="merged" id="index.4behA5" title="原文 : Created with from Oracle"><a href="https://www.oracle.com">Oracle</a>から<i class="fas fa-heart"></i>を使用して作成</span></p>
+<p><span class="merged" id="index.1OQYZy"  title="原文:: &nbsp">&nbsp</span></p>
+<p><span class="merged" id="index.msaKb" title="原文 :  GitHub repo"><a href="https://github.com/oracle/weblogic-deploy-tooling"><i class="fab fa-github"></i>GitHubレポ</a></span></p>
+<p><span class="merged" id="index.rjNGa" title="原文 :  Public Slack #weblogic"><a href="https://weblogic-slack-inviter.herokuapp.com/"><i class="fab fa-slack"></i> Public Slack #weblogic</a></span></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span class="merged" id="index.1lpJ2G" title="原文 :  &gt; Concepts &gt; Metadata Model "><span id="sidebar-toggle-span"><a data-sidebar-toggle="" href="index.html#" id="sidebar-toggle"><i class="fas fa-bars"></i></a></span> <span id="toc-menu"><i class="fas fa-list-alt"></i></span> <span class="links"><a href='../../index.html'></a> > <a href='../index.html'>コンセプト</a>&nbsp;>&nbsp;メタデータ・モデル</span></span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><span class="merged" id="index.2qlJ8K"  title="原文:: Contents"><a href="index.html#contents">目次</a></span></li>
+        <li><span class="merged" id="index.1bJUqu"  title="原文:: Overview"><a href="index.html#overview">概要</a></span></li>
+        <li><span class="merged" id="index.2ZsfnM" title="原文 : Top-level model sections"><a href="index.html#top-level-model-sections">トップ・レベル・モデル・セクション</a></span></li>
+        <li><span class="merged" id="index.2YFz2s" title="原文 : Model names"><a href="index.html#model-names">モデル名</a></span></li>
+        <li><span class="merged" id="index.1mNWVF" title="原文 : Model tokens"><a href="index.html#model-tokens">モデル・トークン</a></span></li>
+        <li><span class="merged" id="index.109iWf" title="原文 : Model semantics"><a href="index.html#model-semantics">モデル・セマンティクス</a></span></li>
+        <li><span class="merged" id="index.11VGsP" title="原文 : Declaring named MBeans to delete"><a href="index.html#declaring-named-mbeans-to-delete">削除する名前付きMBeansの宣言</a></span></li>
+        <li><span class="merged" id="index.4SozxI" title="原文 : Using multiple models"><a href="index.html#using-multiple-models">複数のモデルの使用</a></span></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              <span class="merged" id="index.3ZZsep" title="原文 : Metadata Model">メタデータ・モデル</span>
+            </h1>
+          
+
+        
+
+
+<h3 id="contents"><span class="merged" id="index.1Q34Zl"  title="原文:: Contents">目次</span></h3>
+<ul>
+<li><span class="merged" id="index.1bJUqu.1"  title="原文:: Overview"><a href="index.html#overview">概要</a></span></li>
+<li><span class="merged" id="index.stVJx" title="原文 : Top-level sections"><a href="index.html#top-level-model-sections">トップ・レベル・セクション</a></span></li>
+<li><span class="merged" id="index.1nuExX" title="原文 : Simple example"><a href="index.html#simple-example">簡単な例</a></span></li>
+<li><span class="merged" id="index.2YFz2s.1" title="原文 : Model names"><a href="index.html#model-names">モデル名</a></span></li>
+<li><span class="merged" id="index.1mNWVF.1" title="原文 : Model tokens"><a href="index.html#model-tokens">モデル・トークン</a></span></li>
+<li><span class="merged" id="index.109iWf.1" title="原文 : Model semantics"><a href="index.html#model-semantics">モデル・セマンティクス</a></span></li>
+<li><span class="merged" id="index.11VGsP.1" title="原文 : Declaring named MBeans to delete"><a href="index.html#declaring-named-mbeans-to-delete">削除する名前付きMBeansの宣言</a></span></li>
+<li><span class="merged" id="index.4SozxI.1" title="原文 : Using multiple models"><a href="index.html#using-multiple-models">複数のモデルの使用</a></span></li>
+</ul>
+<h3 id="overview"><span class="merged" id="index.YrpRV"  title="原文:: Overview">概要</span></h3>
+<p><span class="merged" id="index.3bPGcJ.spl1" title="原文 : The metadata model (or model, for short) is a version-independent description of a WebLogic Server domain configuration.">メタデータ・モデル(または略してモデル)は、WebLogic Serverドメイン構成のバージョンに依存しない記述です。</span> <span class="merged" id="index.3bPGcJ.spl2" title="原文 : The tools are designed to support a sparse model so that the model need only describe what is required for the specific operation without describing other artifacts.">このツールは、スパース・モデルをサポートするように設計されているため、モデルでは、他のアーティファクトを記述せずに、特定の操作に必要なもののみを記述する必要があります。</span> <span class="merged" id="index.3bPGcJ.spl3" title="原文 : For example, to deploy an application that depends on a JDBC data source into an existing domain that may contain other applications or data sources, the model needs to describe only the application and the data source in question.">たとえば、JDBCデータ・ソースに依存するアプリケーションを、他のアプリケーションまたはデータ・ソースを含む可能性のある既存のドメインにデプロイする場合、モデルでは該当するアプリケーションおよびデータ・ソースのみを記述する必要があります。</span> <span class="merged" id="index.3bPGcJ.spl4" title="原文 : If the data source was previously created, the deployApps tool will not try to recreate it but may update part of that data source&rsquo;s configuration if the model description is different than the existing values.">データ・ソースが以前に作成された場合、<code>deployApps</code>ツールは再作成を試行しませんが、モデルの説明が既存の値と異なる場合は、そのデータ・ソースの構成の一部を更新できます。</span> <span class="merged" id="index.3bPGcJ.spl5" title="原文 : If the application was previously deployed, the deployApps tool will compare the binaries to determine if the application needs to be redeployed or not.">アプリケーションが以前にデプロイされた場合、<code>deployApps</code>ツールはバイナリを比較して、アプリケーションを再デプロイする必要があるかどうかを判断します。</span> </p>
+<p><span class="merged" id="index.2ZGkqh.spl1" title="原文 : The model structure, and its folder and attribute names, are based on the WLST 12.2.1.3 offline structure and names with redundant folders removed to keep the model simple.">モデル構造、およびそのフォルダと属性の名前は、WLST 12.2.1.3オフライン構造と、モデルを単純にするために削除された冗長なフォルダの名前に基づいています。</span> <span class="merged" id="index.2ZGkqh.spl2" title="原文 : For example, the WLST path to the URL for a JDBC data source is /JDBCSystemResource/&lt;data-source-name&gt;/JdbcResource/&lt;data-source-name&gt;/JDBCDriverParams/NO_NAME_0/URL.">たとえば、JDBCデータ・ソースのURLへのWLSTパスは<code>/JDBCSystemResource/&lt;data-source-name>/JdbcResource/&lt;data-source-name>/JDBCDriverParams/NO_NAME_0/URL</code>です。</span> <span class="merged" id="index.2ZGkqh.spl3" title="原文 : In the model, it is resources:/JDBCSystemResource/&lt;data-source-name&gt;/JdbcResource/JDBCDriverParams/URL (where resources is the top-level model section where all WebLogic Server resources/services are described).">モデルでは、<code>resources:/JDBCSystemResource/&lt;data-source-name>/JdbcResource/JDBCDriverParams/URL</code>です(<code>resources</code>は、すべてのWebLogic Serverリソース/サービスが記述されている最上位レベルのモデル・セクションです)。</span> </p>
+<p><span class="merged" id="index.3jr6V0.spl1" title="原文 : The model is written in YAML (or optionally, JSON).">モデルはYAML (またはオプションでJSON)で記述されます。</span> <span class="merged" id="index.3jr6V0.spl2" title="原文 : The YAML parser, built into the underlying framework, is both strict with regard to the specification and supports only the subset of YAML needed to describe WebLogic Server artifacts.">基盤となるフレームワークに組み込まれているYAMLパーサーは、どちらも仕様に関して厳密であり、WebLogic Serverアーティファクトの記述に必要なYAMLのサブセットのみをサポートします。</span> <span class="merged" id="index.3jr6V0.spl3" title="原文 : For example, YAML does not support tabs as indent characters so the parser will generate parse errors if the model file contains leading tabs used for indention purposes.">たとえば、YAMLではタブをインデント文字としてサポートしていないため、モデル・ファイルにインデント目的で使用される先頭のタブが含まれている場合、パーサーは解析エラーを生成します。</span> <span class="merged" id="index.3jr6V0.spl4" title="原文 : In general, names and values can be specified without quotes except when the content contains one of the restricted characters; in which case, the content must be enclosed in either single or double quotes.">通常、名前と値は、コンテンツに制限付き文字のいずれかが含まれている場合を除き、引用符なしで指定できます。その場合、コンテンツは一重引用符または二重引用符で囲む必要があります。</span> <span class="merged" id="index.3jr6V0.spl5" title="原文 : The restricted characters are:">制限付き文字は次のとおりです:</span> </p>
+<ul>
+<li><span class="merged" id="index.3pQMD4"  title="原文:: comma">カンマ</span></li>
+<li><span class="merged" id="index.25p1wU"  title="原文:: colon">コロン</span></li>
+<li><span class="merged" id="index.3Uubge" title="原文 : exclamation mark">感嘆符</span></li>
+<li><span class="merged" id="index.1EBCzY"  title="原文:: question mark">疑問符</span></li>
+<li><span class="merged" id="index.19N5md"  title="原文:: hyphen">ハイフン</span></li>
+<li><span class="merged" id="index.1TPWmx"  title="原文:: ampersand">アンパサンド</span></li>
+<li><span class="merged" id="index.1GvceJ"  title="原文:: percent sign">パーセント記号</span></li>
+<li><span class="merged" id="index.3X82xm" title="原文 : &ldquo;at&rdquo; sign">アットマーク</span></li>
+<li><span class="merged" id="index.3hBoHs"  title="原文:: star">スター </span></li>
+<li><span class="merged" id="index.2yyQpr" title="原文 : pound sign (also known as hash)">シャープ記号(ハッシュとも呼ばれる)</span></li>
+<li><span class="merged" id="index.4Zzg5G"  title="原文:: equal sign">等号</span></li>
+<li><span class="merged" id="index.cQQGU"  title="原文:: less than">より小さい</span></li>
+<li><span class="merged" id="index.4fs52L"  title="原文:: greater than">より大きい</span></li>
+<li><span class="merged" id="index.1qI0ul"  title="原文:: square brackets">角括弧</span></li>
+<li><span class="merged" id="index.1COe4P" title="原文 : curly braces">中カッコ</span></li>
+<li><span class="merged" id="index.kvzA"  title="原文:: back quote">逆引用符</span></li>
+</ul>
+<p><span class="merged" id="index.2DVZxL.spl1" title="原文 : All assignment statements must have one or more spaces between the colon and the value.">すべての代入文には、コロンと値の間に1つ以上のスペースが必要です。</span> <span class="merged" id="index.2DVZxL.spl2" title="原文 : All comments must have a space after the pound sign (also known as hash) to be considered a comment.">コメントとみなされるには、すべてのコメントのシャープ記号(ハッシュとも呼ばれる)の後にスペースが必要です。</span> <span class="merged" id="index.2DVZxL.spl3" title="原文 : YAML doesn&rsquo;t allow comments in all locations.">YAMLでは、すべてのロケーションでコメントを使用できるわけではありません。</span> <span class="merged" id="index.2DVZxL.spl4" title="原文 : While the YAML parser used by the framework does not try to enforce these restrictions, it is likely that putting comments in some locations may cause parse errors since YAML is a difficult language to parse due to its complex indention rules.">フレームワークで使用されるYAMLパーサーはこれらの制限を強制しませんが、YAMLは複雑なインデント・ルールのために解析が困難な言語であるため、一部のロケーションにコメントを配置すると解析エラーが発生する可能性があります。</span> </p>
+<h3 id="top-level-model-sections"><span class="merged" id="index.3vGEYh" title="原文 : Top-level model sections">トップ・レベル・モデル・セクション</span></h3>
+<p><span class="merged" id="index.1qfcY9" title="原文 : The tooling has five top-level model sections:">このツールには、次の5つのトップレベル・モデル・セクションがあります:</span></p>
+<ul>
+<li><span class="merged" id="index.4YTVKF" title="原文 : domainInfo - The location where special information not represented in WLST is specified (for example, the libraries that go in $DOMAIN_HOME/lib)."><code>domainInfo</code> - WLSTで表現されない特別な情報が指定されているロケーション(<code>$DOMAIN_HOME/lib</code>のライブラリなど)。</span></li>
+<li><span class="merged" id="index.1faylr" title="原文 : topology - The location where servers, clusters, machines, server templates, and other domain-level configuration is specified."><code>topology</code> - サーバー、クラスタ、マシン、サーバー・テンプレートおよびその他のドメイン・レベルの構成が指定されているロケーション。</span></li>
+<li><span class="merged" id="index.OHZwz" title="原文 : resources - The location where resources and services are specified (for example, data sources, JMS, WLDF)."><code>resources</code> - リソースおよびサービスが指定されているロケーション(データ・ソース、JMS、WLDFなど)。</span></li>
+<li><span class="merged" id="index.imF5F" title="原文 : appDeployments - The location where shared libraries and applications are specified."><code>appDeployments</code> - 共有ライブラリおよびアプリケーションが指定されているロケーション。</span></li>
+<li><span class="merged" id="index.QetYi" title="原文 : kubernetes - The location where the WLS Kubernetes Operator domain configuration is specified."><code>kubernetes</code> - WLS Kubernetes Operatorドメイン構成が指定されているロケーション。</span></li>
+</ul>
+<h4 id="simple-example"><span class="merged" id="index.2ruVFI" title="原文 : Simple example">簡単な例</span></h4>
+<p><span class="merged" id="index.1Tgetf" title="原文 : Here is a simple example of a model to deploy an application and its data source:">アプリケーションとそのデータ・ソースをデプロイするモデルの簡単な例を次に示します:</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">resources</span>:
+    <span style="color:#f92672">JDBCSystemResource</span>:
+        <span style="color:#f92672">MyDataSource</span>:
+            <span style="color:#f92672">Target</span>: <span style="color:#e6db74">&#39;@@PROP:myjcs.cluster1.name@@&#39;</span>
+            <span style="color:#f92672">JdbcResource</span>:
+                <span style="color:#f92672">JDBCDataSourceParams</span>:
+                    <span style="color:#f92672">JNDIName</span>: <span style="color:#ae81ff">jdbc/generic1</span>
+                <span style="color:#f92672">JDBCDriverParams</span>:
+                    <span style="color:#f92672">DriverName</span>: <span style="color:#ae81ff">oracle.jdbc.OracleDriver</span>
+                    <span style="color:#f92672">URL</span>: <span style="color:#e6db74">&#39;jdbc:oracle:thin:@//@@PROP:dbcs1.url@@&#39;</span>
+                    <span style="color:#f92672">PasswordEncrypted</span>: <span style="color:#e6db74">&#39;@@PROP:dbcs1.password@@&#39;</span>
+                    <span style="color:#f92672">Properties</span>:
+                        <span style="color:#f92672">user</span>:
+                            <span style="color:#f92672">Value</span>: <span style="color:#e6db74">&#39;@@PROP:dbcs1.user@@&#39;</span>
+                        <span style="color:#f92672">oracle.net.CONNECT_TIMEOUT</span>:
+                            <span style="color:#f92672">Value</span>: <span style="color:#ae81ff">5000</span>
+                <span style="color:#f92672">JDBCConnectionPoolParams</span>:
+                    <span style="color:#f92672">MaxCapacity</span>: <span style="color:#ae81ff">50</span>
+<span style="color:#f92672">appDeployments</span>:
+    <span style="color:#f92672">Application</span>:
+        <span style="color:#f92672">simpleear </span>:
+            <span style="color:#f92672">SourcePath</span>: <span style="color:#ae81ff">wlsdeploy/applications/simpleear.ear</span>
+            <span style="color:#f92672">Target</span>: <span style="color:#e6db74">&#39;@@PROP:myjcs.cluster1.name@@&#39;</span>
+            <span style="color:#f92672">ModuleType</span>: <span style="color:#ae81ff">ear</span>
+     <span style="color:#f92672">Library</span>:
+        <span style="color:#f92672">&#39;jsf#2.0&#39;</span>:
+            <span style="color:#f92672">SourcePath</span>: <span style="color:#e6db74">&#39;@@WL_HOME@@/common/deployable-libraries/jsf-2.0.war&#39;</span>
+            <span style="color:#f92672">Target</span>: <span style="color:#e6db74">&#39;@@PROP:myjcs.cluster1.name@@&#39;</span>
+            <span style="color:#f92672">ModuleType</span>: <span style="color:#ae81ff">war</span>
+</code></pre></div><p><span class="merged" id="index.1mxxhe.spl1" title="原文 : The above example shows two important features of the framework.">前述の例は、フレームワークの2つの重要な機能を示しています。</span> <span class="merged" id="index.1mxxhe.spl2" title="原文 : First, notice that the URL, PasswordEncrypted, user property Value and all Target fields contain values that have a @@PROP:&lt;name&gt;@@ pattern.">まず、<code>URL</code>, <code>PasswordEncrypted</code>, <code>user</code>プロパティの<code>Value</code>およびすべての<code>Target</code>フィールドに、<code>@@PROP:&lt;name>@@</code>パターンを持つ値が含まれていることに注意してください。</span> <span class="merged" id="index.1mxxhe.spl3" title="原文 : This indicates a variable placeholder whose value is specified at runtime using a variables file.">これは、変数ファイルを使用して実行時に値が指定される変数プレースホルダーを示します。</span> <span class="merged" id="index.1mxxhe.spl4" title="原文 : See Model tokens for more information about this and other token types.">このトークンとその他のトークン・タイプの詳細は、<a href="index.html#model-tokens">「モデル・トークン」</a>を参照してください。</span> </p>
+<p><span class="merged" id="index.3RJedc.spl1" title="原文 : Second, notice that the jsf#2.0 shared library SourcePath attribute value starts with @@WL_HOME@@.">次に、<code>jsf#2.0</code>共有ライブラリの<code>SourcePath</code>属性値が<code>@@WL_HOME@@</code>で始まることに注意してください。</span> <span class="merged" id="index.3RJedc.spl2" title="原文 : This is a path token that can be used to specify that the location is relative to the location of the WebLogic Server home directory on the target environment.">これは、ターゲット環境のWebLogic Serverホーム・ディレクトリのロケーションに対する相対的なロケーションを指定するために使用できるパス・トークンです。</span> <span class="merged" id="index.3RJedc.spl3" title="原文 : See Model tokens for more information and a list of available path tokens.">詳細および使用可能なパス・トークンのリストは、<a href="index.html#model-tokens">「モデル・トークン」</a>を参照してください。</span> </p>
+<p><span class="merged" id="index.39Evho.spl1" title="原文 : The example above shows the attribute SourcePath of the simpleear application with a value of wlsdeploy/applications/simpleear.ear.">前述の例は、<code>wlsdeploy/applications/simpleear.ear</code>の値を持つ<code>simpleear</code>アプリケーションの属性<code>SourcePath</code>を示しています。</span> <span class="merged" id="index.39Evho.spl2" title="原文 : The prefix wlsdeploy/ indicates that the resource is located in the archive file in the specified location, and will be deployed to that directory within the domain, in this case &lt;domain-home&gt;/wlsdeploy/applications/simpleear.ear.">プレフィクス<code>wlsdeploy/</code>は、リソースが指定されたロケーションのアーカイブ・ファイルにあり、ドメイン内のそのディレクトリ(この場合は<code>&lt;domain-home>/wlsdeploy/applications/simpleear.ear</code>)にデプロイされることを示します。</span> <span class="merged" id="index.39Evho.spl3" title="原文 : See the Archive file for more details about using the archive file.">アーカイブ・ファイルの使用の詳細は、<a href="../archive/index.html">「アーカイブ・ファイル」</a>を参照してください。</span> </p>
+<p><span class="merged" id="index.2Xz1mg.spl1" title="原文 : Users can create further directory structures underneath the above locations to organize the files and directories as they see fit.">ユーザーは、前述のロケーションの下にさらにディレクトリ構造を作成して、ファイルおよびディレクトリを適宜編成できます。</span> <span class="merged" id="index.2Xz1mg.spl2" title="原文 : Note that any binary that already exists on the target system need not be included in the archive provided that the model specified the correct location on the target system.">モデルでターゲット・システム上の正しいロケーションが指定されている場合は、ターゲット・システムにすでに存在するバイナリをアーカイブに含める必要はありません。</span> </p>
+<p><span class="merged" id="index.1ICF8I.spl1" title="原文 : One final note is that the framework is written in such a way to allow the model to be extended for use by other tools.">最後のノートとして、フレームワークは、他のツールで使用できるようにモデルを拡張できるように記述されています。</span> <span class="merged" id="index.1ICF8I.spl2" title="原文 : Adding other top-level sections to the model is supported and the existing tooling and framework will simply ignore them, if present.">モデルへの他のトップレベル・セクションの追加はサポートされており、既存のツールおよびフレームワークはそれらを無視します(存在する場合)。</span> <span class="merged" id="index.1ICF8I.spl3" title="原文 : For example, it would be possible to add a soaComposites section to the model where SOA composite applications are described, and a location within the archive file where those binaries can be stored, so that a tool that understands SOA composites and how to deploy them could be run against the same model and archive files.">たとえば、SOAコンポジット・アプリケーションが記述されているモデル、およびそれらのバイナリを格納できるアーカイブ・ファイル内のロケーションに<code>soaComposites</code>セクションを追加して、SOAコンポジットを理解し、それらをデプロイするツールを同じモデルおよびアーカイブ・ファイルに対して実行できます。</span> </p>
+<h3 id="model-names"><span class="merged" id="index.3EVUxg" title="原文 : Model names">モデル名</span></h3>
+<p><span class="merged" id="index.IELbr.spl1" title="原文 : The WebLogic Deploy Tooling handles names of WebLogic Server configuration artifacts in a very prescribed way.">WebLogic Deploy Toolingは、WebLogic Server構成アーティファクトの名前を非常に規定された方法で処理します。</span> <span class="merged" id="index.IELbr.spl2" title="原文 : To understand how names are handled, users first need a basic understanding of WLST offline naming.">名前の処理方法を理解するには、まずWLSTオフライン・ネーミングの基本を理解する必要があります。</span> <span class="merged" id="index.IELbr.spl3" title="原文 : In WLST offline, there are two general categories of configuration artifacts:">WLSTオフラインでは、構成アーティファクトに次の2つの一般的なカテゴリがあります:</span> </p>
+<ul>
+<li><span class="merged" id="index.3N4gpd" title="原文 : Artifacts that can hold zero or more references to another configuration artifact type.">別の構成アーティファクト・タイプへのゼロ個以上の参照を保持できるアーティファクト。</span></li>
+<li><span class="merged" id="index.1VSATL" title="原文 : Artifacts that can hold zero or one reference to another configuration artifact.">ゼロまたは別の構成アーティファクトへの参照を保持できるアーティファクト。</span></li>
+</ul>
+<p><span class="merged" id="index.1PQcXE.spl1" title="原文 : For example, a domain can contain zero or more JDBCSystemResource or AppDeployment instances but can only contain a single SecurityConfiguration artifact.">たとえば、ドメインにはゼロ個以上の<code>JDBCSystemResource</code>または<code>AppDeployment</code>インスタンスを含めることができますが、単一の<code>SecurityConfiguration</code>アーティファクトのみを含めることができます。</span> <span class="merged" id="index.1PQcXE.spl2" title="原文 : When working with configuration artifacts like JDBCSystemResource, the name is always modeled as a sub-element of the JDBCSystemResource element, as shown below."><code>JDBCSystemResource</code>などの構成アーティファクトを操作する場合、次に示すように、名前は常に<code>JDBCSystemResource</code>要素のサブ要素としてモデル化されます。</span> </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">resources</span>:
+    <span style="color:#f92672">JDBCSystemResource</span>:
+        <span style="color:#f92672">MyDataSource</span>:
+            <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">mycluster</span>
+            <span style="color:#ae81ff">...</span>
+        <span style="color:#f92672">YourDataSource</span>:
+            <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">yourcluster</span>
+            <span style="color:#ae81ff">...</span>
+</code></pre></div><p><span class="merged" id="index.33Er9C.spl1" title="原文 : In the example above, the model has two instances of JDBCSystemResource: one named MyDataSource and one named YourDataSource.">前述の例では、モデルに<code>JDBCSystemResource</code>のインスタンスが2つあります: <code>MyDataSource</code>という名前のものと<code>YourDataSource</code>という名前のもの。</span> <span class="merged" id="index.33Er9C.spl2" title="原文 : For anyone familiar with WLST, this should seem somewhat familiar because the WLST offline path to the MyDataSource configuration will always start with /JDBCSystemResource/MyDataSource.">WLSTに精通しているすべてのユーザーにとって、<code>MyDataSource</code>構成へのWLSTオフライン・パスは常に<code>/JDBCSystemResource/MyDataSource</code>で始まるため、これはある程度理解しているはずです。</span> <span class="merged" id="index.33Er9C.spl3" title="原文 : What might not seem familiar is that in this WLST folder, there is a Name attribute that is also set to MyDataSource.">使い慣れていないように思われるのは、このWLSTフォルダには、<code>MyDataSource</code>にも設定されている<code>Name</code>属性があるからです。</span> <span class="merged" id="index.33Er9C.spl4" title="原文 : The WebLogic Deploy Tooling requires that modelers set the JDBCSystemRTesource name using the folder semantics as shown in the example.">WebLogic Deploy Toolingでは、例に示すように、モデラーがフォルダ・セマンティクスを使用して<code>JDBCSystemRTesource</code>名を設定する必要があります。</span> <span class="merged" id="index.33Er9C.spl5" title="原文 : It is not possible to set the Name using the Name attribute inside the folder and any attempts to do so, will not work; in this case, the Name attribute is redundant because the name was already specified as the folder name.">フォルダ内の<code>Name</code>属性を使用して名前を設定することはできず、設定しようとしても機能しません。この場合、名前がすでにフォルダ名として指定されているため、<code>Name</code>属性は冗長です。</span> </p>
+<p><span class="merged" id="index.48oVp0.spl1" title="原文 : When working with artifacts like SecurityConfiguration or JMX, there is never more than one instance of these artifacts in a domain because they are just configuration containers and their names generally have no semantic meaning."><code>SecurityConfiguration</code>や<code>JMX</code>などのアーティファクトを操作する場合、これらのアーティファクトは構成コンテナであり、一般的に名前に意味がないため、ドメイン内に複数のインスタンスが存在することはありません。</span> <span class="merged" id="index.48oVp0.spl2" title="原文 : As such, the WebLogic Deploy Tooling does not expose these names in the model, as shown below:">そのため、次に示すように、WebLogic Deploy Toolingではこれらの名前はモデルに公開されません:</span> </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">topology</span>:
+    <span style="color:#f92672">SecurityConfiguration</span>:
+        <span style="color:#f92672">NodeManagerUsername</span>: <span style="color:#ae81ff">weblogic</span>
+        <span style="color:#f92672">NodeManagerPasswordEncrypted</span>: <span style="color:#ae81ff">welcome1</span>
+</code></pre></div><p><span class="merged" id="index.2z3RBx.spl1" title="原文 : As the example above shows, the SecurityConfiguration element has no named sub-element, as there is with JDBCSystemResource, even though the WLST path to the SecurityConfiguration attributes is /SecurityConfiguration/&lt;domain-name&gt;.">前述の例に示すように、<code>SecurityConfiguration</code>属性へのWLSTパスが<code>/SecurityConfiguration/&lt;domain-name></code>であっても、<code>JDBCSystemResource</code>の場合と同様に、<code>SecurityConfiguration</code>要素には名前付きサブ要素がありません。</span> <span class="merged" id="index.2z3RBx.spl2" title="原文 : The WebLogic Deploy Tooling has built-in rules and a knowledge base that controls how these names are handled so that it can complete the configuration of these artifacts.">WebLogic Deploy Toolingには、これらのアーティファクトの構成を完了できるように、これらの名前の処理方法を制御する組込みルールおよびナレッジ・ベースがあります。</span> <span class="merged" id="index.2z3RBx.spl3" title="原文 : As with the previous class of configuration artifact, the folder almost always contains a Name attribute that, in WLST, could be used to change the name.">以前のクラスの構成アーティファクトと同様に、ほとんどの場合、フォルダにはWLSTで名前の変更に使用できる<code> Name</code>属性が含まれています。</span> <span class="merged" id="index.2z3RBx.spl4" title="原文 : As with the previous class of artifact, the WebLogic Deploy Tooling does not support the use of the Name attribute in these folders and any attempt to set the Name attribute will not be honored.">以前のクラスのアーティファクトと同様に、WebLogic Deploy Toolingではこれらのフォルダでの<code>Name</code>属性の使用はサポートされておらず、<code>Name</code>属性を設定しようとしても考慮されません。</span> <span class="merged" id="index.2z3RBx.spl5" title="原文 : In general, the only model location that uses the Name attribute is the top-level topology section, because this maps to where WLST stores the domain name.">通常、<code>Name</code>属性を使用するモデルのロケーションは、トップレベルのトポロジ・セクションのみです。これは、WLSTがドメイン名を格納するロケーションにマップされるためです。</span> </p>
+<h3 id="model-tokens"><span class="merged" id="index.2YaLwB" title="原文 : Model tokens">モデル・トークン</span></h3>
+<p><span class="merged" id="index.H7uxV.spl1" title="原文 : The model allows the use of tokens that are substituted with text values as the model is processed.">このモデルでは、モデルの処理時にテキスト値で置換されるトークンを使用できます。</span> <span class="merged" id="index.H7uxV.spl2" title="原文 : This section describes several types of tokens.">この項では、いくつかのタイプのトークンについて説明します。</span> </p>
+<p><span class="merged" id="index.2Fmy0s.spl1" title="原文 : Variable tokens are declared with the syntax @@PROP:&lt;variable&gt;@@."><strong>「変数トークン」</strong>は、構文<code>@@PROP:&lt;variable>@@</code>で宣言されます。</span> <span class="merged" id="index.2Fmy0s.spl2" title="原文 : This type of token represents a value that is resolved at runtime using a variables file in a standard Java properties file format.">このタイプのトークンは、標準のJavaプロパティ・ファイル形式の変数ファイルを使用して実行時に解決される値を表します。</span> <span class="merged" id="index.2Fmy0s.spl3" title="原文 : Variables can be used for any value and for some names.">変数は、任意の値および一部の名前に使用できます。</span> <span class="merged" id="index.2Fmy0s.spl4" title="原文 : For example, to automate standing up an environment with one or more applications in the Oracle Java Cloud Service, service provisioning does not allow the provisioning script to specify the server names.">たとえば、Oracle Java Cloud Service内の1つ以上のアプリケーションを含む環境を自動化する場合、サービス・プロビジョニングでは、プロビジョニング・スクリプトでサーバー名を指定できません。</span> <span class="merged" id="index.2Fmy0s.spl5" title="原文 : For example, if the application being deployed immediately following provisioning needs to tweak the Server Start arguments to specify a Java system property, the model can use a variable placeholder in place of the server name and populate the variable file with the provisioned server names dynamically between provisioning and application deployment.">たとえば、プロビジョニング直後にデプロイされるアプリケーションで、サーバー起動引数を調整してJavaシステム・プロパティを指定する必要がある場合、モデルでは、サーバー名のかわりに変数プレースホルダーを使用して、プロビジョニングとアプリケーション・デプロイメントの間で動的に変数ファイルにプロビジョニングされたサーバー名を移入できます。</span> </p>
+<p><span class="merged" id="index.2izUK5.spl1" title="原文 : File tokens are declared with the syntax @@FILE:&lt;filename&gt;@@."><strong>「ファイル・トークン」</strong>は、構文<code>@@FILE:&lt;filename>@@</code>で宣言されます。</span> <span class="merged" id="index.2izUK5.spl2" title="原文 : This type of token is similar to a variable token, but it references a single value that is read from the specified file.">このタイプのトークンは可変トークンと似ていますが、指定されたファイルから読み取られる単一の値を参照します。</span> <span class="merged" id="index.2izUK5.spl3" title="原文 : For example, the model may reference a password attribute as follows:">たとえば、モデルは次のようにパスワード属性を参照できます:</span> </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">PasswordEncrypted</span>: <span style="color:#e6db74">&#39;@@FILE:/home/me/dbcs1.txt@@&#39;</span>
+</code></pre></div><p><span class="merged" id="index.Ak7yK" title="原文 : The file /home/me/dbcs1.txt would then contain this single line:">この場合、ファイル<code>/home/me/dbcs1.txt</code>には次の単一行が含まれます:</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">password#123</span>
+</code></pre></div><p><span class="merged" id="index.11QNZh.spl1" title="原文 : As the model is processed, the value for the PasswordEncrypted would resolve to password#123.">モデルが処理されると、<code>PasswordEncrypted</code>の値は<code>password#123</code>に解決されます。</span> <span class="merged" id="index.11QNZh.spl2" title="原文 : It is also possible to combine file placeholders with other types of tokens, to allow for variations in the name and location of the file, such as:">次のように、ファイルのプレースホルダーを他のタイプのトークンと組み合せて、ファイルの名前とロケーションを変えることもできます:</span> </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">PasswordEncrypted</span>: <span style="color:#e6db74">&#39;@@FILE:/dir/@@PROP:name@@.txt@@&#39;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">PasswordEncrypted</span>: <span style="color:#e6db74">&#39;@@FILE:@@ORACLE_HOME@@/dir/name.txt@@&#39;</span>
+</code></pre></div><p><span class="merged" id="index.1gAG9b.spl1" title="原文 : Environment tokens are declared with the syntax @@ENV:&lt;name&gt;@@."><strong>「環境トークン」</strong>は、構文<code>@@ENV:&lt;name>@@</code>で宣言されます。</span> <span class="merged" id="index.1gAG9b.spl2" title="原文 : This type of token is resolved by looking up the system environment variable &lt;name&gt;, and substituting that value for the token.">このタイプのトークンは、システム環境変数<code>&lt;name></code>を検索し、その値をトークンに置換することで解決されます。</span> </p>
+<p><span class="merged" id="index.2PG50q.spl1" title="原文 : Secret tokens are declared with the syntax @@SECRET:&lt;name&gt;:&lt;key&gt;@@."><strong>シークレット・トークン</strong>は、構文<code>@@SECRET:&lt;name>:&lt;key>@@</code>で宣言されます。</span> <span class="merged" id="index.2PG50q.spl2" title="原文 : This type of token is resolved by determining the location of a Kubernetes secret file, and reading the first line from that file.">このタイプのトークンは、Kubernetesシークレット・ファイルのロケーションを決定し、そのファイルから最初の行を読み取ることで解決されます。</span> <span class="merged" id="index.2PG50q.spl3" title="原文 : That line is substituted for the token.">その行はトークンのかわりに使用されます。</span> </p>
+<p><span class="merged" id="index.37s0Er.spl1" title="原文 : There are two methods for deriving the location of the Kubernetes secret file.">Kubernetesシークレット・ファイルのロケーションを導出するには、2つのメソッドがあります。</span> <span class="merged" id="index.37s0Er.spl2" title="原文 : The first method involves using one or more configured root directories, and looking for the secret file in the path &lt;root-directory&gt;/&lt;name&gt;/&lt;key&gt;.">最初のメソッドでは、構成された1つ以上のルート・ディレクトリを使用し、パス<code>&lt;root-directory>/&lt;name>/&lt;key></code>でシークレット・ファイルを探します。</span> </p>
+<p><span class="merged" id="index.1mTP5M.spl1" title="原文 : The root directories are configured as a comma-separated list of directories, using the environment variable WDT_MODEL_SECRETS_DIRS.">ルート・ディレクトリは、環境変数<code>WDT_MODEL_SECRETS_DIRS</code>を使用してディレクトリのカンマ区切りリストとして構成されます。</span> <span class="merged" id="index.1mTP5M.spl2" title="原文 : For example, if WDT_MODEL_SECRETS_DIRS is set to /etc/my-secrets,/etc/your-secrets, then the token @@SECRET:secrets:the-secret@@ will search the following locations:">たとえば、<code>WDT_MODEL_SECRETS_DIRS</code>が<code>/etc/my-secrets,/etc/your-secrets</code>に設定されている場合、トークン<code>@@SECRET:secrets:the-secret@@</code>は次のロケーションを検索します:</span> </p>
+<pre><code>/etc/my-secrets/secrets/the-secret
+/etc/your-secrets/secrets/the-secret
+</code></pre><p><span class="merged" id="index.3lhdlu" title="原文 : If either of these files is found, the secret is read from that file and substituted in the model.">これらのファイルのいずれかが見つかった場合、シークレットがそのファイルから読み取られ、モデル内で置換されます。</span></p>
+<p><span class="merged" id="index.bN1OI.spl1" title="原文 : The second method for locating the Kubernetes secret file is to use the environment variable WDT_MODEL_SECRETS_NAME_DIR_PAIRS to map &lt;name&gt; values to specific directory locations.">Kubernetesシークレット・ファイルを検索する別のメソッドは、環境変数<code>WDT_MODEL_SECRETS_NAME_DIR_PAIRS</code>を使用して<code>&lt;name></code>値を特定のディレクトリのロケーションにマップすることです。</span> <span class="merged" id="index.bN1OI.spl2" title="原文 : For example, if WDT_MODEL_SECRETS_NAME_DIR_PAIRS is set to my-root=/etc/my-secrets,your-root=/etc/your-secrets, then the token @@SECRET:your-root:the-secret@@ will look for the secrets file at:">たとえば、<code>WDT_MODEL_SECRETS_NAME_DIR_PAIRS</code>が<code>my-root=/etc/my-secrets,your-root=/etc/your-secrets</code>に設定されている場合、トークン<code>@@SECRET:your-root:the-secret@@</code>は次の場所でシークレット・ファイルを検索します:</span> </p>
+<pre><code>/etc/your-secrets/the-secret
+</code></pre><p><span class="merged" id="index.3QiueJ" title="原文 : If the &lt;name&gt; value has a corresponding mapped directory in WDT_MODEL_SECRETS_NAME_DIR_PAIRS, then that directory will take precedence over any roots specified in WDT_MODEL_SECRETS_DIRS."><code>&lt;name></code>値に対応するマップ済ディレクトリが<code>WDT_MODEL_SECRETS_NAME_DIR_PAIRS</code>にある場合、そのディレクトリは<code>WDT_MODEL_SECRETS_DIRS</code>で指定されたルートよりも優先されます。</span></p>
+
+<div class="notices note" ><p><span class="merged" id="index.3EfWhK" title="原文 : It is important that the secrets directories contain only secrets files, because those files are examined to create a list of available name/key pairs.">シークレット・ディレクトリにはシークレット・ファイルのみが含まれていることが重要です。これらのファイルは、使用可能な名前とキーのペアのリストを作成するために調査されるためです。</span></p>
+</div>
+
+<p><span class="merged" id="index.3b2pu6.spl1" title="原文 : Path tokens are tokens that reference known values, and can be used to make the model more portable."><strong>「パス・トークン」</strong>は既知の値を参照するトークンであり、モデルの移植性を高めるために使用できます。</span> <span class="merged" id="index.3b2pu6.spl2" title="原文 : For example, a model may reference a WebLogic library source path as:">たとえば、モデルは次のようにWebLogicライブラリ・ソース・パスを参照できます:</span> </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">SourcePath</span>: <span style="color:#e6db74">&#39;@@WL_HOME@@/common/deployable-libraries/jsf-2.0.war&#39;</span>
+</code></pre></div><p><span class="merged" id="index.1F0hZ9.spl1" title="原文 : Using the path token @@WL_HOME@@ allows the model to be used across multiple environments, even if the WebLogic installation directory is different.">パス・トークン<code>@@WL_HOME@@</code>を使用すると、WebLogicインストール・ディレクトリが異なる場合でも、複数の環境でモデルを使用できます。</span> <span class="merged" id="index.1F0hZ9.spl2" title="原文 : Path tokens can be used at any location in the model that specifies a file or directory location.">パス・トークンは、ファイルまたはディレクトリのロケーションを指定するモデル内の任意のロケーションで使用できます。</span> <span class="merged" id="index.1F0hZ9.spl3" title="原文 : The supported tokens are:">サポートされているトークンは次のとおりです:</span> </p>
+<ul>
+<li><span class="merged" id="index.HEmIq" title="原文 : @@ORACLE_HOME@@ - The location where WebLogic Server and any other FMW products are installed (in older versions, this was known as the MW_HOME)."><code>@@ORACLE_HOME@@</code> - WebLogic Serverおよび他のFMW製品がインストールされているロケーション(旧バージョンでは、これは<code>MW_HOME</code>と呼ばれていました)。</span></li>
+<li><span class="merged" id="index.3GU4hS" title="原文 : @@WL_HOME@@ - The location within the Oracle Home where WebLogic Server is installed (for example, the $ORACLE_HOME/wlserver directory in 12.1.2+)."><code>@@WL_HOME@@</code> - WebLogic ServerがインストールされているOracle Home内のロケーション(たとえば、12.1.2 +の<code>$ORACLE_HOME/wlserver</code>ディレクトリ)。</span></li>
+<li><span class="merged" id="index.4TCiI5" title="原文 : @@DOMAIN_HOME@@ - The location of the domain home directory on which the tool is working."><code>@@DOMAIN_HOME@@</code> - ツールが動作しているドメイン・ホーム・ディレクトリのロケーション。</span></li>
+<li><span class="merged" id="index.Co7Ob" title="原文 : @@PWD@@ - The current working directory from which the tool was invoked."><code>@@PWD@@</code> - ツールが起動された現在の作業ディレクトリ。</span></li>
+<li><span class="merged" id="index.2WYTxk" title="原文 : @@TMP@@ - The location of the temporary directory, as controlled by the java.io.tmpdir system property."><code>@@TMP@@</code> - <code>java.io.tmpdir</code>システム・プロパティによって制御される一時ディレクトリのロケーション。</span></li>
+</ul>
+<h3 id="model-semantics"><span class="merged" id="index.ltIy1" title="原文 : Model semantics">モデル・セマンティクス</span></h3>
+<p><span class="merged" id="index.bIeeV.spl1" title="原文 : When modeling configuration attributes that can have multiple values, the WebLogic Deploy Tooling tries to make this as painless as possible.">複数の値を持つことができる構成属性をモデリングする場合、WebLogic Deploy Toolingはこれをできるだけ無痛にしようとします。</span> <span class="merged" id="index.bIeeV.spl2" title="原文 : For example, the Target attribute on resources can have zero or more clusters and/or servers specified.">たとえば、リソースの<code>Target</code>属性には、ゼロ個以上のクラスタまたはサーバー(あるいはその両方)を指定できます。</span> <span class="merged" id="index.bIeeV.spl3" title="原文 : When specifying the value of such list attributes, the user has freedom to specify them as a list or as a comma-delimited string (comma is the only recognized delimiter for lists).">このようなリスト属性の値を指定する場合、ユーザーは自由にリストまたはカンマ区切り文字列として指定できます(リストで認識されるデリミタはカンマのみです)。</span> <span class="merged" id="index.bIeeV.spl4" title="原文 : For attributes where the values can legally contain commas, the items must be specified as a list.">値にカンマを含めることができる属性の場合、アイテムをリストとして指定する必要があります。</span> <span class="merged" id="index.bIeeV.spl5" title="原文 : Examples of each are shown below.">それぞれの例を次に示します。</span> </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">resources</span>:
+    <span style="color:#f92672">JDBCSystemResource</span>:
+        <span style="color:#f92672">MyStringDataSource</span>:
+            <span style="color:#f92672">Target</span>: <span style="color:#e6db74">&#39;AdminServer,mycluster&#39;</span>
+            <span style="color:#f92672">JdbcResource</span>:
+                <span style="color:#f92672">JDBCDataSourceParams</span>:
+                    <span style="color:#f92672">JNDIName</span>: <span style="color:#e6db74">&#39;jdbc/generic1, jdbc/special1&#39;</span>
+                <span style="color:#ae81ff">...</span>
+        <span style="color:#f92672">MyListDataSource</span>:
+            <span style="color:#f92672">Target</span>: [ <span style="color:#ae81ff">AdminServer, mycluster ]</span>
+            <span style="color:#f92672">JdbcResource</span>:
+                <span style="color:#f92672">JDBCDataSourceParams</span>:
+                    <span style="color:#f92672">JNDIName</span>: [ <span style="color:#ae81ff">jdbc/generic2, jdbc/special2 ]</span>
+                <span style="color:#ae81ff">...</span>
+    <span style="color:#f92672">WLDFSystemResource</span>:
+        <span style="color:#f92672">MyWldfModule</span>:
+            <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">mycluster</span>
+            <span style="color:#f92672">WLDFResource</span>:
+                <span style="color:#f92672">Harvester</span>:
+                    <span style="color:#f92672">HarvestedType</span>:
+                        <span style="color:#f92672">weblogic.management.runtime.ServerRuntimeMBean</span>:
+                            <span style="color:#f92672">Enabled</span>: <span style="color:#66d9ef">true</span>
+                            <span style="color:#f92672">HarvestedInstance</span>: [
+                                <span style="color:#e6db74">&#39;com.bea:Name=AdminServer,Type=ServerRuntime&#39;</span>,
+                                <span style="color:#e6db74">&#39;com.bea:Name=m1,Type=ServerRuntime&#39;</span>
+                            ]
+                <span style="color:#ae81ff">...</span>
+</code></pre></div><p><span class="merged" id="index.9m6QN.spl1" title="原文 : In the example above, the Target attribute is specified three different ways, as a comma-separated string, as a list, and as a single string in the case of where there is only a single target.">前述の例では、<code>Target</code>属性は、カンマ区切りの文字列として、単一のターゲットのみが存在する場合は単一の文字列として、3つの異なる方法で指定されています。</span> <span class="merged" id="index.9m6QN.spl2" title="原文 : The JNDIName attribute is specified as a comma-separated string and as a list (a single string also works)."><code>JNDIName</code>属性は、カンマ区切りの文字列およびリストとして指定されます(単一の文字列も機能します)。</span> <span class="merged" id="index.9m6QN.spl3" title="原文 : On the other hand, the HarvestedInstances attribute had to be specified as a list because each element contains commas.">一方、各要素にはカンマが含まれているため、<code>HarvestedInstances</code>属性をリストとして指定する必要がありました。</span> </p>
+<p><span class="merged" id="index.1oMkEr.spl1" title="原文 : One of the primary goals of the WebLogic Deploy Tooling is to support a sparse model where the user can specify just the configuration needed for a particular situation.">WebLogic Deploy Toolingの主な目的の1つは、特定の状況に必要な構成のみをユーザーが指定できるスパース・モデルをサポートすることです。</span> <span class="merged" id="index.1oMkEr.spl2" title="原文 : What this implies varies somewhat between the tools but, in general, this implies that the tools are using an additive model.">これは、ツール間で多少異なることを意味しますが、通常、これはツールが加算モデルを使用していることを意味します。</span> <span class="merged" id="index.1oMkEr.spl3" title="原文 : That is, the tools add to what is already there in the existing domain or domain templates (when creating a new domain) rather than making the domain conform exactly to the specified model.">つまり、ツールは、ドメインを指定されたモデルに正確に準拠させるのではなく、既存のドメインまたはドメイン・テンプレートにすでに存在するものに追加します(新しいドメインの作成時)。</span> <span class="merged" id="index.1oMkEr.spl4" title="原文 : Where it makes sense, a similar, additive approach is taken when setting the value of multi-valued attributes.">意味がある場合は、複数値属性の値を設定するときに同様の加算的なアプローチが採用されます。</span> <span class="merged" id="index.1oMkEr.spl5" title="原文 : For example, if the model specified the cluster mycluster as the target for an artifact, the tooling will add mycluster to any existing list of targets for the artifact.">たとえば、モデルでアーティファクトのターゲットとしてクラスタ<code>mycluster</code>が指定されている場合、ツールによってアーティファクトの既存のターゲット・リストに<code>mycluster</code>が追加されます。</span> <span class="merged" id="index.1oMkEr.spl6" title="原文 : While the development team has tried to mark attributes that do not make sense to merge accordingly in our knowledge base, this behavior can be disabled on an attribute-by-attribute basis, by adding an additional annotation in the knowledge base data files.">開発チームがナレッジ・ベースで適宜マージしない属性にマークを付けようとしましたが、ナレッジ・ベースのデータ・ファイルに注釈を追加することで、この動作を属性ごとに無効にできます。</span> <span class="merged" id="index.1oMkEr.spl7" title="原文 : The development team is already thinking about how to handle situations that require a non-additive, converge-to-the-model approach, and how that might be supported, but this still remains a wish list item.">開発チームは、非加算的な会話からモデルへのアプローチを必要とする状況の処理方法と、そのサポート方法についてすでに考えていますが、これはウィッシュ・リスト・アイテムのままです。</span> <span class="merged" id="index.1oMkEr.spl8" title="原文 : Users with these requirements should raise an issue for this support.">これらの要件を持つユーザーは、このサポートの問題を発生させる必要があります。</span> </p>
+<h3 id="declaring-named-mbeans-to-delete"><span class="merged" id="index.3FMP9w" title="原文 : Declaring named MBeans to delete">削除する名前付きMBeansの宣言</span></h3>
+<p><span class="merged" id="index.3TjLfu.spl1" title="原文 : With WebLogic Deploy Tooling release 1.3.0, you can specify named items in the model to be deleted using the Create Domain, Update Domain, and Deploy Applications Tools.">WebLogic Deploy Toolingリリース1.3.0では、ドメインの作成、ドメインの更新およびアプリケーションのデプロイ・ツールを使用して、削除するモデル内の名前付きアイテムを指定できます。</span> <span class="merged" id="index.3TjLfu.spl2" title="原文 : Named items are those that have multiple instances that are distinguished by user-provided names, such as managed servers, data sources, and security realms.">名前付きアイテムは、管理対象サーバー、データ・ソース、セキュリティ・レルムなど、ユーザーが指定した名前で識別される複数のインスタンスを持つアイテムです。</span> <span class="merged" id="index.3TjLfu.spl3" title="原文 : Items to be deleted are prepended with an exclamation point (!) in the model.">削除するアイテムには、モデル内の感嘆符(!)が付加されます。</span> </p>
+<p><span class="merged" id="index.Om5ZV" title="原文 : In this example, the managed server obsoleteServer will be deleted, and newServer will be created:">この例では、管理対象サーバー<code>obsoleteServer</code>が削除され、<code>newServer</code>が作成されます:</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">Server</span>:
+        <span style="color:#f92672">!obsoleteServer</span>:
+        <span style="color:#f92672">newServer</span>:
+            <span style="color:#f92672">ListenAddress</span>: <span style="color:#ae81ff">127.0.0.1</span>
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">9005</span>
+</code></pre></div><p><span class="merged" id="index.2R4cH4" title="原文 : If the name of the item requires quotation marks, the exclamation point should be inside the quotation marks:">アイテムの名前に引用符が必要な場合、感嘆符は引用符で囲む必要があります:</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">Server</span>:
+        <span style="color:#f92672">&#39;!obsolete-server&#39;</span>:
+</code></pre></div><p><span class="merged" id="index.45DIYu.spl1" title="原文 : This feature can also remove items that were created by WebLogic Server templates.">この機能では、WebLogic Serverテンプレートで作成されたアイテムを削除することもできます。</span> <span class="merged" id="index.45DIYu.spl2" title="原文 : For example, the base template creates a default security realm called myrealm.">たとえば、基本テンプレートでは、<code>myrealm</code>というデフォルト・セキュリティ・レルムが作成されます。</span> <span class="merged" id="index.45DIYu.spl3" title="原文 : If a user chooses to declare a custom realm, myrealm is no longer needed.">ユーザーがカスタム・レルムの宣言を選択した場合、<code>myrealm</code>は不要になります。</span> <span class="merged" id="index.45DIYu.spl4" title="原文 : In this example, myrealm will be deleted, and the custom realm newrealm will be created, and declared as the default realm:">この例では、<code>myrealm</code>が削除され、カスタム・レルム<code>newrealm</code>が作成されてデフォルト・レルムとして宣言されます:</span> </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">SecurityConfiguration</span>:
+        <span style="color:#f92672">DefaultRealm</span>: <span style="color:#ae81ff">newrealm</span>
+        <span style="color:#f92672">Realm</span>:
+            <span style="color:#f92672">!myrealm</span>:
+            <span style="color:#f92672">newrealm</span>:
+                <span style="color:#f92672">AuthenticationProvider</span>:
+                <span style="color:#ae81ff">...</span>
+</code></pre></div><p><span class="merged" id="index.1d2eH6.spl1" title="原文 : This feature does not apply to named security providers within a realm.">この機能は、レルム内の名前付きセキュリティ・プロバイダには適用されません。</span> <span class="merged" id="index.1d2eH6.spl2" title="原文 : These items follow a special set of rules that are required to maintain their ordering.">これらのアイテムは、順序を維持するために必要な特別なルールのセットに従います。</span> <span class="merged" id="index.1d2eH6.spl3" title="原文 : See Modeling security providers for detailed information.">詳細は、<a href="../../samples/securityproviders-model/index.html">「セキュリティ・プロバイダのモデル化」</a>を参照してください。</span> </p>
+<p><span class="merged" id="index.1g2XNS" title="原文 : This feature cannot be use to undeploy applications or remove libraries.">この機能は、アプリケーションのアンデプロイやライブラリの削除には使用できません。</span></p>
+<h3 id="using-multiple-models"><span class="merged" id="index.UbdES" title="原文 : Using multiple models">複数のモデルの使用</span></h3>
+<p><span class="merged" id="index.1H6viu.spl1" title="原文 : The Create Domain, Update Domain, Deploy Applications, and Validate Model Tools allow the specification of multiple models on the command line.">ドメインの作成、ドメインの更新、アプリケーションのデプロイおよびモデルの検証ツールを使用すると、コマンドラインで複数のモデルを指定できます。</span> <span class="merged" id="index.1H6viu.spl2"  title="原文:: For example:">次に例を示します。</span> </p>
+<pre><code>$ weblogic-deploy\bin\createDomain.cmd -model_file modelOne,modelTwo,modelThree ...
+</code></pre>
+<p><span class="merged" id="index.BIe5D.spl1" title="原文 : In this case, the models are merged into a single model before being applied.">この場合、モデルは適用前に単一のモデルにマージされます。</span> <span class="merged" id="index.BIe5D.spl2" title="原文 : Each successive model is added to the previous model.">連続する各モデルが前のモデルに追加されます。</span> <span class="merged" id="index.BIe5D.spl3" title="原文 : In cases where entities exist in both models, the attributes are combined and attribute values from successive models prevail.">エンティティが両方のモデルに存在する場合は、属性が組み合され、連続するモデルの属性値が優先されます。</span> <span class="merged" id="index.BIe5D.spl4" title="原文 : The resulting model is then verified before being applied.">結果のモデルは、適用前に検証されます。</span> <span class="merged" id="index.BIe5D.spl5" title="原文 : For example, if Model 1 looks like:">たとえば、モデル1が次のようになっているとします:</span> </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">topology</span>:
+    <span style="color:#f92672">Server</span>:
+        <span style="color:#f92672">m1</span>:
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">7000</span>
+            <span style="color:#f92672">Notes</span>: <span style="color:#e6db74">&#34;Server 1&#34;</span>
+        <span style="color:#f92672">m2</span>:
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">9000</span>
+</code></pre></div><p><span class="merged" id="index.3VohmB" title="原文 : and Model 2 looks like:">モデル2は次のようになります:</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">topology</span>:
+    <span style="color:#f92672">Server</span>:
+        <span style="color:#f92672">m1</span>:
+            <span style="color:#f92672">ListenAddress</span>: <span style="color:#ae81ff">myhostname</span>
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">8000</span>
+        <span style="color:#f92672">m3</span>:
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">10000</span>
+</code></pre></div><p><span class="merged" id="index.seTXn.spl1" title="原文 : The attributes for server m1 are merged, server m2 is left unchanged, and server m3 is added.">サーバーm1の属性がマージされ、サーバーm2は変更されず、サーバーm3が追加されます。</span> <span class="merged" id="index.seTXn.spl2" title="原文 : The resulting model would be:">結果のモデルは次のようになります:</span> </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">topology</span>:
+    <span style="color:#f92672">Server</span>:
+        <span style="color:#f92672">m1</span>:
+            <span style="color:#f92672">ListenAddress</span>: <span style="color:#ae81ff">myhostname</span>
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">8000</span>
+            <span style="color:#f92672">Notes</span>: <span style="color:#e6db74">&#34;Server 1&#34;</span>
+        <span style="color:#f92672">m2</span>:
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">9000</span>
+        <span style="color:#f92672">m3</span>:
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">10000</span>
+</code></pre></div><p><span class="merged" id="index.3Ekuke" title="原文 : If variable properties are used in element names, such as @@PROP:my-server@@, the names in both models will be resolved and matching elements will be merged."><code>@@PROP:my-server@@</code>などの要素名で変数プロパティが使用されている場合、両方のモデルの名前が解決され、一致する要素がマージされます。</span></p>
+<h4 id="multiple-models-and-delete-notation"><span class="merged" id="index.2kMhif" title="原文 : Multiple models and delete notation">複数のモデルと削除表記法</span></h4>
+<p><span class="merged" id="index.4UOeJ.spl1" title="原文 : A named element using delete notation will completely delete an element with a matching name and no delete notation in a previous model."><a href="index.html#declaring-named-mbeans-to-delete">「表記法の削除」</a>を使用する名前付き要素は、名前が一致する要素を完全に削除し、以前のモデルでは削除表記法はありません。</span> <span class="merged" id="index.4UOeJ.spl2" title="原文 : For example, if Model 1 looks like:">たとえば、モデル1が次のようになっているとします:</span> </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">topology</span>:
+    <span style="color:#f92672">Server</span>:
+        <span style="color:#f92672">m1</span>:
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">7000</span>
+            <span style="color:#f92672">Notes</span>: <span style="color:#e6db74">&#34;Server 1&#34;</span>
+        <span style="color:#f92672">m2</span>:
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">9000</span>
+</code></pre></div><p><span class="merged" id="index.3VohmB.1" title="原文 : and Model 2 looks like:">モデル2は次のようになります:</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">topology</span>:
+    <span style="color:#f92672">Server</span>:
+        <span style="color:#f92672">!m2</span>:
+</code></pre></div><p><span class="merged" id="index.2lgOFv" title="原文 : The resulting model would be:">結果のモデルは次のようになります:</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">topology</span>:
+    <span style="color:#f92672">Server</span>:
+        <span style="color:#f92672">m1</span>:
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">7000</span>
+            <span style="color:#f92672">Notes</span>: <span style="color:#e6db74">&#34;Server 1&#34;</span>
+</code></pre></div><p><span class="merged" id="index.Uo1e.spl1" title="原文 : Similarly, an element without delete notation will completely replace an element with a matching name that has delete notation in a previous model.">同様に、削除表記法のない要素は、以前のモデルで削除表記法を持つ一致する名前で要素を完全に置換します。</span> <span class="merged" id="index.Uo1e.spl2" title="原文 : For example, if Model 1 looks like:">たとえば、モデル1が次のようになっているとします:</span> </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">topology</span>:
+    <span style="color:#f92672">Server</span>:
+        <span style="color:#f92672">!m1</span>:
+</code></pre></div><p><span class="merged" id="index.3VohmB.2" title="原文 : and Model 2 looks like:">モデル2は次のようになります:</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">topology</span>:
+    <span style="color:#f92672">Server</span>:
+        <span style="color:#f92672">m1</span>:
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">7000</span>
+            <span style="color:#f92672">Notes</span>: <span style="color:#e6db74">&#34;Server 1&#34;</span>
+</code></pre></div><p><span class="merged" id="index.2lgOFv.1" title="原文 : The resulting model would be:">結果のモデルは次のようになります:</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">topology</span>:
+    <span style="color:#f92672">Server</span>:
+        <span style="color:#f92672">m1</span>:
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">7000</span>
+            <span style="color:#f92672">Notes</span>: <span style="color:#e6db74">&#34;Server 1&#34;</span>
+</code></pre></div>
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../index.html" > <i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="../archive/index.html" style="margin-right: 0px;" ><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../js/clipboard.min.js?1620686566"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1620686566"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1620686566"></script>
+    <script src="../../js/jquery.sticky.js?1620686566"></script>
+    <script src="../../js/featherlight.min.js?1620686566"></script>
+    <script src="../../js/highlight.pack.js?1620686566"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1620686566"></script>
+    <script src="../../js/learn.js?1620686566"></script>
+    <script src="../../js/hugo-learn.js?1620686566"></script>
+    
+        
+            <script src="../../mermaid/mermaid.js?1620686566"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>

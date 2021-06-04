@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+<html lang="ja" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.82.0" />
+    <meta content="Compares two model files." name="description">
+
+
+    <link rel="icon" href="../../../images/favicon.png" type="image/png">
+
+    <title>モデル比較ツール :: WebLogic Deploy Tooling</title>
+
+    
+    <link href="../../../css/nucleus.css?1620686566" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1620686566" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1620686566" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1620686566" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1620686566" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1620686566" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1620686566" rel="stylesheet">
+    <link href="../../../css/theme.css?1620686566" rel="stylesheet">
+    <link href="../../../css/tabs.css?1620686566" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1620686566" rel="stylesheet">
+    
+    
+
+    <script src="../../../js/jquery-3.3.1.min.js?1620686566"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  <meta HTTP-EQUIV="Content-Type" Content="text/html; charset=utf-8"></head>
+  <style type="text/css"> <!-- .merged:hover {text-decoration: underline;} --> </style>
+<body class="" data-url="/weblogic-deploy-tooling/userguide/tools/compare/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <span class="merged" id="index.3vfFi5" title="原文 :  Deploy Tooling "><a href="https://oracle.github.io/weblogic-deploy-tooling" id="logo"><img height="60" src="../../../images/logo.png"><br />ツールのデプロイ</a></span>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../../js/lunr.min.js?1620686566"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1620686566"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/oracle.github.io\/weblogic-deploy-tooling";
+    
+</script>
+<script type="text/javascript" src="../../../js/search.js?1620686566"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+      <li><span class="merged" id="index.4CNnKm"  title="原文:: Home"><a class="padding" href="https://oracle.github.io/weblogic-deploy-tooling">ホーム</a></span></li>
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/concepts/" title=" 概念">
+      <span class="merged" id="index.2GCNml" title="原文 :  1. Concepts "><a href="../../../concepts/index.html"> <b>1. </b>概要 </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/concepts/model/" title="メタデータ・モデル">
+        <span class="merged" id="index.UBsau" title="原文 :  Metadata Model "><a href="../../../concepts/model/index.html">メタデータ・モデル</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/concepts/archive/" title="アーカイブ・ファイル">
+        <span class="merged" id="index.Vk6jX"  title="原文::  Archive File "><a href="../../../concepts/archive/index.html"> アーカイブ・ファイル </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        parent
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/" title="ユーザー・ガイド">
+      <span class="merged" id="index.1Bam9Q" title="原文 :  2. User Guide "><a href="../../index.html"> <b>2. </b>ユーザー・ガイド </a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/install/" title="WDTのインストール">
+        <span class="merged" id="index.2jt5gK" title="原文 :  Install WDT "><a href="../../install/index.html">WDTのインストール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        parent
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/tools/" title="WDTツール">
+      <span class="merged" id="index.1rqQC0" title="原文 :  WDT Tools "><a href="../index.html"> <b> </b>WDTツール </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/create/" title="ドメインの作成ツール">
+        <span class="merged" id="index.1GcHuk" title="原文 :  Create Domain Tool "><a href="../create/index.html">ドメインの作成ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/update/" title="ドメインの更新ツール">
+        <span class="merged" id="index.2WnvRb" title="原文 :  Update Domain Tool "><a href="../update/index.html">ドメインの更新ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/deploy/" title="Deploy Applications Tool">
+        <span class="merged" id="index.1DcafQ" title="原文 :  Deploy Applications Tool "><a href="../deploy/index.html"> Deploy Applications Tool </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/discover/" title="ドメインの検出ツール">
+        <span class="merged" id="index.1zlutE" title="原文 :  Discover Domain Tool "><a href="../discover/index.html">ドメインの検出ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/encrypt/" title="モデルの暗号化ツール">
+        <span class="merged" id="index.CLiGZ" title="原文 :  Encrypt Model Tool "><a href="../encrypt/index.html">モデルの暗号化ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/validate/" title="モデルの検証ツール">
+        <span class="merged" id="index.1hwFVt" title="原文 :  Validate Model Tool "><a href="../validate/index.html">モデルの検証ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item active" data-nav-id="/weblogic-deploy-tooling/userguide/tools/compare/" title="モデルの比較ツール">
+        <span class="merged" id="index.rvX87" title="原文 :  Compare Model Tool "><a href="index.html">モデルの比較ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/prepare/" title="モデルの準備ツール">
+        <span class="merged" id="index.1MrHh3" title="原文 :  Prepare Model Tool "><a href="../prepare/index.html">モデルの準備ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/kubernetes/" title="ドメイン・リソースの抽出ツール">
+        <span class="merged" id="index.3bomdS" title="原文 :  Extract Domain Resource Tool "><a href="../kubernetes/index.html">ドメイン・リソースの抽出ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/variable_injection/" title="変数インジェクタ・ツール">
+        <span class="merged" id="index.3Bxi3K" title="原文 :  Variable Injector Tool "><a href="../variable_injection/index.html">変数インジェクタ・ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/model_help/" title="モデル・ヘルプ・ツール">
+        <span class="merged" id="index.1b0YMw" title="原文 :  Model Help Tool "><a href="../model_help/index.html">モデル・ヘルプ・ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/target_env/" title="ターゲット環境">
+        <span class="merged" id="index.2BiRhD" title="原文 :  Target environments "><a href="../../target_env/index.html">ターゲット環境</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/" title="ツール構成">
+      <span class="merged" id="index.I1lGn" title="原文 :  Tools configuration "><a href="../../tools-config/index.html">ツール構成</a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/model_filters/" title="モデル・フィルタ">
+        <span class="merged" id="index.2vk8dF" title="原文 :  Model filters "><a href="../../tools-config/model_filters/index.html">モデル・フィルタ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/domain_def/" title="ドメイン・タイプ定義">
+        <span class="merged" id="index.2LofWD" title="原文 :  Domain type definitions "><a href="../../tools-config/domain_def/index.html">ドメイン・タイプ定義</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/custom_config/" title="カスタム構成">
+        <span class="merged" id="index.18oiNn"  title="原文::  Custom configuration "><a href="../../tools-config/custom_config/index.html"> カスタム構成 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/tool_prop/" title="ツールのプロパティ・ファイル">
+        <span class="merged" id="index.1qomGW" title="原文 :  Tool property file "><a href="../../tools-config/tool_prop/index.html">ツールのプロパティ・ファイル</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/samples/" title="サンプル">
+      <span class="merged" id="index.2CbTQi" title="原文 :  3. Samples "><a href="../../../samples/index.html"> <b>3. </b>サンプル</a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/adminserver-model/" title="管理サーバーのカスタマイズ">
+        <span class="merged" id="index.25qmdE" title="原文 :  Customizing the Administration Server "><a href="../../../samples/adminserver-model/index.html">管理サーバーのカスタマイズ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/cluster-model/" title="構成済クラスタのモデル化">
+        <span class="merged" id="index.H7Gaw" title="原文 :  Modeling a configured cluster "><a href="../../../samples/cluster-model/index.html">構成済クラスタのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/jdbc-model/" title="JDBCデータ・ソースのモデル化">
+        <span class="merged" id="index.3EMyea" title="原文 :  Modeling a JDBC data source "><a href="../../../samples/jdbc-model/index.html">JDBCデータ・ソースのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/workmanager-model/" title="ワーク・マネージャのモデリング">
+        <span class="merged" id="index.39Hl7y" title="原文 :  Modeling a Work Manager "><a href="../../../samples/workmanager-model/index.html">ワーク・マネージャのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/securityproviders-model/" title="セキュリティ・プロバイダのモデル化">
+        <span class="merged" id="index.24yacq" title="原文 :  Modeling security providers "><a href="../../../samples/securityproviders-model/index.html">セキュリティ・プロバイダのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/usersgroups-model/" title="WebLogicのユーザー、グループおよびロールのモデリング">
+        <span class="merged" id="index.4OEyXR" title="原文 :  Modeling WebLogic users, groups, and roles "><a href="../../../samples/usersgroups-model/index.html">WebLogicのユーザー、グループおよびロールのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/pwcredentialmap-model/" title="WebLogicユーザー・パスワード資格証明マッピングのモデリング">
+        <span class="merged" id="index.4bbJ8U" title="原文 :  Modeling WebLogic user password credential mapping "><a href="../../../samples/pwcredentialmap-model/index.html">WebLogicユーザー・パスワード資格証明マッピングのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/odl-model/" title="Oracle Diagnostic Loggingの構成">
+        <span class="merged" id="index.43ApUq" title="原文 :  Configuring Oracle Diagnostic Logging "><a href="../../../samples/odl-model/index.html">Oracle Diagnostic Loggingの構成</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/ohs-model/" title="Oracle HTTP Serverの構成">
+        <span class="merged" id="index.2BWoBg"  title="原文:  Configuring Oracle HTTP Server "><a href="../../../samples/ohs-model/index.html"> Oracle HTTP Serverの構成 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/targetservers-model/" title="サーバー・グループのターゲット指定">
+        <span class="merged" id="index.1zjtFh" title="原文 :  Targeting server groups "><a href="../../../samples/targetservers-model/index.html">サーバー・グループのターゲット指定</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/wko-model/" title="WebLogic Kubernetes OperatorでのWDTの使用">
+        <span class="merged" id="index.4g6412" title="原文 :  Using WDT with WebLogic Kubernetes Operator "><a href="../../../samples/wko-model/index.html">WebLogic Kubernetes OperatorでのWDTの使用</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/developer/" title="開発者ガイド">
+      <span class="merged" id="index.kQTEC" title="原文 :  4. Developer Guide "><a href="../../../developer/index.html"> <b>4. </b>開発者ガイド </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/project-structure/" title="プロジェクト体系">
+        <span class="merged" id="index.3Lxch9" title="原文 :  Project structure "><a href="../../../developer/project-structure/index.html">プロジェクト体系</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/feature-impl/" title="機能の実装">
+        <span class="merged" id="index.1gpFlU" title="原文 :  Feature implementation "><a href="../../../developer/feature-impl/index.html">機能の実装</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/alias-definitions/" title="別名定義">
+        <span class="merged" id="index.1Gyhad" title="原文 :  Alias definitions "><a href="../../../developer/alias-definitions/index.html">別名定義</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/buildwdt/" title="WebLogic Deploy Toolのビルド">
+        <span class="merged" id="index.4MCAhb" title="原文 :  Build WebLogic Deploy Tool "><a href="../../../developer/buildwdt/index.html">WebLogic Deploy Toolのビルド</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/releaseprocess/" title="WDTプロジェクト・リリース・プロセス">
+        <span class="merged" id="index.lwbOu" title="原文 :  WDT project release process "><a href="../../../developer/releaseprocess/index.html">WDTプロジェクト・リリース・プロセス</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/contribute/" title="WDTにコントリビュート">
+        <span class="merged" id="index.1L4vNs" title="原文 :  Contribute to WDT "><a href="../../../developer/contribute/index.html">WDTにコントリビュート</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+      <li><span class="merged" id="index.1X27Sv"  title="原文:: Release Notes"><a class="padding" href="../../../release-notes">リリース・ノート</a></span></li>
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p><span class="merged" id="index.4behA5" title="原文 : Created with from Oracle"><a href="https://www.oracle.com">Oracle</a>から<i class="fas fa-heart"></i>を使用して作成</span></p>
+<p><span class="merged" id="index.1OQYZy"  title="原文:: &nbsp">&nbsp</span></p>
+<p><span class="merged" id="index.msaKb" title="原文 :  GitHub repo"><a href="https://github.com/oracle/weblogic-deploy-tooling"><i class="fab fa-github"></i>GitHubレポ</a></span></p>
+<p><span class="merged" id="index.rjNGa" title="原文 :  Public Slack #weblogic"><a href="https://weblogic-slack-inviter.herokuapp.com/"><i class="fab fa-slack"></i> Public Slack #weblogic</a></span></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span class="merged" id="index.8nqks" title="原文 :  &gt; User Guide &gt; WDT Tools &gt; Compare Model Tool "><span id="sidebar-toggle-span"><a data-sidebar-toggle="" href="index.html#" id="sidebar-toggle"><i class="fas fa-bars"></i></a></span> <span id="toc-menu"><i class="fas fa-list-alt"></i></span> <span class="links"><a href='../../../index.html'></a> > <a href='../../index.html'>ユーザー・ガイド</a> > <a href='../index.html'>WDTツール</a> > モデルの比較ツール</span></span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              <span class="merged" id="index.wzP3p" title="原文 : Compare Model Tool">モデルの比較ツール</span>
+            </h1>
+          
+
+        
+
+
+<p><span class="merged" id="index.2qoFAA.spl1" title="原文 : When working with a domain model, sometimes it is useful to know the differences between different models.">ドメイン・モデルを使用する場合、異なるモデル間の違いを把握しておくと便利な場合があります。</span> <span class="merged" id="index.2qoFAA.spl2" title="原文 : The Compare Model Tool compares two model files and generates a model that shows the differences between them.">モデルの比較ツールは、2つのモデル・ファイルを比較し、それらの違いを示すモデルを生成します。</span> </p>
+<p><span class="merged" id="index.1vgiCK.spl1" title="原文 : To use the Compare Model Tool, simply run the compareModel shell script with the correct arguments.">モデルの比較ツールを使用するには、正しい引数を指定して<code>compareModel</code>シェル・スクリプトを実行します。</span> <span class="merged" id="index.1vgiCK.spl2" title="原文 : To see the list of valid arguments, simply run the shell script with the -help option (or with no arguments) for usage information.">有効な引数のリストを表示するには、<code>-help</code>オプションを指定して(または引数を指定せずに)シェル・スクリプトを実行し、使用方法を確認します。</span> </p>
+<p><span class="merged" id="index.47eoCE" title="原文 : For example, comparing the following models.">たとえば、次のモデルを比較します。</span></p>
+<h4 id="new-model"><span class="merged" id="index.1bNGfD"  title="原文:: New model">新規モデル</span></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">domainInfo</span>:
+    <span style="color:#f92672">AdminUserName</span>: <span style="color:#e6db74">&#39;weblogic&#39;</span>
+    <span style="color:#f92672">AdminPassword</span>: <span style="color:#e6db74">&#39;welcome2&#39;</span>
+    <span style="color:#f92672">ServerStartMode</span>: <span style="color:#e6db74">&#39;prod&#39;</span>
+<span style="color:#f92672">topology</span>:
+    <span style="color:#f92672">Name</span>: <span style="color:#ae81ff">domain1</span>
+    <span style="color:#f92672">AdminServerName</span>: <span style="color:#e6db74">&#34;admin-server&#34;</span>
+    <span style="color:#f92672">SecurityConfiguration</span>:
+        <span style="color:#f92672">NodeManagerUsername </span>: <span style="color:#e6db74">&#39;weblogic&#39;</span>
+        <span style="color:#f92672">NodeManagerPasswordEncrypted </span>: <span style="color:#e6db74">&#39;welcome1&#39;</span>
+    <span style="color:#f92672">Cluster</span>:
+        <span style="color:#e6db74">&#34;cluster-1&#34;</span>:
+            <span style="color:#f92672">DynamicServers</span>:
+                <span style="color:#f92672">ServerTemplate</span>:  <span style="color:#e6db74">&#34;cluster-1-template&#34;</span>
+                <span style="color:#f92672">ServerNamePrefix</span>: <span style="color:#e6db74">&#34;managed-server&#34;</span>
+                <span style="color:#f92672">DynamicClusterSize</span>: <span style="color:#ae81ff">5</span>
+                <span style="color:#f92672">MaxDynamicClusterSize</span>: <span style="color:#ae81ff">5</span>
+                <span style="color:#f92672">CalculatedListenPorts</span>: <span style="color:#66d9ef">false</span>
+        <span style="color:#e6db74">&#34;cluster-2&#34;</span>:
+            <span style="color:#f92672">DynamicServers</span>:
+                <span style="color:#f92672">ServerTemplate</span>:  <span style="color:#e6db74">&#34;cluster-2-template&#34;</span>
+                <span style="color:#f92672">ServerNamePrefix</span>: <span style="color:#e6db74">&#34;managed-server&#34;</span>
+                <span style="color:#f92672">DynamicClusterSize</span>: <span style="color:#ae81ff">2</span>
+                <span style="color:#f92672">MaxDynamicClusterSize</span>: <span style="color:#ae81ff">3</span>
+                <span style="color:#f92672">CalculatedListenPorts</span>: <span style="color:#66d9ef">false</span>
+    <span style="color:#f92672">Server</span>:
+        <span style="color:#e6db74">&#34;admin-server&#34;</span>:
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">10011</span>
+    <span style="color:#f92672">ServerTemplate</span>:
+        <span style="color:#e6db74">&#34;cluster-1-template&#34;</span>:
+            <span style="color:#f92672">Cluster</span>: <span style="color:#e6db74">&#34;cluster-1&#34;</span>
+            <span style="color:#f92672">ListenPort </span>: <span style="color:#e6db74">&#39;5001&#39;</span>
+            <span style="color:#f92672">JTAMigratableTarget</span>:
+                    <span style="color:#f92672">StrictOwnershipCheck</span>: <span style="color:#66d9ef">true</span>
+                    <span style="color:#f92672">Cluster</span>: <span style="color:#e6db74">&#34;cluster-1&#34;</span>
+        <span style="color:#e6db74">&#34;cluster-2-template&#34;</span>:
+            <span style="color:#f92672">Cluster</span>: <span style="color:#e6db74">&#34;cluster-2&#34;</span>
+            <span style="color:#f92672">ListenPort </span>: <span style="color:#e6db74">&#39;8001&#39;</span>
+            <span style="color:#f92672">ServerStart</span>:
+                    <span style="color:#f92672">Arguments</span>: [<span style="color:#e6db74">&#39;-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6006&#39;</span>]
+            <span style="color:#f92672">JTAMigratableTarget</span>:
+                    <span style="color:#f92672">StrictOwnershipCheck</span>: <span style="color:#66d9ef">true</span>
+                    <span style="color:#f92672">Cluster</span>: <span style="color:#e6db74">&#34;cluster-2&#34;</span>
+<span style="color:#f92672">appDeployments</span>:
+     <span style="color:#f92672">Application</span>:
+         <span style="color:#f92672">myear</span>:
+             <span style="color:#f92672">SourcePath</span>: <span style="color:#ae81ff">/home/johnny/dimtemp23/sample_app_stage/wlsdeploy/applications/sample_app.ear</span>
+             <span style="color:#f92672">Target</span>: [<span style="color:#e6db74">&#39;cluster-2&#39;</span>,<span style="color:#e6db74">&#39;cluster-1&#39;</span>]
+         <span style="color:#f92672">yourear</span>:
+             <span style="color:#f92672">SourcePath</span>: <span style="color:#ae81ff">/home/johnny/dimtemp23/sample_app_stage/wlsdeploy/applications/sample_app2.ear</span>
+             <span style="color:#f92672">ModuleType</span>: <span style="color:#ae81ff">ear</span>
+             <span style="color:#f92672">Target</span>: [<span style="color:#e6db74">&#39;cluster-2&#39;</span>,<span style="color:#e6db74">&#39;cluster-1&#39;</span>]
+<span style="color:#f92672">resources</span>:
+    <span style="color:#f92672">JMSServer</span>:
+        <span style="color:#f92672">JMSServer1</span>:
+            <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">m1</span>
+        <span style="color:#f92672">JMSServer2</span>:
+            <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">m2</span>
+    <span style="color:#f92672">JMSSystemResource</span>:
+        <span style="color:#f92672">MyJmsModule</span>:
+            <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">mycluster</span>
+            <span style="color:#f92672">SubDeployment</span>:
+                <span style="color:#f92672">JMSServer1Subdeployment</span>:
+                    <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">JMSServer1</span>
+                <span style="color:#f92672">JMSServer2Subdeployment</span>:
+                    <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">JMSServer2</span>
+            <span style="color:#f92672">JmsResource</span>:
+                <span style="color:#f92672">ConnectionFactory</span>:
+                    <span style="color:#f92672">WebAppConnectionFactory</span>:
+                        <span style="color:#f92672">DefaultTargetingEnabled</span>: <span style="color:#66d9ef">true</span>
+                        <span style="color:#f92672">JNDIName</span>: <span style="color:#ae81ff">jms/WebCF</span>
+                        <span style="color:#f92672">ClientParams</span>:
+                            <span style="color:#f92672">AllowCloseInOnMessage</span>: <span style="color:#66d9ef">true</span>
+                            <span style="color:#f92672">MessagesMaximum</span>: <span style="color:#ae81ff">1</span>
+                        <span style="color:#f92672">DefaultDeliveryParams</span>:
+                            <span style="color:#f92672">DefaultTimeToDeliver</span>: <span style="color:#ae81ff">3</span>
+                            <span style="color:#f92672">DefaultTimeToLive</span>: <span style="color:#ae81ff">3600</span>
+                        <span style="color:#f92672">FlowControlParams</span>:
+                            <span style="color:#f92672">FlowControlEnabled</span>: <span style="color:#66d9ef">false</span>
+                        <span style="color:#f92672">LoadBalancingParams</span>:
+                            <span style="color:#f92672">LoadBalancingEnabled</span>: <span style="color:#66d9ef">false</span>
+                        <span style="color:#f92672">SecurityParams</span>:
+                            <span style="color:#f92672">AttachJMSXUserId</span>: <span style="color:#66d9ef">true</span>
+                        <span style="color:#f92672">TransactionParams</span>:
+                            <span style="color:#f92672">XAConnectionFactoryEnabled</span>: <span style="color:#66d9ef">true</span>
+                <span style="color:#f92672">UniformDistributedQueue</span>:
+                    <span style="color:#f92672">MyUniformDistributedQueue</span>:
+                        <span style="color:#f92672">DefaultTargetingEnabled</span>: <span style="color:#66d9ef">true</span>
+                        <span style="color:#f92672">JNDIName</span>: <span style="color:#ae81ff">jms/myUDQ</span>
+</code></pre></div><h4 id="old-model"><span class="merged" id="index.Ao01w" title="原文 : Old model">古いモデル</span></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">domainInfo</span>:
+    <span style="color:#f92672">AdminUserName</span>: <span style="color:#e6db74">&#39;weblogic&#39;</span>
+    <span style="color:#f92672">AdminPassword</span>: <span style="color:#e6db74">&#39;welcome2&#39;</span>
+    <span style="color:#f92672">ServerStartMode</span>: <span style="color:#e6db74">&#39;prod&#39;</span>
+<span style="color:#f92672">topology</span>:
+    <span style="color:#f92672">Name</span>: <span style="color:#ae81ff">domain1</span>
+    <span style="color:#f92672">AdminServerName</span>: <span style="color:#e6db74">&#34;admin-server&#34;</span>
+    <span style="color:#f92672">SecurityConfiguration</span>:
+        <span style="color:#f92672">NodeManagerUsername </span>: <span style="color:#e6db74">&#39;weblogic&#39;</span>
+        <span style="color:#f92672">NodeManagerPasswordEncrypted </span>: <span style="color:#e6db74">&#39;welcome1&#39;</span>
+    <span style="color:#f92672">Cluster</span>:
+        <span style="color:#e6db74">&#34;cluster-1&#34;</span>:
+            <span style="color:#f92672">DynamicServers</span>:
+                <span style="color:#f92672">ServerTemplate</span>:  <span style="color:#e6db74">&#34;cluster-1-template&#34;</span>
+                <span style="color:#f92672">ServerNamePrefix</span>: <span style="color:#e6db74">&#34;managed-server&#34;</span>
+                <span style="color:#f92672">DynamicClusterSize</span>: <span style="color:#ae81ff">5</span>
+                <span style="color:#f92672">MaxDynamicClusterSize</span>: <span style="color:#ae81ff">5</span>
+                <span style="color:#f92672">CalculatedListenPorts</span>: <span style="color:#66d9ef">false</span>
+    <span style="color:#f92672">Server</span>:
+        <span style="color:#e6db74">&#34;admin-server&#34;</span>:
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">10011</span>
+    <span style="color:#f92672">ServerTemplate</span>:
+        <span style="color:#e6db74">&#34;cluster-1-template&#34;</span>:
+            <span style="color:#f92672">Cluster</span>: <span style="color:#e6db74">&#34;cluster-1&#34;</span>
+            <span style="color:#f92672">ListenPort </span>: <span style="color:#e6db74">&#39;5001&#39;</span>
+            <span style="color:#f92672">ServerStart</span>:
+                    <span style="color:#f92672">Arguments</span>: [<span style="color:#e6db74">&#39;-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6006&#39;</span>]
+            <span style="color:#f92672">JTAMigratableTarget</span>:
+                    <span style="color:#f92672">StrictOwnershipCheck</span>: <span style="color:#66d9ef">true</span>
+                    <span style="color:#f92672">Cluster</span>: <span style="color:#e6db74">&#34;cluster-1&#34;</span>
+<span style="color:#f92672">appDeployments</span>:
+     <span style="color:#f92672">Application</span>:
+         <span style="color:#f92672">myear</span>:
+             <span style="color:#f92672">SourcePath</span>: <span style="color:#ae81ff">/home/johnny/dimtemp23/sample_app_stage/wlsdeploy/applications/sample_app.ear</span>
+             <span style="color:#f92672">ModuleType</span>: <span style="color:#ae81ff">ear</span>
+             <span style="color:#f92672">Target</span>: [<span style="color:#e6db74">&#39;cluster-1&#39;</span>,<span style="color:#e6db74">&#39;cluster-2&#39;</span>]
+         <span style="color:#f92672">myear2</span>:
+             <span style="color:#f92672">SourcePath</span>: <span style="color:#ae81ff">/home/johnny/dimtemp23/sample_app_stage/wlsdeploy/applications/sample_app2.ear</span>
+             <span style="color:#f92672">ModuleType</span>: <span style="color:#ae81ff">ear</span>
+             <span style="color:#f92672">Target</span>: [<span style="color:#e6db74">&#39;cluster-1&#39;</span>,<span style="color:#e6db74">&#39;cluster-2&#39;</span>]
+<span style="color:#f92672">resources</span>:
+    <span style="color:#f92672">WebAppContainer</span>:
+        <span style="color:#f92672">WAPEnabled</span>: <span style="color:#e6db74">&#39;@@PROP:WAPENABLED@@&#39;</span>
+        <span style="color:#f92672">FilterDispatchedRequestsEnabled</span>: <span style="color:#66d9ef">true</span>
+        <span style="color:#f92672">AllowAllRoles</span>: <span style="color:#66d9ef">true</span>
+        <span style="color:#f92672">XPoweredByHeaderLevel</span>: <span style="color:#ae81ff">NONE</span>
+        <span style="color:#f92672">ServletAuthenticationFormURL</span>: <span style="color:#66d9ef">true</span>
+        <span style="color:#f92672">ServletReloadCheckSecs</span>: <span style="color:#ae81ff">1</span>
+        <span style="color:#f92672">ChangeSessionIDOnAuthentication</span>: <span style="color:#66d9ef">true</span>
+        <span style="color:#f92672">MimeMappingFile</span>: <span style="color:#ae81ff">wlsdeploy/config/amimemappings.properties</span>
+        <span style="color:#f92672">AuthCookieEnabled</span>: <span style="color:#66d9ef">true</span>
+        <span style="color:#f92672">WorkContextPropagationEnabled</span>: <span style="color:#66d9ef">true</span>
+        <span style="color:#f92672">ReloginEnabled</span>: <span style="color:#66d9ef">true</span>
+        <span style="color:#f92672">GzipCompression</span>:
+            <span style="color:#f92672">GzipCompressionContentType</span>: [ <span style="color:#ae81ff">text/html, text/xml, text/plain ]</span>
+            <span style="color:#f92672">GzipCompressionEnabled</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#f92672">JMSServer</span>:
+        <span style="color:#f92672">JMSServer1</span>:
+            <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">m1</span>
+        <span style="color:#f92672">JMSServer2</span>:
+            <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">m2</span>
+    <span style="color:#f92672">JMSSystemResource</span>:
+        <span style="color:#f92672">MyJmsModule</span>:
+            <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">mycluster</span>
+            <span style="color:#f92672">SubDeployment</span>:
+                <span style="color:#f92672">JMSServer1Subdeployment</span>:
+                    <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">JMSServer1</span>
+                <span style="color:#f92672">JMSServer2Subdeployment</span>:
+                    <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">JMSServer2</span>
+            <span style="color:#f92672">JmsResource</span>:
+                <span style="color:#f92672">ConnectionFactory</span>:
+                    <span style="color:#f92672">WebAppConnectionFactory</span>:
+                        <span style="color:#f92672">DefaultTargetingEnabled</span>: <span style="color:#66d9ef">true</span>
+                        <span style="color:#f92672">JNDIName</span>: <span style="color:#ae81ff">jms/WebCF</span>
+                        <span style="color:#f92672">ClientParams</span>:
+                            <span style="color:#f92672">AllowCloseInOnMessage</span>: <span style="color:#66d9ef">true</span>
+                            <span style="color:#f92672">MessagesMaximum</span>: <span style="color:#ae81ff">1</span>
+                        <span style="color:#f92672">DefaultDeliveryParams</span>:
+                            <span style="color:#f92672">DefaultTimeToDeliver</span>: <span style="color:#ae81ff">3</span>
+                            <span style="color:#f92672">DefaultTimeToLive</span>: <span style="color:#ae81ff">3600</span>
+                        <span style="color:#f92672">FlowControlParams</span>:
+                            <span style="color:#f92672">FlowControlEnabled</span>: <span style="color:#66d9ef">false</span>
+                        <span style="color:#f92672">LoadBalancingParams</span>:
+                            <span style="color:#f92672">LoadBalancingEnabled</span>: <span style="color:#66d9ef">false</span>
+                        <span style="color:#f92672">SecurityParams</span>:
+                            <span style="color:#f92672">AttachJMSXUserId</span>: <span style="color:#66d9ef">true</span>
+                        <span style="color:#f92672">TransactionParams</span>:
+                            <span style="color:#f92672">XAConnectionFactoryEnabled</span>: <span style="color:#66d9ef">true</span>
+                    <span style="color:#f92672">MDBConnectionFactory</span>:
+                        <span style="color:#f92672">DefaultTargetingEnabled</span>: <span style="color:#66d9ef">true</span>
+                        <span style="color:#f92672">JNDIName</span>: <span style="color:#ae81ff">jms/mdbCF</span>
+                        <span style="color:#f92672">TransactionParams</span>:
+                            <span style="color:#f92672">XAConnectionFactoryEnabled</span>: <span style="color:#66d9ef">true</span>
+                <span style="color:#f92672">UniformDistributedQueue</span>:
+                    <span style="color:#f92672">MyUniformDistributedQueue</span>:
+                        <span style="color:#f92672">DefaultTargetingEnabled</span>: <span style="color:#66d9ef">true</span>
+                        <span style="color:#f92672">JNDIName</span>: <span style="color:#ae81ff">jms/myUDQ</span>
+                        <span style="color:#f92672">ResetDeliveryCountOnForward</span>: <span style="color:#66d9ef">true</span>
+</code></pre></div><p><span class="merged" id="index.3NmiWJ" title="原文 : To compare the two model files, run the tool as follows:">2つのモデル・ファイルを比較するには、次のようにツールを実行します:</span></p>
+<pre><code>$ weblogic-deploy\bin\compareModel.cmd -oracle_home c:\wls12213 new_model.yaml old_model.yaml
+</code></pre>
+<p><span class="merged" id="index.2m30dR" title="原文 : The output of the tool will look something like this:">ツールの出力は次のようになります:</span></p>
+<pre><code>Comparing Models: new=/tmp/model2.yaml vs old=/tmp/model1.yaml
+
+Differences between new model and old model:
+
+resources:
+    JMSSystemResource:
+        MyJmsModule:
+            JmsResource:
+                ConnectionFactory:
+                    '!MDBConnectionFactory':
+    '!WebAppContainer':
+appDeployments:
+    Application:
+        '!myear2':
+        yourear:
+            SourcePath: /home/johnny/dimtemp23/sample_app_stage/wlsdeploy/applications/sample_app2.ear
+            ModuleType: ear
+            Target: [ 'cluster-2', 'cluster-1' ]
+        myear:
+            Target: [ 'cluster-2', 'cluster-1' ]
+topology:
+    ServerTemplate:
+        'cluster-1-template':
+            '!ServerStart':
+        'cluster-2-template':
+            Cluster: 'cluster-2'
+            ListenPort: 8001
+            ServerStart:
+                Arguments: [ '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6006' ]
+            JTAMigratableTarget:
+                StrictOwnershipCheck: True
+                Cluster: 'cluster-2'
+    Cluster:
+        'cluster-2':
+            DynamicServers:
+                ServerTemplate: 'cluster-2-template'
+                ServerNamePrefix: 'managed-server'
+                DynamicClusterSize: 2
+                MaxDynamicClusterSize: 3
+                CalculatedListenPorts: False
+
+
+1. Model Path: resources--&gt;JMSSystemResource--&gt;MyJmsModule--&gt;JmsResource--&gt;UniformDistributedQueue--&gt;MyUniformDistributedQueue--&gt;ResetDeliveryCountOnForward does not exist in new model but exists in previous model
+
+2. Model Path: appDeployments--&gt;Application--&gt;myear--&gt;ModuleType does not exist in new model but exists in previous model
+
+</code></pre><p><span class="merged" id="index.3ZpBgV" title="原文 : Comparing the new and old models:">新しいモデルと古いモデルの比較:</span></p>
+<ol>
+<li><span class="merged" id="index.3j7iiP" title="原文 : Added cluster-2 and cluster-2-template in the topology section."><code>topology</code>セクションに<code>cluster-2</code>および<code>cluster-2-template</code>が追加されました。</span></li>
+<li><span class="merged" id="index.3oftpo" title="原文 : Removed ServerStart of cluster-1-template in the topology section."><code>topology</code>セクションの<code>cluster-1-template</code>の<code>ServerStart</code>が削除されました。</span></li>
+<li><span class="merged" id="index.2T1Nt4" title="原文 : Deployed two applications yourear and myear in the appDeployments section."><code>appDeployments</code>セクションに、<code>yourear</code>と<code>myear</code>の2つのアプリケーションをデプロイしました。</span></li>
+<li><span class="merged" id="index.1T5iW0" title="原文 : Removed application myear in the appDeployments section."><code>appDeployments</code>セクションのアプリケーション<code>myear</code>が削除されました。</span></li>
+<li><span class="merged" id="index.1HnTCP" title="原文 : Removed MDBConnectionFactory from the MyJmsModule JMS Module in the resource section."><code>resource</code>セクションの<code>MyJmsModule</code> JMSモジュールから<code>MDBConnectionFactory</code>が削除されました。</span></li>
+<li><span class="merged" id="index.22CWwM" title="原文 : Removed WebAppContainer in the resource section."><code>resource</code>セクションの<code>WebAppContainer</code>が削除されました。</span></li>
+<li><span class="merged" id="index.su7Yh" title="原文 : Removed the attribute ResetDeliveryCountOnForward from MyUniformDistributedQueue."><code>MyUniformDistributedQueue</code>から属性<code>ResetDeliveryCountOnForward</code>が削除されました。</span></li>
+<li><span class="merged" id="index.4UCQwj" title="原文 : Changed deployment targets for application myear.">アプリケーション<code>myear</code>のデプロイメント・ターゲットを変更しました。</span></li>
+<li><span class="merged" id="index.4JUOBP" title="原文 : Removed the attribute &lsquo;ModuleType&rsquo; for application myear.">アプリケーション<code>myear</code>の属性'ModuleType'を削除しました。</span></li>
+</ol>
+
+<div class="notices note" ><p><span class="merged" id="index.HuO9h.spl1" title="原文 : The ! is a notation for the deletion of a non-attribute key element from the model."><code>!</code>は、モデルから非属性キー要素を削除するための表記法です。</span> <span class="merged" id="index.HuO9h.spl2" title="原文 : Missing attributes will be omitted from the resulting model, but shown as messages in the output.">欠落している属性は結果のモデルから省略されますが、メッセージとして出力に表示されます。</span> <span class="merged" id="index.HuO9h.spl3" title="原文 : If the attribute value is a list, even if all the individual items within the list are identical but the ordering is different, the attribute is counted as different.">属性値がリストの場合、リスト内の個々のアイテムがすべて同じでも順序が異なる場合、属性は異なるものとしてカウントされます。</span> </p>
+</div>
+
+<p><span class="merged" id="index.2IaIkE" title="原文 : To compare the two model files and generate the output to files, run the tool as follows:">2つのモデル・ファイルを比較し、出力をファイルに生成するには、次のようにツールを実行します:</span></p>
+<pre><code>$ weblogic-deploy\bin\compareModel.cmd -oracle_home c:\wls12213 -output_dir c:\cm-output ew_model.yaml old_model.yaml
+
+The following files will be written to the directory:
+
+diffed_model.json
+diffed_model.yaml
+compare_model_stdout
+</code></pre>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../validate/index.html" > <i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="../prepare/index.html" style="margin-right: 0px;" ><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../../js/clipboard.min.js?1620686566"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1620686566"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1620686566"></script>
+    <script src="../../../js/jquery.sticky.js?1620686566"></script>
+    <script src="../../../js/featherlight.min.js?1620686566"></script>
+    <script src="../../../js/highlight.pack.js?1620686566"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1620686566"></script>
+    <script src="../../../js/learn.js?1620686566"></script>
+    <script src="../../../js/hugo-learn.js?1620686566"></script>
+    
+        
+            <script src="../../../mermaid/mermaid.js?1620686566"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>

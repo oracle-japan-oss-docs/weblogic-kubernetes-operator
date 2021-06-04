@@ -1,0 +1,5218 @@
+<!DOCTYPE html>
+<html lang="ja" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <meta content="" name="description">
+
+
+    <link rel="icon" href="../../../images/favicon.png" type="image/png">
+
+    <title>構成のオーバーライド :: WebLogic Kubernetes Operator</title>
+
+    
+    <link href="../../../css/nucleus.css?1614202517" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1614202517" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1614202517" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1614202517" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1614202517" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1614202517" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1614202517" rel="stylesheet">
+    <link href="../../../css/theme.css?1614202517" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1614202517" rel="stylesheet">
+    
+
+    <script src="../../../js/jquery-3.3.1.min.js?1614202517"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  <meta HTTP-EQUIV="Content-Type" Content="text/html; charset=utf-8"></head>
+  <style type="text/css"> <!-- .merged:hover {text-decoration: underline;} --> </style>
+<body class="" data-url="/weblogic-kubernetes-operator/userguide/managing-domains/configoverrides/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <span class="merged" id="index.42xjKN" title="原文 :  Kubernetes Operator "><a href="../../../index.html" id="logo"> <img height="60" src="../../../images/logo.png"><br /> Kubernetes Operator </a></span>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../../js/lunr.min.js?1614202517"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1614202517"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/weblogic-kubernetes-operator\/";
+    
+</script>
+<script type="text/javascript" src="../../../js/search.js?1614202517"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+        <li><span class="merged" id="index.40pwEN"  title="原文:: Home"><a class="padding" href="../../../index.html">ホーム</a></span></li>
+        
+          
+          
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/quickstart/" title="クイック・スタート">
+      <span class="merged" id="index.14jWLk" title="原文 :  1. Quick Start "><a href="../../../quickstart/index.html"><b>1. </b>クイック・スタート</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/introduction/" title="導入">
+        <span class="merged" id="index.17O7UA"  title="原文::  Introduction "><a href="../../../quickstart/introduction/index.html"> 導入 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/prerequisites/" title="始める前に">
+        <span class="merged" id="index.1MEoIn"  title="原文::  Before you begin "><a href="../../../quickstart/prerequisites/index.html"> 始める前に </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/get-images/" title="イメージの取得">
+        <span class="merged" id="index.3yaxlM" title="原文 :  Get images "><a href="../../../quickstart/get-images/index.html">イメージの取得</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/install/" title="オペレータおよびイングレス・コントローラのインストール">
+        <span class="merged" id="index.G9Dsb" title="原文 :  Install the operator and ingress controller "><a href="../../../quickstart/install/index.html">オペレータおよびイングレス・コントローラのインストール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/prepare/" title="ドメインの準備">
+        <span class="merged" id="index.gwxsX" title="原文 :  Prepare for a domain "><a href="../../../quickstart/prepare/index.html">ドメインの準備</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/create-domain/" title="ドメインの作成">
+        <span class="merged" id="index.2MoM3P"  title="原文::  Create a domain "><a href="../../../quickstart/create-domain/index.html"> ドメインの作成 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/cleanup/" title="クリーン・アップ">
+        <span class="merged" id="index.15zFRC"  title="原文::  Clean up "><a href="../../../quickstart/cleanup/index.html"> クリーン・アップ </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li class="dd-item 
+        parent
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/" title="ユーザー・ガイド">
+      <span class="merged" id="index.1Bam9Q" title="原文 :  2. User Guide "><a href="../../index.html"><b>2. </b>ユーザー・ガイド</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/" title="導入">
+      <span class="merged" id="index.3bir1z"  title="原文::  Introduction "><a href="../../introduction/index.html"> 導入 </a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/introduction/" title="開始">
+        <span class="merged" id="index.2V0VYP" title="原文 :  Get started "><a href="../../introduction/introduction/index.html">開始</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/demo/" title="デモ">
+        <span class="merged" id="index.1P50iG"  title="原文::  Demo "><a href="../../introduction/demo/index.html"> デモ </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/architecture/" title="アーキテクチャ">
+        <span class="merged" id="index.2FVdqC"  title="原文::  Architecture "><a href="../../introduction/architecture/index.html"> アーキテクチャ </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計の方針">
+        <span class="merged" id="index.5tV7K"  title="原文::  Design philosophy "><a href="../../introduction/design/index.html"> 設計の方針 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/overview/" title="概要">
+      <span class="merged" id="index.2vGBoi"  title="原文::  Overview "><a href="../../overview/index.html"> 概要 </a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/overview/prepare/" title="環境の準備">
+        <span class="merged" id="index.4MjQOh" title="原文 :  Prepare your environment "><a href="../../overview/prepare/index.html">環境の準備</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/overview/k8s-setup/" title="Kubernetesの設定">
+        <span class="merged" id="index.3n3B8t" title="原文 :  Set up Kubernetes "><a href="../../overview/k8s-setup/index.html">Kubernetesの設定</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/overview/database/" title="データベースの実行">
+        <span class="merged" id="index.4Kvv3k" title="原文 :  Run a database "><a href="../../overview/database/index.html">データベースの実行</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/" title="オペレータの管理">
+      <span class="merged" id="index.ld657" title="原文 :  Manage operators "><a href="../../managing-operators/index.html">オペレータの管理</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/installation/" title="オペレータのインストール">
+      <span class="merged" id="index.3Ct75u" title="原文 :  Install the operator "><a href="../../managing-operators/installation/index.html">オペレータのインストール</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/using-the-operator/" title="オペレータの使用">
+      <span class="merged" id="index.1A911Q" title="原文 :  Use the operator "><a href="../../managing-operators/using-the-operator/index.html"><b></b>オペレータの使用</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/using-the-operator/using-helm/" title="Helmの使用">
+        <span class="merged" id="index.4HSmKn" title="原文 :  Use Helm "><a href="../../managing-operators/using-the-operator/using-helm/index.html">Helmの使用</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/using-the-operator/the-rest-api/" title="REST API">
+        <span class="merged" id="index.1YhqXr" title="原文 :  The REST API "><a href="../../managing-operators/using-the-operator/the-rest-api/index.html"> REST API </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        parent
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/" title="WebLogicドメインの管理">
+      <span class="merged" id="index.26TtrU" title="原文 :  Manage WebLogic domains "><a href="../index.html">WebLogicドメインの管理</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/choosing-a-model/" title="ドメイン・ホーム・ソース・タイプの選択">
+      <span class="merged" id="index.2qXppk" title="原文 :  Choose a domain home source type "><a href="../choosing-a-model/index.html"><b></b>ドメイン・ホーム・ソース・タイプの選択</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/prepare/" title="ドメインを実行する準備">
+        <span class="merged" id="index.1l1t6i" title="原文 :  Prepare to run a domain "><a href="../prepare/index.html"><b></b>ドメイン実行の準備</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-resource/" title="ドメイン・リソース">
+        <span class="merged" id="index.3NODaI" title="原文 :  Domain resource "><a href="../domain-resource/index.html"><b></b>ドメイン・リソース</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/persistent-storage/" title="永続ストレージ">
+      <span class="merged" id="index.3JEnap" title="原文 :  Persistent storage "><a href="../persistent-storage/index.html"><b></b>永続ストレージ</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-in-image/" title="Domain in Image">
+      <span class="merged" id="index.c2vXW" title="原文 :  Domain in Image "><a href="../domain-in-image/index.html"> <b> </b>Domain in Image </a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-in-image/base-images/" title="ベース・イメージ">
+      <span class="merged" id="index.3utIg5" title="原文 :  Base images "><a href="../domain-in-image/base-images/index.html">ベース・イメージ</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/" title="Model in Image">
+      <span class="merged" id="index.4QAVBR" title="原文 :  Model in Image "><a href="../model-in-image/index.html"> <b> </b>Model in Image </a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/overview/" title="概要">
+        <span class="merged" id="index.32CaDx"  title="原文::  Overview "><a href="../model-in-image/overview/index.html"> <b> </b>概要 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/usage/" title="使用方法">
+        <span class="merged" id="index.2LnH8m"  title="原文::  Usage "><a href="../model-in-image/usage/index.html"> <b> </b>使用方法 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/model-files/" title="モデル・ファイル">
+        <span class="merged" id="index.4co5Eg" title="原文 :  Model files "><a href="../model-in-image/model-files/index.html"><b></b>モデル・ファイル</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/runtime-updates/" title="ランタイムの更新">
+        <span class="merged" id="index.XrFbL" title="原文 :  Runtime updates "><a href="../model-in-image/runtime-updates/index.html"><b></b>ランタイムの更新</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/debugging/" title="デバッグ">
+        <span class="merged" id="index.GdERF"  title="原文::  Debugging "><a href="../model-in-image/debugging/index.html"> <b> </b>デバッグ </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        parent
+        active
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/configoverrides/" title="構成のオーバーライド">
+      <span class="merged" id="index.4I3trP" title="原文 :  Configuration overrides "><a href="index.html"><b></b>構成のオーバーライド</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/ingress/" title="イングレス">
+      <span class="merged" id="index.34NYiL"  title="原文::  Ingress "><a href="../ingress/index.html"> <b> </b>イングレス </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/accessing-the-domain/" title="ドメインへのアクセス">
+      <span class="merged" id="index.37rn4S" title="原文 :  Access the domain "><a href="../accessing-the-domain/index.html"><b></b>ドメインへのアクセス</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/accessing-the-domain/wlst/" title="WLSTの使用">
+        <span class="merged" id="index.V7FVh"  title="原文::  Use WLST "><a href="../accessing-the-domain/wlst/index.html"> WLSTの使用 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/" title="ドメインのライフ・サイクル">
+      <span class="merged" id="index.4HE92g" title="原文 :  Domain life cycle "><a href="../domain-lifecycle/index.html"><b></b>ドメインのライフ・サイクル</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/startup/" title="起動と停止">
+        <span class="merged" id="index.1unaVJ" title="原文 :  Startup and shutdown "><a href="../domain-lifecycle/startup/index.html">起動と停止</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/restarting/" title="再起動">
+        <span class="merged" id="index.2x5hRD"  title="原文::  Restarting "><a href="../domain-lifecycle/restarting/index.html"> 再起動 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/scaling/" title="スケーリング">
+        <span class="merged" id="index.NFrEm"  title="原文::  Scaling "><a href="../domain-lifecycle/scaling/index.html"> スケーリング </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/introspection/" title="ドメイン・イントロスペクション">
+        <span class="merged" id="index.2sS1Qt" title="原文 :  Domain introspection "><a href="../domain-lifecycle/introspection/index.html">ドメイン・イントロスペクション</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-fmw-domains/" title="FMWドメインの管理">
+      <span class="merged" id="index.3IPnl7" title="原文 :  Manage FMW domains "><a href="../../managing-fmw-domains/index.html">FMWドメインの管理</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-fmw-domains/fmw-infra/" title="FMW Infrastructureドメインの管理">
+      <span class="merged" id="index.2FhQgq" title="原文 :  Manage FMW Infrastructure domains "><a href="../../managing-fmw-domains/fmw-infra/index.html">FMW Infrastructureドメインの管理</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/" title="CI/CDに関する考慮事項">
+      <span class="merged" id="index.3NbVjs" title="原文 :  CI/CD considerations "><a href="../../cicd/index.html">CI/CDに関する考慮事項</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/layering/" title="コンテナ・イメージ・レイヤー化">
+        <span class="merged" id="index.BeuKF" title="原文 :  Container image layering "><a href="../../cicd/layering/index.html">コンテナ・イメージ・レイヤー化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/why-layering-matters/" title="レイヤー化が重要な理由">
+        <span class="merged" id="index.1faWE0" title="原文 :  Why layering matters "><a href="../../cicd/why-layering-matters/index.html">レイヤー化が重要な理由</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/choose-an-approach/" title="アプローチの選択">
+        <span class="merged" id="index.2IHwHj" title="原文 :  Choose an approach "><a href="../../cicd/choose-an-approach/index.html">アプローチの選択</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/mutate-the-domain-layer/" title="ドメイン・レイヤーの変更">
+        <span class="merged" id="index.FqpA0" title="原文 :  Mutate the domain layer "><a href="../../cicd/mutate-the-domain-layer/index.html">ドメイン・レイヤーの変更</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/how-to-copy-domains/" title="ドメインのコピー">
+        <span class="merged" id="index.1fR3Ol" title="原文 :  Copy domains "><a href="../../cicd/how-to-copy-domains/index.html">ドメインのコピー</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/tools/" title="ツール">
+        <span class="merged" id="index.4clvbD"  title="原文::  Tools "><a href="../../cicd/tools/index.html"> ツール </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/istio/istio/" title="Istioサポート">
+        <span class="merged" id="index.2Q2l1J" title="原文 :  Istio support "><a href="../../istio/istio/index.html">Istioサポート</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/" title="サンプル">
+      <span class="merged" id="index.2CbTQi" title="原文 :  3. Samples "><a href="../../../samples/index.html"><b>3. </b>サンプル</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/" title="単純なサンプル">
+      <span class="merged" id="index.K1xCC" title="原文 :  Simple samples "><a href="../../../samples/simple/index.html"><b></b>単純なサンプル</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/credentials/" title="資格証明">
+      <span class="merged" id="index.4IcLtC"  title="原文::  Credentials "><a href="../../../samples/simple/credentials/index.html"> 資格証明 </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/storage/" title="ストレージ">
+      <span class="merged" id="index.1EadGD"  title="原文::  Storage "><a href="../../../samples/simple/storage/index.html"> ストレージ </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/" title="ドメイン">
+      <span class="merged" id="index.3HXhge" title="原文 :  Domains "><a href="../../../samples/simple/domains/index.html">ドメイン</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/manually-create-domain/" title="手動">
+      <span class="merged" id="index.3l1SuY" title="原文 :  Manually "><a href="../../../samples/simple/domains/manually-create-domain/index.html">手動</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/domain-home-on-pv/" title="Domain home on a PV">
+      <span class="merged" id="index.25o8Vx" title="原文 :  Domain home on a PV "><a href="../../../samples/simple/domains/domain-home-on-pv/index.html"> Domain home on a PV </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/domain-home-in-image/" title="Domain home in image">
+      <span class="merged" id="index.11xyOb" title="原文 :  Domain home in image "><a href="../../../samples/simple/domains/domain-home-in-image/index.html"> Domain home in image </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/" title="Model in image">
+      <span class="merged" id="index.2dU7ND" title="原文 :  Model in image "><a href="../../../samples/simple/domains/model-in-image/index.html"> Model in image </a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/prerequisites/" title="前提条件">
+        <span class="merged" id="index.1QWJma"  title="原文::  Prerequisites "><a href="../../../samples/simple/domains/model-in-image/prerequisites/index.html"> 前提条件 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/initial/" title="初期状態のユース・ケース">
+        <span class="merged" id="index.4bTV9P" title="原文 :  Initial use case "><a href="../../../samples/simple/domains/model-in-image/initial/index.html">初期状態のユース・ケース</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/update1/" title="更新1">
+        <span class="merged" id="index.1jvZ3N"  title="原文::  Update 1 "><a href="../../../samples/simple/domains/model-in-image/update1/index.html"> 更新1 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/update2/" title="更新2">
+        <span class="merged" id="index.40xZVM"  title="原文::  Update 2 "><a href="../../../samples/simple/domains/model-in-image/update2/index.html"> 更新2 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/update3/" title="更新3">
+        <span class="merged" id="index.K4X3M"  title="原文::  Update 3 "><a href="../../../samples/simple/domains/model-in-image/update3/index.html"> 更新3 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/cleanup/" title="クリーンアップ">
+        <span class="merged" id="index.ufwAc"  title="原文::  Cleanup "><a href="../../../samples/simple/domains/model-in-image/cleanup/index.html"> クリーンアップ </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/fmw-domain/" title="FMW Infrastructureドメイン">
+      <span class="merged" id="index.3Q16QH" title="原文 :  FMW Infrastructure domain "><a href="../../../samples/simple/domains/fmw-domain/index.html">FMW Infrastructureドメイン</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/delete-domain/" title="ドメインに関連付けられたリソースの削除">
+      <span class="merged" id="index.2KcxyC" title="原文 :  Delete resources associated with the domain "><a href="../../../samples/simple/domains/delete-domain/index.html">ドメインに関連付けられたリソースの削除</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/lifecycle/" title="ドメイン・ライフサイクル操作">
+      <span class="merged" id="index.eLNIW" title="原文 :  Domain lifecycle operations "><a href="../../../samples/simple/domains/lifecycle/index.html">ドメイン・ライフサイクル操作</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/rest/" title="REST API">
+      <span class="merged" id="index.3j3mzo"  title="原文::  REST APIs "><a href="../../../samples/simple/rest/index.html"> REST API </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/ingress/" title="イングレス">
+      <span class="merged" id="index.4YxPa0"  title="原文::  Ingress "><a href="../../../samples/simple/ingress/index.html"> イングレス </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/elastic-stack/" title="エラスティック・スタック">
+      <span class="merged" id="index.2qmaC" title="原文 :  Elastic Stack "><a href="../../../samples/simple/elastic-stack/index.html">エラスティック・スタック</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/elastic-stack/operator/" title="オペレータ">
+      <span class="merged" id="index.1VALVu" title="原文 :  Operator "><a href="../../../samples/simple/elastic-stack/operator/index.html">オペレータ</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/elastic-stack/weblogic-domain/" title="WebLogicドメイン">
+      <span class="merged" id="index.1l11Rf" title="原文 :  WebLogic domain "><a href="../../../samples/simple/elastic-stack/weblogic-domain/index.html">WebLogicドメイン</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/azure-kubernetes-service/" title="Azure Kubernetes Service">
+      <span class="merged" id="index.2D8uwb"  title="原文::  Azure Kubernetes Service "><a href="../../../samples/simple/azure-kubernetes-service/index.html"> Azure Kubernetes Service </a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/azure-kubernetes-service/domain-on-pv/" title="Domain home on a PV">
+        <span class="merged" id="index.4S5NJa" title="原文 :  Domain home on a PV "><a href="../../../samples/simple/azure-kubernetes-service/domain-on-pv/index.html"> Domain home on a PV </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/azure-kubernetes-service/model-in-image/" title="Model in Image">
+        <span class="merged" id="index.3P0V9E" title="原文 :  Model in Image "><a href="../../../samples/simple/azure-kubernetes-service/model-in-image/index.html"> Model in Image </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/azure-kubernetes-service/troubleshooting/" title="トラブルシューティング">
+        <span class="merged" id="index.KUGQw"  title="原文::  Troubleshooting "><a href="../../../samples/simple/azure-kubernetes-service/troubleshooting/index.html"> トラブルシューティング </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/tanzu-kubernetes-service/" title="Tanzu Kubernetes Service">
+      <span class="merged" id="index.1nEqUl" title="原文 :  Tanzu Kubernetes Service "><a href="../../../samples/simple/tanzu-kubernetes-service/index.html"> Tanzu Kubernetes Service </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/developerguide/" title="開発者ガイド">
+      <span class="merged" id="index.1qgqU4" title="原文 :  4. Developer Guide "><a href="../../../developerguide/index.html"><b>4. </b>開発者ガイド</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/requirements/" title="要件">
+        <span class="merged" id="index.3x0RN3"  title="原文::  Requirements "><a href="../../../developerguide/requirements/index.html"> 要件 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/building/" title="ビルディング">
+        <span class="merged" id="index.40qLX8"  title="原文::  Building "><a href="../../../developerguide/building/index.html"> ビルディング </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/integration-tests/" title="統合テスト">
+        <span class="merged" id="index.1OtFSa" title="原文 :  Integration tests "><a href="../../../developerguide/integration-tests/index.html">統合テスト</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/branching/" title="分岐">
+        <span class="merged" id="index.2pWEdC" title="原文 :  Branching "><a href="../../../developerguide/branching/index.html">ブランチ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/coding-standards/" title="コーディング標準">
+        <span class="merged" id="index.20Yctv" title="原文 :  Coding standards "><a href="../../../developerguide/coding-standards/index.html">コーディング標準</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/code-structure/" title="コード構造">
+        <span class="merged" id="index.4MFwNz" title="原文 :  Code structure "><a href="../../../developerguide/code-structure/index.html">コード構造</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/asynchronous-call-model/" title="非同期コール・モデル">
+        <span class="merged" id="index.4d2xGa" title="原文 :  Asynchronous call model "><a href="../../../developerguide/asynchronous-call-model/index.html">非同期コール・モデル</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/domain-processing/" title="ドメイン処理">
+        <span class="merged" id="index.4VIwPr" title="原文 :  Domain processing "><a href="../../../developerguide/domain-processing/index.html">ドメイン処理</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/documentation/" title="ドキュメント">
+        <span class="merged" id="index.3Yy1Hd"  title="原文::  Documentation "><a href="../../../developerguide/documentation/index.html"> ドキュメント </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/backwards-compatibility/" title="下位互換性">
+        <span class="merged" id="index.2cxMTM"  title="原文::  Backward compatibility "><a href="../../../developerguide/backwards-compatibility/index.html"> 下位互換性 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/reference/" title="リファレンス">
+      <span class="merged" id="index.3ATnIf" title="原文 :  5. Reference "><a href="../../../reference/index.html"><b>5. </b>リファレンス</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/reference/javadoc/" title="Javadoc">
+        <span class="merged" id="index.1HsE6b"  title="原文::  Javadoc "><a href="../../../reference/javadoc/index.html"> Javadoc </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/reference/swagger/" title="Swagger">
+        <span class="merged" id="index.3dfwSN"  title="原文::  Swagger "><a href="../../../reference/swagger/index.html"> Swagger </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/reference/domain-resource/" title="ドメイン・リソース">
+        <span class="merged" id="index.48qYb0" title="原文 :  Domain resource "><a href="../../../reference/domain-resource/index.html">ドメイン・リソース</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/security/" title="セキュリティ">
+      <span class="merged" id="index.2UPDCk" title="原文 :  6. Security "><a href="../../../security/index.html"><b>6. </b>セキュリティ</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/certificates/" title="証明書">
+        <span class="merged" id="index.443sZH"  title="原文::  Certificates "><a href="../../../security/certificates/index.html"> 証明書 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/security/domain-security/" title="ドメイン・セキュリティ">
+      <span class="merged" id="index.cKnm" title="原文 :  Domain security "><a href="../../../security/domain-security/index.html">ドメイン・セキュリティ</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/domain-security/image-protection/" title="コンテナ・イメージ保護">
+        <span class="merged" id="index.3aLBX2" title="原文 :  Container image protection "><a href="../../../security/domain-security/image-protection/index.html">コンテナ・イメージ保護</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/domain-security/weblogic-channels/" title="チャネル">
+        <span class="merged" id="index.RgLcn"  title="原文::  Channels "><a href="../../../security/domain-security/weblogic-channels/index.html"> チャネル </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/encryption/" title="暗号化">
+        <span class="merged" id="index.25RNw3"  title="原文::  Encryption "><a href="../../../security/encryption/index.html"> 暗号化 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/service-accounts/" title="サービス・アカウント">
+        <span class="merged" id="index.3d6FM6"  title="原文::  Service accounts "><a href="../../../security/service-accounts/index.html"> サービス・アカウント </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/rbac/" title="RBAC">
+        <span class="merged" id="index.4UCyOe"  title="原文::  RBAC "><a href="../../../security/rbac/index.html"> RBAC </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/secrets/" title="シークレット">
+        <span class="merged" id="index.1WGG6b"  title="原文::  Secrets "><a href="../../../security/secrets/index.html"> シークレット </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/openshift/" title="OpenShift">
+        <span class="merged" id="index.1LoQ4z"  title="原文::  OpenShift "><a href="../../../security/openshift/index.html"> OpenShift </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/faq/" title=" よくある質問">
+      <span class="merged" id="index.l0Zmb"  title="原文::  Frequently asked questions "><a href="../../../faq/index.html"> よくある質問 </a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/namespace-management/" title="ドメイン・ネームスペースの管理">
+        <span class="merged" id="index.oBerI" title="原文 :  Managing domain namespaces "><a href="../../../faq/namespace-management/index.html">ドメイン・ネームスペースの管理</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="イメージをプルできません">
+        <span class="merged" id="index.4D9OOz" title="原文 :  Cannot pull image "><a href="../../../faq/cannot-pull-image/index.html">イメージをプルできません</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="起動アイデンティティが無効">
+        <span class="merged" id="index.2qYRYe" title="原文 :  Boot identity not valid "><a href="../../../faq/boot-identity-not-valid/index.html">起動アイデンティティが無効</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="ドメイン・シークレットの不一致">
+        <span class="merged" id="index.CHnpG" title="原文 :  Domain secret mismatch "><a href="../../../faq/domain-secret-mismatch/index.html">ドメイン・シークレットの不一致</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/node-heating/" title="ノード・ヒーティングの問題">
+        <span class="merged" id="index.1Ohaqw" title="原文 :  Node heating problem "><a href="../../../faq/node-heating/index.html">ノード・ヒーティングの問題</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/fan/" title="高速アプリケーション通知の無効化">
+        <span class="merged" id="index.10gG2o" title="原文 :  Disabling Fast Application Notifications "><a href="../../../faq/fan/index.html">高速アプリケーション通知の無効化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/oci-fss-pv/" title="永続ボリュームに対するOCIファイル・ストレージ(FSS)の使用">
+        <span class="merged" id="index.40erQN" title="原文 :  Using OCI File Storage (FSS) for persistent volumes "><a href="../../../faq/oci-fss-pv/index.html">永続ボリュームに対するOCIファイル・ストレージ(FSS)の使用</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/oci-lb/" title="OCIロード・バランサの使用">
+        <span class="merged" id="index.7h3BH" title="原文 :  Using an OCI load balancer "><a href="../../../faq/oci-lb/index.html">OCIロード・バランサの使用</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/volumes/" title="PersistentVolumeClaimへのアクセスの提供">
+        <span class="merged" id="index.hFhEM" title="原文 :  Providing access to a PersistentVolumeClaim "><a href="../../../faq/volumes/index.html">PersistentVolumeClaimへのアクセスの提供</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/configmaps/" title="ConfigMapへのアクセスの提供">
+        <span class="merged" id="index.ApkZD" title="原文 :  Providing access to a ConfigMap "><a href="../../../faq/configmaps/index.html">ConfigMapへのアクセスの提供</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/external-clients/" title="外部WebLogicクライアント">
+        <span class="merged" id="index.K3FLd" title="原文 :  External WebLogic clients "><a href="../../../faq/external-clients/index.html">外部WebLogicクライアント</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/coherence-requirements/" title="Coherenceの要件">
+        <span class="merged" id="index.47KQt3" title="原文 :  Coherence requirements "><a href="../../../faq/coherence-requirements/index.html">Coherenceの要件</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/resource-settings/" title="ポッド・メモリーとCPUリソース">
+        <span class="merged" id="index.4Qal7a" title="原文 :  Pod memory and CPU resources "><a href="../../../faq/resource-settings/index.html">ポッド・メモリーとCPUリソース</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+        <li><span class="merged" id="index.1X27Sv"  title="原文:: Release Notes"><a class="padding" href="../../../release-notes">リリース・ノート</a></span></li>
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p><span class="merged" id="index.4behA5" title="原文 : Created with from Oracle"><a href="https://www.oracle.com">Oracle</a>から<i class="fas fa-heart"></i>を使用して作成</span></p>
+<p>&nbsp;</p>
+<p><span class="merged" id="index.3sNKIh" title="原文 :  GitHub repo"><a href="https://github.com/oracle/weblogic-kubernetes-operator"><i class="fab fa-github"></i> GitHubレポ</a></span></p>
+<p><span class="merged" id="index.3Imawx" title="原文 :  Public Slack #operator"><a href="https://weblogic-slack-inviter.herokuapp.com/"><i class="fab fa-slack"></i> パブリックSlack #operator</a></span></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span class="merged" id="index.2WFEPT" title="原文 :  &gt; User Guide &gt; Manage WebLogic domains &gt; Configuration overrides "><span id="sidebar-toggle-span"><a data-sidebar-toggle="" href="index.html#" id="sidebar-toggle"><i class="fas fa-bars"></i></a></span> <span id="toc-menu"><i class="fas fa-list-alt"></i></span> <span class="links"><a href='../../../index.html'></a> > <a href='../../index.html'>ユーザー・ガイド</a> > <a href='../index.html'>WebLogicドメインの管理</a> > 構成オーバーライド</span></span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+        <li><span class="merged" id="index.1bJUqu"  title="原文:: Overview"><a href="index.html#overview">概要</a></span></li>
+        <li><span class="merged" id="index.qG0s2"  title="原文:: Prerequisites"><a href="index.html#prerequisites">前提条件</a></span></li>
+        <li><span class="merged" id="index.4WOXvq" title="原文 : Typical overrides"><a href="index.html#typical-overrides">一般的なオーバーライド</a></span></li>
+        <li><span class="merged" id="index.UhhRa" title="原文 : Unsupported overrides"><a href="index.html#unsupported-overrides">サポートされないオーバーライド</a></span></li>
+        <li><span class="merged" id="index.4Opz1c" title="原文 : Overrides distribution"><a href="index.html#overrides-distribution">配分の上書き</a></span></li>
+        <li><span class="merged" id="index.3HEx1H" title="原文 : Override template names and syntax"><a href="index.html#override-template-names-and-syntax">テンプレート名および構文のオーバーライド</a></span></li>
+        <li><span class="merged" id="index.1h8FCz" title="原文 : Step-by-step guide"><a href="index.html#step-by-step-guide">段階的なガイド</a></span></li>
+        <li><span class="merged" id="index.2OwPPp"  title="原文:: Debugging"><a href="index.html#debugging">デバッグ</a></span></li>
+        <li><span class="merged" id="index.2lVa3a" title="原文 : Internal design flow"><a href="index.html#internal-design-flow">内部設計フロー</a></span></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              <span class="merged" id="index.1FYeeS" title="原文 : Configuration overrides">構成のオーバーライド</span>
+            </h1>
+          
+
+        
+
+
+
+
+	<h4 id="contents"><span class="merged" id="index.1Q34Zl"  title="原文:: Contents">目次</span></h4>
+<ul>
+<li><span class="merged" id="index.1bJUqu.1"  title="原文:: Overview"><a href="index.html#overview">概要</a></span></li>
+<li><span class="merged" id="index.qG0s2.1"  title="原文:: Prerequisites"><a href="index.html#prerequisites">前提条件</a></span></li>
+<li><span class="merged" id="index.4WOXvq.1" title="原文 : Typical overrides"><a href="index.html#typical-overrides">一般的なオーバーライド</a></span></li>
+<li><span class="merged" id="index.UhhRa.1" title="原文 : Unsupported overrides"><a href="index.html#unsupported-overrides">サポートされないオーバーライド</a></span></li>
+<li><span class="merged" id="index.4Opz1c.1" title="原文 : Overrides distribution"><a href="index.html#overrides-distribution">配分の上書き</a></span></li>
+<li><span class="merged" id="index.3HEx1H.1" title="原文 : Override template names and syntax"><a href="index.html#override-template-names-and-syntax">テンプレート名および構文のオーバーライド</a></span>
+<ul>
+<li><span class="merged" id="index.3zqmSU" title="原文 : Override template names"><a href="index.html#override-template-names">テンプレート名のオーバーライド</a></span></li>
+<li><span class="merged" id="index.1Sbb5z" title="原文 : Override template schemas"><a href="index.html#override-template-schemas">テンプレート・スキーマのオーバーライド</a></span></li>
+<li><span class="merged" id="index.3b8jTN" title="原文 : Override template macros"><a href="index.html#override-template-macros">テンプレート・マクロのオーバーライド</a></span></li>
+<li><span class="merged" id="index.2kxlr0" title="原文 : Override template syntax special requirements"><a href="index.html#override-template-syntax-special-requirements">テンプレート構文の特別な要件のオーバーライド</a></span></li>
+<li><span class="merged" id="index.2UVSkA" title="原文 : Override template samples"><a href="index.html#override-template-samples">テンプレート・サンプルのオーバーライド</a></span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.1h8FCz.1" title="原文 : Step-by-step guide"><a href="index.html#step-by-step-guide">段階的なガイド</a></span></li>
+<li><span class="merged" id="index.2OwPPp.1"  title="原文:: Debugging"><a href="index.html#debugging">デバッグ</a></span></li>
+<li><span class="merged" id="index.2lVa3a.1" title="原文 : Internal design flow"><a href="index.html#internal-design-flow">内部設計フロー</a></span></li>
+</ul>
+<hr>
+<h3 id="overview"><span class="merged" id="index.YrpRV"  title="原文:: Overview">概要</span></h3>
+
+<div class="notices note" ><p><span class="merged" id="index.2F7lH5.spl1" title="原文 : Configuration overrides can only be used in combination with Domain in Image and Domain in PV domains.">構成オーバーライドは、Domain in ImageおよびDomain in PVドメインとの組合せでのみ使用できます。</span> <span class="merged" id="index.2F7lH5.spl2" title="原文 : For Model in Image domains, use Model in Image Runtime Updates instead.">Model in Imageドメインの場合は、かわりに<a href="../model-in-image/runtime-updates/index.html">「Model in Imageランタイムの更新」</a>を使用します。</span> </p>
+</div>
+
+<p><span class="merged" id="index.3aJq7A.spl1" title="原文 : Use configuration overrides (also called situational configuration) to customize a Domain in Image or Domain in PV domain&rsquo;s WebLogic domain configuration without modifying the domain&rsquo;s actual config.xml or system resource files.">構成オーバーライド(<em>「状況構成」</em>とも呼ばれる)を使用して、ドメインの実際の<code>config.xml</code>またはシステム・リソース・ファイルを変更せずに、Domain in ImageまたはDomain in PVドメインのWebLogicドメイン構成をカスタマイズします。</span> <span class="merged" id="index.3aJq7A.spl2" title="原文 : For example, you may want to override a JDBC data source XML module user name, password, and URL so that it references a local database.">たとえば、JDBCデータ・ソースのXMLモジュールのユーザー名、パスワードおよびURLを、ローカル・データベースを参照するようにオーバーライドできます。</span> </p>
+<p><span class="merged" id="index.164sd2.spl1" title="原文 : You can use overrides to customize domains as they are moved from QA to production, are deployed to different sites, or are even deployed multiple times at the same site.">オーバーライドを使用して、QAから本番に移行するとき、異なるサイトにデプロイされるとき、または同じサイトに複数回デプロイされるときに、ドメインをカスタマイズできます。</span> <span class="merged" id="index.164sd2.spl2" title="原文 : Beginning with operator version 3.0.0, you can now modify configuration overrides for running WebLogic Server instances and have these new overrides take effect dynamically.">オペレータ・バージョンの3.0.0から、実行中のWebLogic Serverインスタンスの構成オーバーライドを変更して、これらの新しいオーバーライドを動的に有効にできるようになりました。</span> <span class="merged" id="index.164sd2.spl3" title="原文 : There are limitations to the WebLogic configuration attributes that can be modified by overrides and only changes to dynamic configuration MBean attributes may be changed while a server is running.">オーバーライドによって変更できるWebLogic構成属性に対する<a href="index.html#unsupported-overrides">「制限事項」</a>があり、サーバーの実行中に変更できるのは動的構成のMBean属性に対する変更のみです。</span> <span class="merged" id="index.164sd2.spl4" title="原文 : Other changes, specifically overrides to non-dynamic MBeans, must be applied when servers are starting or restarting.">その他の変更、特に動的でないMBeansに対するオーバーライドは、サーバーの起動時または再起動時に適用する必要があります。</span> </p>
+<h4 id="how-do-you-specify-overrides"><span class="merged" id="index.3ZeAUq" title="原文 : How do you specify overrides?">どのようにオーバーライドを指定しますか。</span></h4>
+<ul>
+<li><span class="merged" id="index.2rSBFC.spl1" title="原文 : Make sure your domain home meets the prerequisites.">ドメイン・ホームが前提条件を満たしていることを確認します。</span> <span class="merged" id="index.2rSBFC.spl2"  title="原文:: See Prerequisites."><a href="index.html#prerequisites">「前提条件」</a>を参照してください。</span> </li>
+<li><span class="merged" id="index.237VVG.spl1" title="原文 : Make sure your overrides are supported.">オーバーライドがサポートされていることを確認します。</span> <span class="merged" id="index.237VVG.spl2" title="原文 : See Typical overrides and Unsupported overrides."><a href="index.html#typical-overrides">「一般的なオーバーライド」</a>および<a href="index.html#unsupported-overrides">「サポートされないオーバーライド」</a>を参照してください。</span> </li>
+<li><span class="merged" id="index.1nFNir" title="原文 : Create a Kubernetes ConfigMap that contains:">次のものを含むKubernetes ConfigMapを作成します:</span>
+<ul>
+<li><span class="merged" id="index.40sk2Z" title="原文 : Override templates (also known as situational configuration templates), with names and syntax as described in Override template names and syntax."><a href="index.html#override-template-names-and-syntax">「テンプレート名および構文のオーバーライド」</a>で説明されている名前と構文を使用して、テンプレート(状況構成テンプレートとも呼ばれます)をオーバーライドします。</span></li>
+<li><span class="merged" id="index.mMn3Y" title="原文 : A file named version.txt that contains the exact string 2.0.">正確な文字列<code>2.0</code>を含む<code>version.txt</code>という名前のファイル。</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.28hj9G" title="原文 : Set your Domain configuration.overridesConfigMap field to the name of this ConfigMap.">ドメイン<code>configuration.overridesConfigMap</code>フィールドをこのConfigMapの名前に構成します。</span></li>
+<li><span class="merged" id="index.nH0Y8" title="原文 : If templates leverage secret macros:">テンプレートでシークレット・マクロを利用する場合:</span>
+<ul>
+<li><span class="merged" id="index.4LjljN" title="原文 : Create Kubernetes Secrets that contain template macro values.">テンプレート・マクロ値を含むKubernetesシークレットを作成します。</span></li>
+<li><span class="merged" id="index.1kIFI0" title="原文 : Set your domain configuration.secrets to reference the aforementioned Secrets.">前述のシークレットを参照するようにドメイン<code>configuration.secrets</code>を設定します。</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.1MYDqL" title="原文 : If your configuration overrides modify non-dynamic MBean attributes and you currently have WebLogic Server instances from this domain running:">構成オーバーライドによって動的でないMBean属性が変更され、現在このドメインのWebLogic Serverインスタンスが実行されている場合:</span>
+<ul>
+<li><span class="merged" id="index.18jeOT" title="原文 : Decide if the changes you are making to non-dynamic MBean attributes can be applied by rolling the affected clusters or Managed Server instances or if the change required a full domain shutdown.">影響を受けるクラスタまたは管理対象サーバー・インスタンスをローリングすることで、動的でないMBean属性に加えた変更を適用できるかどうか、または変更に完全なドメイン停止が必要かどうかを決定します。</span></li>
+<li><span class="merged" id="index.28155y.spl1" title="原文 : If a full domain shut down is requried, stop all running WebLogic Server instance Pods in your domain and then restart them.">ドメイン全体の停止が必要な場合は、ドメイン内で実行中のすべてのWebLogic Serverインスタンス・ポッドを停止してから再起動します。</span> <span class="merged" id="index.28155y.spl2" title="原文 : (See Starting and stopping servers.)">(<a href="../domain-lifecycle/startup/index.html#starting-and-stopping-servers">「サーバーの起動と停止」</a>を参照。)</span> </li>
+<li><span class="merged" id="index.311TTQ.spl1" title="原文 : Otherwise, simply restart your domain, which includes rolling clusters.">それ以外の場合は、ローリング・クラスタを含むドメインを再起動するだけです。</span> <span class="merged" id="index.311TTQ.spl2" title="原文 : (See Restarting servers.)">(<a href="../domain-lifecycle/startup/index.html#restarting-servers">「サーバーの再起動」</a>を参照。)</span> </li>
+</ul>
+</li>
+<li><span class="merged" id="index.1Dzr5u.spl1" title="原文 : Verify your overrides are taking effect.">オーバーライドが有効になっていることを確認します。</span> <span class="merged" id="index.1Dzr5u.spl2" title="原文 : (See Debugging).">(<a href="index.html#debugging">「デバッグ」</a>を参照してください)。</span> </li>
+</ul>
+<p><span class="merged" id="index.102gGS" title="原文 : For a detailed walk-through of these steps, see the Step-by-step guide.">これらのステップの詳細は、<a href="index.html#step-by-step-guide">「段階的なガイド」</a>を参照してください。</span></p>
+<h4 id="how-do-overrides-work-during-runtime"><span class="merged" id="index.VZZ2b" title="原文 : How do overrides work during runtime?">実行時のオーバーライドの動作</span></h4>
+<ul>
+<li><span class="merged" id="index.36ZDCx" title="原文 : Configuration overrides are processed during the operator&rsquo;s introspection phase.">構成のオーバーライドは、オペレータの<a href="../domain-lifecycle/introspection/index.html">「イントロスペクション」</a>フェーズで処理されます。</span></li>
+<li><span class="merged" id="index.4Nt3cO" title="原文 : Introspection automatically occurs when:">イントロスペクションは次の場合に自動的に行われます:</span>
+<ol>
+<li><span class="merged" id="index.3dWQMS.spl1" title="原文 : The operator is starting a WebLogic Server instance when there are currently no other servers running.">オペレータは、他のサーバーが現在実行されていないときにWebLogic Serverインスタンスを起動しています。</span> <span class="merged" id="index.3dWQMS.spl2" title="原文 : This occurs when the operator first starts servers for a domain or when starting servers following a full domain shutdown.">これは、オペレータが最初にドメインのサーバーを起動したとき、または完全なドメイン停止後にサーバーを起動したときに発生します。</span> </li>
+<li><span class="merged" id="index.1jNa5m.spl1" title="原文 : For Model in Image, the operator determines that at least one WebLogic Server instance that is currently running must be shut down and restarted.">Model in Imageの場合、オペレータは、現在実行中のWebLogic Serverインスタンスを停止して再起動する必要があると判断します。</span> <span class="merged" id="index.1jNa5m.spl2" title="原文 : This could be a rolling of one or more clusters, the shut down and restart of one or more WebLogic Server instances, or a combination.">これには、1つ以上のクラスタのローリング、1つ以上のWebLogic Serverインスタンスの停止と再起動、またはこれらの組合せがあります。</span> </li>
+</ol>
+</li>
+<li><span class="merged" id="index.jV897" title="原文 : You can initiate introspection by changing the value of the Domain introspectVersion field.">ドメイン<code>introspectVersion</code>フィールドの値を変更して、<a href="../domain-lifecycle/introspection/index.html#initiating-introspection">「イントロスペクションの開始」</a>を実行できます。</span></li>
+<li><span class="merged" id="index.1OX2HX" title="原文 : For configuration overrides and during introspection, the operator will:">構成オーバーライドの場合、およびイントロスペクション時に、オペレータは次のことを行います:</span>
+<ul>
+<li><span class="merged" id="index.1rVlMQ" title="原文 : Resolve any macros in your override templates.">オーバーライド・テンプレートのマクロを解決します。</span></li>
+<li><span class="merged" id="index.sAblD" title="原文 : Place expanded override templates in the optconfig directory located in each WebLogic domain home directory.">拡張されたオーバーライド・テンプレートを、各WebLogicドメイン・ホーム・ディレクトリにある<code>optconfig</code>ディレクトリに配置します。</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.29475J" title="原文 : When the WebLogic Server instances start, they will:">WebLogic Serverインスタンスが起動すると、次の処理が行われます:</span>
+<ul>
+<li><span class="merged" id="index.1RKTta" title="原文 : Automatically load the override files from the optconfig directory.">オーバーライド・ファイルを<code>optconfig</code>ディレクトリから自動的にロードします。</span></li>
+<li><span class="merged" id="index.1nMWlI" title="原文 : Use the override values in the override files instead of the values specified in their config.xml or system resource XML files."><code>config.xml</code>またはシステム・リソースのXMLファイルで指定された値のかわりに、オーバーライド・ファイルのオーバーライド値を使用します。</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.4gespQ.spl1" title="原文 : WebLogic Server instances monitor the files in the optconfig directory so that if these files change while the server is running, WebLogic will detect and use the new configuration values based on the updated contents of these files.">WebLogic Serverインスタンスは、サーバーの実行中にこれらのファイルが変更された場合に、WebLogicがこれらのファイルの更新された内容に基づいて新しい構成値を検出して使用するように、<code>optconfig</code>ディレクトリ内のファイルを監視します。</span> <span class="merged" id="index.4gespQ.spl2" title="原文 : This only works for changes to configuration overrides related to dynamic configuration MBean attributes.">これは、動的構成MBean属性に関連する構成オーバーライドの変更に対してのみ機能します。</span> </li>
+</ul>
+<p><span class="merged" id="index.1NhSki" title="原文 : For a detailed walk-through of the runtime flow, see the Internal design flow.">ランタイム・フローの詳細は、<a href="index.html#internal-design-flow">「内部設計フロー」</a>を参照してください。</span></p>
+<hr>
+<h3 id="prerequisites"><span class="merged" id="index.2LZvWc"  title="原文:: Prerequisites">前提条件</span></h3>
+<ul>
+<li>
+<p><span class="merged" id="index.3SDkTk.spl1" title="原文 : Configuration overrides can be used in combination with Domain in Image and Domain in PV domains.">構成オーバーライドは、Domain in ImageおよびDomain in PVドメインと組み合せて使用できます。</span> <span class="merged" id="index.3SDkTk.spl2" title="原文 : For Model in Image domains (introduced in 3.0.0), use Model in Image Runtime Updates instead.">Model in Imageドメイン(3.0.0で導入)の場合は、かわりに<a href="../model-in-image/runtime-updates/index.html">「Model in Imageランタイムの更新」</a>を使用します。</span> </p>
+</li>
+<li>
+<p><span class="merged" id="index.SUZEb.spl1" title="原文 : A WebLogic domain home must not contain any configuration overrides XML file in its optconfig directory that was not placed there by the operator.">WebLogicドメイン・ホームの<code>optconfig</code>ディレクトリに、オペレータによって配置されていない構成オーバーライドXMLファイルを含めることはできません。</span> <span class="merged" id="index.SUZEb.spl2" title="原文 : Any existing configuration overrides XML files in this directory will be deleted and replaced by your operator override templates, if any.">このディレクトリ内の既存の構成オーバーライドXMLファイルはすべて削除され、オペレータ・オーバーライド・テンプレート(存在する場合)に置き換えられます。</span> </p>
+</li>
+<li>
+<p><span class="merged" id="index.3m64ax.spl1" title="原文 : If you want to override a JDBC, JMS, or WLDF (diagnostics) module, then the original module must be located in your domain home config/jdbc, config/jms, and config/diagnostics directory, respectively.">JDBC、JMSまたはWLDF (診断)モジュールをオーバーライドする場合は、元のモジュールをそれぞれドメイン・ホームの<code>config/jdbc</code>、<code>config/jms</code>および<code>config/diagnostics</code>ディレクトリに配置する必要があります。</span> <span class="merged" id="index.3m64ax.spl2" title="原文 : These are the default locations for these types of modules.">これらは、これらのタイプのモジュールのデフォルトのロケーションです。</span> </p>
+</li>
+</ul>
+<hr>
+<h3 id="typical-overrides"><span class="merged" id="index.4Mnyk9" title="原文 : Typical overrides">一般的なオーバーライド</span></h3>
+<p><span class="merged" id="index.3gwRGz" title="原文 : Typical attributes for overrides include:">オーバーライドの一般的な属性は次のとおりです:</span></p>
+<ul>
+<li><span class="merged" id="index.49YRhh" title="原文 : User names, passwords, and URLs for:">次のユーザー名、パスワードおよびURL:</span>
+<ul>
+<li><span class="merged" id="index.A5XKw"  title="原文:: JDBC data sources">JDBCデータ・ソース</span></li>
+<li><span class="merged" id="index.1UBqBY" title="原文 : JMS bridges, foreign servers, and SAF">JMSブリッジ、外部サーバーおよびSAF</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.3iRt8" title="原文 : Network channel external/public addresses">ネットワーク・チャネルの外部/パブリック・アドレス</span>
+<ul>
+<li><span class="merged" id="index.4PG919" title="原文 : For remote RMI clients (T3, JMS, EJB)">リモートRMIクライアント(T3、JMS、EJB)の場合</span></li>
+<li><span class="merged" id="index.3FVuL2" title="原文 : For remote WLST clients">リモートWLSTクライアントの場合</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.3wnjIU" title="原文 : Network channel external/public ports">ネットワーク・チャネルの外部/パブリック・ポート</span>
+<ul>
+<li><span class="merged" id="index.4PG919.1" title="原文 : For remote RMI clients (T3, JMS, EJB)">リモートRMIクライアント(T3、JMS、EJB)の場合</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.1d0jt8"  title="原文:: Debugging">デバッグ</span></li>
+<li><span class="merged" id="index.dS7q" title="原文 : Tuning (MaxMessageSize, and such)">チューニング(<code>MaxMessageSize</code>など)</span></li>
+</ul>
+<p><span class="merged" id="index.NqXs2" title="原文 : See overrides distribution for a discussion of distributing new or changed configuration overrides to already running WebLogic Server instances.">新規または変更された構成オーバーライドを、すでに実行中のWebLogic Serverインスタンスに配布する方法については、<a href="index.html#overrides-distribution">「配分の上書き」</a>を参照してください。</span></p>
+<hr>
+<h3 id="unsupported-overrides"><span class="merged" id="index.1iPc7F" title="原文 : Unsupported overrides">サポートされないオーバーライド</span></h3>
+<p><span class="merged" id="index.4alg9r" title="原文 : IMPORTANT: The operator does not support customer-provided overrides in the following areas."><strong>重要: オペレータは、次の領域での顧客指定の上書きをサポートしていません。</strong></span></p>
+<ul>
+<li><span class="merged" id="index.11qcEZ" title="原文 : Domain topology (cluster members)">ドメイン・トポロジ(クラスタ・メンバー)</span></li>
+<li><span class="merged" id="index.3QkXVB" title="原文 : Network channel listen address, port, and enabled configuration">ネットワーク・チャネルのリスニング・アドレス、ポートおよび有効な構成</span></li>
+<li><span class="merged" id="index.1EWTvB" title="原文 : Server and domain log locations">サーバーおよびドメインのログのロケーション</span></li>
+<li><span class="merged" id="index.RRkDs" title="原文 : Node Manager related configuration">ノード・マネージャ関連の構成</span></li>
+<li><span class="merged" id="index.33cHn5" title="原文 : Changing any existing MBean name">既存のMBean名の変更</span></li>
+<li><span class="merged" id="index.2REDMf" title="原文 : Adding or removing a module (for example, a JDBC module)">モジュール(JDBCモジュールなど)の追加または削除</span></li>
+</ul>
+<p><span class="merged" id="index.5KYj1" title="原文 : Specifically, do not use custom overrides for:"><strong>具体的には、次の場合にカスタム・オーバーライドを使用しないでください:</strong></span></p>
+<ul>
+<li><span class="merged" id="index.3cD90y" title="原文 : Adding or removing:">追加または削除:</span>
+<ul>
+<li><span class="merged" id="index.2LZxtr"  title="原文:: Servers">サーバー</span></li>
+<li><span class="merged" id="index.OyUcT"  title="原文:: Clusters">クラスタ</span></li>
+<li><span class="merged" id="index.1TRrtQ" title="原文 : Network Access Points (custom channels)">ネットワーク・アクセス・ポイント(カスタム・チャネル)</span></li>
+<li><span class="merged" id="index.47VrhL"  title="原文:: Modules">モジュール</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.3tyCz" title="原文 : Changing any of the following:">次のいずれかの変更:</span>
+<ul>
+<li><span class="merged" id="index.49r1Ln" title="原文 : Dynamic cluster size">動的クラスタ・サイズ</span></li>
+<li><span class="merged" id="index.3mK4Q4" title="原文 : Default, SSL, and Admin channel Enabled, listen address, and port">デフォルト、SSLおよび管理チャネル<code>Enabled</code>、リスニング・アドレスおよびポート</span></li>
+<li><span class="merged" id="index.2ekyXA" title="原文 : Network Access Point (custom channel), listen address, or port">ネットワーク・アクセス・ポイント(カスタム・チャネル)、リスニング・アドレスまたはポート</span></li>
+<li><span class="merged" id="index.3dLgCt" title="原文 : Server and domain log locations - use the logHome domain setting instead">サーバーおよびドメインのログのロケーション - かわりに<code>logHome</code>ドメイン設定を使用してください</span></li>
+<li><span class="merged" id="index.152mJi" title="原文 : Node Manager access credentials">ノード・マネージャのアクセス資格証明</span></li>
+<li><span class="merged" id="index.4ZPsW" title="原文 : Any existing MBean name (for example, you cannot change the domain name)">既存のMBean名(たとえば、ドメイン名は変更できません)</span></li>
+</ul>
+</li>
+</ul>
+<p><span class="merged" id="index.njpOn.spl1" title="原文 : Note that it&rsquo;s supported, even expected, to override network access point public or external addresses and ports.">ネットワーク・アクセス・ポイントの<code>public</code>または<code>external</code>のアドレスとポートをオーバーライドすることもできます。</span> <span class="merged" id="index.njpOn.spl2" title="原文 : Also note that external access to JMX (MBean) or online WLST requires that the network access point internal port and external port match (external T3 or HTTP tunneling access to JMS, RMI, or EJBs don&rsquo;t require port matching).">また、JMX (MBean)またはオンラインWLSTへの外部アクセスでは、ネットワーク・アクセス・ポイントの内部ポートと外部ポートが一致している必要があります(JMS、RMIまたはEJBへの外部T3またはHTTPトンネリング・アクセスでは、ポートの一致は必要ありません)。</span> </p>
+<p><span class="merged" id="index.1pS9H9" title="原文 : The behavior when using an unsupported override is undefined.">サポートされていないオーバーライドを使用した場合の動作は未定義です。</span></p>
+<h3 id="overrides-distribution"><span class="merged" id="index.3oO5Tw" title="原文 : Overrides distribution">配分の上書き</span></h3>
+<p><span class="merged" id="index.1mNnjM.spl1" title="原文 : The operator generates the final configuration overrides, combining customer-provided configuration overrides and operator-generated overrides, during the operator&rsquo;s introspection phase.">オペレータは、オペレータのイントロスペクション・フェーズで、顧客が指定した構成オーバーライドとオペレータが生成したオーバーライドを組み合せて、最終構成オーバーライドを生成します。</span> <span class="merged" id="index.1mNnjM.spl2" title="原文 : These overrides are then used when starting or restarting WebLogic Server instances.">これらのオーバーライドは、WebLogic Serverインスタンスの起動時または再起動時に使用されます。</span> <span class="merged" id="index.1mNnjM.spl3" title="原文 : Starting with operator version 3.0.0, these overrides can also be distributed and applied to already running WebLogic Server instances.">オペレータ・バージョン3.0.0以降、これらの<a href="../domain-lifecycle/introspection/index.html#distributing-changes-to-configuration-overrides">「上書きも配布できます」</a>はすでに実行中のWebLogic Serverインスタンスに適用されます。</span> </p>
+<p><span class="merged" id="index.1ejbPZ.spl1" title="原文 : For Domain in PV, the ability to change WebLogic domain configuration using traditional management transactions involving the Administration Console or WLST can be combined with the ability to initiate a repeat introspection and distribute updated configuration overrides."><a href="../domain-lifecycle/restarting/index.html#domain-in-pv">Domain in PV</a>では、管理コンソールまたはWLSTを含む従来の管理トランザクションを使用してWebLogicドメイン構成を変更する機能を組み合せて、繰返しイントロスペクションを開始し、更新された構成オーバーライドを配布できます。</span> <span class="merged" id="index.1ejbPZ.spl2" title="原文 : This combination supports use cases such as defining a new WebLogic cluster and then immediately starting Managed Server cluster members.">この組合せでは、新しいWebLogicクラスタの定義や、管理対象サーバー・クラスタ・メンバーの即時起動などのユースケースがサポートされます。</span> </p>
+<hr>
+<h3 id="override-template-names-and-syntax"><span class="merged" id="index.40UT5U" title="原文 : Override template names and syntax">テンプレート名および構文のオーバーライド</span></h3>
+<p><span class="merged" id="index.1HSXnu.spl1" title="原文 : Overrides leverage a built-in WebLogic feature called &ldquo;Configuration Overriding&rdquo; which is often informally called &ldquo;Situational Configuration.&rdquo;">オーバーライドは、「構成のオーバーライド」と呼ばれる組込みのWebLogic機能を利用します。この機能は、非公式には「状況構成」と呼ばれます。</span> <span class="merged" id="index.1HSXnu.spl2" title="原文 : Configuration overriding consists of XML formatted files that closely resemble the structure of WebLogic config.xml and system resource module XML files.">構成オーバーライドは、WebLogic <code>config.xml</code>の構造によく似たXML形式のファイルと、システム・リソース・モジュールのXMLファイルで構成されます。</span> <span class="merged" id="index.1HSXnu.spl3" title="原文 : In addition, the attribute fields in these files can embed add, replace, and delete verbs to specify the desired override action for the field.">また、これらのファイルの属性フィールドには、<code>add</code>、<code>replace</code>および<code>delete</code>動詞を埋め込んで、フィールドに必要なオーバーライド・アクションを指定できます。</span> </p>
+<h4 id="override-template-names"><span class="merged" id="index.1Bt7Un" title="原文 : Override template names">テンプレート名のオーバーライド</span></h4>
+<p><span class="merged" id="index.4MFuDt.spl1" title="原文 : The operator requires a different file name format for override templates than WebLogic&rsquo;s built-in configuration overrides feature.">このオペレータには、WebLogicの組込み構成オーバーライド機能とは異なるオーバーライド・テンプレートのファイル名形式が必要です。</span> <span class="merged" id="index.4MFuDt.spl2" title="原文 : It converts the names to the format required by the configuration overrides feature when it moves the templates to the domain home optconfig directory.">テンプレートをドメイン・ホームの<code>optconfig</code>ディレクトリに移動するときに、名前が構成オーバーライド機能で必要な形式に変換されます。</span> <span class="merged" id="index.4MFuDt.spl3" title="原文 : The following table describes the format:">次の表では、形式について説明します:</span> </p>
+<table>
+<thead>
+<tr>
+<th><span class="merged" id="index.4LlyaD" title="原文 : Original Configuration">元の構成</span></th>
+<th><span class="merged" id="index.30W2Fd" title="原文 : Required Override Name">必須上書き名</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="merged" id="index.1NmbyS"  title="原文: config.xml"><code>config.xml</code></span></td>
+<td><span class="merged" id="index.1NmbyS.1"  title="原文: config.xml"><code>config.xml</code></span></td>
+</tr>
+<tr>
+<td><span class="merged" id="index.4KECCL"  title="原文:: JMS module">JMSモジュール</span></td>
+<td><span class="merged" id="index.2ZIck1"  title="原文: jms-MODULENAME.xml"><code>jms-MODULENAME.xml</code></span></td>
+</tr>
+<tr>
+<td><span class="merged" id="index.4LDRC9" title="原文 : JDBC module">JDBCモジュール</span></td>
+<td><span class="merged" id="index.1c6nj8"  title="原文: jdbc-MODULENAME.xml"><code>jdbc-MODULENAME.xml</code></span></td>
+</tr>
+<tr>
+<td><span class="merged" id="index.47ViUp" title="原文 : Diagnostics module">診断モジュール</span></td>
+<td><span class="merged" id="index.319AFl"  title="原文: diagnostics-MODULENAME.xml"><code>diagnostics-MODULENAME.xml</code></span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="merged" id="index.1CMJpZ.spl1" title="原文 : A MODULENAME must correspond to the MBean name of a system resource defined in your original config.xml file."><code>MODULENAME</code>は、元の<code>config.xml</code>ファイルで定義されているシステム・リソースのMBean名に対応している必要があります。</span> <span class="merged" id="index.1CMJpZ.spl2" title="原文 : It&rsquo;s not possible to add a new module by using overrides.">オーバーライドを使用して新しいモジュールを追加することはできません。</span> <span class="merged" id="index.1CMJpZ.spl3" title="原文 : If you need your overrides to set up a new module, then have your original configuration specify &lsquo;skeleton&rsquo; modules that can be overridden.">新しいモジュールを設定するためにオーバーライドが必要な場合は、元の構成でオーバーライド可能なスケルトン・モジュールを指定します。</span> </p>
+<h4 id="override-template-schemas"><span class="merged" id="index.Z8z8D" title="原文 : Override template schemas">テンプレート・スキーマのオーバーライド</span></h4>
+<p><span class="merged" id="index.3TNw1O.spl1" title="原文 : An override template must define the exact schemas required by the configuration overrides feature.">オーバーライド・テンプレートでは、構成オーバーライド機能に必要な正確なスキーマを定義する必要があります。</span> <span class="merged" id="index.3TNw1O.spl2" title="原文 : The schemas vary based on the file type you wish to override.">スキーマは、オーバーライドするファイル・タイプによって異なります。</span> </p>
+<p><span class="merged" id="index.3uISkt"  title="原文:: config.xml"><em><code>config.xml</code></em></span></p>
+<pre><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;d:domain xmlns:d=&quot;http://xmlns.oracle.com/weblogic/domain&quot;
+          xmlns:f=&quot;http://xmlns.oracle.com/weblogic/domain-fragment&quot;
+          xmlns:s=&quot;http://xmlns.oracle.com/weblogic/situational-config&quot;&gt;
+  ...
+&lt;/d:domain&gt;
+</code></pre><p><span class="merged" id="index.3MFSFa" title="原文 : jdbc-MODULENAME.xml"><em><code>jdbc-MODULENAME.xml</code></em></span></p>
+<pre><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;jdbc:jdbc-data-source xmlns:jdbc=&quot;http://xmlns.oracle.com/weblogic/jdbc-data-source&quot;
+                       xmlns:f=&quot;http://xmlns.oracle.com/weblogic/jdbc-data-source-fragment&quot;
+                       xmlns:s=&quot;http://xmlns.oracle.com/weblogic/situational-config&quot;&gt;
+  ...
+&lt;/jdbc:jdbc-data-source&gt;
+</code></pre><p><span class="merged" id="index.1a2Jha" title="原文 : jms-MODULENAME.xml"><em><code>jms-MODULENAME.xml</code></em></span></p>
+<pre><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;jms:weblogic-jms xmlns:jms=&quot;http://xmlns.oracle.com/weblogic/weblogic-jms&quot;
+                  xmlns:f=&quot;http://xmlns.oracle.com/weblogic/weblogic-jms-fragment&quot;
+                  xmlns:s=&quot;http://xmlns.oracle.com/weblogic/situational-config&quot; &gt;
+  ...
+&lt;/jms:weblogic-jms&gt;
+</code></pre><p><span class="merged" id="index.SVEmw" title="原文 : diagnostics-MODULENAME.xml"><em><code>diagnostics-MODULENAME.xml</code></em></span></p>
+<pre><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;wldf:wldf-resource xmlns:wldf=&quot;http://xmlns.oracle.com/weblogic/weblogic-diagnostics&quot;
+                    xmlns:f=&quot;http://xmlns.oracle.com/weblogic/weblogic-diagnostics-fragment&quot;
+                    xmlns:s=&quot;http://xmlns.oracle.com/weblogic/situational-config&quot; &gt;
+  ...
+&lt;/wldf:wldf-resource&gt;
+</code></pre><h4 id="override-template-macros"><span class="merged" id="index.3LA7qU" title="原文 : Override template macros">テンプレート・マクロのオーバーライド</span></h4>
+<p><span class="merged" id="index.3TDppR.spl1" title="原文 : The operator supports embedding macros within override templates.">オペレータは、オーバーライド・テンプレートへのマクロの埋込みをサポートしています。</span> <span class="merged" id="index.3TDppR.spl2" title="原文 : This helps make your templates flexibly handle multiple use cases, such as specifying a different URL, user name, and password for a different deployment.">これにより、テンプレートでは、異なるデプロイメントに対して異なるURL、ユーザー名およびパスワードを指定するなど、複数のユースケースを柔軟に処理できます。</span> </p>
+<p><span class="merged" id="index.bpZTn" title="原文 : Two types of macros are supported, environment variable macros and secret macros:">環境変数マクロとシークレット・マクロの2タイプのマクロがサポートされています:</span></p>
+<ul>
+<li>
+<p><span class="merged" id="index.4PnBJG" title="原文 : Environment variable macros have the syntax ${env:ENV-VAR-NAME}, where the supported environment variables include DOMAIN_UID, DOMAIN_NAME, DOMAIN_HOME, and LOG_HOME.">環境変数マクロの構文は<code>${env:ENV-VAR-NAME}</code>で、サポートされている環境変数は<code>DOMAIN_UID</code>, <code>DOMAIN_NAME</code>, <code>DOMAIN_HOME</code>および<code>LOG_HOME</code>です。</span></p>
+</li>
+<li>
+<p><span class="merged" id="index.3fjsEt" title="原文 : Secret macros have the syntax ${secret:SECRETNAME.SECRETKEY} and ${secret:SECRETNAME.SECRETKEY:encrypt}.">シークレット・マクロの構文は、<code>${secret:SECRETNAME.SECRETKEY}</code>および<code>${secret:SECRETNAME.SECRETKEY:encrypt}</code>です。</span></p>
+</li>
+</ul>
+<p><span class="merged" id="index.47bOHl.spl1" title="原文 : The secret macro SECRETNAME field must reference the name of a Kubernetes Secret, and the SECRETKEY field must reference a key within that Secret.">シークレット・マクロの<code>SECRETNAME</code>フィールドはKubernetesシークレットの名前を参照する必要があり、<code>SECRETKEY</code>フィールドはそのシークレット内のキーを参照する必要があります。</span> <span class="merged" id="index.47bOHl.spl2" title="原文 : For example, if you have created a Secret named dbuser with a key named username that contains the value scott, then the macro ${secret:dbuser.username} will be replaced with the word scott before the template is copied into its WebLogic Server instance Pod.">たとえば、値<code>scott</code>を含む<code>username</code>という名前のキーを使用して<code>dbuser</code>という名前のシークレットを作成した場合、テンプレートがWebLogic Serverインスタンス・ポッドにコピーされる前に、マクロ<code>${secret:dbuser.username}</code>が<code>scott</code>に置き換えられます。</span> </p>
+
+<div class="notices warning" ><p><span class="merged" id="index.4KyU75.spl1" title="原文 : SECURITY NOTE: Use the :encrypt suffix in a secret macro to encrypt its replacement value with the WebLogic WLST encrypt command (instead of leaving it at its plain text value)."><strong>セキュリティ上のノート</strong>: シークレット・マクロで<code>:encrypt</code>サフィクスを使用して、(プレーン・テキスト値のままにするのではなく) WebLogic WLST <code>encrypt</code>コマンドで置換値を暗号化します。</span> <span class="merged" id="index.4KyU75.spl2" title="原文 : This is useful for overriding MBean attributes that expect encrypted values, such as the password-encrypted field of a data source, and is also useful for ensuring that a custom overrides configuration file the operator places in the domain home does not expose passwords in plain-text.">これは、データ・ソースの<code>password-encrypted</code>フィールドなど、暗号化された値を必要とするMBean属性をオーバーライドする場合に役立ちます。また、オペレータがドメイン・ホームに配置した構成ファイルをカスタム・オーバーライドしてもプレーン・テキストでパスワードが公開されないようにする場合にも役立ちます。</span> </p>
+</div>
+
+<h4 id="override-template-syntax-special-requirements"><span class="merged" id="index.3iX4d3" title="原文 : Override template syntax special requirements">テンプレート構文の特別な要件のオーバーライド</span></h4>
+<p><span class="merged" id="index.PhFXG" title="原文 : Check each item below for best practices and to ensure custom overrides configuration takes effect:"><strong>次の各アイテムでベスト・プラクティスを確認し、カスタム・オーバーライド構成が有効になっていることを確認します:</strong></span></p>
+<ul>
+<li><span class="merged" id="index.4JcHir" title="原文 : Reference the name of the current bean and each parent bean in any hierarchy you override.">オーバーライドする階層内の現在のBeanおよび各親Beanの名前を参照します。</span>
+<ul>
+<li><span class="merged" id="index.1HvpWg" title="原文 : Note that the combine-mode verbs (add and replace) should be omitted for beans that are already defined in your original domain home configuration.">元のドメイン・ホーム構成ですでに定義されているBeanでは、<code>combine-mode</code>動詞(<code>add</code>および<code>replace</code>)を省略する必要があります。</span>
+<ul>
+<li><span class="merged" id="index.2qa9fR" title="原文 : See Override template samples for examples.">例については、<a href="index.html#override-template-samples">「テンプレート・サンプルのオーバーライド」</a>を参照してください。</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="merged" id="index.2grX1" title="原文 : Use replace and add verbs as follows:"><code>replace</code>および<code>add</code>動詞を次のように使用します:</span>
+<ul>
+<li><span class="merged" id="index.PPwY0" title="原文 : If you are adding a new bean that doesn&rsquo;t already exist in your original domain home config.xml, then specify add on the MBean itself and on each attribute within the bean.">元のドメイン・ホーム<code>config.xml</code>にまだ存在しない新規Beanを追加する場合は、MBean自体およびBean内の各属性で<code>add</code>を指定します。</span>
+<ul>
+<li><span class="merged" id="index.2MDas8" title="原文 : See the server-debug stanza in Override template samples for an example.">例については、<a href="index.html#override-template-samples">「テンプレート・サンプルのオーバーライド」</a>の<code>server-debug</code>スタンザを参照してください。</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.1vKJ4p" title="原文 : If you are adding a new attribute to an existing bean in the domain home config.xml, then the attribute needs an add verb.">ドメイン・ホーム<code>config.xml</code>内の既存のBeanに新しい属性を追加する場合、その属性には<code>add</code>動詞が必要です。</span>
+<ul>
+<li><span class="merged" id="index.15RRIy" title="原文 : See the max-message-size stanza in Override template samples for an example.">例については、<a href="index.html#override-template-samples">「テンプレート・サンプルのオーバーライド」</a>の<code>max-message-size</code>スタンザを参照してください。</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.2VtpWu" title="原文 : If you are changing the value of an existing attribute within a domain home config.xml, then the attribute needs a replace verb.">ドメイン・ホーム<code>config.xml</code>内の既存の属性の値を変更する場合、属性には<code>replace</code>動詞が必要です。</span>
+<ul>
+<li><span class="merged" id="index.4H0arO" title="原文 : See the public-address stanza in Override template samples for an example.">例については、<a href="index.html#override-template-samples">「テンプレート・サンプルのオーバーライド」</a>の<code>public-address</code>スタンザを参照してください。</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="merged" id="index.4at4f8" title="原文 : When overriding config.xml:"><code>config.xml</code>をオーバーライドする場合:</span>
+<ul>
+<li><span class="merged" id="index.4eoWgF" title="原文 : The XML namespace (xmlns: in the XML) must be exactly as specified in Override template schemas.">XMLネームスペース(XMLの<code>xmlns:</code>)は、<a href="index.html#override-template-schemas">テンプレート・スキーマのオーバーライド</a>で指定されているとおりにする必要があります。</span>
+<ul>
+<li><span class="merged" id="index.3Cp8IG" title="原文 : For example, use d: to reference config.xml beans and attributes, f: for add and replace domain-fragment verbs, and s: to reference the configuration overrides schema.">たとえば、<code>d:</code>を使用して<code>config.xml</code> beanおよび属性を参照し、<code>add</code>の<code>f:</code>および<code>replace</code> <code>domain-fragment</code>動詞、および<code>s:</code>を使用して構成オーバーライド・スキーマを参照します。</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.2TjF6L" title="原文 : Avoid specifying the domain name stanza, as this may cause some overrides to be ignored (for example, server-template scoped overrides).">ドメイン名スタンザを指定すると、一部のオーバーライド(たとえば、サーバー・テンプレート・スコープのオーバーライド)が無視される可能性があるため、指定しないでください。</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.25UocN" title="原文 : When overriding modules:">モジュールをオーバーライドする場合:</span>
+<ul>
+<li><span class="merged" id="index.2D71am" title="原文 : It is a best practice to use XML namespace abbreviations jms:, jdbc:, and wldf: respectively for JMS, JDBC, and WLDF (diagnostics) module override files.">JMS、JDBCおよびWLDF (診断)モジュール・オーバーライド・ファイルには、それぞれXMLネームスペースの略称<code>jms:</code>、<code>jdbc:</code>および<code>wldf:</code>を使用することをお薦めします。</span></li>
+<li><span class="merged" id="index.19lQdG.spl1" title="原文 : A module must already exist in your original configuration if you want to override it; it&rsquo;s not possible to add a new module by using overrides.">モジュールをオーバーライドする場合は、そのモジュールがすでに元の構成に存在している必要があります。オーバーライドを使用して新しいモジュールを追加することはできません。</span> <span class="merged" id="index.19lQdG.spl2" title="原文 : If you need your overrides to set up a new module, then have your original configuration specify &lsquo;skeleton&rsquo; modules that can be overridden.">新しいモジュールを設定するためにオーバーライドが必要な場合は、元の構成でオーバーライド可能なスケルトン・モジュールを指定します。</span> </li>
+<li><span class="merged" id="index.2SFrRD.spl1" title="原文 : See Overriding a data source module for best practice advice.">ベスト・プラクティスのアドバイスについては、<a href="index.html#overriding-a-data-source-module">「データ・ソース・モジュールのオーバーライド」</a>を参照してください。</span> <span class="merged" id="index.2SFrRD.spl2" title="原文 : Note that similar advice applies generally to other module types.">一般に、他のモジュール・タイプにも同様のアドバイスが適用されることに注意してください。</span> </li>
+</ul>
+</li>
+<li><span class="merged" id="index.3xKvCj" title="原文 : Consider having your original configuration reference invalid user names, passwords, and URLs:">元の構成で無効なユーザー名、パスワードおよびURLを参照することを検討してください:</span>
+<ul>
+<li><span class="merged" id="index.3IU0ak.spl1" title="原文 : If your original (non-overridden) configuration references non-working user names, passwords, and URLS, then this helps guard against accidentally deploying a working configuration that&rsquo;s invalid for the intended environment.">元の(オーバーライドされていない)構成が動作していないユーザー名、パスワードおよびURLを参照している場合、意図した環境に対して無効な作業構成を誤ってデプロイしないようにするのに役立ちます。</span> <span class="merged" id="index.3IU0ak.spl2" title="原文 : For example, if your base configuration references a working QA database, and there is some mistake in setting up overrides, then it&rsquo;s possible the running servers will connect to the QA database when you deploy to your production environment.">たとえば、基本構成が動作中のQAデータベースを参照しており、オーバーライドの設定に誤りがある場合、本番環境へのデプロイ時に稼働中のサーバーがQAデータベースに接続する可能性があります。</span> </li>
+</ul>
+</li>
+</ul>
+<h4 id="override-template-samples"><span class="merged" id="index.2oWKii" title="原文 : Override template samples">テンプレート・サンプルのオーバーライド</span></h4>
+<p><span class="merged" id="index.18XV0t" title="原文 : Here are some sample template override files.">次に、テンプレートのオーバーライド・ファイルの例を示します。</span></p>
+<h4 id="overriding-configxml"><span class="merged" id="index.1rLXoS" title="原文 : Overriding config.xml"><code>config.xml</code>のオーバーライド</span></h4>
+<p><span class="merged" id="index.3vSQGf" title="原文 : The following config.xml override file demonstrates:">次の<code>config.xml</code>オーバーライド・ファイルは、次のことを示しています:</span></p>
+<ul>
+<li><span class="merged" id="index.WKbjM.spl1" title="原文 : Setting the max-message-size field on a WebLogic Server named admin-server."><code>admin-server</code>という名前のWebLogic Serverでの<code>max-message-size</code>フィールドの設定。</span> <span class="merged" id="index.WKbjM.spl2" title="原文 : It assumes the original config.xml does not define this value, and so uses add instead of replace.">元の<code>config.xml</code>ではこの値が定義されていないため、<code>replace</code>のかわりに<code>add</code>が使用されることを前提としています。</span> </li>
+<li><span class="merged" id="index.4MfVJn.spl1" title="原文 : Sets the public-address and public-port fields with values obtained from a Secret named test-host with keys hostname and port."><code>public-address</code>および<code>public-port</code>フィールドに、<code>hostname</code>および<code>port</code>というキーを持つ<code>test-host</code>という名前のシークレットから取得した値を設定します。</span> <span class="merged" id="index.4MfVJn.spl2" title="原文 : It assumes the original config.xml already sets these fields, and so uses replace instead of add.">ここでは、元のconfig.xmlでこれらのフィールドがすでに設定されていることを前提としているため、<code>add</code>のかわりに<code>replace</code>を使用します。</span> </li>
+<li><span class="merged" id="index.lQaUa.spl1" title="原文 : Sets two debug settings.">2つのデバッグ設定を設定します。</span> <span class="merged" id="index.lQaUa.spl2" title="原文 : It assumes the original config.xml does not have a server-debug stanza, so it uses add throughout the entire stanza.">元のconfig.xmlには<code>server-debug</code>スタンザがないため、スタンザ全体で<code>add</code>を使用します。</span> </li>
+</ul>
+<pre><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;d:domain xmlns:d=&quot;http://xmlns.oracle.com/weblogic/domain&quot;
+          xmlns:f=&quot;http://xmlns.oracle.com/weblogic/domain-fragment&quot;
+          xmlns:s=&quot;http://xmlns.oracle.com/weblogic/situational-config&quot; &gt;
+    &lt;d:server&gt;
+        &lt;d:name&gt;admin-server&lt;/d:name&gt;
+        &lt;d:max-message-size f:combine-mode=&quot;add&quot;&gt;78787878&lt;/d:max-message-size&gt;
+        &lt;d:server-debug f:combine-mode=&quot;add&quot;&gt;
+          &lt;d:debug-server-life-cycle f:combine-mode=&quot;add&quot;&gt;true&lt;/d:debug-server-life-cycle&gt;
+          &lt;d:debug-jmx-core f:combine-mode=&quot;add&quot;&gt;true&lt;/d:debug-jmx-core&gt;
+        &lt;/d:server-debug&gt;
+        &lt;d:network-access-point&gt;
+          &lt;d:name&gt;T3Channel&lt;/d:name&gt;
+          &lt;d:public-address f:combine-mode=&quot;replace&quot;&gt;${secret:test-host.hostname}&lt;/d:public-address&gt;
+          &lt;d:public-port f:combine-mode=&quot;replace&quot;&gt;${secret:test-host.port}&lt;/d:public-port&gt;
+        &lt;/d:network-access-point&gt;
+    &lt;/d:server&gt;
+&lt;/d:domain&gt;
+</code></pre><h4 id="overriding-a-data-source-module"><span class="merged" id="index.1PiPrj" title="原文 : Overriding a data source module">データ・ソース・モジュールのオーバーライド</span></h4>
+<p><span class="merged" id="index.43UBKF.spl1" title="原文 : The following jdbc-testDS.xml override template demonstrates setting the URL, user name, and password-encrypted fields of a JDBC module named testDS by using secret macros.">次の<code>jdbc-testDS.xml</code>オーバーライド・テンプレートは、<code>secret macros</code>を使用した<code>testDS</code>という名前のJDBCモジュールのURL、ユーザー名およびパスワード暗号化フィールドの設定を示しています。</span> <span class="merged" id="index.43UBKF.spl2" title="原文 : The generated configuration overrides that replaces the macros with secret values will be located in the DOMAIN_HOME/optconfig/jdbc directory.">マクロをシークレット値に置き換える生成済の構成オーバーライドは、<code>DOMAIN_HOME/optconfig/jdbc</code>ディレクトリにあります。</span> <span class="merged" id="index.43UBKF.spl3" title="原文 : The password-encrypted field will be populated with an encrypted value because it uses a secret macro with an :encrypt suffix."><code>password-encrypted</code>フィールドには、<code>:encrypt</code>サフィクスの付いたシークレット・マクロが使用されるため、暗号化された値が移入されます。</span> <span class="merged" id="index.43UBKF.spl4" title="原文 : The Secret is named dbsecret and contains three keys: url, username, and password.">Secretは<code>dbsecret</code>という名前で、3つのキーが含まれています: <code>url</code>、<code>username</code>および<code>password</code>。</span> </p>
+<p><span class="merged" id="index.4YwlFd" title="原文 : Best practices for data source modules and their overrides:">データ・ソース・モジュールとそのオーバーライドのベスト・プラクティス:</span></p>
+<ul>
+<li><span class="merged" id="index.4PyfXR.spl1" title="原文 : A data source module must already exist in your original configuration if you want to override it; it&rsquo;s not possible to add a new module by using overrides.">データ・ソース・モジュールをオーバーライドする場合は、元の構成にすでに存在している必要があります。オーバーライドを使用して新しいモジュールを追加することはできません。</span> <span class="merged" id="index.4PyfXR.spl2" title="原文 : If you need your overrides to set up a new module, then have your original configuration specify &lsquo;skeleton&rsquo; modules that can be overridden.">新しいモジュールを設定するためにオーバーライドが必要な場合は、元の構成でオーバーライド可能なスケルトン・モジュールを指定します。</span> <span class="merged" id="index.4PyfXR.spl3" title="原文 : See the next two bulleted items for the typical contents of a skeleton data source module.">スケルトン・データ・ソース・モジュールの一般的な内容については、次の2つの箇条書きアイテムを参照してください。</span> </li>
+<li><span class="merged" id="index.3QzYNq.spl1" title="原文 : Set your original (non-overridden) URL, username, and password to invalid values.">元の(オーバーライドされていない) URL、ユーザー名およびパスワードを無効な値に設定します。</span> <span class="merged" id="index.3QzYNq.spl2" title="原文 : This helps prevent accidentally starting a server without overrides, and then having the data source successfully connect to a database that&rsquo;s wrong for the current environment.">これにより、オーバーライドせずにサーバーを誤って起動し、現在の環境に適していないデータベースにデータ・ソースが正常に接続するのを防ぐことができます。</span> <span class="merged" id="index.3QzYNq.spl3" title="原文 : For example, if these attributes are set to reference a QA database in your original configuration, then a mistake configuring overrides in your production Kubernetes Deployment could cause your production applications to use your QA database.">たとえば、これらの属性が元の構成でQAデータベースを参照するように設定されている場合、本番Kubernetesデプロイメントでオーバーライドを誤って構成すると、本番アプリケーションでQAデータベースが使用される可能性があります。</span> </li>
+<li><span class="merged" id="index.2e8WZV.spl1" title="原文 : Set your original (non-overridden) JDBCConnectionPoolParams MinCapacity and InitialCapacity to 0, and set your original DriverName to a reference an existing JDBC Driver.">元の(オーバーライドされていない) <code>JDBCConnectionPoolParams</code> <code>MinCapacity</code>および<code>InitialCapacity</code>を<code>0</code>に設定し、元の<code>DriverName</code>を既存のJDBCドライバを参照するように設定します。</span> <span class="merged" id="index.2e8WZV.spl2" title="原文 : This ensures that you can still successfully boot a server even when you have configured invalid URL/username/password values, your database isn&rsquo;t running, or you haven&rsquo;t specified your overrides yet.">これにより、無効なURL/username/password値を構成した場合、データベースが稼働していない場合、またはまだオーバーライドを指定していない場合でも、サーバーを正常に起動できます。</span> </li>
+</ul>
+<pre><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;jdbc:jdbc-data-source xmlns:jdbc=&quot;http://xmlns.oracle.com/weblogic/jdbc-data-source&quot;
+                       xmlns:f=&quot;http://xmlns.oracle.com/weblogic/jdbc-data-source-fragment&quot;
+                       xmlns:s=&quot;http://xmlns.oracle.com/weblogic/situational-config&quot;&gt;
+
+  &lt;jdbc:name&gt;testDS&lt;/jdbc:name&gt;
+  &lt;jdbc:jdbc-driver-params&gt;
+    &lt;jdbc:url f:combine-mode=&quot;replace&quot;&gt;${secret:dbsecret.url}&lt;/jdbc:url&gt;
+    &lt;jdbc:properties&gt;
+       &lt;jdbc:property&gt;
+          &lt;jdbc:name&gt;user&lt;/jdbc:name&gt;
+          &lt;jdbc:value f:combine-mode=&quot;replace&quot;&gt;${secret:dbsecret.username}&lt;/jdbc:value&gt;
+       &lt;/jdbc:property&gt;
+    &lt;/jdbc:properties&gt;
+    &lt;jdbc:password-encrypted f:combine-mode=&quot;replace&quot;&gt;${secret:dbsecret.password:encrypt}&lt;/jdbc:password-encrypted&gt;
+  &lt;/jdbc:jdbc-driver-params&gt;
+&lt;/jdbc:jdbc-data-source&gt;
+</code></pre><hr>
+<h3 id="step-by-step-guide"><span class="merged" id="index.1qTkIH" title="原文 : Step-by-step guide">段階的なガイド</span></h3>
+<ul>
+<li><span class="merged" id="index.2rSBFC.1.spl1" title="原文 : Make sure your domain home meets the prerequisites.">ドメイン・ホームが前提条件を満たしていることを確認します。</span> <span class="merged" id="index.2rSBFC.1.spl2"  title="原文:: See Prerequisites."><a href="index.html#prerequisites">「前提条件」</a>を参照してください。</span> </li>
+<li><span class="merged" id="index.1iidOR.spl1" title="原文 : Make sure your overrides are supported.">オーバーライドがサポートされていることを確認します。</span> <span class="merged" id="index.1iidOR.spl2" title="原文 : See Typical overrides, Overrides distribution, and Unsupported overrides."><a href="index.html#typical-overrides">「一般的なオーバーライド」</a>、<a href="index.html#overrides-distribution">「配分の上書き」</a>および<a href="index.html#unsupported-overrides">「サポートされないオーバーライド」</a>を参照してください。</span> </li>
+<li><span class="merged" id="index.15dcIq" title="原文 : Create a directory containing (A) a set of configuration overrides templates for overriding the MBean properties you want to replace and (B) a version.txt file.">(A)置換するMBeanプロパティをオーバーライドするための一連の構成オーバーライド・テンプレート、および(B) <code>version.txt</code>ファイル、を含むディレクトリを作成します。</span>
+<ul>
+<li><span class="merged" id="index.4CiTAo" title="原文 : This directory must not contain any other files.">このディレクトリには、他のファイルを含めないでください。</span></li>
+<li><span class="merged" id="index.mwyUJ" title="原文 : The version.txt file must contain exactly the string 2.0."><code>version.txt</code>ファイルには、文字列<code>2.0</code>を正確に含める必要があります。</span>
+<ul>
+<li><span class="merged" id="index.38ZStT" title="原文 : Note: This version.txt file must stay 2.0 even when you are updating your templates from a previous deployment.">ノート: 以前のデプロイメントからテンプレートを更新する場合でも、このversion.txtファイルは<code>2.0</code>のままである必要があります。</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.192ULC" title="原文 : Templates must not override the settings listed in Unsupported overrides.">テンプレートは、<a href="index.html#unsupported-overrides">「サポートされないオーバーライド」</a>にリストされている設定をオーバーライドできません。</span></li>
+<li><span class="merged" id="index.cNt3O" title="原文 : Templates must be formatted and named as per Override template names and syntax.">テンプレートは、<a href="index.html#override-template-names-and-syntax">「テンプレート名および構文のオーバーライド」</a>に従って書式設定し、名前を付ける必要があります。</span></li>
+<li><span class="merged" id="index.2TzrT5.spl1" title="原文 : Templates can embed macros that reference environment variables or Kubernetes Secrets.">テンプレートには、環境変数またはKubernetesシークレットを参照するマクロを埋め込むことができます。</span> <span class="merged" id="index.2TzrT5.spl2" title="原文 : See Override template macros."><a href="index.html#override-template-macros">「テンプレート・マクロのオーバーライド」</a>を参照してください。</span> </li>
+</ul>
+</li>
+<li><span class="merged" id="index.4ZfOz6" title="原文 : Create a Kubernetes ConfigMap from the directory of templates.">テンプレートのディレクトリからKubernetes ConfigMapを作成します。</span>
+<ul>
+<li>
+<p><span class="merged" id="index.2HujCl" title="原文 : The ConfigMap must be in the same Kubernetes Namespace as the domain.">ConfigMapは、ドメインと同じKubernetesネームスペースに存在する必要があります。</span></p>
+</li>
+<li>
+<p><span class="merged" id="index.1L2rsq" title="原文 : If the ConfigMap is going to be used by a single DOMAIN_UID, then we recommend adding the weblogic.domainUID=&lt;mydomainuid&gt; label to help track the resource.">ConfigMapを単一の<code>DOMAIN_UID</code>で使用する場合は、リソースの追跡に役立つ<code>weblogic.domainUID=&lt;mydomainuid></code>ラベルを追加することをお薦めします。</span></p>
+</li>
+<li>
+<p><span class="merged" id="index.B8YhC" title="原文 : For example, assuming ./mydir contains your version.txt and situation configuration template files:">たとえば、<code>./mydir</code>に<code>version.txt</code>および状況構成テンプレート・ファイルが含まれているとします:</span></p>
+<pre><code>kubectl -n MYNAMESPACE create cm MYCMNAME --from-file ./mydir
+kubectl -n MYNAMESPACE label cm MYCMNAME weblogic.domainUID=DOMAIN_UID
+</code></pre></li>
+</ul>
+</li>
+<li><span class="merged" id="index.3EEa9" title="原文 : Create any Kubernetes Secrets referenced by a template &ldquo;secret macro&rdquo;.">テンプレートの「シークレット・マクロ」によって参照されるKubernetesシークレットを作成します。</span>
+<ul>
+<li>
+<p><span class="merged" id="index.2rN5bM.spl1" title="原文 : Secrets can have multiple keys (files) that can hold either cleartext or base64 values.">シークレットには、クリア・テキストまたはbase64値を保持できる複数のキー(ファイル)を含めることができます。</span> <span class="merged" id="index.2rN5bM.spl2" title="原文 : We recommend that you use base64 values for passwords by using Opaque type secrets in their data field, so that they can&rsquo;t be easily read at a casual glance."><code>Opaque</code>タイプのシークレットを<code>data</code>フィールドで使用してパスワードにbase64値を使用することをお薦めします。これにより、それらのシークレットを簡単に読めなくなります。</span> <span class="merged" id="index.2rN5bM.spl3" title="原文 : For more information, see https://kubernetes.io/docs/concepts/configuration/secret/.">詳細は、<a href="https://kubernetes.io/docs/concepts/configuration/secret/">https://kubernetes.io/docs/concepts/configuration/secret/</a>を参照してください。</span> </p>
+</li>
+<li>
+<p><span class="merged" id="index.43XfkK" title="原文 : Secrets must be in the same Kubernetes Namespace as the domain.">シークレットは、ドメインと同じKubernetesネームスペースに存在する必要があります。</span></p>
+</li>
+<li>
+<p><span class="merged" id="index.4IrQhz" title="原文 : If a Secret is going to be used by a single DOMAIN_UID, then we recommend adding the weblogic.domainUID=&lt;mydomainuid&gt; label to help track the resource.">シークレットを単一の<code>DOMAIN_UID</code>で使用する場合は、リソースの追跡に役立つように<code>weblogic.domainUID=&lt;mydomainuid></code>ラベルを追加することをお薦めします。</span></p>
+</li>
+<li>
+<p><span class="merged" id="index.6vDv5"  title="原文:: For example:">例えば:</span></p>
+<pre><code>kubectl -n MYNAMESPACE create secret generic my-secret --from-literal=key1=supersecret --from-literal=key2=topsecret
+kubectl -n MYNAMESPACE label secret my-secret weblogic.domainUID=DOMAIN_UID
+</code></pre></li>
+</ul>
+</li>
+<li><span class="merged" id="index.2s0VXi" title="原文 : Configure the name of the ConfigMap in the Domain YAML file configuration.overridesConfigMap field.">ドメインYAMLファイル<code>configuration.overridesConfigMap</code>フィールドでConfigMapの名前を構成します。</span></li>
+<li><span class="merged" id="index.VVcDs" title="原文 : Configure the names of each Secret in Domain YAML file.">ドメインYAMLファイルの各シークレットの名前を構成します。</span>
+<ul>
+<li><span class="merged" id="index.aYqnJ" title="原文 : If the Secret contains the WebLogic admin username and password keys, then set the Domain YAML file webLogicCredentialsSecret field.">シークレットにWebLogic管理<code>username</code>および<code>password</code>キーが含まれている場合は、ドメインYAMLファイルの<code>webLogicCredentialsSecret</code>フィールドを設定します。</span></li>
+<li><span class="merged" id="index.2pFfA2.spl1" title="原文 : For all other Secrets, add them to the Domain YAML file configuration.secrets field.">その他すべてのシークレットについては、ドメインYAMLファイル<code>configuration.secrets</code>フィールドに追加します。</span> <span class="merged" id="index.2pFfA2.spl2" title="原文 : Note: This must be in an array format even if you only add one Secret (see the sample Domain YAML below).">ノート: これは、1つのシークレットのみを追加した場合でも配列形式である必要があります(後述のサンプル・ドメインYAMLを参照)。</span> </li>
+</ul>
+</li>
+<li><span class="merged" id="index.1B5gV" title="原文 : Changes to configuration overrides, including the contents of the ConfigMap containing the override templates or the contents of referenced Secrets, do not take effect until the operator runs or repeats its introspection of the WebLogic domain configuration.">オーバーライド・テンプレートを含むConfigMapのコンテンツや参照されるシークレットのコンテンツなど、構成オーバーライドに対する変更は、オペレータがWebLogicドメイン構成の<a href="../domain-lifecycle/introspection/index.html">「イントロスペクション」</a>を実行または繰り返すまで有効になりません。</span></li>
+<li><span class="merged" id="index.1MYDqL.1" title="原文 : If your configuration overrides modify non-dynamic MBean attributes and you currently have WebLogic Server instances from this domain running:">構成オーバーライドによって動的でないMBean属性が変更され、現在このドメインのWebLogic Serverインスタンスが実行されている場合:</span>
+<ul>
+<li><span class="merged" id="index.zx7zO.spl1" title="原文 : Decide if the changes you are making to non-dynamic MBean attributes can be applied by rolling the affected clusters or Managed Server instances, or if the change requires a full domain shutdown.">影響を受けるクラスタまたは管理対象サーバー・インスタンスをローリングして、動的でないMBean属性に加えた変更を適用できるかどうか、または変更に完全なドメイン停止が必要かどうかを決定します。</span> <span class="merged" id="index.zx7zO.spl2" title="原文 : (See Overrides distribution)">(<a href="index.html#overrides-distribution">「配分の上書き」</a>を参照)</span> </li>
+<li><span class="merged" id="index.28155y.1.spl1" title="原文 : If a full domain shut down is requried, stop all running WebLogic Server instance Pods in your domain and then restart them.">ドメイン全体の停止が必要な場合は、ドメイン内で実行中のすべてのWebLogic Serverインスタンス・ポッドを停止してから再起動します。</span> <span class="merged" id="index.28155y.1.spl2" title="原文 : (See Starting and stopping servers.)">(<a href="../domain-lifecycle/startup/index.html#starting-and-stopping-servers">「サーバーの起動と停止」</a>を参照。)</span> </li>
+<li><span class="merged" id="index.311TTQ.1.spl1" title="原文 : Otherwise, simply restart your domain, which includes rolling clusters.">それ以外の場合は、ローリング・クラスタを含むドメインを再起動するだけです。</span> <span class="merged" id="index.311TTQ.1.spl2" title="原文 : (See Restarting servers.)">(<a href="../domain-lifecycle/startup/index.html#restarting-servers">「サーバーの再起動」</a>を参照。)</span> </li>
+</ul>
+</li>
+<li><span class="merged" id="index.19aVWi" title="原文 : See Debugging for ways to check if the configuration overrides are taking effect or if there are errors.">構成のオーバーライドが有効かどうか、またはエラーがあるかどうかを確認する方法については、<a href="index.html#debugging">「デバッグ」</a>を参照してください。</span></li>
+</ul>
+<p><span class="merged" id="index.Kkdst" title="原文 : Example Domain YAML:">ドメインYAMLの例:</span></p>
+<pre><code>apiVersion: &quot;weblogic.oracle/v8&quot;
+kind: Domain
+metadata:
+  name: domain1
+  namespace: default
+  labels:
+    weblogic.domainUID: domain1
+spec:
+  [ ... ]
+  webLogicCredentialsSecret:
+    name: domain1-wl-credentials-secret
+  configuration:
+    overridesConfigMap: domain1-overrides-config-map
+    secrets: [my-secret, my-other-secret]
+  [ ... ]
+</code></pre><hr>
+<h3 id="debugging"><span class="merged" id="index.1d0jt8.1"  title="原文:: Debugging">デバッグ</span></h3>
+<p><span class="merged" id="index.27ibHa.spl1" title="原文 : Incorrectly formatted override files may be accepted without warnings or errors and may not prevent WebLogic Server instance Pods from booting.">不適切にフォーマットされたオーバーライド・ファイルは、警告またはエラーなしで受け入れられる可能性があり、WebLogic Serverインスタンス・ポッドの起動を妨げることはありません。</span> <span class="merged" id="index.27ibHa.spl2" title="原文 : So, it is important to make sure that the template files are correct in a QA environment, otherwise your WebLogic Servers may start even though critically required overrides are failing to take effect.">そのため、QA環境でテンプレート・ファイルが正しいことを確認することが重要です。そうしないと、クリティカルに必要なオーバーライドが有効になりませんが、WebLogic Serversが起動する可能性があります。</span> </p>
+<p><span class="merged" id="index.aU1FQ.spl1" title="原文 : On WebLogic Server versions that support the weblogic.SituationalConfig.failBootOnError system property (Note: It is not supported in WebLogic Server 12.2.1.3.0), by default the WebLogic Server will fail to boot if any configuration overrides files are invalid, or if it encounters an error while loading configuration overrides files."><code>weblogic.SituationalConfig.failBootOnError</code>システム・プロパティをサポートするWebLogic Serverバージョンの場合(ノート: WebLogic Server 12.2.1.3.0)ではサポートされていません)。デフォルトでは、構成オーバーライド・ファイルが無効な場合、または構成オーバーライド・ファイルのロード中にエラーが発生した場合、WebLogic Serverはブートに失敗します。</span> <span class="merged" id="index.aU1FQ.spl2" title="原文 : By setting the FAIL_BOOT_ON_SITUATIONAL_CONFIG_ERROR environment variable in the Kubernetes containers for the WebLogic Servers to false, you can start up the WebLogic Servers even with incorrectly formatted override files.">WebLogic ServersのKubernetesコンテナの<code>FAIL_BOOT_ON_SITUATIONAL_CONFIG_ERROR</code>環境変数を<code>false</code>に設定すると、不正な形式のオーバーライド・ファイルを使用してもWebLogic Serversを起動できます。</span> </p>
+<ul>
+<li>
+<p><span class="merged" id="index.2tl1ac" title="原文 : Make sure you&rsquo;ve followed each step in the Step-by-step guide."><a href="index.html#step-by-step-guide">「段階的なガイド」</a>の各ステップに従っていることを確認します。</span></p>
+</li>
+<li>
+<p><span class="merged" id="index.1vU3nk" title="原文 : If WebLogic Server instance Pods do not come up at all, then:">WebLogic Serverインスタンスのポッドがまったく起動しない場合は、次のようにします:</span></p>
+<ul>
+<li><span class="merged" id="index.4MJ6nv" title="原文 : Examine your Domain resource status: kubectl -n MYDOMAINNAMESPACE describe domain MYDOMAIN">ドメイン・リソース・ステータスの確認: <code>kubectl -n MYDOMAINNAMESPACE describe domain MYDOMAIN</code></span></li>
+<li><span class="merged" id="index.2laEgY.spl1" title="原文 : In the domain&rsquo;s namespace, see if you can find a job named DOMAIN_UID-introspector and a corresponding pod named something like DOMAIN_UID-introspector-xxxx.">ドメインのネームスペースで、<code>DOMAIN_UID-introspector</code>という名前のジョブと、<code>DOMAIN_UID-introspector-xxxx</code>のような名前の対応するポッドがあるかどうかを確認します。</span> <span class="merged" id="index.2laEgY.spl2" title="原文 : If so, examine:">その場合は、次の点を確認してください:</span> 
+<ul>
+<li><span class="merged" id="index.4VG0MS"  title="原文: kubectl -n MYDOMAINNAMESPACE describe job INTROSPECTJOBNAME"><code>kubectl -n MYDOMAINNAMESPACE describe job INTROSPECTJOBNAME</code></span></li>
+<li><span class="merged" id="index.3E3cak"  title="原文: kubectl -n MYDOMAINNAMESPACE logs INTROSPECTPODNAME"><code>kubectl -n MYDOMAINNAMESPACE logs INTROSPECTPODNAME</code></span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.1xDpvK" title="原文 : Check your operator log for Warning/Error/Severe messages.">オペレータ・ログでWarning/Error/Severeメッセージを確認してください。</span>
+<ul>
+<li><span class="merged" id="index.4ExlsI"  title="原文: kubectl -n MYOPERATORNAMESPACE logs OPERATORPODNAME"><code>kubectl -n MYOPERATORNAMESPACE logs OPERATORPODNAME</code></span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="notices tip" ><p><span class="merged" id="index.3rHyvP" title="原文 : The introspector log is mirrored to the Domain resource spec.logHome directory when spec.logHome is configured and spec.logHomeEnabled is true.">イントロスペクタ・ログは、<code>spec.logHome</code>が構成され、<code>spec.logHomeEnabled</code>がtrueの場合、ドメイン・リソースの<code>spec.logHome</code>ディレクトリにミラー化されます。</span></p>
+</div>
+
+<ul>
+<li>
+<p><span class="merged" id="index.dyPd4" title="原文 : If WebLogic Server instance Pods do start, then:">WebLogic Serverインスタンスのポッドが起動する場合は、次のようにします:</span></p>
+<ul>
+<li><span class="merged" id="index.4QGi18" title="原文 : Search your Administration Server Pod&rsquo;s kubectl log for the keyword situational, for example kubectl logs MYADMINPOD | grep -i situational.">管理サーバー・ポッドの<code>kubectl log</code>でキーワード<code>situational</code>を検索します(例: <code>kubectl logs MYADMINPOD | grep -i situational</code>)。</span>
+<ul>
+<li><span class="merged" id="index.4Qn7jB" title="原文 : The only WebLogic Server log lines that match should look something like:">一致するWebLogic Serverログ行は次のようになります:</span>
+<ul>
+<li><span class="merged" id="index.3OP3PW"  title="原文: &lt;Dec 14, 2018 12:20:47 PM UTC&gt; &lt;Info&gt; &lt;Management&gt; &lt;BEA-141330&gt; &lt;Loading situational configuration file: /shared/domains/domain1/optconfig/custom-situational-config.xml&gt;"><code>&lt;Dec 14, 2018 12:20:47 PM UTC> &lt;Info> &lt;Management> &lt;BEA-141330> &lt;Loading situational configuration file: /shared/domains/domain1/optconfig/custom-situational-config.xml></code></span></li>
+<li><span class="merged" id="index.3mq525" title="原文 : This line indicates a configuration overrides file has been loaded.">この行は、構成オーバーライド・ファイルがロードされたことを示します。</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.3TN4om" title="原文 : If the search yields Warning or Error lines, then the format of the custom configuration overrides template is incorrect, and the Warning or Error text should describe the problem.">検索で警告またはエラーの行が生成された場合、カスタム構成オーバーライド・テンプレートの書式が正しくなく、警告またはエラーのテキストで問題を説明する必要があります。</span></li>
+<li><span class="merged" id="index.28wE1E.spl1" title="原文 : Note: The following exception may show up in your server logs when overriding JDBC modules.">ノート: JDBCモジュールをオーバーライドすると、サーバー・ログに次の例外が表示される場合があります。</span> <span class="merged" id="index.28wE1E.spl2" title="原文 : It is not expected to affect runtime behavior, and can be ignored (a fix is pending for them):">実行時の動作には影響せず、無視できます(修正は保留中です):</span> 
+<pre><code>java.lang.NullPointerException
+  at weblogic.management.provider.internal.situationalconfig.SituationalConfigManagerImpl.registerListener(SituationalConfigManagerImpl.java:227)
+  at weblogic.management.provider.internal.situationalconfig.SituationalConfigManagerImpl.start(SituationalConfigManagerImpl.java:319)
+  ...
+  at weblogic.management.configuration.DomainMBeanImpl.setJDBCSystemResources(DomainMBeanImpl.java:11444)
+  ...
+</code></pre></li>
+</ul>
+</li>
+<li><span class="merged" id="index.4DMKfu" title="原文 : Look in your DOMAIN_HOME/optconfig directory."><code>DOMAIN_HOME/optconfig</code>ディレクトリを確認します。</span>
+<ul>
+<li><span class="merged" id="index.12IZa4" title="原文 : This directory, or a subdirectory within this directory, should contain each of your custom configuration ovrrides files.">このディレクトリまたはこのディレクトリ内のサブディレクトリには、各カスタム構成ovrridesファイルが含まれている必要があります。</span></li>
+<li><span class="merged" id="index.3g4IgF" title="原文 : If it doesn&rsquo;t, then this likely indicates your Domain YAML file configuration.overridesConfigMap was not set to match your custom override ConfigMap name, or that your custom override ConfigMap does not contain your override files.">一致しない場合は、ドメインYAMLファイル<code>configuration.overridesConfigMap</code>がカスタム・オーバーライドConfigMap名と一致するように構成されていないか、カスタム・オーバーライドConfigMapにオーバーライド・ファイルが含まれていない可能性があります。</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="merged" id="index.c3ZsI" title="原文 : If the Administration Server Pod does start but fails to reach ready state or tries to restart:">管理サーバーのポッドが起動しても準備完了状態にならない場合、または再起動を試行する場合:</span></p>
+<ul>
+<li><span class="merged" id="index.FIlaf" title="原文 : Check for this message WebLogic Server failed to start due to missing or invalid situational configuration files in the Administration Server Pod&rsquo;s kubectl log">管理サーバー・ポッドの<code>kubectl log</code>でこのメッセージ<code> WebLogic Server failed to start due to missing or invalid situational configuration files</code>を確認してください</span>
+<ul>
+<li><span class="merged" id="index.bjFzd" title="原文 : This suggests that the Administration Server failure to start may have been caused by errors found in a configuration override file.">これは、管理サーバーの起動に失敗した原因が、構成オーバーライド・ファイルで見つかったエラーである可能性があることを示しています。</span>
+<ul>
+<li><span class="merged" id="index.4OFiz0" title="原文 : Lines containing the String situational may be found in the Administration Server Pod log to provide more hints.">String <code>situational</code>を含む行は、より多くのヒントを提供するために管理サーバーのポッド・ログに記録される場合があります。</span></li>
+<li><span class="merged" id="index.6vDv5.1"  title="原文:: For example:">例えば:</span>
+<ul>
+<li><span class="merged" id="index.2jsmii"  title="原文: &lt;Jun 20, 2019 3:48:45 AM GMT&gt; &lt;Warning&gt; &lt;Management&gt; &lt;BEA-141323&gt; &lt;The situational config file has an invalid format, it is being ignored: XMLSituationalConfigFile[/shared/domains/domain1/optconfig/jdbc/testDS-0527-jdbc-situational-config.xml] because org.xml.sax.SAXParseException; lineNumber: 8; columnNumber: 3; The element type &quot;jdbc:jdbc-driver-params&quot; must be terminated by the matching end-tag &quot;&lt;/jdbc:jdbc-driver-params&gt;&quot;."><code>&lt;Jun 20, 2019 3:48:45 AM GMT> &lt;Warning> &lt;Management> &lt;BEA-141323> &lt;The situational config file has an invalid format, it is being ignored: XMLSituationalConfigFile[/shared/domains/domain1/optconfig/jdbc/testDS-0527-jdbc-situational-config.xml] because org.xml.sax.SAXParseException; lineNumber: 8; columnNumber: 3; The element type "jdbc:jdbc-driver-params" must be terminated by the matching end-tag "&lt;/jdbc:jdbc-driver-params>".</code></span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.2jzno" title="原文 : The warning message suggests a syntax error is found in the provided configuration override file for the testDS JDBC datasource.">警告メッセージは、testDS JDBCデータソースの指定された構成オーバーライド・ファイルで構文エラーが見つかったことを示しています。</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="merged" id="index.1JNlrA" title="原文 : If you&rsquo;d like to verify that the configuration overrides are taking effect in the WebLogic MBean tree, then one way to do this is to compare the server config and domain config MBean tree values.">WebLogic MBeanツリーで構成のオーバーライドが有効になっていることを確認するには、<code>server config</code>と<code>domain config</code>のMBeanツリー値を比較します。</span></p>
+<ul>
+<li><span class="merged" id="index.1sGRyg" title="原文 : The domain config value should reflect the original value in your domain home configuration."><code>domain config</code>値は、ドメイン・ホーム構成の元の値を反映する必要があります。</span></li>
+<li><span class="merged" id="index.3s3hIm" title="原文 : The server config value should reflect the overridden value."><code>server config</code>値は、オーバーライドされた値を反映する必要があります。</span></li>
+<li><span class="merged" id="index.3bX5d5" title="原文 : For example, assuming your DOMAIN_UID is domain1, and your domain contains a WebLogic Server named admin-server, then:">たとえば、<code>DOMAIN_UID</code>が<code>domain1</code>で、ドメインに<code>admin-server</code>という名前のWebLogic Serverが含まれているとします:</span></li>
+</ul>
+<pre><code>kubectl exec -it domain1-admin-server /bin/bash
+$ wlst.sh
+&gt; connect(MYADMINUSERNAME, MYADMINPASSWORD, 't3://domain1-admin-server:7001')
+&gt; domainConfig()
+&gt; get('/Servers/admin-server/MaxMessageSize')
+&gt; serverConfig()
+&gt; get('/Servers/admin-server/MaxMessageSize')
+&gt; exit()
+</code></pre></li>
+<li>
+<p><span class="merged" id="index.2KkSs5" title="原文 : To cause the WebLogic configuration overrides feature to produce additional debugging information in the WebLogic Server logs, configure the JAVA_OPTIONS environment variable in your Domain YAML file with:">WebLogic構成オーバーライド機能によってWebLogic Serverログに追加のデバッグ情報が生成されるようにするには、ドメインYAMLファイルで<code>JAVA_OPTIONS</code>環境変数を次のように構成します:</span></p>
+</li>
+</ul>
+<pre><code>-Dweblogic.debug.DebugSituationalConfig=true
+-Dweblogic.debug.DebugSituationalConfigDumpXml=true
+</code></pre><ul>
+<li><span class="merged" id="index.aweA4.spl1" title="原文 : NOTE: The WebLogic Server Administration Console will not reflect any override changes."><strong>ノート</strong>: WebLogic Server管理コンソールにはオーバーライドの変更は反映<em>「されません」</em>。</span> <span class="merged" id="index.aweA4.spl2" title="原文 : You cannot use the Console to verify overrides are taking effect.">コンソールを使用してオーバーライドが有効になっていることを確認することはできません。</span> </li>
+</ul>
+<hr>
+<h3 id="internal-design-flow"><span class="merged" id="index.EwfT6" title="原文 : Internal design flow">内部設計フロー</span></h3>
+<ul>
+<li><span class="merged" id="index.4TOzxO" title="原文 : The operator generates the final configuration overrides, which include the merging of operator-generated overrides and the processing of any customer-provided configuration overrides templates and Secrets, during its introspection phase.">オペレータが生成したオーバーライドのマージ、およびイントロスペクション・フェーズでの顧客が指定した構成オーバーライド・テンプレートとシークレットの処理を含む、最終構成オーバーライドが生成されます。</span></li>
+<li><span class="merged" id="index.7iXtQ" title="原文 : The operator creates a Kubernetes Job for introspection named DOMAIN_UID-introspector.">このオペレータは、<code>DOMAIN_UID-introspector</code>という名前のイントロスペクション用のKubernetesジョブを作成します。</span></li>
+<li><span class="merged" id="index.1snE7A" title="原文 : The introspector Job&rsquo;s Pod:">イントロスペクタ・ジョブのポッド:</span>
+<ul>
+<li><span class="merged" id="index.i1KSp" title="原文 : Mounts the Kubernetes ConfigMap and Secrets specified by using the operator Domain configuration.overridesConfigMap, webLogicCredentialsSecret, and configuration.secrets fields.">オペレータDomain <code>configuration.overridesConfigMap</code>、<code>webLogicCredentialsSecret</code>および<code>configuration.secrets</code>フィールドを使用して指定されたKubernetes ConfigMapおよびシークレットをマウントします。</span></li>
+<li><span class="merged" id="index.20zzzR" title="原文 : Reads the mounted configuration overrides templates from the ConfigMap and expands them to create the actual configuration overrides files for the domain:">マウントされた構成オーバーライド・テンプレートをConfigMapから読み取り、展開してドメインの実際の構成オーバーライド・ファイルを作成します:</span>
+<ul>
+<li><span class="merged" id="index.4UpClA" title="原文 : It expands some fixed replaceable values (for example, ${env:DOMAIN_UID}).">一部の固定の置換可能な値(<code>${env:DOMAIN_UID}</code>など)が拡張されます。</span></li>
+<li><span class="merged" id="index.fLcGt" title="原文 : It expands referenced Secrets by reading the value from the corresponding mounted secret file (for example, ${secret:mysecret.mykey}).">対応するマウント済シークレット・ファイル(<code>${secret:mysecret.mykey}</code>など)から値を読み取ることで、参照されるシークレットを拡張します。</span></li>
+<li><span class="merged" id="index.3yZEQq" title="原文 : It optionally encrypts secrets using offline WLST to encrypt the value - useful for passwords (for example, ${secret:mysecret.mykey:encrypt}).">オプションで、オフラインWLSTを使用してシークレットを暗号化し、値を暗号化 - パスワード(<code>${secret:mysecret.mykey:encrypt}</code>など)に便利です。</span></li>
+<li><span class="merged" id="index.3Ticax" title="原文 : It returns expanded configuration overrides files to the operator.">展開された構成オーバーライド・ファイルをオペレータに返します。</span></li>
+<li><span class="merged" id="index.PZ39Z" title="原文 : It reports any errors when attempting expansion to the operator.">オペレータを拡張しようとすると、エラーが報告されます。</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="merged" id="index.3Mb9LU" title="原文 : The operator runtime:">オペレータ・ランタイム:</span>
+<ul>
+<li><span class="merged" id="index.2w6Vzy" title="原文 : Reads the expanded configuration overrides files or errors from the introspector.">拡張構成オーバーライド・ファイルまたはエラーをイントロスペクタから読み取ります。</span></li>
+<li><span class="merged" id="index.3ohohC" title="原文 : And, if the introspector reported no errors, it:">イントロスペクタでエラーが報告されなかった場合は、次のようになります:</span>
+<ul>
+<li><span class="merged" id="index.3yv0Pj" title="原文 : Puts configuration overrides files in a ConfigMap named DOMAIN_UID-weblogic-domain-introspect-cm.">構成オーバーライド・ファイルを<code>DOMAIN_UID-weblogic-domain-introspect-cm</code>という名前のConfigMapに配置します。</span></li>
+<li><span class="merged" id="index.2jKtVj" title="原文 : Mounts this ConfigMap into the WebLogic Server instance Pods.">このConfigMapをWebLogic Serverインスタンス・ポッドにマウントします。</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.1gNQ2N" title="原文 : Otherwise, if the introspector reported errors, it:">それ以外の場合、イントロスペクタがエラーを報告すると、次のようになります:</span>
+<ul>
+<li><span class="merged" id="index.4MDVyw" title="原文 : Logs warning, error, or severe messages.">警告、エラーまたは重大なメッセージを記録します。</span></li>
+<li><span class="merged" id="index.4gACs7" title="原文 : Will not start WebLogic Server instance Pods; however, any already running Pods are preserved.">WebLogic Serverインスタンスのポッドは起動されませんが、すでに実行中のポッドは保持されます。</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="merged" id="index.1sfkS7" title="原文 : The startServer.sh script in the WebLogic Server instance Pods:">WebLogic Serverインスタンスのポッドの<code>startServer.sh</code>スクリプト:</span>
+<ul>
+<li><span class="merged" id="index.mjax9" title="原文 : Copies the expanded configuration overrides files to a special location where the WebLogic runtime can find them:">拡張構成オーバーライド・ファイルを、WebLogicランタイムが検出できる特別なロケーションにコピーします:</span>
+<ul>
+<li><span class="merged" id="index.2vXxrE" title="原文 : config.xml overrides are copied to the optconfig directory in its domain home."><code>config.xml</code>オーバーライドは、そのドメイン・ホームの<code>optconfig</code>ディレクトリにコピーされます。</span></li>
+<li><span class="merged" id="index.1nf8ce" title="原文 : Module overrides are copied to the optconfig/jdbc, optconfig/jms, or optconfig/diagnostics directory.">モジュール・オーバーライドは、<code>optconfig/jdbc</code>、<code>optconfig/jms</code>または<code>optconfig/diagnostics</code>ディレクトリにコピーされます。</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.xgqcs" title="原文 : Deletes any configuration overrides files in the optconfig directory that do not have corresponding template files in the ConfigMap.">ConfigMapに対応するテンプレート・ファイルがない<code>optconfig</code>ディレクトリ内の構成オーバーライド・ファイルを削除します。</span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.3L2S6x" title="原文 : WebLogic Servers read their overrides from their domain home&rsquo;s optconfig directory.">WebLogic Serversは、ドメイン・ホームの<code>optconfig</code>ディレクトリからオーバーライドを読み取ります。</span></li>
+<li><span class="merged" id="index.18hwmx" title="原文 : If WebLogic Server instance Pods are already running when introspection is repeated and this new introspection generates different configuration overrides then:">イントロスペクションの繰返し時にWebLogic Serverインスタンスのポッドがすでに実行されており、この新しいイントロスペクションで異なる構成オーバーライドが生成される場合は、次のようになります:</span>
+<ul>
+<li><span class="merged" id="index.1Zfcse" title="原文 : After the operator updates the ConfigMap, Kubernetes modifies the mounted files in running containers to match the new contents of the ConfigMap.">オペレータがConfigMapを更新すると、Kubernetesは実行中のコンテナ内のマウントされたファイルを、ConfigMapの新しい内容と一致するように変更します。</span></li>
+<li><span class="merged" id="index.9mal1" title="原文 : The rate of this periodic sync of ConfigMap data by kubelet is configurable, but defaults to 10 seconds."><code>kubelet</code>によるConfigMapデータのこの定期的な同期率は構成可能ですが、デフォルトは10秒です。</span></li>
+<li><span class="merged" id="index.GeslR" title="原文 : If overridesDistributionStrategy is DYNAMIC, then the livenessProbe.sh script, which is already periodically invoked by Kubernetes, will perform the same actions as startServer.sh to update the files in optconfig."><code>overridesDistributionStrategy</code>がDYNAMICの場合、Kubernetesによってすでに定期的に起動されている<code>livenessProbe.sh</code>スクリプトは、<code>optconfig</code>でファイルを更新するために<code>startServer.sh</code>と同じアクションを実行します。</span></li>
+<li><span class="merged" id="index.2cfstI" title="原文 : WebLogic Server instances monitor the files in optconfig and dynamically update the active configuration based on the current contents of the configuration overrides files.">WebLogic Serverインスタンスは、<code>optconfig</code>内のファイルを監視し、構成オーバーライド・ファイルの現在の内容に基づいてアクティブな構成を動的に更新します。</span></li>
+<li><span class="merged" id="index.1Rv2xG" title="原文 : Otherwise, if the overridesDistributionStrategy is ON_RESTART, then the updated files at the ConfigMap&rsquo;s mount point are not copied to optconfig while the WebLogic Server instance is running and, therefore, don&rsquo;t affect the active configuration.">それ以外の場合、<code>overridesDistributionStrategy</code>がON_RESTARTであれば、ConfigMapのマウント・ポイントで更新されたファイルはWebLogic Serverインスタンスの実行中に<code>optconfig</code>にコピーされないため、アクティブな構成には影響しません。</span></li>
+</ul>
+</li>
+</ul>
+
+<div class="notices note" ><p><span class="merged" id="index.yHCba.spl1" title="原文 : Changes to configuration overrides distributed to running WebLogic Server instances can only take effect if the corresponding WebLogic configuration MBean attribute is &ldquo;dynamic&rdquo;.">実行中のWebLogic Serverインスタンスに配布された構成オーバーライドへの変更は、対応するWebLogic構成のMBean属性が「動的」である場合にのみ有効になります。</span> <span class="merged" id="index.yHCba.spl2" title="原文 : For instance, the Data Source passwordEncrypted attribute is dynamic while the Url attribute is non-dynamic.">たとえば、データソース<code>passwordEncrypted</code>属性は動的ですが、<code>Url</code>属性は動的ではありません。</span> </p>
+</div>
+
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../model-in-image/debugging/index.html" > <i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="../ingress/index.html" style="margin-right: 0px;" ><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../../js/clipboard.min.js?1614202517"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1614202517"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1614202517"></script>
+    <script src="../../../js/jquery.sticky.js?1614202517"></script>
+    <script src="../../../js/featherlight.min.js?1614202517"></script>
+    <script src="../../../js/highlight.pack.js?1614202517"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1614202517"></script>
+    <script src="../../../js/learn.js?1614202517"></script>
+    <script src="../../../js/hugo-learn.js?1614202517"></script>
+
+    <link href="../../../mermaid/mermaid.css?1614202517" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1614202517"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>

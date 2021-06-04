@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+<html lang="ja" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.82.0" />
+    <meta content="Encrypts the passwords in a model (or its variable file) using a user-provided passphrase." name="description">
+
+
+    <link rel="icon" href="../../../images/favicon.png" type="image/png">
+
+    <title>モデルの暗号化ツール :: WebLogic Deploy Tooling</title>
+
+    
+    <link href="../../../css/nucleus.css?1620686566" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1620686566" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1620686566" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1620686566" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1620686566" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1620686566" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1620686566" rel="stylesheet">
+    <link href="../../../css/theme.css?1620686566" rel="stylesheet">
+    <link href="../../../css/tabs.css?1620686566" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1620686566" rel="stylesheet">
+    
+    
+
+    <script src="../../../js/jquery-3.3.1.min.js?1620686566"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  <meta HTTP-EQUIV="Content-Type" Content="text/html; charset=utf-8"></head>
+  <style type="text/css"> <!-- .merged:hover {text-decoration: underline;} --> </style>
+<body class="" data-url="/weblogic-deploy-tooling/userguide/tools/encrypt/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <span class="merged" id="index.3vfFi5" title="原文 :  Deploy Tooling "><a href="https://oracle.github.io/weblogic-deploy-tooling" id="logo"><img height="60" src="../../../images/logo.png"><br />ツールのデプロイ</a></span>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../../js/lunr.min.js?1620686566"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1620686566"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/oracle.github.io\/weblogic-deploy-tooling";
+    
+</script>
+<script type="text/javascript" src="../../../js/search.js?1620686566"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+      <li><span class="merged" id="index.4CNnKm"  title="原文:: Home"><a class="padding" href="https://oracle.github.io/weblogic-deploy-tooling">ホーム</a></span></li>
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/concepts/" title=" 概念">
+      <span class="merged" id="index.2GCNml" title="原文 :  1. Concepts "><a href="../../../concepts/index.html"> <b>1. </b>概要 </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/concepts/model/" title="メタデータ・モデル">
+        <span class="merged" id="index.UBsau" title="原文 :  Metadata Model "><a href="../../../concepts/model/index.html">メタデータ・モデル</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/concepts/archive/" title="アーカイブ・ファイル">
+        <span class="merged" id="index.Vk6jX"  title="原文::  Archive File "><a href="../../../concepts/archive/index.html"> アーカイブ・ファイル </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        parent
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/" title="ユーザー・ガイド">
+      <span class="merged" id="index.1Bam9Q" title="原文 :  2. User Guide "><a href="../../index.html"> <b>2. </b>ユーザー・ガイド </a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/install/" title="WDTのインストール">
+        <span class="merged" id="index.2jt5gK" title="原文 :  Install WDT "><a href="../../install/index.html">WDTのインストール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        parent
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/tools/" title="WDTツール">
+      <span class="merged" id="index.1rqQC0" title="原文 :  WDT Tools "><a href="../index.html"> <b> </b>WDTツール </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/create/" title="ドメインの作成ツール">
+        <span class="merged" id="index.1GcHuk" title="原文 :  Create Domain Tool "><a href="../create/index.html">ドメインの作成ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/update/" title="ドメインの更新ツール">
+        <span class="merged" id="index.2WnvRb" title="原文 :  Update Domain Tool "><a href="../update/index.html">ドメインの更新ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/deploy/" title="Deploy Applications Tool">
+        <span class="merged" id="index.1DcafQ" title="原文 :  Deploy Applications Tool "><a href="../deploy/index.html"> Deploy Applications Tool </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/discover/" title="ドメインの検出ツール">
+        <span class="merged" id="index.1zlutE" title="原文 :  Discover Domain Tool "><a href="../discover/index.html">ドメインの検出ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item active" data-nav-id="/weblogic-deploy-tooling/userguide/tools/encrypt/" title="モデルの暗号化ツール">
+        <span class="merged" id="index.1ETu8F" title="原文 :  Encrypt Model Tool "><a href="index.html">モデルの暗号化ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/validate/" title="モデルの検証ツール">
+        <span class="merged" id="index.1hwFVt" title="原文 :  Validate Model Tool "><a href="../validate/index.html">モデルの検証ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/compare/" title="モデルの比較ツール">
+        <span class="merged" id="index.2Q4ssQ" title="原文 :  Compare Model Tool "><a href="../compare/index.html">モデルの比較ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/prepare/" title="モデルの準備ツール">
+        <span class="merged" id="index.1MrHh3" title="原文 :  Prepare Model Tool "><a href="../prepare/index.html">モデルの準備ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/kubernetes/" title="ドメイン・リソースの抽出ツール">
+        <span class="merged" id="index.3bomdS" title="原文 :  Extract Domain Resource Tool "><a href="../kubernetes/index.html">ドメイン・リソースの抽出ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/variable_injection/" title="変数インジェクタ・ツール">
+        <span class="merged" id="index.3Bxi3K" title="原文 :  Variable Injector Tool "><a href="../variable_injection/index.html">変数インジェクタ・ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/model_help/" title="モデル・ヘルプ・ツール">
+        <span class="merged" id="index.1b0YMw" title="原文 :  Model Help Tool "><a href="../model_help/index.html">モデル・ヘルプ・ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/target_env/" title="ターゲット環境">
+        <span class="merged" id="index.2BiRhD" title="原文 :  Target environments "><a href="../../target_env/index.html">ターゲット環境</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/" title="ツール構成">
+      <span class="merged" id="index.I1lGn" title="原文 :  Tools configuration "><a href="../../tools-config/index.html">ツール構成</a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/model_filters/" title="モデル・フィルタ">
+        <span class="merged" id="index.2vk8dF" title="原文 :  Model filters "><a href="../../tools-config/model_filters/index.html">モデル・フィルタ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/domain_def/" title="ドメイン・タイプ定義">
+        <span class="merged" id="index.2LofWD" title="原文 :  Domain type definitions "><a href="../../tools-config/domain_def/index.html">ドメイン・タイプ定義</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/custom_config/" title="カスタム構成">
+        <span class="merged" id="index.18oiNn"  title="原文::  Custom configuration "><a href="../../tools-config/custom_config/index.html"> カスタム構成 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/tool_prop/" title="ツールのプロパティ・ファイル">
+        <span class="merged" id="index.1qomGW" title="原文 :  Tool property file "><a href="../../tools-config/tool_prop/index.html">ツールのプロパティ・ファイル</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/samples/" title="サンプル">
+      <span class="merged" id="index.2CbTQi" title="原文 :  3. Samples "><a href="../../../samples/index.html"> <b>3. </b>サンプル</a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/adminserver-model/" title="管理サーバーのカスタマイズ">
+        <span class="merged" id="index.25qmdE" title="原文 :  Customizing the Administration Server "><a href="../../../samples/adminserver-model/index.html">管理サーバーのカスタマイズ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/cluster-model/" title="構成済クラスタのモデル化">
+        <span class="merged" id="index.H7Gaw" title="原文 :  Modeling a configured cluster "><a href="../../../samples/cluster-model/index.html">構成済クラスタのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/jdbc-model/" title="JDBCデータ・ソースのモデル化">
+        <span class="merged" id="index.3EMyea" title="原文 :  Modeling a JDBC data source "><a href="../../../samples/jdbc-model/index.html">JDBCデータ・ソースのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/workmanager-model/" title="ワーク・マネージャのモデリング">
+        <span class="merged" id="index.39Hl7y" title="原文 :  Modeling a Work Manager "><a href="../../../samples/workmanager-model/index.html">ワーク・マネージャのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/securityproviders-model/" title="セキュリティ・プロバイダのモデル化">
+        <span class="merged" id="index.24yacq" title="原文 :  Modeling security providers "><a href="../../../samples/securityproviders-model/index.html">セキュリティ・プロバイダのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/usersgroups-model/" title="WebLogicのユーザー、グループおよびロールのモデリング">
+        <span class="merged" id="index.4OEyXR" title="原文 :  Modeling WebLogic users, groups, and roles "><a href="../../../samples/usersgroups-model/index.html">WebLogicのユーザー、グループおよびロールのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/pwcredentialmap-model/" title="WebLogicユーザー・パスワード資格証明マッピングのモデリング">
+        <span class="merged" id="index.4bbJ8U" title="原文 :  Modeling WebLogic user password credential mapping "><a href="../../../samples/pwcredentialmap-model/index.html">WebLogicユーザー・パスワード資格証明マッピングのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/odl-model/" title="Oracle Diagnostic Loggingの構成">
+        <span class="merged" id="index.43ApUq" title="原文 :  Configuring Oracle Diagnostic Logging "><a href="../../../samples/odl-model/index.html">Oracle Diagnostic Loggingの構成</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/ohs-model/" title="Oracle HTTP Serverの構成">
+        <span class="merged" id="index.2BWoBg"  title="原文:  Configuring Oracle HTTP Server "><a href="../../../samples/ohs-model/index.html"> Oracle HTTP Serverの構成 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/targetservers-model/" title="サーバー・グループのターゲット指定">
+        <span class="merged" id="index.1zjtFh" title="原文 :  Targeting server groups "><a href="../../../samples/targetservers-model/index.html">サーバー・グループのターゲット指定</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/wko-model/" title="WebLogic Kubernetes OperatorでのWDTの使用">
+        <span class="merged" id="index.4g6412" title="原文 :  Using WDT with WebLogic Kubernetes Operator "><a href="../../../samples/wko-model/index.html">WebLogic Kubernetes OperatorでのWDTの使用</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/developer/" title="開発者ガイド">
+      <span class="merged" id="index.kQTEC" title="原文 :  4. Developer Guide "><a href="../../../developer/index.html"> <b>4. </b>開発者ガイド </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/project-structure/" title="プロジェクト体系">
+        <span class="merged" id="index.3Lxch9" title="原文 :  Project structure "><a href="../../../developer/project-structure/index.html">プロジェクト体系</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/feature-impl/" title="機能の実装">
+        <span class="merged" id="index.1gpFlU" title="原文 :  Feature implementation "><a href="../../../developer/feature-impl/index.html">機能の実装</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/alias-definitions/" title="別名定義">
+        <span class="merged" id="index.1Gyhad" title="原文 :  Alias definitions "><a href="../../../developer/alias-definitions/index.html">別名定義</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/buildwdt/" title="WebLogic Deploy Toolのビルド">
+        <span class="merged" id="index.4MCAhb" title="原文 :  Build WebLogic Deploy Tool "><a href="../../../developer/buildwdt/index.html">WebLogic Deploy Toolのビルド</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/releaseprocess/" title="WDTプロジェクト・リリース・プロセス">
+        <span class="merged" id="index.lwbOu" title="原文 :  WDT project release process "><a href="../../../developer/releaseprocess/index.html">WDTプロジェクト・リリース・プロセス</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/contribute/" title="WDTにコントリビュート">
+        <span class="merged" id="index.1L4vNs" title="原文 :  Contribute to WDT "><a href="../../../developer/contribute/index.html">WDTにコントリビュート</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+      <li><span class="merged" id="index.1X27Sv"  title="原文:: Release Notes"><a class="padding" href="../../../release-notes">リリース・ノート</a></span></li>
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p><span class="merged" id="index.4behA5" title="原文 : Created with from Oracle"><a href="https://www.oracle.com">Oracle</a>から<i class="fas fa-heart"></i>を使用して作成</span></p>
+<p><span class="merged" id="index.1OQYZy"  title="原文:: &nbsp">&nbsp</span></p>
+<p><span class="merged" id="index.msaKb" title="原文 :  GitHub repo"><a href="https://github.com/oracle/weblogic-deploy-tooling"><i class="fab fa-github"></i>GitHubレポ</a></span></p>
+<p><span class="merged" id="index.rjNGa" title="原文 :  Public Slack #weblogic"><a href="https://weblogic-slack-inviter.herokuapp.com/"><i class="fab fa-slack"></i> Public Slack #weblogic</a></span></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span class="merged" id="index.1pPa7x" title="原文 :  &gt; User Guide &gt; WDT Tools &gt; Encrypt Model Tool "><span id="sidebar-toggle-span"><a data-sidebar-toggle="" href="index.html#" id="sidebar-toggle"><i class="fas fa-bars"></i></a></span> <span id="toc-menu"><i class="fas fa-list-alt"></i></span> <span class="links"><a href='../../../index.html'></a> > <a href='../../index.html'>ユーザー・ガイド</a> > <a href='../index.html'>WDTツール</a> > モデルの暗号化ツール</span></span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              <span class="merged" id="index.2ddtVX" title="原文 : Encrypt Model Tool">モデルの暗号化ツール</span>
+            </h1>
+          
+
+        
+
+
+
+<div class="notices note" ><p><span class="merged" id="index.XCzWX" title="原文 : To meet Oracle&rsquo;s security standards, the encryption algorithms require JDK 8 to run.">Oracleのセキュリティ標準を満たすために、暗号化アルゴリズムを実行するにはJDK 8が必要です。</span></p>
+</div>
+
+<p><span class="merged" id="index.MWnV7.spl1" title="原文 : Models contain WebLogic Server domain configuration.">モデルには、WebLogic Serverドメイン構成が含まれます。</span> <span class="merged" id="index.MWnV7.spl2" title="原文 : Certain types of resources and other configurations require passwords; for example, a JDBC data source requires the password for the user establishing the database connection.">特定のタイプのリソースおよびその他の構成では、パスワードが必要です。たとえば、JDBCデータ・ソースでは、データベース接続を確立するユーザーのパスワードが必要です。</span> <span class="merged" id="index.MWnV7.spl3" title="原文 : When creating or configuring a resource that requires a password, that password must be specified either in the model directly or in the variable file.">パスワードを必要とするリソースを作成または構成する場合は、そのパスワードをモデルに直接指定するか、変数ファイルに指定する必要があります。</span> <span class="merged" id="index.MWnV7.spl4" title="原文 : Clear-text passwords are not conducive to storing configurations as source, so the Encrypt Model Tool gives the model author the ability to encrypt the passwords in the model and variable file using passphrase-based, reversible encryption.">ク・リア・テキスト・パスワードは、構成をソースとして格納することには導電性がないため、モデルの暗号化ツールを使用すると、モデル作成者は、パスフレーズ・ベースの可逆暗号化を使用してモデルおよび変数ファイルのパスワードを暗号化できます。</span> <span class="merged" id="index.MWnV7.spl5" title="原文 : When using a tool with a model containing encrypted passwords, the encryption passphrase must be provided, so that the tool can decrypt the password in memory to set the necessary WebLogic Server configuration (which supports its own encryption mechanism based on a domain-specific key).">暗号化されたパスワードを含むモデルでツールを使用する場合、ツールが必要なWebLogic Server構成(ドメイン固有のキーに基づく独自の暗号化メカニズムをサポート)を設定するためにメモリー内のパスワードを復号化できるように、暗号化パスフレーズを指定する必要があります。</span> <span class="merged" id="index.MWnV7.spl6" title="原文 : While there is no requirement to use the WebLogic Deploy Tooling encryption mechanism, it is highly recommended because storing clear text passwords on disk is never a good idea.">WebLogic Deploy Tooling暗号化メカニズムを使用する必要はありませんが、クリア・テキスト・パスワードをディスクに格納することはお薦めしないため、強くお薦めします。</span> </p>
+<p><span class="merged" id="index.Fnt4A.spl1" title="原文 : The Create, Update and Deploy tools can take a set of models.">作成、更新およびデプロイ・ツールでは、一連のモデルを使用できます。</span> <span class="merged" id="index.Fnt4A.spl2" title="原文 : The Encrypt model will encrypt a set of models.">暗号化モデルは、モデルのセットを暗号化します。</span> <span class="merged" id="index.Fnt4A.spl3" title="原文 : Each model is encrypted using the same passphrase and written back to its original location.">各モデルは、同じパスフレーズを使用して暗号化され、元のロケーションに書き戻されます。</span> </p>
+
+<div class="notices note" ><p><span class="merged" id="index.2qmdO5.spl1" title="原文 : WebLogic Deploy Tooling also supports the use of domain-encrypted passwords directly in the model.">WebLogic Deploy Toolでは、ドメインで暗号化されたパスワードをモデル内で直接使用することもできます。</span> <span class="merged" id="index.2qmdO5.spl2" title="原文 : The Encrypt Model Tool should not be used in tandem with this method.">モデルの暗号化ツールは、このメソッドと組み合せて使用しないでください。</span> </p>
+</div>
+
+<p><span class="merged" id="index.c42Uk" title="原文 : Start with the following example model:">次のサンプル・モデルから始めます:</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">domainInfo</span>:
+    <span style="color:#f92672">AdminUserName</span>: <span style="color:#ae81ff">weblogic</span>
+    <span style="color:#f92672">AdminPassword</span>: <span style="color:#ae81ff">welcome1</span>
+    <span style="color:#f92672">ServerStartMode</span>: <span style="color:#ae81ff">prod</span>
+<span style="color:#f92672">topology</span>:
+    <span style="color:#f92672">Name</span>: <span style="color:#ae81ff">DemoDomain</span>
+    <span style="color:#f92672">AdminServerName</span>: <span style="color:#ae81ff">AdminServer</span>
+    <span style="color:#f92672">Cluster</span>:
+        <span style="color:#f92672">mycluster</span>:
+    <span style="color:#f92672">Server</span>:
+        <span style="color:#f92672">AdminServer</span>:
+            <span style="color:#f92672">ListenAddress</span>: <span style="color:#ae81ff">192.168.1.50</span>
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">7001</span>
+            <span style="color:#f92672">Machine</span>: <span style="color:#ae81ff">machine1</span>
+        <span style="color:#f92672">m1</span>:
+            <span style="color:#f92672">ListenAddress</span>: <span style="color:#ae81ff">192.168.1.50</span>
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">8001</span>
+            <span style="color:#f92672">Cluster</span>: <span style="color:#ae81ff">mycluster</span>
+            <span style="color:#f92672">Machine</span>: <span style="color:#ae81ff">machine1</span>
+        <span style="color:#f92672">m2</span>:
+            <span style="color:#f92672">ListenAddress</span>: <span style="color:#ae81ff">192.168.1.51</span>
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">8001</span>
+            <span style="color:#f92672">Cluster</span>: <span style="color:#ae81ff">mycluster</span>
+            <span style="color:#f92672">Machine</span>: <span style="color:#ae81ff">machine2</span>
+    <span style="color:#f92672">Machine</span>:
+        <span style="color:#f92672">machine1</span>:
+            <span style="color:#f92672">NodeManager</span>:
+                <span style="color:#f92672">ListenAddress</span>: <span style="color:#ae81ff">192.168.1.50</span>
+                <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">5556</span>
+        <span style="color:#f92672">machine2</span>:
+            <span style="color:#f92672">NodeManager</span>:
+                <span style="color:#f92672">ListenAddress</span>: <span style="color:#ae81ff">192.168.1.51</span>
+                <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">5556</span>
+    <span style="color:#f92672">SecurityConfiguration</span>:
+        <span style="color:#f92672">NodeManagerUsername</span>: <span style="color:#ae81ff">weblogic</span>
+        <span style="color:#f92672">NodeManagerPasswordEncrypted</span>: <span style="color:#ae81ff">welcome1</span>
+    <span style="color:#f92672">RestfulManagementServices</span>:
+        <span style="color:#f92672">Enabled</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#f92672">Security</span>:
+        <span style="color:#f92672">Group</span>:
+            <span style="color:#f92672">FriscoGroup</span>:
+                <span style="color:#f92672">Description</span>: <span style="color:#ae81ff">The WLS Deploy development group</span>
+        <span style="color:#f92672">User</span>:
+            <span style="color:#f92672">Robert</span>:
+                <span style="color:#f92672">Password</span>: <span style="color:#ae81ff">welcome1</span>
+                <span style="color:#f92672">GroupMemberOf</span>: [ <span style="color:#ae81ff">Administrators, FriscoGroup ]</span>
+            <span style="color:#f92672">Derek</span>:
+                <span style="color:#f92672">Password</span>: <span style="color:#ae81ff">welcome1</span>
+                <span style="color:#f92672">GroupMemberOf</span>: <span style="color:#e6db74">&#39;Administrators, FriscoGroup&#39;</span>
+            <span style="color:#f92672">Richard</span>:
+                <span style="color:#f92672">Password</span>: <span style="color:#ae81ff">welcome1</span>
+                <span style="color:#f92672">GroupMemberOf</span>: [ <span style="color:#ae81ff">FriscoGroup ]</span>
+            <span style="color:#f92672">Carolyn</span>:
+                <span style="color:#f92672">Password</span>: <span style="color:#ae81ff">welcome1</span>
+                <span style="color:#f92672">GroupMemberOf</span>: <span style="color:#ae81ff">FriscoGroup</span>
+            <span style="color:#f92672">Mike</span>:
+                <span style="color:#f92672">Password</span>: <span style="color:#ae81ff">welcome1</span>
+                <span style="color:#f92672">GroupMemberOf</span>: <span style="color:#ae81ff">FriscoGroup</span>
+            <span style="color:#f92672">Johnny</span>:
+                <span style="color:#f92672">Password</span>: <span style="color:#ae81ff">welcome1</span>
+                <span style="color:#f92672">GroupMemberOf</span>: <span style="color:#ae81ff">FriscoGroup</span>
+            <span style="color:#f92672">Gopi</span>:
+                <span style="color:#f92672">Password</span>: <span style="color:#ae81ff">welcome1</span>
+                <span style="color:#f92672">GroupMemberOf</span>: <span style="color:#ae81ff">FriscoGroup</span>
+</code></pre></div><p><span class="merged" id="index.39jvRZ" title="原文 : To run the encryption tool on the model, run the following command:">モデルで暗号化ツールを実行するには、次のコマンドを実行します:</span></p>
+<pre><code>$ weblogic-deploy\bin\encryptModel.cmd -oracle_home c:\wls12213 -model_file UnencryptedDemoDomain.yaml
+</code></pre>
+<p><span class="merged" id="index.1Aun4W" title="原文 : The tool will prompt for the encryption passphrase twice and then encrypt any passwords it finds in the model, skipping any password fields that have variable values, to produce a result that looks like the following model.">このツールは、暗号化パスフレーズを2回要求し、モデル内で見つかったパスワードを暗号化して、変数値を持つパスワード・フィールドをスキップし、次のモデルのような結果を生成します。</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">domainInfo</span>:
+    <span style="color:#f92672">AdminUserName</span>: <span style="color:#ae81ff">weblogic</span>
+    <span style="color:#f92672">AdminPassword</span>: <span style="color:#e6db74">&#39;{AES}a0dacEQ4Q2JnTmI4VHp5NjIzVHNPRFg5ZjRiVDJ4NzU6T1M0SGYwM2xBeHdRdHFWVTpWZEh6bkd4NzZSQT0=&#39;</span>
+    <span style="color:#f92672">ServerStartMode</span>: <span style="color:#ae81ff">prod</span>
+<span style="color:#f92672">topology</span>:
+    <span style="color:#f92672">Name</span>: <span style="color:#ae81ff">DemoDomain</span>
+    <span style="color:#f92672">AdminServerName</span>: <span style="color:#ae81ff">AdminServer</span>
+    <span style="color:#f92672">Cluster</span>:
+        <span style="color:#f92672">mycluster</span>:
+    <span style="color:#f92672">Server</span>:
+        <span style="color:#f92672">AdminServer</span>:
+            <span style="color:#f92672">ListenAddress</span>: <span style="color:#ae81ff">192.168.1.50</span>
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">7001</span>
+            <span style="color:#f92672">Machine</span>: <span style="color:#ae81ff">machine1</span>
+        <span style="color:#f92672">m1</span>:
+            <span style="color:#f92672">ListenAddress</span>: <span style="color:#ae81ff">192.168.1.50</span>
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">8001</span>
+            <span style="color:#f92672">Cluster</span>: <span style="color:#ae81ff">mycluster</span>
+            <span style="color:#f92672">Machine</span>: <span style="color:#ae81ff">machine1</span>
+        <span style="color:#f92672">m2</span>:
+            <span style="color:#f92672">ListenAddress</span>: <span style="color:#ae81ff">192.168.1.51</span>
+            <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">8001</span>
+            <span style="color:#f92672">Cluster</span>: <span style="color:#ae81ff">mycluster</span>
+            <span style="color:#f92672">Machine</span>: <span style="color:#ae81ff">machine2</span>
+    <span style="color:#f92672">Machine</span>:
+        <span style="color:#f92672">machine1</span>:
+            <span style="color:#f92672">NodeManager</span>:
+                <span style="color:#f92672">ListenAddress</span>: <span style="color:#ae81ff">192.168.1.50</span>
+                <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">5556</span>
+        <span style="color:#f92672">machine2</span>:
+            <span style="color:#f92672">NodeManager</span>:
+                <span style="color:#f92672">ListenAddress</span>: <span style="color:#ae81ff">192.168.1.51</span>
+                <span style="color:#f92672">ListenPort</span>: <span style="color:#ae81ff">5556</span>
+    <span style="color:#f92672">SecurityConfiguration</span>:
+        <span style="color:#f92672">NodeManagerUsername</span>: <span style="color:#ae81ff">weblogic</span>
+        <span style="color:#f92672">NodeManagerPasswordEncrypted</span>: <span style="color:#e6db74">&#39;{AES}WndJQWNySWpoY0VEbFpmR2V1RFhvamVFdGwzandtaFU6L1d4V0dPRFpsaXJIUkl2djpQdUdLaTloR1IxTT0=&#39;</span>
+    <span style="color:#f92672">RestfulManagementServices</span>:
+        <span style="color:#f92672">Enabled</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#f92672">Security</span>:
+        <span style="color:#f92672">Group</span>:
+            <span style="color:#f92672">FriscoGroup</span>:
+                <span style="color:#f92672">Description</span>: <span style="color:#ae81ff">The WebLogic Deploy development group</span>
+        <span style="color:#f92672">User</span>:
+            <span style="color:#f92672">Robert</span>:
+                <span style="color:#f92672">Password</span>: <span style="color:#e6db74">&#39;{AES}VFIzVmdwcWNLeHBPaWhyRy82VER6WFV6aHRPbGcwMjQ6bS90OGVSTnJxWTIvZjkrRjpjSzBQUHlOWWpWTT0=&#39;</span>
+                <span style="color:#f92672">GroupMemberOf</span>: [ <span style="color:#ae81ff">Administrators, FriscoGroup ]</span>
+            <span style="color:#f92672">Derek</span>:
+                <span style="color:#f92672">Password</span>: <span style="color:#e6db74">&#39;{AES}R1BTM21ZSkxpdTNIZjNqcTlsSC9PeHV4aXJoT3kxazM6M1dLOXBLeCtlc1lsVDUrWjo5VitHZUxCcjZnOD0=&#39;</span>
+                <span style="color:#f92672">GroupMemberOf</span>: <span style="color:#e6db74">&#39;Administrators, FriscoGroup&#39;</span>
+            <span style="color:#f92672">Richard</span>:
+                <span style="color:#f92672">Password</span>: <span style="color:#e6db74">&#39;{AES}Y3FkQmRIRGhjZEtlRjVkVVdLQU1Eb09LWDIzMlhUWVo6MjllVExsMmNmNzJzZDFjaTpNcVNDbUs2cnRFRT0=&#39;</span>
+                <span style="color:#f92672">GroupMemberOf</span>: [ <span style="color:#ae81ff">FriscoGroup ]</span>
+            <span style="color:#f92672">Carolyn</span>:
+                <span style="color:#f92672">Password</span>: <span style="color:#e6db74">&#39;{AES}cW8wczJqZXJZOHVsTGNOTmlqTGpuZGFoSkY2ME5WbTk6c0VaWGs1ME5pemlKdC9wajpFaTJPRS9ZQlcvND0=&#39;</span>
+                <span style="color:#f92672">GroupMemberOf</span>: <span style="color:#ae81ff">FriscoGroup</span>
+            <span style="color:#f92672">Mike</span>:
+                <span style="color:#f92672">Password</span>: <span style="color:#e6db74">&#39;{AES}cnF6Z3JOVWcvc0czN3JVb1g5T2FidmRsSU51anJCa0Y6UlBsNVFsOFlXU29xUlY1aDp3VWZWYU5VOVRkMD0=&#39;</span>
+                <span style="color:#f92672">GroupMemberOf</span>: <span style="color:#ae81ff">FriscoGroup</span>
+            <span style="color:#f92672">Johnny</span>:
+                <span style="color:#f92672">Password</span>: <span style="color:#e6db74">&#39;{AES}UWJ5Y25Ma2RHTkNMVTZ1RnlhRkNaTUxXaXV4SjBjaWg6citwTDQvelN1aUlPdnZaSDpCMEdSWGg2ZlVJUT0=&#39;</span>
+                <span style="color:#f92672">GroupMemberOf</span>: <span style="color:#ae81ff">FriscoGroup</span>
+            <span style="color:#f92672">Gopi</span>:
+                <span style="color:#f92672">Password</span>: <span style="color:#e6db74">&#39;{AES}MWJGcnhtZlNyWXVrU1VXMVFxZFEvQThoS1hPN2FQdDc6MmRPaUF2Y1FCQ3VIK3MydDpZaFR5clBrN1FjOD0=&#39;</span>
+                <span style="color:#f92672">GroupMemberOf</span>: <span style="color:#ae81ff">FriscoGroup</span>
+</code></pre></div><p><span class="merged" id="index.3AMiyW" title="原文 : If the model stores passwords in the variables file, like the following model:">モデルで、次のモデルのようにパスワードが変数ファイルに格納されているとします:</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">resources</span>:
+    <span style="color:#f92672">JDBCSystemResource</span>:
+        <span style="color:#f92672">Generic1</span>:
+            <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">mycluster</span>
+            <span style="color:#f92672">JdbcResource</span>:
+              <span style="color:#f92672">JDBCDataSourceParams</span>:
+                  <span style="color:#f92672">JNDIName</span>: [ <span style="color:#ae81ff">jdbc/generic1 ]</span>
+                  <span style="color:#f92672">GlobalTransactionsProtocol</span>: <span style="color:#ae81ff">TwoPhaseCommit</span>
+              <span style="color:#f92672">JDBCDriverParams</span>:
+                  <span style="color:#f92672">DriverName</span>: <span style="color:#ae81ff">oracle.jdbc.xa.client.OracleXADataSource</span>
+                  <span style="color:#f92672">URL</span>: <span style="color:#e6db74">&#39;jdbc:oracle:thin:@//@@PROP:db.url@@&#39;</span>
+                  <span style="color:#f92672">PasswordEncrypted</span>: <span style="color:#e6db74">&#39;@@PROP:db.password@@&#39;</span>
+                  <span style="color:#f92672">Properties</span>:
+                      <span style="color:#f92672">user</span>:
+                          <span style="color:#f92672">Value</span>: <span style="color:#e6db74">&#39;@@PROP:db.user@@&#39;</span>
+                      <span style="color:#f92672">oracle.net.CONNECT_TIMEOUT</span>:
+                          <span style="color:#f92672">Value</span>: <span style="color:#ae81ff">5000</span>
+                      <span style="color:#f92672">oracle.jdbc.ReadTimeout</span>:
+                          <span style="color:#f92672">Value</span>: <span style="color:#ae81ff">30000</span>
+              <span style="color:#f92672">JDBCConnectionPoolParams</span>:
+                  <span style="color:#f92672">InitialCapacity</span>: <span style="color:#ae81ff">3</span>
+                  <span style="color:#f92672">MaxCapacity</span>: <span style="color:#ae81ff">15</span>
+                  <span style="color:#f92672">TestTableName</span>: <span style="color:#ae81ff">SQL ISVALID</span>
+                  <span style="color:#f92672">TestConnectionsOnReserve</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#f92672">MailSession</span>:
+        <span style="color:#f92672">MyMailSession</span>:
+            <span style="color:#f92672">JNDIName</span>: <span style="color:#ae81ff">mail/MyMailSession</span>
+            <span style="color:#f92672">Target</span>: <span style="color:#ae81ff">mycluster</span>
+            <span style="color:#f92672">SessionUsername</span>: <span style="color:#e6db74">&#39;john.smith@example.com&#39;</span>
+            <span style="color:#f92672">SessionPasswordEncrypted</span>: <span style="color:#e6db74">&#39;@@PROP:mymailsession.password@@&#39;</span>
+            <span style="color:#f92672">Properties</span>:
+                <span style="color:#f92672">mail.store.protocol</span>: <span style="color:#ae81ff">imap</span>
+                <span style="color:#f92672">mail.imap.port</span>: <span style="color:#ae81ff">993</span>
+                <span style="color:#f92672">mail.imap.ssl.enable</span>: <span style="color:#66d9ef">true</span>
+                <span style="color:#f92672">mail.imap.starttls.enable</span>: <span style="color:#66d9ef">true</span>
+                <span style="color:#f92672">mail.imap.host</span>: <span style="color:#ae81ff">imap.example.com</span>
+                <span style="color:#f92672">mail.impa.auth</span>: <span style="color:#66d9ef">true</span>
+                <span style="color:#f92672">mail.transport.protocol</span>: <span style="color:#ae81ff">smtp</span>
+                <span style="color:#f92672">mail.smtp.starttls.enable</span>: <span style="color:#66d9ef">true</span>
+                <span style="color:#f92672">mail.smtp.port</span>: <span style="color:#ae81ff">465</span>
+                <span style="color:#f92672">mail.smtp.ssl.enable</span>: <span style="color:#66d9ef">true</span>
+                <span style="color:#f92672">mail.smtp.auth</span>: <span style="color:#66d9ef">true</span>
+                <span style="color:#f92672">mail.smtp.host</span>: <span style="color:#ae81ff">smtp.example.com</span>
+</code></pre></div><p><span class="merged" id="index.2N4wB8" title="原文 : Run the encryption tool and pass both the model and variable files, like this:">暗号化ツールを実行し、次のようにモデル・ファイルと変数ファイルの両方を渡します:</span></p>
+<pre><code>$ weblogic-deploy\bin\encryptModel.cmd -oracle_home c:\wls12213 -model_file UnencryptedDemoDomain.yaml -variable_file UnencryptedDemoDomain.properties
+</code></pre>
+<p><span class="merged" id="index.28JbXY" title="原文 : The variable file will now look something like the following:">変数ファイルは次のようになります:</span></p>
+<pre><code>#Variables updated after encryption
+#Thu Feb 01 19:12:57 CST 2018
+db.user=rpatrick
+db.url=mydb.example.com:1539/PDBORCL
+db.password={AES}czFXMkNFWNG9jNTNYd0hRL2R1anBnb0hDUlp4K1liQWFBdVM4UTlvMnE0NU1aMUZ5UVhiK25oaWFBc2lIQ20\=
+mymailsession.password={AES}RW9nRnUzcE41WGNMdnEzNDdRQVVNWm1LMGhidkFBVXg6OUN3aXcyci82cmh3cnpNQTpmY2UycUp5YWl4UT0\=
+</code></pre>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../discover/index.html" > <i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="../validate/index.html" style="margin-right: 0px;" ><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../../js/clipboard.min.js?1620686566"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1620686566"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1620686566"></script>
+    <script src="../../../js/jquery.sticky.js?1620686566"></script>
+    <script src="../../../js/featherlight.min.js?1620686566"></script>
+    <script src="../../../js/highlight.pack.js?1620686566"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1620686566"></script>
+    <script src="../../../js/learn.js?1620686566"></script>
+    <script src="../../../js/hugo-learn.js?1620686566"></script>
+    
+        
+            <script src="../../../mermaid/mermaid.js?1620686566"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>

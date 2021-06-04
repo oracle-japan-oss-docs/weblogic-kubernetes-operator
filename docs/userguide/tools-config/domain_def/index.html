@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="ja" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.82.0" />
+    <meta content="" name="description">
+
+
+    <link rel="icon" href="../../../images/favicon.png" type="image/png">
+
+    <title>ドメイン・タイプ定義 :: WebLogic Deploy Tooling</title>
+
+    
+    <link href="../../../css/nucleus.css?1620686566" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1620686566" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1620686566" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1620686566" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1620686566" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1620686566" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1620686566" rel="stylesheet">
+    <link href="../../../css/theme.css?1620686566" rel="stylesheet">
+    <link href="../../../css/tabs.css?1620686566" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1620686566" rel="stylesheet">
+    
+    
+
+    <script src="../../../js/jquery-3.3.1.min.js?1620686566"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  <meta HTTP-EQUIV="Content-Type" Content="text/html; charset=utf-8"></head>
+  <style type="text/css"> <!-- .merged:hover {text-decoration: underline;} --> </style>
+<body class="" data-url="/weblogic-deploy-tooling/userguide/tools-config/domain_def/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <span class="merged" id="index.3vfFi5" title="原文 :  Deploy Tooling "><a href="https://oracle.github.io/weblogic-deploy-tooling" id="logo"><img height="60" src="../../../images/logo.png"><br />ツールのデプロイ</a></span>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../../js/lunr.min.js?1620686566"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1620686566"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/oracle.github.io\/weblogic-deploy-tooling";
+    
+</script>
+<script type="text/javascript" src="../../../js/search.js?1620686566"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+      <li><span class="merged" id="index.4CNnKm"  title="原文:: Home"><a class="padding" href="https://oracle.github.io/weblogic-deploy-tooling">ホーム</a></span></li>
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/concepts/" title=" 概念">
+      <span class="merged" id="index.2GCNml" title="原文 :  1. Concepts "><a href="../../../concepts/index.html"> <b>1. </b>概要 </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/concepts/model/" title="メタデータ・モデル">
+        <span class="merged" id="index.UBsau" title="原文 :  Metadata Model "><a href="../../../concepts/model/index.html">メタデータ・モデル</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/concepts/archive/" title="アーカイブ・ファイル">
+        <span class="merged" id="index.Vk6jX"  title="原文::  Archive File "><a href="../../../concepts/archive/index.html"> アーカイブ・ファイル </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        parent
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/" title="ユーザー・ガイド">
+      <span class="merged" id="index.1Bam9Q" title="原文 :  2. User Guide "><a href="../../index.html"> <b>2. </b>ユーザー・ガイド </a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/install/" title="WDTのインストール">
+        <span class="merged" id="index.2jt5gK" title="原文 :  Install WDT "><a href="../../install/index.html">WDTのインストール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/tools/" title="WDTツール">
+      <span class="merged" id="index.28fMxH" title="原文 :  WDT Tools "><a href="../../tools/index.html"> <b> </b>WDTツール </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/create/" title="ドメインの作成ツール">
+        <span class="merged" id="index.10wkLV" title="原文 :  Create Domain Tool "><a href="../../tools/create/index.html">ドメインの作成ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/update/" title="ドメインの更新ツール">
+        <span class="merged" id="index.4XyEyK" title="原文 :  Update Domain Tool "><a href="../../tools/update/index.html">ドメインの更新ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/deploy/" title="Deploy Applications Tool">
+        <span class="merged" id="index.3rut50" title="原文 :  Deploy Applications Tool "><a href="../../tools/deploy/index.html"> Deploy Applications Tool </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/discover/" title="ドメインの検出ツール">
+        <span class="merged" id="index.VSbaa" title="原文 :  Discover Domain Tool "><a href="../../tools/discover/index.html">ドメインの検出ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/encrypt/" title="モデルの暗号化ツール">
+        <span class="merged" id="index.4L1kXn" title="原文 :  Encrypt Model Tool "><a href="../../tools/encrypt/index.html">モデルの暗号化ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/validate/" title="モデルの検証ツール">
+        <span class="merged" id="index.zo0mL" title="原文 :  Validate Model Tool "><a href="../../tools/validate/index.html">モデルの検証ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/compare/" title="モデルの比較ツール">
+        <span class="merged" id="index.1nY5sQ" title="原文 :  Compare Model Tool "><a href="../../tools/compare/index.html">モデルの比較ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/prepare/" title="モデルの準備ツール">
+        <span class="merged" id="index.3A3NyX" title="原文 :  Prepare Model Tool "><a href="../../tools/prepare/index.html">モデルの準備ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/kubernetes/" title="ドメイン・リソースの抽出ツール">
+        <span class="merged" id="index.3gaN5M" title="原文 :  Extract Domain Resource Tool "><a href="../../tools/kubernetes/index.html">ドメイン・リソースの抽出ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/variable_injection/" title="変数インジェクタ・ツール">
+        <span class="merged" id="index.1WvuHb" title="原文 :  Variable Injector Tool "><a href="../../tools/variable_injection/index.html">変数インジェクタ・ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools/model_help/" title="モデル・ヘルプ・ツール">
+        <span class="merged" id="index.3F7SM6" title="原文 :  Model Help Tool "><a href="../../tools/model_help/index.html">モデル・ヘルプ・ツール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/target_env/" title="ターゲット環境">
+        <span class="merged" id="index.2BiRhD" title="原文 :  Target environments "><a href="../../target_env/index.html">ターゲット環境</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        parent
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/" title="ツール構成">
+      <span class="merged" id="index.yvCXQ" title="原文 :  Tools configuration "><a href="../index.html">ツール構成</a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/model_filters/" title="モデル・フィルタ">
+        <span class="merged" id="index.qcU0E" title="原文 :  Model filters "><a href="../model_filters/index.html">モデル・フィルタ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item active" data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/domain_def/" title="ドメイン・タイプ定義">
+        <span class="merged" id="index.2Sk385" title="原文 :  Domain type definitions "><a href="index.html">ドメイン・タイプ定義</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/custom_config/" title="カスタム構成">
+        <span class="merged" id="index.3QQGc5"  title="原文::  Custom configuration "><a href="../custom_config/index.html"> カスタム構成 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/userguide/tools-config/tool_prop/" title="ツールのプロパティ・ファイル">
+        <span class="merged" id="index.4DhaWa" title="原文 :  Tool property file "><a href="../tool_prop/index.html">ツールのプロパティ・ファイル</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/samples/" title="サンプル">
+      <span class="merged" id="index.2CbTQi" title="原文 :  3. Samples "><a href="../../../samples/index.html"> <b>3. </b>サンプル</a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/adminserver-model/" title="管理サーバーのカスタマイズ">
+        <span class="merged" id="index.25qmdE" title="原文 :  Customizing the Administration Server "><a href="../../../samples/adminserver-model/index.html">管理サーバーのカスタマイズ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/cluster-model/" title="構成済クラスタのモデル化">
+        <span class="merged" id="index.H7Gaw" title="原文 :  Modeling a configured cluster "><a href="../../../samples/cluster-model/index.html">構成済クラスタのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/jdbc-model/" title="JDBCデータ・ソースのモデル化">
+        <span class="merged" id="index.3EMyea" title="原文 :  Modeling a JDBC data source "><a href="../../../samples/jdbc-model/index.html">JDBCデータ・ソースのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/workmanager-model/" title="ワーク・マネージャのモデリング">
+        <span class="merged" id="index.39Hl7y" title="原文 :  Modeling a Work Manager "><a href="../../../samples/workmanager-model/index.html">ワーク・マネージャのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/securityproviders-model/" title="セキュリティ・プロバイダのモデル化">
+        <span class="merged" id="index.24yacq" title="原文 :  Modeling security providers "><a href="../../../samples/securityproviders-model/index.html">セキュリティ・プロバイダのモデル化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/usersgroups-model/" title="WebLogicのユーザー、グループおよびロールのモデリング">
+        <span class="merged" id="index.4OEyXR" title="原文 :  Modeling WebLogic users, groups, and roles "><a href="../../../samples/usersgroups-model/index.html">WebLogicのユーザー、グループおよびロールのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/pwcredentialmap-model/" title="WebLogicユーザー・パスワード資格証明マッピングのモデリング">
+        <span class="merged" id="index.4bbJ8U" title="原文 :  Modeling WebLogic user password credential mapping "><a href="../../../samples/pwcredentialmap-model/index.html">WebLogicユーザー・パスワード資格証明マッピングのモデリング</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/odl-model/" title="Oracle Diagnostic Loggingの構成">
+        <span class="merged" id="index.43ApUq" title="原文 :  Configuring Oracle Diagnostic Logging "><a href="../../../samples/odl-model/index.html">Oracle Diagnostic Loggingの構成</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/ohs-model/" title="Oracle HTTP Serverの構成">
+        <span class="merged" id="index.2BWoBg"  title="原文:  Configuring Oracle HTTP Server "><a href="../../../samples/ohs-model/index.html"> Oracle HTTP Serverの構成 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/targetservers-model/" title="サーバー・グループのターゲット指定">
+        <span class="merged" id="index.1zjtFh" title="原文 :  Targeting server groups "><a href="../../../samples/targetservers-model/index.html">サーバー・グループのターゲット指定</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/samples/wko-model/" title="WebLogic Kubernetes OperatorでのWDTの使用">
+        <span class="merged" id="index.4g6412" title="原文 :  Using WDT with WebLogic Kubernetes Operator "><a href="../../../samples/wko-model/index.html">WebLogic Kubernetes OperatorでのWDTの使用</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/weblogic-deploy-tooling/developer/" title="開発者ガイド">
+      <span class="merged" id="index.kQTEC" title="原文 :  4. Developer Guide "><a href="../../../developer/index.html"> <b>4. </b>開発者ガイド </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/project-structure/" title="プロジェクト体系">
+        <span class="merged" id="index.3Lxch9" title="原文 :  Project structure "><a href="../../../developer/project-structure/index.html">プロジェクト体系</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/feature-impl/" title="機能の実装">
+        <span class="merged" id="index.1gpFlU" title="原文 :  Feature implementation "><a href="../../../developer/feature-impl/index.html">機能の実装</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/alias-definitions/" title="別名定義">
+        <span class="merged" id="index.1Gyhad" title="原文 :  Alias definitions "><a href="../../../developer/alias-definitions/index.html">別名定義</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/buildwdt/" title="WebLogic Deploy Toolのビルド">
+        <span class="merged" id="index.4MCAhb" title="原文 :  Build WebLogic Deploy Tool "><a href="../../../developer/buildwdt/index.html">WebLogic Deploy Toolのビルド</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/releaseprocess/" title="WDTプロジェクト・リリース・プロセス">
+        <span class="merged" id="index.lwbOu" title="原文 :  WDT project release process "><a href="../../../developer/releaseprocess/index.html">WDTプロジェクト・リリース・プロセス</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-deploy-tooling/developer/contribute/" title="WDTにコントリビュート">
+        <span class="merged" id="index.1L4vNs" title="原文 :  Contribute to WDT "><a href="../../../developer/contribute/index.html">WDTにコントリビュート</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+      <li><span class="merged" id="index.1X27Sv"  title="原文:: Release Notes"><a class="padding" href="../../../release-notes">リリース・ノート</a></span></li>
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p><span class="merged" id="index.4behA5" title="原文 : Created with from Oracle"><a href="https://www.oracle.com">Oracle</a>から<i class="fas fa-heart"></i>を使用して作成</span></p>
+<p><span class="merged" id="index.1OQYZy"  title="原文:: &nbsp">&nbsp</span></p>
+<p><span class="merged" id="index.msaKb" title="原文 :  GitHub repo"><a href="https://github.com/oracle/weblogic-deploy-tooling"><i class="fab fa-github"></i>GitHubレポ</a></span></p>
+<p><span class="merged" id="index.rjNGa" title="原文 :  Public Slack #weblogic"><a href="https://weblogic-slack-inviter.herokuapp.com/"><i class="fab fa-slack"></i> Public Slack #weblogic</a></span></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span class="merged" id="index.YKWp2" title="原文 :  &gt; User Guide &gt; Tools configuration &gt; Domain type definitions "><span id="sidebar-toggle-span"><a data-sidebar-toggle="" href="index.html#" id="sidebar-toggle"><i class="fas fa-bars"></i></a></span> <span id="toc-menu"><i class="fas fa-list-alt"></i></span> <span class="links"><a href='../../../index.html'></a> > <a href='../../index.html'>ユーザー・ガイド</a> > <a href='../index.html'>ツール構成</a> > ドメイン型定義</span></span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              <span class="merged" id="index.22aloh" title="原文 : Domain type definitions">ドメイン・タイプ定義</span>
+            </h1>
+          
+
+        
+
+
+<p><span class="merged" id="index.1w4usA.spl1" title="原文 : WebLogic Deploy Tooling has an extensible domain type system.">WebLogic Deploy Toolingには、拡張可能なドメイン・タイプ・システムがあります。</span> <span class="merged" id="index.1w4usA.spl2" title="原文 : The three built-in domain types (WLS, RestrictedJRF, and JRF) are defined in JSON files of the same name in the WLSDEPLOY_HOME/lib/typedefs directory.">3つの組込みドメイン・タイプ(<code>WLS</code>、<code>RestrictedJRF</code>および<code>JRF</code>)は、<code>WLSDEPLOY_HOME/lib/typedefs</code>ディレクトリの同じ名前のJSONファイルで定義されています。</span> <span class="merged" id="index.1w4usA.spl3" title="原文 : For example, the JRF domain type is defined in the WLSDEPLOY_HOME/lib/typedefs/JRF.json file with similar content, as shown below.">たとえば、<code>JRF</code>ドメイン・タイプは、次に示すように、<code>WLSDEPLOY_HOME/lib/typedefs/JRF.json</code>ファイルで同様のコンテンツを使用して定義されます。</span> </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;copyright&#34;</span>: <span style="color:#e6db74">&#34;Copyright (c) 2017, 2020, Oracle Corporation and/or its affiliates.&#34;</span>,
+    <span style="color:#f92672">&#34;license&#34;</span>: <span style="color:#e6db74">&#34;Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl&#34;</span>,
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;JRF&#34;</span>,
+    <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;JRF type domain definitions&#34;</span>,
+    <span style="color:#f92672">&#34;versions&#34;</span>: {
+        <span style="color:#f92672">&#34;12.1.2&#34;</span>: <span style="color:#e6db74">&#34;JRF_1212&#34;</span>,
+        <span style="color:#f92672">&#34;12.1.3&#34;</span>: <span style="color:#e6db74">&#34;JRF_1213&#34;</span>,
+        <span style="color:#f92672">&#34;12.2.1.0&#34;</span>: <span style="color:#e6db74">&#34;JRF_12CR2&#34;</span>,
+        <span style="color:#f92672">&#34;12.2.1.1&#34;</span>: <span style="color:#e6db74">&#34;JRF_12C_DYN&#34;</span>,
+        <span style="color:#f92672">&#34;12.2.1.2&#34;</span>: <span style="color:#e6db74">&#34;JRF_12C_DYN&#34;</span>,
+        <span style="color:#f92672">&#34;12.2.1.3&#34;</span>: <span style="color:#e6db74">&#34;JRF_12C_DYN&#34;</span>,
+        <span style="color:#f92672">&#34;12.2.1.4&#34;</span>: <span style="color:#e6db74">&#34;JRF_12214&#34;</span>
+    },
+    <span style="color:#f92672">&#34;definitions&#34;</span>: {
+        <span style="color:#f92672">&#34;JRF_1212&#34;</span> : {
+            <span style="color:#f92672">&#34;baseTemplate&#34;</span>: <span style="color:#e6db74">&#34;@@WL_HOME@@/common/templates/wls/wls.jar&#34;</span>,
+            <span style="color:#f92672">&#34;extensionTemplates&#34;</span>: [
+                <span style="color:#e6db74">&#34;@@ORACLE_HOME@@/oracle_common/common/templates/wls/oracle.jrf_template_12.1.2.jar&#34;</span>,
+                <span style="color:#e6db74">&#34;@@ORACLE_HOME@@/oracle_common/common/templates/wls/oracle.jrf.ws.async_template_12.1.2.jar&#34;</span>,
+                <span style="color:#e6db74">&#34;@@ORACLE_HOME@@/oracle_common/common/templates/wls/oracle.wsmpm_template_12.1.2.jar&#34;</span>,
+                <span style="color:#e6db74">&#34;@@ORACLE_HOME@@/em/common/templates/wls/oracle.em_wls_template_12.1.2.jar&#34;</span>
+            ],
+            <span style="color:#f92672">&#34;serverGroupsToTarget&#34;</span> : [ <span style="color:#e6db74">&#34;JRF-MAN-SVR&#34;</span>, <span style="color:#e6db74">&#34;WSMPM-MAN-SVR&#34;</span> ],
+            <span style="color:#f92672">&#34;rcuSchemas&#34;</span>: [ <span style="color:#e6db74">&#34;MDS&#34;</span>, <span style="color:#e6db74">&#34;IAU&#34;</span>, <span style="color:#e6db74">&#34;IAU_VIEWER&#34;</span>, <span style="color:#e6db74">&#34;IAU_APPEND&#34;</span>, <span style="color:#e6db74">&#34;OPSS&#34;</span> ]
+        },
+        <span style="color:#f92672">&#34;JRF_1213&#34;</span> : {
+            <span style="color:#f92672">&#34;baseTemplate&#34;</span>: <span style="color:#e6db74">&#34;@@WL_HOME@@/common/templates/wls/wls.jar&#34;</span>,
+            <span style="color:#f92672">&#34;extensionTemplates&#34;</span>: [
+                <span style="color:#e6db74">&#34;@@ORACLE_HOME@@/oracle_common/common/templates/wls/oracle.jrf_template_12.1.3.jar&#34;</span>,
+                <span style="color:#e6db74">&#34;@@ORACLE_HOME@@/oracle_common/common/templates/wls/oracle.jrf.ws.async_template_12.1.3.jar&#34;</span>,
+                <span style="color:#e6db74">&#34;@@ORACLE_HOME@@/oracle_common/common/templates/wls/oracle.wsmpm_template_12.1.3.jar&#34;</span>,
+                <span style="color:#e6db74">&#34;@@ORACLE_HOME@@/em/common/templates/wls/oracle.em_wls_template_12.1.3.jar&#34;</span>
+            ],
+            <span style="color:#f92672">&#34;serverGroupsToTarget&#34;</span> : [ <span style="color:#e6db74">&#34;JRF-MAN-SVR&#34;</span>, <span style="color:#e6db74">&#34;WSMPM-MAN-SVR&#34;</span> ],
+            <span style="color:#f92672">&#34;rcuSchemas&#34;</span>: [ <span style="color:#e6db74">&#34;MDS&#34;</span>, <span style="color:#e6db74">&#34;IAU&#34;</span>, <span style="color:#e6db74">&#34;IAU_VIEWER&#34;</span>, <span style="color:#e6db74">&#34;IAU_APPEND&#34;</span>, <span style="color:#e6db74">&#34;OPSS&#34;</span> ]
+        },
+        <span style="color:#f92672">&#34;JRF_12CR2&#34;</span>: {
+            <span style="color:#f92672">&#34;baseTemplate&#34;</span>: <span style="color:#e6db74">&#34;Basic WebLogic Server Domain&#34;</span>,
+            <span style="color:#f92672">&#34;extensionTemplates&#34;</span>: [
+                <span style="color:#e6db74">&#34;Oracle JRF WebServices Asynchronous services&#34;</span>,
+                <span style="color:#e6db74">&#34;Oracle WSM Policy Manager&#34;</span>,
+                <span style="color:#e6db74">&#34;Oracle Enterprise Manager&#34;</span>
+            ],
+            <span style="color:#f92672">&#34;serverGroupsToTarget&#34;</span>: [ <span style="color:#e6db74">&#34;JRF-MAN-SVR&#34;</span>, <span style="color:#e6db74">&#34;WSMPM-MAN-SVR&#34;</span> ],
+            <span style="color:#f92672">&#34;rcuSchemas&#34;</span>: [ <span style="color:#e6db74">&#34;MDS&#34;</span>, <span style="color:#e6db74">&#34;IAU&#34;</span>, <span style="color:#e6db74">&#34;IAU_VIEWER&#34;</span>, <span style="color:#e6db74">&#34;IAU_APPEND&#34;</span>, <span style="color:#e6db74">&#34;OPSS&#34;</span> ]
+        },
+        <span style="color:#f92672">&#34;JRF_12C-DYN&#34;</span>: {
+            <span style="color:#f92672">&#34;baseTemplate&#34;</span>: <span style="color:#e6db74">&#34;Basic WebLogic Server Domain&#34;</span>,
+            <span style="color:#f92672">&#34;extensionTemplates&#34;</span>: [
+                <span style="color:#e6db74">&#34;Oracle JRF WebServices Asynchronous services&#34;</span>,
+                <span style="color:#e6db74">&#34;Oracle WSM Policy Manager&#34;</span>,
+                <span style="color:#e6db74">&#34;Oracle Enterprise Manager&#34;</span>
+            ],
+            <span style="color:#f92672">&#34;serverGroupsToTarget&#34;</span>: [ <span style="color:#e6db74">&#34;JRF-MAN-SVR&#34;</span>, <span style="color:#e6db74">&#34;WSMPM-MAN-SVR&#34;</span> ],
+            <span style="color:#f92672">&#34;dynamicClusterServerGroupsToTarget&#34;</span>: [ <span style="color:#e6db74">&#34;WSMPM-DYN-CLUSTER&#34;</span> ],
+            <span style="color:#f92672">&#34;rcuSchemas&#34;</span>: [ <span style="color:#e6db74">&#34;WLS&#34;</span>, <span style="color:#e6db74">&#34;MDS&#34;</span>, <span style="color:#e6db74">&#34;IAU&#34;</span>, <span style="color:#e6db74">&#34;IAU_VIEWER&#34;</span>, <span style="color:#e6db74">&#34;IAU_APPEND&#34;</span>, <span style="color:#e6db74">&#34;OPSS&#34;</span> ]
+        },
+        <span style="color:#f92672">&#34;JRF_12214&#34;</span>: {
+             <span style="color:#f92672">&#34;baseTemplate&#34;</span>: <span style="color:#e6db74">&#34;Basic WebLogic Server Domain&#34;</span>,
+             <span style="color:#f92672">&#34;extensionTemplates&#34;</span>: [
+                 <span style="color:#e6db74">&#34;Oracle JRF WebServices Asynchronous services&#34;</span>,
+                 <span style="color:#e6db74">&#34;Oracle WSM Policy Manager&#34;</span>,
+                 <span style="color:#e6db74">&#34;Oracle Enterprise Manager&#34;</span>
+             ],
+             <span style="color:#f92672">&#34;serverGroupsToTarget&#34;</span>: [ <span style="color:#e6db74">&#34;JRF-MAN-SVR&#34;</span>, <span style="color:#e6db74">&#34;WSMPM-MAN-SVR&#34;</span> ],
+             <span style="color:#f92672">&#34;dynamicClusterServerGroupsToTarget&#34;</span>: [ <span style="color:#e6db74">&#34;WSMPM-DYN-CLUSTER&#34;</span>, <span style="color:#e6db74">&#34;WSM-CACHE-DYN-CLUSTER&#34;</span> ],
+             <span style="color:#f92672">&#34;rcuSchemas&#34;</span>: [ <span style="color:#e6db74">&#34;WLS&#34;</span>, <span style="color:#e6db74">&#34;MDS&#34;</span>, <span style="color:#e6db74">&#34;IAU&#34;</span>, <span style="color:#e6db74">&#34;IAU_VIEWER&#34;</span>, <span style="color:#e6db74">&#34;IAU_APPEND&#34;</span>, <span style="color:#e6db74">&#34;OPSS&#34;</span> ]
+         }
+    }
+}
+</code></pre></div><p><span class="merged" id="index.11l0yB" title="原文 : This file tells the Create Domain Tool which templates to use to create the domain, which server groups to target, and even which RCU schemas to create, all based on the installed version of WebLogic Server.">このファイルは、ドメインの作成に使用するテンプレート、ターゲットにするサーバー・グループ、および作成するRCUスキーマをすべて、インストールされているWebLogic Serverのバージョンに基づいて示します。</span></p>
+<p><span class="merged" id="index.3nFkIA" title="原文 : New domain types can be defined by creating a new JSON file with the same structure in the WLSDEPLOY_HOME/lib/typedefs directory.">新しいドメイン・タイプを定義するには、<code>WLSDEPLOY_HOME/lib/typedefs</code>ディレクトリに同じ構造の新しいJSONファイルを作成します。</span></p>
+<p><span class="merged" id="index.3QK3Fe" title="原文 : Another option is to create this file in the Custom configuration directory $WDT_CUSTOM_CONFIG/typedefs.">別の方法として、<a href="../custom_config/index.html">「カスタム構成」</a>ディレクトリ<code>$WDT_CUSTOM_CONFIG/typedefs</code>にこのファイルを作成することもできます。</span></p>
+<p><span class="merged" id="index.3jerdc" title="原文 : For example, to define a SOA domain type for 12.2.1.3, add the typedefs/SOA.json file with similar content, as shown below.">たとえば、12.2.1.3の<code>SOA</code>ドメイン・タイプを定義するには、次のような内容の<code>typedefs/SOA.json</code>ファイルを追加します。</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;SOA&#34;</span>,
+    <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;SOA type domain definitions&#34;</span>,
+    <span style="color:#f92672">&#34;versions&#34;</span>: {
+        <span style="color:#f92672">&#34;12.2.1.3&#34;</span>: <span style="color:#e6db74">&#34;SOA_12213&#34;</span>
+    },
+    <span style="color:#f92672">&#34;definitions&#34;</span>: {
+        <span style="color:#f92672">&#34;SOA_12213&#34;</span>: {
+            <span style="color:#f92672">&#34;baseTemplate&#34;</span>: <span style="color:#e6db74">&#34;Basic WebLogic Server Domain&#34;</span>,
+            <span style="color:#f92672">&#34;extensionTemplates&#34;</span>: [
+                <span style="color:#e6db74">&#34;Oracle SOA Suite&#34;</span>
+            ],
+            <span style="color:#f92672">&#34;serverGroupsToTarget&#34;</span>: [ <span style="color:#e6db74">&#34;JRF-MAN-SVR&#34;</span>, <span style="color:#e6db74">&#34;WSMPM-MAN-SVR&#34;</span>,  <span style="color:#e6db74">&#34;SOA-MGD-SVRS&#34;</span> ],
+            <span style="color:#f92672">&#34;rcuSchemas&#34;</span>: [ <span style="color:#e6db74">&#34;STB&#34;</span>, <span style="color:#e6db74">&#34;WLS&#34;</span>, <span style="color:#e6db74">&#34;MDS&#34;</span>, <span style="color:#e6db74">&#34;IAU&#34;</span>, <span style="color:#e6db74">&#34;IAU_VIEWER&#34;</span>, <span style="color:#e6db74">&#34;IAU_APPEND&#34;</span>, <span style="color:#e6db74">&#34;OPSS&#34;</span>, <span style="color:#e6db74">&#34;UCSUMS&#34;</span>, <span style="color:#e6db74">&#34;SOAINFRA&#34;</span> ]
+        }
+    }
+}
+</code></pre></div><p><span class="merged" id="index.ZGvr2.spl1" title="原文 : After the new domain typedef file exists, simply specify the new domain type name to the createDomain script, being sure to reference an Oracle Home with the required components installed.">新しいドメイン<code>typedef</code>ファイルが存在するようになったら、必要なコンポーネントがインストールされているOracle Homeを参照して、新しいドメイン・タイプ名を<code>createDomain</code>スクリプトに指定します。</span> <span class="merged" id="index.ZGvr2.spl2" title="原文 : For pre-12.2.1 versions, the -wlst_path argument must be used to point to the product home where the appropriate WLST shell script exists; for example, for SOA 12.1.3, add -wlst_path &lt;ORACLE_HOME&gt;/soa so that the tool uses the WLST shell script with the proper environment for SOA domains.">12.2.1より前のバージョンの場合は、<code>-wlst_path</code>引数を使用して、適切なWLSTシェル・スクリプトが存在する製品ホームを指す必要があります。たとえば、SOA 12.1.3の場合は、ツールがSOAドメインの適切な環境でWLSTシェル・スクリプトを使用するように<code>-wlst_path &lt;ORACLE_HOME>/soa</code>を追加します。</span> <span class="merged" id="index.ZGvr2.spl3" title="原文 : In 12.2.1 and later, this is no longer necessary because the WLST shell script in the standard &lt;ORACLE_HOME&gt;oracle_common/common/bin directory will automatically load all components in the Oracle Home.">12.2.1以降では、標準の<code>&lt;ORACLE_HOME>oracle_common/common/bin</code>ディレクトリにあるWLSTシェル・スクリプトによってすべてのコンポーネントがOracle Homeに自動的にロードされるため、これは必要なくなりました。</span> <span class="merged" id="index.ZGvr2.spl4" title="原文 : Using the new domain type, simply run the following command to run RCU and create the SOA domain with all of its resources and applications deployed.">新しいドメイン・タイプを使用して、次のコマンドを実行してRCUを実行し、そのすべてのリソースおよびアプリケーションがデプロイされたSOAドメインを作成します。</span> </p>
+<pre><code> weblogic-deploy\bin\createDomain.cmd -oracle_home d:\SOA12213 -domain_type SOA -domain_parent d:\demo\domains -model_file DemoDomain.yaml -archive_file DemoDomain.zip -variable_file DemoDomain.properties -run_rcu -rcu_db mydb.example.com:1539/PDBORCL -rcu_prefix DEMO [-rcu_db_user SYS]
+</code></pre>
+<h4 id="custom-extension-templates"><span class="merged" id="index.3sVoxF" title="原文 : Custom extension templates">カスタム拡張テンプレート</span></h4>
+<p><span class="merged" id="index.XbDbb.spl1" title="原文 : The customExtensionTemplates attribute can be used to specify custom extension templates to be applied to the domain."><code>customExtensionTemplates</code>属性を使用して、ドメインに適用するカスタム拡張テンプレートを指定できます。</span> <span class="merged" id="index.XbDbb.spl2" title="原文 : These should be specified as absolute file paths, and can use tokens.">これらは絶対ファイル・パスとして指定する必要があり、トークンを使用できます。</span> </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;MyCustom&#34;</span>,
+    <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;My custom type domain definitions&#34;</span>,
+    <span style="color:#f92672">&#34;versions&#34;</span>: {
+        <span style="color:#f92672">&#34;12.2.1.3&#34;</span>: <span style="color:#e6db74">&#34;My_12213&#34;</span>
+    },
+    <span style="color:#f92672">&#34;definitions&#34;</span>: {
+        <span style="color:#f92672">&#34;My_12213&#34;</span>: {
+            <span style="color:#f92672">&#34;baseTemplate&#34;</span>: <span style="color:#e6db74">&#34;Basic WebLogic Server Domain&#34;</span>,
+            <span style="color:#f92672">&#34;extensionTemplates&#34;</span>: [ ],
+            <span style="color:#f92672">&#34;customExtensionTemplates&#34;</span>: [
+                <span style="color:#e6db74">&#34;/user/me/templates/my-template.jar&#34;</span>,
+                <span style="color:#e6db74">&#34;@@ORACLE_HOME@@/user_templates/other-template.jar&#34;</span>
+            ],
+            <span style="color:#f92672">&#34;serverGroupsToTarget&#34;</span>: [ <span style="color:#e6db74">&#34;MY-MAN-SVR&#34;</span> ],
+            <span style="color:#f92672">&#34;rcuSchemas&#34;</span>: [ ]
+        }
+    }
+}
+</code></pre></div><p><span class="merged" id="index.2lXWwg" title="原文 : If there are any server groups in the custom template that should be targeted to managed servers, they should be specified in the serverGroupsToTarget attribute, similar to MY_MAN_SVR in the example above.">カスタム・テンプレートに管理対象サーバーをターゲットにするサーバー・グループがある場合は、前述の例の<code>MY_MAN_SVR</code>のように、<code>serverGroupsToTarget</code>属性で指定する必要があります。</span></p>
+<h4 id="targeting-in-earlier-weblogic-server-versions"><span class="merged" id="index.7dk8E" title="原文 : Targeting in earlier WebLogic Server versions">以前のバージョンのWebLogic Serverでのターゲット指定</span></h4>
+<p><span class="merged" id="index.2PyQ6I.spl1" title="原文 : Templates in WebLogic Server versions prior to 12.2.1 may require the use of the applyJRF WLST command to correctly target resources to the correct clusters and servers.">12.2.1より前のWebLogic Serverバージョンのテンプレートでは、リソースを正しいクラスタおよびサーバーに正しくターゲット指定するために、<code>applyJRF</code> WLSTコマンドの使用が必要になる場合があります。</span> <span class="merged" id="index.2PyQ6I.spl2" title="原文 : The default behavior for WebLogic Deploy Tooling is to invoke applyJRF only when the extensionTemplates list includes JRF templates.">WebLogic Deploy Toolingのデフォルトの動作では、<code>extensionTemplates</code>リストにJRFテンプレートが含まれている場合にのみ<code>applyJRF</code>が起動されます。</span> </p>
+<p><span class="merged" id="index.2iPzKb.spl1" title="原文 : A custom type definition file can require applyJRF to be invoked after the templates are added.">カスタム・タイプ定義ファイルでは、テンプレートの追加後に<code>applyJRF</code>の起動が必要になる場合があります。</span> <span class="merged" id="index.2iPzKb.spl2" title="原文 : This is done by setting the targeting attribute to APPLY_JRF, as in this example:">これを行うには、次の例に示すように、<code>targeting</code>属性を<code>APPLY_JRF</code>に設定します:</span> </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;MyCustom&#34;</span>,
+    <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;My custom type domain definitions&#34;</span>,
+    <span style="color:#f92672">&#34;versions&#34;</span>: {
+        <span style="color:#f92672">&#34;10.3.6&#34;</span>: <span style="color:#e6db74">&#34;My_11G&#34;</span>
+    },
+    <span style="color:#f92672">&#34;definitions&#34;</span>: {
+        <span style="color:#f92672">&#34;My_11G&#34;</span>: {
+            <span style="color:#f92672">&#34;baseTemplate&#34;</span>: <span style="color:#e6db74">&#34;@@WL_HOME@@/common/templates/wls/wls.jar&#34;</span>,
+            <span style="color:#f92672">&#34;extensionTemplates&#34;</span>: [
+                <span style="color:#e6db74">&#34;/user/me/templates/my-template.jar&#34;</span>
+             ],
+            <span style="color:#f92672">&#34;targeting&#34;</span>: <span style="color:#e6db74">&#34;APPLY_JRF&#34;</span>,
+            <span style="color:#f92672">&#34;serverGroupsToTarget&#34;</span>: [ <span style="color:#e6db74">&#34;MY-MAN-SVR&#34;</span> ],
+            <span style="color:#f92672">&#34;rcuSchemas&#34;</span>: [ ]
+        }
+    }
+}
+</code></pre></div><p><span class="merged" id="index.2NRkmS" title="原文 : The targeting attribute is not valid for WebLogic Server versions 12.2.1 and up."><code>targeting</code>属性は、WebLogic Serverバージョン12.2.1以上では無効です。</span></p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../model_filters/index.html" > <i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="../custom_config/index.html" style="margin-right: 0px;" ><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../../js/clipboard.min.js?1620686566"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1620686566"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1620686566"></script>
+    <script src="../../../js/jquery.sticky.js?1620686566"></script>
+    <script src="../../../js/featherlight.min.js?1620686566"></script>
+    <script src="../../../js/highlight.pack.js?1620686566"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1620686566"></script>
+    <script src="../../../js/learn.js?1620686566"></script>
+    <script src="../../../js/hugo-learn.js?1620686566"></script>
+    
+        
+            <script src="../../../mermaid/mermaid.js?1620686566"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>

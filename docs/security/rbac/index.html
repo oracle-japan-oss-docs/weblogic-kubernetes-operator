@@ -1,0 +1,4821 @@
+<!DOCTYPE html>
+<html lang="ja" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <meta content="Operator role-based authorization" name="description">
+
+
+    <link rel="icon" href="../../images/favicon.png" type="image/png">
+
+    <title>RBAC :: WebLogic Kubernetes Operator</title>
+
+    
+    <link href="../../css/nucleus.css?1614202516" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1614202516" rel="stylesheet">
+    <link href="../../css/hybrid.css?1614202516" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1614202516" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1614202516" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1614202516" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1614202516" rel="stylesheet">
+    <link href="../../css/theme.css?1614202516" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1614202516" rel="stylesheet">
+    
+
+    <script src="../../js/jquery-3.3.1.min.js?1614202516"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  <meta HTTP-EQUIV="Content-Type" Content="text/html; charset=utf-8"></head>
+  <style type="text/css"> <!-- .merged:hover {text-decoration: underline;} --> </style>
+<body class="" data-url="/weblogic-kubernetes-operator/security/rbac/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <span class="merged" id="index.1x4ytT" title="原文 :  Kubernetes Operator "><a href="../../index.html" id="logo"> <img height="60" src="../../images/logo.png"><br /> Kubernetes Operator </a></span>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../js/lunr.min.js?1614202516"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1614202516"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/weblogic-kubernetes-operator\/";
+    
+</script>
+<script type="text/javascript" src="../../js/search.js?1614202516"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+        <li><span class="merged" id="index.2sOq72"  title="原文:: Home"><a class="padding" href="../../index.html">ホーム</a></span></li>
+        
+          
+          
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/quickstart/" title="クイック・スタート">
+      <span class="merged" id="index.2zu61x" title="原文 :  1. Quick Start "><a href="../../quickstart/index.html"><b>1. </b>クイック・スタート</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/introduction/" title="導入">
+        <span class="merged" id="index.1GWBX8"  title="原文::  Introduction "><a href="../../quickstart/introduction/index.html"> 導入 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/prerequisites/" title="始める前に">
+        <span class="merged" id="index.nuKva"  title="原文::  Before you begin "><a href="../../quickstart/prerequisites/index.html"> 始める前に </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/get-images/" title="イメージの取得">
+        <span class="merged" id="index.1B1yob" title="原文 :  Get images "><a href="../../quickstart/get-images/index.html">イメージの取得</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/install/" title="オペレータおよびイングレス・コントローラのインストール">
+        <span class="merged" id="index.VViRo" title="原文 :  Install the operator and ingress controller "><a href="../../quickstart/install/index.html">オペレータおよびイングレス・コントローラのインストール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/prepare/" title="ドメインの準備">
+        <span class="merged" id="index.2gjsgT" title="原文 :  Prepare for a domain "><a href="../../quickstart/prepare/index.html">ドメインの準備</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/create-domain/" title="ドメインの作成">
+        <span class="merged" id="index.rYgMf"  title="原文::  Create a domain "><a href="../../quickstart/create-domain/index.html"> ドメインの作成 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/cleanup/" title="クリーン・アップ">
+        <span class="merged" id="index.4bOIWz"  title="原文::  Clean up "><a href="../../quickstart/cleanup/index.html"> クリーン・アップ </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/" title="ユーザー・ガイド">
+      <span class="merged" id="index.1eLzcq" title="原文 :  2. User Guide "><a href="../../userguide/index.html"><b>2. </b>ユーザー・ガイド</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/" title="導入">
+      <span class="merged" id="index.4g0n34"  title="原文::  Introduction "><a href="../../userguide/introduction/index.html"> 導入 </a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/introduction/" title="開始">
+        <span class="merged" id="index.3cIigx" title="原文 :  Get started "><a href="../../userguide/introduction/introduction/index.html">開始</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/demo/" title="デモ">
+        <span class="merged" id="index.3EBU8K"  title="原文::  Demo "><a href="../../userguide/introduction/demo/index.html"> デモ </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/architecture/" title="アーキテクチャ">
+        <span class="merged" id="index.2hyfDA"  title="原文::  Architecture "><a href="../../userguide/introduction/architecture/index.html"> アーキテクチャ </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計の方針">
+        <span class="merged" id="index.1K0IIO"  title="原文::  Design philosophy "><a href="../../userguide/introduction/design/index.html"> 設計の方針 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/overview/" title="概要">
+      <span class="merged" id="index.4bsN9V"  title="原文::  Overview "><a href="../../userguide/overview/index.html"> 概要 </a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/overview/prepare/" title="環境の準備">
+        <span class="merged" id="index.42xQVR" title="原文 :  Prepare your environment "><a href="../../userguide/overview/prepare/index.html">環境の準備</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/overview/k8s-setup/" title="Kubernetesの設定">
+        <span class="merged" id="index.29kX0d" title="原文 :  Set up Kubernetes "><a href="../../userguide/overview/k8s-setup/index.html">Kubernetesの設定</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/overview/database/" title="データベースの実行">
+        <span class="merged" id="index.v7vi9" title="原文 :  Run a database "><a href="../../userguide/overview/database/index.html">データベースの実行</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/" title="オペレータの管理">
+      <span class="merged" id="index.uK6Sv" title="原文 :  Manage operators "><a href="../../userguide/managing-operators/index.html">オペレータの管理</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/installation/" title="オペレータのインストール">
+      <span class="merged" id="index.2o8n5l" title="原文 :  Install the operator "><a href="../../userguide/managing-operators/installation/index.html">オペレータのインストール</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/using-the-operator/" title="オペレータの使用">
+      <span class="merged" id="index.2Z9C38" title="原文 :  Use the operator "><a href="../../userguide/managing-operators/using-the-operator/index.html"><b></b>オペレータの使用</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/using-the-operator/using-helm/" title="Helmの使用">
+        <span class="merged" id="index.1bQL4p" title="原文 :  Use Helm "><a href="../../userguide/managing-operators/using-the-operator/using-helm/index.html">Helmの使用</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/using-the-operator/the-rest-api/" title="REST API">
+        <span class="merged" id="index.3GHNuV" title="原文 :  The REST API "><a href="../../userguide/managing-operators/using-the-operator/the-rest-api/index.html"> REST API </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/" title="WebLogicドメインの管理">
+      <span class="merged" id="index.1OFkp7" title="原文 :  Manage WebLogic domains "><a href="../../userguide/managing-domains/index.html">WebLogicドメインの管理</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/choosing-a-model/" title="ドメイン・ホーム・ソース・タイプの選択">
+      <span class="merged" id="index.1i5hk2" title="原文 :  Choose a domain home source type "><a href="../../userguide/managing-domains/choosing-a-model/index.html"><b></b>ドメイン・ホーム・ソース・タイプの選択</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/prepare/" title="ドメインを実行する準備">
+        <span class="merged" id="index.3VkbdA" title="原文 :  Prepare to run a domain "><a href="../../userguide/managing-domains/prepare/index.html"><b></b>ドメイン実行の準備</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-resource/" title="ドメイン・リソース">
+        <span class="merged" id="index.1tgHjG" title="原文 :  Domain resource "><a href="../../userguide/managing-domains/domain-resource/index.html"><b></b>ドメイン・リソース</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/persistent-storage/" title="永続ストレージ">
+      <span class="merged" id="index.2qqcNB" title="原文 :  Persistent storage "><a href="../../userguide/managing-domains/persistent-storage/index.html"><b></b>永続ストレージ</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-in-image/" title="Domain in Image">
+      <span class="merged" id="index.4ejZ4A" title="原文 :  Domain in Image "><a href="../../userguide/managing-domains/domain-in-image/index.html"> <b> </b>Domain in Image </a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-in-image/base-images/" title="ベース・イメージ">
+      <span class="merged" id="index.BVLIj" title="原文 :  Base images "><a href="../../userguide/managing-domains/domain-in-image/base-images/index.html">ベース・イメージ</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/" title="Model in Image">
+      <span class="merged" id="index.2529aT" title="原文 :  Model in Image "><a href="../../userguide/managing-domains/model-in-image/index.html"> <b> </b>Model in Image </a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/overview/" title="概要">
+        <span class="merged" id="index.4RIJac"  title="原文::  Overview "><a href="../../userguide/managing-domains/model-in-image/overview/index.html"> <b> </b>概要 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/usage/" title="使用方法">
+        <span class="merged" id="index.5mFui"  title="原文::  Usage "><a href="../../userguide/managing-domains/model-in-image/usage/index.html"> <b> </b>使用方法 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/model-files/" title="モデル・ファイル">
+        <span class="merged" id="index.4KRvKM" title="原文 :  Model files "><a href="../../userguide/managing-domains/model-in-image/model-files/index.html"><b></b>モデル・ファイル</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/runtime-updates/" title="ランタイムの更新">
+        <span class="merged" id="index.3RL35z" title="原文 :  Runtime updates "><a href="../../userguide/managing-domains/model-in-image/runtime-updates/index.html"><b></b>ランタイムの更新</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/debugging/" title="デバッグ">
+        <span class="merged" id="index.1gC1Xf"  title="原文::  Debugging "><a href="../../userguide/managing-domains/model-in-image/debugging/index.html"> <b> </b>デバッグ </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/configoverrides/" title="構成のオーバーライド">
+      <span class="merged" id="index.36iFoM" title="原文 :  Configuration overrides "><a href="../../userguide/managing-domains/configoverrides/index.html"><b></b>構成のオーバーライド</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/ingress/" title="イングレス">
+      <span class="merged" id="index.2uB7Ya"  title="原文::  Ingress "><a href="../../userguide/managing-domains/ingress/index.html"> <b> </b>イングレス </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/accessing-the-domain/" title="ドメインへのアクセス">
+      <span class="merged" id="index.3PW0SG" title="原文 :  Access the domain "><a href="../../userguide/managing-domains/accessing-the-domain/index.html"><b></b>ドメインへのアクセス</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/accessing-the-domain/wlst/" title="WLSTの使用">
+        <span class="merged" id="index.2tVMWr"  title="原文::  Use WLST "><a href="../../userguide/managing-domains/accessing-the-domain/wlst/index.html"> WLSTの使用 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/" title="ドメインのライフ・サイクル">
+      <span class="merged" id="index.3SZ7SC" title="原文 :  Domain life cycle "><a href="../../userguide/managing-domains/domain-lifecycle/index.html"><b></b>ドメインのライフ・サイクル</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/startup/" title="起動と停止">
+        <span class="merged" id="index.1JKpXj" title="原文 :  Startup and shutdown "><a href="../../userguide/managing-domains/domain-lifecycle/startup/index.html">起動と停止</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/restarting/" title="再起動">
+        <span class="merged" id="index.H6OON"  title="原文::  Restarting "><a href="../../userguide/managing-domains/domain-lifecycle/restarting/index.html"> 再起動 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/scaling/" title="スケーリング">
+        <span class="merged" id="index.3ZYZG9"  title="原文::  Scaling "><a href="../../userguide/managing-domains/domain-lifecycle/scaling/index.html"> スケーリング </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/introspection/" title="ドメイン・イントロスペクション">
+        <span class="merged" id="index.TstXv" title="原文 :  Domain introspection "><a href="../../userguide/managing-domains/domain-lifecycle/introspection/index.html">ドメイン・イントロスペクション</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-fmw-domains/" title="FMWドメインの管理">
+      <span class="merged" id="index.1Pp38J" title="原文 :  Manage FMW domains "><a href="../../userguide/managing-fmw-domains/index.html">FMWドメインの管理</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-fmw-domains/fmw-infra/" title="FMW Infrastructureドメインの管理">
+      <span class="merged" id="index.2nDCH8" title="原文 :  Manage FMW Infrastructure domains "><a href="../../userguide/managing-fmw-domains/fmw-infra/index.html">FMW Infrastructureドメインの管理</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/" title="CI/CDに関する考慮事項">
+      <span class="merged" id="index.2Oj2s9" title="原文 :  CI/CD considerations "><a href="../../userguide/cicd/index.html">CI/CDに関する考慮事項</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/layering/" title="コンテナ・イメージ・レイヤー化">
+        <span class="merged" id="index.4ACzb1" title="原文 :  Container image layering "><a href="../../userguide/cicd/layering/index.html">コンテナ・イメージ・レイヤー化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/why-layering-matters/" title="レイヤー化が重要な理由">
+        <span class="merged" id="index.WzGYu" title="原文 :  Why layering matters "><a href="../../userguide/cicd/why-layering-matters/index.html">レイヤー化が重要な理由</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/choose-an-approach/" title="アプローチの選択">
+        <span class="merged" id="index.2WMFbI" title="原文 :  Choose an approach "><a href="../../userguide/cicd/choose-an-approach/index.html">アプローチの選択</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/mutate-the-domain-layer/" title="ドメイン・レイヤーの変更">
+        <span class="merged" id="index.15ZLjX" title="原文 :  Mutate the domain layer "><a href="../../userguide/cicd/mutate-the-domain-layer/index.html">ドメイン・レイヤーの変更</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/how-to-copy-domains/" title="ドメインのコピー">
+        <span class="merged" id="index.P3Ouz" title="原文 :  Copy domains "><a href="../../userguide/cicd/how-to-copy-domains/index.html">ドメインのコピー</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/tools/" title="ツール">
+        <span class="merged" id="index.4bfvWg"  title="原文::  Tools "><a href="../../userguide/cicd/tools/index.html"> ツール </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/istio/istio/" title="Istioサポート">
+        <span class="merged" id="index.3U0nei" title="原文 :  Istio support "><a href="../../userguide/istio/istio/index.html">Istioサポート</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/" title="サンプル">
+      <span class="merged" id="index.14e0I8" title="原文 :  3. Samples "><a href="../../samples/index.html"><b>3. </b>サンプル</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/" title="単純なサンプル">
+      <span class="merged" id="index.3UvA48" title="原文 :  Simple samples "><a href="../../samples/simple/index.html"><b></b>単純なサンプル</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/credentials/" title="資格証明">
+      <span class="merged" id="index.1dAb7M"  title="原文::  Credentials "><a href="../../samples/simple/credentials/index.html"> 資格証明 </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/storage/" title="ストレージ">
+      <span class="merged" id="index.RFq6k"  title="原文::  Storage "><a href="../../samples/simple/storage/index.html"> ストレージ </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/" title="ドメイン">
+      <span class="merged" id="index.4FdKRP" title="原文 :  Domains "><a href="../../samples/simple/domains/index.html">ドメイン</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/manually-create-domain/" title="手動">
+      <span class="merged" id="index.AAoLD" title="原文 :  Manually "><a href="../../samples/simple/domains/manually-create-domain/index.html">手動</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/domain-home-on-pv/" title="Domain home on a PV">
+      <span class="merged" id="index.1xksFG" title="原文 :  Domain home on a PV "><a href="../../samples/simple/domains/domain-home-on-pv/index.html"> Domain home on a PV </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/domain-home-in-image/" title="Domain home in image">
+      <span class="merged" id="index.HfL9x" title="原文 :  Domain home in image "><a href="../../samples/simple/domains/domain-home-in-image/index.html"> Domain home in image </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/" title="Model in image">
+      <span class="merged" id="index.mhGKw" title="原文 :  Model in image "><a href="../../samples/simple/domains/model-in-image/index.html"> Model in image </a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/prerequisites/" title="前提条件">
+        <span class="merged" id="index.LiIDD"  title="原文::  Prerequisites "><a href="../../samples/simple/domains/model-in-image/prerequisites/index.html"> 前提条件 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/initial/" title="初期状態のユース・ケース">
+        <span class="merged" id="index.4Msr7q" title="原文 :  Initial use case "><a href="../../samples/simple/domains/model-in-image/initial/index.html">初期状態のユース・ケース</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/update1/" title="更新1">
+        <span class="merged" id="index.2piYmS"  title="原文::  Update 1 "><a href="../../samples/simple/domains/model-in-image/update1/index.html"> 更新1 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/update2/" title="更新2">
+        <span class="merged" id="index.YfeOL"  title="原文::  Update 2 "><a href="../../samples/simple/domains/model-in-image/update2/index.html"> 更新2 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/update3/" title="更新3">
+        <span class="merged" id="index.3t8JaH"  title="原文::  Update 3 "><a href="../../samples/simple/domains/model-in-image/update3/index.html"> 更新3 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/cleanup/" title="クリーンアップ">
+        <span class="merged" id="index.1HnjSc"  title="原文::  Cleanup "><a href="../../samples/simple/domains/model-in-image/cleanup/index.html"> クリーンアップ </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/fmw-domain/" title="FMW Infrastructureドメイン">
+      <span class="merged" id="index.3OXx51" title="原文 :  FMW Infrastructure domain "><a href="../../samples/simple/domains/fmw-domain/index.html">FMW Infrastructureドメイン</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/delete-domain/" title="ドメインに関連付けられたリソースの削除">
+      <span class="merged" id="index.3xjJq6" title="原文 :  Delete resources associated with the domain "><a href="../../samples/simple/domains/delete-domain/index.html">ドメインに関連付けられたリソースの削除</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/lifecycle/" title="ドメイン・ライフサイクル操作">
+      <span class="merged" id="index.14scsh" title="原文 :  Domain lifecycle operations "><a href="../../samples/simple/domains/lifecycle/index.html">ドメイン・ライフサイクル操作</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/rest/" title="REST API">
+      <span class="merged" id="index.1lo9U7"  title="原文::  REST APIs "><a href="../../samples/simple/rest/index.html"> REST API </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/ingress/" title="イングレス">
+      <span class="merged" id="index.2yEhyZ"  title="原文::  Ingress "><a href="../../samples/simple/ingress/index.html"> イングレス </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/elastic-stack/" title="エラスティック・スタック">
+      <span class="merged" id="index.1bnf1e" title="原文 :  Elastic Stack "><a href="../../samples/simple/elastic-stack/index.html">エラスティック・スタック</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/elastic-stack/operator/" title="オペレータ">
+      <span class="merged" id="index.40oJdx" title="原文 :  Operator "><a href="../../samples/simple/elastic-stack/operator/index.html">オペレータ</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/elastic-stack/weblogic-domain/" title="WebLogicドメイン">
+      <span class="merged" id="index.2Drbnk" title="原文 :  WebLogic domain "><a href="../../samples/simple/elastic-stack/weblogic-domain/index.html">WebLogicドメイン</a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/azure-kubernetes-service/" title="Azure Kubernetes Service">
+      <span class="merged" id="index.1Rljsv"  title="原文::  Azure Kubernetes Service "><a href="../../samples/simple/azure-kubernetes-service/index.html"> Azure Kubernetes Service </a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/azure-kubernetes-service/domain-on-pv/" title="Domain home on a PV">
+        <span class="merged" id="index.2sAOSW" title="原文 :  Domain home on a PV "><a href="../../samples/simple/azure-kubernetes-service/domain-on-pv/index.html"> Domain home on a PV </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/azure-kubernetes-service/model-in-image/" title="Model in Image">
+        <span class="merged" id="index.3sDdqi" title="原文 :  Model in Image "><a href="../../samples/simple/azure-kubernetes-service/model-in-image/index.html"> Model in Image </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/azure-kubernetes-service/troubleshooting/" title="トラブルシューティング">
+        <span class="merged" id="index.1n26me"  title="原文::  Troubleshooting "><a href="../../samples/simple/azure-kubernetes-service/troubleshooting/index.html"> トラブルシューティング </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/tanzu-kubernetes-service/" title="Tanzu Kubernetes Service">
+      <span class="merged" id="index.1Zn4wN" title="原文 :  Tanzu Kubernetes Service "><a href="../../samples/simple/tanzu-kubernetes-service/index.html"> Tanzu Kubernetes Service </a></span>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/developerguide/" title="開発者ガイド">
+      <span class="merged" id="index.3iw5u2" title="原文 :  4. Developer Guide "><a href="../../developerguide/index.html"><b>4. </b>開発者ガイド</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/requirements/" title="要件">
+        <span class="merged" id="index.2EADrr"  title="原文::  Requirements "><a href="../../developerguide/requirements/index.html"> 要件 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/building/" title="ビルディング">
+        <span class="merged" id="index.1DK34J"  title="原文::  Building "><a href="../../developerguide/building/index.html"> ビルディング </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/integration-tests/" title="統合テスト">
+        <span class="merged" id="index.FbzFl" title="原文 :  Integration tests "><a href="../../developerguide/integration-tests/index.html">統合テスト</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/branching/" title="分岐">
+        <span class="merged" id="index.132qGJ" title="原文 :  Branching "><a href="../../developerguide/branching/index.html">ブランチ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/coding-standards/" title="コーディング標準">
+        <span class="merged" id="index.IaxFj" title="原文 :  Coding standards "><a href="../../developerguide/coding-standards/index.html">コーディング標準</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/code-structure/" title="コード構造">
+        <span class="merged" id="index.1rMPuJ" title="原文 :  Code structure "><a href="../../developerguide/code-structure/index.html">コード構造</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/asynchronous-call-model/" title="非同期コール・モデル">
+        <span class="merged" id="index.4GjcG1" title="原文 :  Asynchronous call model "><a href="../../developerguide/asynchronous-call-model/index.html">非同期コール・モデル</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/domain-processing/" title="ドメイン処理">
+        <span class="merged" id="index.3JCHhu" title="原文 :  Domain processing "><a href="../../developerguide/domain-processing/index.html">ドメイン処理</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/documentation/" title="ドキュメント">
+        <span class="merged" id="index.2mYLN9"  title="原文::  Documentation "><a href="../../developerguide/documentation/index.html"> ドキュメント </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/backwards-compatibility/" title="下位互換性">
+        <span class="merged" id="index.39bDuL"  title="原文::  Backward compatibility "><a href="../../developerguide/backwards-compatibility/index.html"> 下位互換性 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/reference/" title="リファレンス">
+      <span class="merged" id="index.74pOo" title="原文 :  5. Reference "><a href="../../reference/index.html"><b>5. </b>リファレンス</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/reference/javadoc/" title="Javadoc">
+        <span class="merged" id="index.5N4ML"  title="原文::  Javadoc "><a href="../../reference/javadoc/index.html"> Javadoc </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/reference/swagger/" title="Swagger">
+        <span class="merged" id="index.2Q1Ov9"  title="原文::  Swagger "><a href="../../reference/swagger/index.html"> Swagger </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/reference/domain-resource/" title="ドメイン・リソース">
+        <span class="merged" id="index.2PoXCz" title="原文 :  Domain resource "><a href="../../reference/domain-resource/index.html">ドメイン・リソース</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li class="dd-item 
+        parent
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/security/" title="セキュリティ">
+      <span class="merged" id="index.2ItjEj" title="原文 :  6. Security "><a href="../index.html"><b>6. </b>セキュリティ</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/certificates/" title="証明書">
+        <span class="merged" id="index.4UDgTq"  title="原文::  Certificates "><a href="../certificates/index.html"> 証明書 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/security/domain-security/" title="ドメイン・セキュリティ">
+      <span class="merged" id="index.PTDXZ" title="原文 :  Domain security "><a href="../domain-security/index.html">ドメイン・セキュリティ</a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/domain-security/image-protection/" title="コンテナ・イメージ保護">
+        <span class="merged" id="index.4ZKZ8k" title="原文 :  Container image protection "><a href="../domain-security/image-protection/index.html">コンテナ・イメージ保護</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/domain-security/weblogic-channels/" title="チャネル">
+        <span class="merged" id="index.218KQL"  title="原文::  Channels "><a href="../domain-security/weblogic-channels/index.html"> チャネル </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/encryption/" title="暗号化">
+        <span class="merged" id="index.30H5S5"  title="原文::  Encryption "><a href="../encryption/index.html"> 暗号化 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/service-accounts/" title="サービス・アカウント">
+        <span class="merged" id="index.62eun"  title="原文::  Service accounts "><a href="../service-accounts/index.html"> サービス・アカウント </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item active" data-nav-id="/weblogic-kubernetes-operator/security/rbac/" title="RBAC">
+        <span class="merged" id="index.2JWyOp"  title="原文::  RBAC "><a href="index.html"> RBAC </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/secrets/" title="シークレット">
+        <span class="merged" id="index.5Xkcb"  title="原文::  Secrets "><a href="../secrets/index.html"> シークレット </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/openshift/" title="OpenShift">
+        <span class="merged" id="index.3D140T"  title="原文::  OpenShift "><a href="../openshift/index.html"> OpenShift </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li class="dd-item 
+        
+        
+        
+        " data-nav-id="/weblogic-kubernetes-operator/faq/" title=" よくある質問">
+      <span class="merged" id="index.25WEpW"  title="原文::  Frequently asked questions "><a href="../../faq/index.html"> よくある質問 </a></span>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/namespace-management/" title="ドメイン・ネームスペースの管理">
+        <span class="merged" id="index.13Svp9" title="原文 :  Managing domain namespaces "><a href="../../faq/namespace-management/index.html">ドメイン・ネームスペースの管理</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="イメージをプルできません">
+        <span class="merged" id="index.1U2AFZ" title="原文 :  Cannot pull image "><a href="../../faq/cannot-pull-image/index.html">イメージをプルできません</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="起動アイデンティティが無効">
+        <span class="merged" id="index.2cF2DH" title="原文 :  Boot identity not valid "><a href="../../faq/boot-identity-not-valid/index.html">起動アイデンティティが無効</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="ドメイン・シークレットの不一致">
+        <span class="merged" id="index.1LlQFB" title="原文 :  Domain secret mismatch "><a href="../../faq/domain-secret-mismatch/index.html">ドメイン・シークレットの不一致</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/node-heating/" title="ノード・ヒーティングの問題">
+        <span class="merged" id="index.49gu3u" title="原文 :  Node heating problem "><a href="../../faq/node-heating/index.html">ノード・ヒーティングの問題</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/fan/" title="高速アプリケーション通知の無効化">
+        <span class="merged" id="index.1N0rSg" title="原文 :  Disabling Fast Application Notifications "><a href="../../faq/fan/index.html">高速アプリケーション通知の無効化</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/oci-fss-pv/" title="永続ボリュームに対するOCIファイル・ストレージ(FSS)の使用">
+        <span class="merged" id="index.4PqpdL" title="原文 :  Using OCI File Storage (FSS) for persistent volumes "><a href="../../faq/oci-fss-pv/index.html">永続ボリュームに対するOCIファイル・ストレージ(FSS)の使用</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/oci-lb/" title="OCIロード・バランサの使用">
+        <span class="merged" id="index.35F6pz" title="原文 :  Using an OCI load balancer "><a href="../../faq/oci-lb/index.html">OCIロード・バランサの使用</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/volumes/" title="PersistentVolumeClaimへのアクセスの提供">
+        <span class="merged" id="index.2xkIFh" title="原文 :  Providing access to a PersistentVolumeClaim "><a href="../../faq/volumes/index.html">PersistentVolumeClaimへのアクセスの提供</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/configmaps/" title="ConfigMapへのアクセスの提供">
+        <span class="merged" id="index.2M4hpQ" title="原文 :  Providing access to a ConfigMap "><a href="../../faq/configmaps/index.html">ConfigMapへのアクセスの提供</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/external-clients/" title="外部WebLogicクライアント">
+        <span class="merged" id="index.2nAU7S" title="原文 :  External WebLogic clients "><a href="../../faq/external-clients/index.html">外部WebLogicクライアント</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/coherence-requirements/" title="Coherenceの要件">
+        <span class="merged" id="index.309nIk" title="原文 :  Coherence requirements "><a href="../../faq/coherence-requirements/index.html">Coherenceの要件</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/resource-settings/" title="ポッド・メモリーとCPUリソース">
+        <span class="merged" id="index.3EXOjH" title="原文 :  Pod memory and CPU resources "><a href="../../faq/resource-settings/index.html">ポッド・メモリーとCPUリソース</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+        <li><span class="merged" id="index.2BBM2L"  title="原文:: Release Notes"><a class="padding" href="../../release-notes">リリース・ノート</a></span></li>
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p><span class="merged" id="index.4behA5" title="原文 : Created with from Oracle"><a href="https://www.oracle.com">Oracle</a>から<i class="fas fa-heart"></i>を使用して作成</span></p>
+<p>&nbsp;</p>
+<p><span class="merged" id="index.3sNKIh" title="原文 :  GitHub repo"><a href="https://github.com/oracle/weblogic-kubernetes-operator"><i class="fab fa-github"></i> GitHubレポ</a></span></p>
+<p><span class="merged" id="index.3Imawx" title="原文 :  Public Slack #operator"><a href="https://weblogic-slack-inviter.herokuapp.com/"><i class="fab fa-slack"></i> パブリックSlack #operator</a></span></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span class="merged" id="index.2FzxwQ" title="原文 :  &gt; Security &gt; RBAC "><span id="sidebar-toggle-span"> <a data-sidebar-toggle="" href="index.html#" id="sidebar-toggle"> <i class="fas fa-bars"></i> </a> </span> <span id="toc-menu"><i class="fas fa-list-alt"></i></span> <span class="links"> <a href='../../index.html'></a> > <a href='../index.html'>Security</a> > RBAC </span></span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              <span class="merged" id="index.zD5AD"  title="原文:: RBAC">RBAC</span>
+            </h1>
+          
+
+        
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-129126578-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<h4 id="contents"><span class="merged" id="index.1Q34Zl"  title="原文:: Contents">目次</span></h4>
+<ul>
+<li><span class="merged" id="index.1bJUqu"  title="原文:: Overview"><a href="index.html#overview">概要</a></span></li>
+<li><span class="merged" id="index.nQafz" title="原文 : Operator RBAC definitions"><a href="index.html#operator-rbac-definitions">オペレータRBAC定義</a></span>
+<ul>
+<li><span class="merged" id="index.R2zYZ" title="原文 : Role and RoleBinding naming conventions"><a href="index.html#kubernetes-role-and-rolebinding-naming-conventions">ロールおよびRoleBindingのネーミング規則</a></span></li>
+<li><span class="merged" id="index.6n5dM" title="原文 : ClusterRole and ClusterRoleBinding naming conventions"><a href="index.html#kubernetes-clusterrole-and-clusterrolebinding-naming-conventions">ClusterRoleおよびClusterRoleBindingのネーミング規則</a></span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.49tdcM" title="原文 : RoleBindings"><a href="index.html#rolebindings">RoleBindings</a></span></li>
+<li><span class="merged" id="index.41uVAu" title="原文 : ClusterRoleBindings"><a href="index.html#clusterrolebindings">ClusterRoleBindings</a></span></li>
+</ul>
+<h4 id="overview"><span class="merged" id="index.YrpRV"  title="原文:: Overview">概要</span></h4>
+<p><span class="merged" id="index.cUbTr.spl1" title="原文 : The operator assumes that certain Kubernetes Roles are created in the Kubernetes cluster.">オペレータは、特定のKubernetesロールがKubernetesクラスタに作成されていることを前提としています。</span> <span class="merged" id="index.cUbTr.spl2" title="原文 : The operator Helm chart creates the required ClusterRoles, ClusterRoleBindings, Roles, and RoleBindings for the ServiceAccount that is used by the operator.">オペレータHelmチャートでは、オペレータが使用する<code>ServiceAccount</code>に必要なClusterRoles、ClusterRoleBindings、ロールおよびRoleBindingsが作成されます。</span> <span class="merged" id="index.cUbTr.spl3" title="原文 : The operator will also attempt to verify that the RBAC settings are correct when the operator starts running.">オペレータはまた、オペレータの実行開始時にRBAC設定が正しいことを確認しようとします。</span> </p>
+
+<div class="notices info" ><p><span class="merged" id="index.3kcfkA" title="原文 : For more information about the Kubernetes ServiceAccount used by the operator, see Service Accounts.">オペレータが使用するKubernetes <code>ServiceAccount</code>の詳細は、<a href="../service-accounts/index.html#weblogic-server-kubernetes-operator-service-accounts">「サービス・アカウント」</a>を参照してください。</span></p>
+</div>
+
+<p><span class="merged" id="index.31jIAg" title="原文 : The general design goal is to provide the operator with the minimum amount of permissions that the operator requires and to favor built-in roles over custom roles where it make sense to use the Kubernetes built-in roles.">一般的な設計目標は、オペレータが必要とする最小限の権限をオペレータに付与し、Kubernetes組込みロールの使用に適したカスタム・ロールよりも組込みロールを優先することです。</span></p>
+
+<div class="notices info" ><p><span class="merged" id="index.WXvT0" title="原文 : For more information about Kubernetes Roles, see the Kubernetes RBAC documentation.">Kubernetesロールの詳細は、<a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Kubernetes RBAC</a>のドキュメントを参照してください。</span></p>
+</div>
+
+<h4 id="operator-rbac-definitions"><span class="merged" id="index.4GLtmd" title="原文 : Operator RBAC definitions">オペレータRBAC定義</span></h4>
+<p><span class="merged" id="index.2sVHnd" title="原文 : To display the Kubernetes Roles and related Bindings used by the operator where the operator was installed using the Helm release name weblogic-operator, look for the Kubernetes objects, Role, RoleBinding, ClusterRole, and ClusterRoleBinding, when using the Helm status command:">Helmリリース名<code>weblogic-operator</code>を使用して、オペレータがインストールされたオペレータが使用したKubernetesロールおよび関連するバインディングを表示するには、Helm <code>status</code>コマンドを使用するときにKubernetesオブジェクト<code>Role</code>, <code>RoleBinding</code>, <code>ClusterRole</code>および<code>ClusterRoleBinding</code>を探します:</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ helm status weblogic-operator
+</code></pre></div><p><span class="merged" id="index.3SRqBh" title="原文 : Assuming the operator was installed into the namespace weblogic-operator-ns with a target namespaces of domain1-ns, the following commands can be used to display a subset of the Kubernetes Roles and related RoleBindings:">オペレータが<code>domain1-ns</code>のターゲット・ネームスペースを持つネームスペース<code>weblogic-operator-ns</code>にインストールされている場合、次のコマンドを使用してKubernetesロールおよび関連RoleBindingsの<em>「サブセット」</em>を表示できます:</span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl describe clusterrole <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  weblogic-operator-ns-weblogic-operator-clusterrole-general
+
+$ kubectl describe clusterrolebinding <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  weblogic-operator-ns-weblogic-operator-clusterrolebinding-general
+
+$ kubectl -n weblogic-operator-ns <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  describe role weblogic-operator-role
+
+$ kubectl -n domain1-ns <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  describe rolebinding weblogic-operator-rolebinding-namespace <span style="color:#ae81ff">\
+</span></code></pre></div><h5 id="kubernetes-role-and-rolebinding-naming-conventions"><span class="merged" id="index.2HwNXQ" title="原文 : Kubernetes Role and RoleBinding naming conventions">KubernetesロールおよびRoleBindingのネーミング規則</span></h5>
+<p><span class="merged" id="index.1SD1oP" title="原文 : The following naming pattern is used for the Role and RoleBinding objects:"><code>Role</code>および<code>RoleBinding</code>オブジェクトには、次のネーミング・パターンが使用されます:</span></p>
+<ul>
+<li><span class="merged" id="index.3ncCnF" title="原文 : weblogic-operator-&lt;type&gt;-&lt;optional-role-name&gt;">weblogic-operator-<code>&lt;type></code>-<code>&lt;optional-role-name></code></span></li>
+</ul>
+<p><span class="merged" id="index.4JB99u" title="原文 : Using:"><em>次を使用します:</em></span></p>
+<ol>
+<li><span class="merged" id="index.3a0WFM" title="原文 : &lt;type&gt; as the kind of Kubernetes object:">Kubernetesオブジェクトの種類としての<code>&lt;type></code>:</span>
+<ul>
+<li><span class="merged" id="index.3nBbVr"  title="原文:: role"><em>role</em></span></li>
+<li><span class="merged" id="index.8raMB" title="原文 : rolebinding"><em>rolebinding</em></span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.3V1Tm3" title="原文 : &lt;optional-role-name&gt; as an optional name given to the Role or RoleBinding">ロールまたはRoleBindingに指定されたオプション名としての<code>&lt;optional-role-name></code></span>
+<ul>
+<li><span class="merged" id="index.WPmr9" title="原文 : For example: namespace">次に例を示します: <code>namespace</code></span></li>
+</ul>
+</li>
+</ol>
+<p><span class="merged" id="index.3tWSFv" title="原文 : A complete name for an operator created Kubernetes RoleBinding would be:">Kubernetes <code>RoleBinding</code>で作成されるオペレータの完全な名前は次のようになります:</span></p>
+<blockquote>
+<p><span class="merged" id="index.lyHDr"  title="原文: weblogic-operator-rolebinding-namespace"><code>weblogic-operator-rolebinding-namespace</code></span></p>
+</blockquote>
+<h5 id="kubernetes-clusterrole-and-clusterrolebinding-naming-conventions"><span class="merged" id="index.1WtR6t" title="原文 : Kubernetes ClusterRole and ClusterRoleBinding naming conventions">Kubernetes ClusterRoleおよびClusterRoleBindingのネーミング規則</span></h5>
+<p><span class="merged" id="index.3TMBXK" title="原文 : The following naming pattern is used for the ClusterRole and ClusterRoleBinding objects:"><code>ClusterRole</code>および<code>ClusterRoleBinding</code>オブジェクトには、次のネーミング・パターンが使用されます:</span></p>
+<ul>
+<li><span class="merged" id="index.2EeDgh" title="原文 : &lt;operator-ns&gt;-weblogic-operator-&lt;type&gt;-&lt;role-name&gt;"><code>&lt;operator-ns></code>-weblogic-operator-<code>&lt;type></code>-<code>&lt;role-name></code></span></li>
+</ul>
+<p><span class="merged" id="index.4JB99u.1" title="原文 : Using:"><em>次を使用します:</em></span></p>
+<ol>
+<li><span class="merged" id="index.QJgeQ" title="原文 : &lt;operator-ns&gt; as the namespace in which the operator is installed">オペレータがインストールされているネームスペースとしての<code>&lt;operator-ns></code></span>
+<ul>
+<li><span class="merged" id="index.4K8JmE" title="原文 : For example: weblogic-operator-ns">次に例を示します: <code>weblogic-operator-ns</code></span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.3a0WFM.1" title="原文 : &lt;type&gt; as the kind of Kubernetes object:">Kubernetesオブジェクトの種類としての<code>&lt;type></code>:</span>
+<ul>
+<li><span class="merged" id="index.2jyvrF" title="原文 : clusterrole"><em>clusterrole</em></span></li>
+<li><span class="merged" id="index.21qFGL" title="原文 : clusterrolebinding"><em>clusterrolebinding</em></span></li>
+</ul>
+</li>
+<li><span class="merged" id="index.3OPwyA" title="原文 : &lt;role-name&gt; as the name given to the Role or RoleBinding">ロールまたはRoleBindingに指定された名前としての<code>&lt;role-name></code></span>
+<ul>
+<li><span class="merged" id="index.4746ph" title="原文 : For example: general">次に例を示します: <code>general</code></span></li>
+</ul>
+</li>
+</ol>
+<p><span class="merged" id="index.3aoH0i" title="原文 : A complete name for an operator created Kubernetes ClusterRoleBinding would be:">Kubernetes <code>ClusterRoleBinding</code>で作成されるオペレータの完全な名前は次のようになります:</span></p>
+<blockquote>
+<p><span class="merged" id="index.lK27g"  title="原文: weblogic-operator-ns-weblogic-operator-clusterrolebinding-general"><code>weblogic-operator-ns-weblogic-operator-clusterrolebinding-general</code></span></p>
+</blockquote>
+<h4 id="rolebindings"><span class="merged" id="index.2E4fHH"  title="原文: RoleBindings">RoleBindings</span></h4>
+<p><span class="merged" id="index.3rSJcv" title="原文 : Assuming that the operator was installed into the Kubernetes Namespace weblogic-operator-ns, and a target namespace for the operator is domain1-ns, the following RoleBinding entries are mapped to a Role or ClusterRole granting permission to the operator.">オペレータがKubernetes Namespace <code>weblogic-operator-ns</code>にインストールされ、オペレータのターゲット・ネームスペースが<code>domain1-ns</code>である場合、次の<code>RoleBinding</code>エントリは、オペレータに権限を付与する<code>Role</code>または<code>ClusterRole</code>にマップされます。</span></p>
+<table>
+<thead>
+<tr>
+<th><span class="merged" id="index.1KBZGe"  title="原文: RoleBinding">RoleBinding</span></th>
+<th><span class="merged" id="index.QnOGe" title="原文 : Mapped to Role">ロールにマップ済</span></th>
+<th><span class="merged" id="index.1gIa9M"  title="原文:: Resource Access">リソース・アクセス</span></th>
+<th><span class="merged" id="index.3Wy1iS"  title="原文:: Notes">ノート</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="merged" id="index.3kcnql"  title="原文: weblogic-operator-rolebinding"><code>weblogic-operator-rolebinding</code></span></td>
+<td><span class="merged" id="index.4HHxDy"  title="原文: weblogic-operator-role"><code>weblogic-operator-role</code></span></td>
+<td><span class="merged" id="index.3EL8hT" title="原文 : Edit: secrets, configmaps, events"><strong>編集</strong>: シークレット、構成マップ、イベント</span></td>
+<td><span class="merged" id="index.1Z0z02" title="原文 : The RoleBinding is created in the namespace weblogic-operator-ns 1">RoleBindingは、<code>weblogic-operator-ns</code> <sup id="fnref:1"><a class="footnote-ref" href="index.html#fn:1" role="doc-noteref">1</a></sup>というネームスペースに作成されます</span></td>
+</tr>
+<tr>
+<td><span class="merged" id="index.lyHDr.1"  title="原文: weblogic-operator-rolebinding-namespace"><code>weblogic-operator-rolebinding-namespace</code></span></td>
+<td><span class="merged" id="index.1F3XUY" title="原文 : Operator Cluster Role namespace">オペレータ・クラスタ・ロール<code>namespace</code></span></td>
+<td><span class="merged" id="index.1Qq0Ay" title="原文 : Read: secrets, pods/log, pods/exec"><strong>Read</strong>: secrets, pods/log, pods/exec</span></td>
+<td><span class="merged" id="index.48vWDT" title="原文 : The RoleBinding is created in the namespace domain1-ns 2">RoleBindingは、<code>domain1-ns</code> <sup id="fnref:2"><a class="footnote-ref" href="index.html#fn:2" role="doc-noteref">2</a></sup>というネームスペースに作成されます</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><span class="merged" id="index.3SqTfm" title="原文 : Edit: configmaps, events, pods, services, jobs.batch"><strong>編集</strong>: configmaps, events, pods, services, jobs.batch</span></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><span class="merged" id="index.cP0u8" title="原文 : Create: pods/exec"><strong>作成</strong>: pods/exec</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="clusterrolebindings"><span class="merged" id="index.4Udirg"  title="原文: ClusterRoleBindings">ClusterRoleBindings</span></h4>
+<p><span class="merged" id="index.4d1Gpj" title="原文 : Assuming that the operator was installed into the Kubernetes Namespace weblogic-operator-ns, the following ClusterRoleBinding entries are mapped to a ClusterRole granting permission to the operator.">オペレータがKubernetes Namespace <code>weblogic-operator-ns</code>にインストールされている場合、次の<code>ClusterRoleBinding</code>エントリは、オペレータに権限を付与する<code>ClusterRole</code>にマップされます。</span></p>
+<p><span class="merged" id="index.Hyq3J" title="原文 : Note: The operator names in table below represent the &lt;role-name&gt; from the cluster names section."><strong>ノート</strong>: 次の表のオペレータ名は、<a href="index.html#kubernetes-cluster-role-and-cluster-role-binding-naming-convention">クラスタ名</a>セクションの<code>&lt;role-name></code>を表します。</span></p>
+<table>
+<thead>
+<tr>
+<th><span class="merged" id="index.1ucOxe"  title="原文: ClusterRoleBinding">ClusterRoleBinding</span></th>
+<th><span class="merged" id="index.1R6mfV" title="原文 : Mapped to Cluster Role">クラスタ・ロールにマップ済</span></th>
+<th><span class="merged" id="index.1gIa9M.1"  title="原文:: Resource Access">リソース・アクセス</span></th>
+<th><span class="merged" id="index.3Wy1iS.1"  title="原文:: Notes">ノート</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="merged" id="index.3ZwtLF" title="原文 : Operator general">Operator <code>general</code></span></td>
+<td><span class="merged" id="index.3ZwtLF.1" title="原文 : Operator general">Operator <code>general</code></span></td>
+<td><span class="merged" id="index.Ecp2y" title="原文 : Read: namespaces"><strong>Read</strong>: namespaces</span></td>
+<td><span class="merged" id="index.49JZJh" title="原文 : 3"><sup id="fnref:3"><a class="footnote-ref" href="index.html#fn:3" role="doc-noteref">3</a></sup></span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><span class="merged" id="index.i37u0" title="原文 : Edit: customresourcedefinitions"><strong>編集</strong>: customresourcedefinitions</span></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><span class="merged" id="index.4bibrT" title="原文 : Update: domains (weblogic.oracle), domains/status"><strong>更新</strong>: ドメイン(weblogic.oracle)、ドメイン/ステータス</span></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><span class="merged" id="index.3Er8jz" title="原文 : Create: tokenreviews, selfsubjectrulesreviews"><strong>作成</strong>: tokenreview、selfsubjectrulesreviews</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="merged" id="index.2ZwDza" title="原文 : Operator nonresource">Operator <code>nonresource</code></span></td>
+<td><span class="merged" id="index.2ZwDza.1" title="原文 : Operator nonresource">Operator <code>nonresource</code></span></td>
+<td><span class="merged" id="index.2Zf8AT" title="原文 : Get: /version/*"><strong>Get</strong>: /version/*</span></td>
+<td><span class="merged" id="index.4Nob7U" title="原文 : 1"><sup id="fnref:1"><a class="footnote-ref" href="index.html#fn:1" role="doc-noteref">1</a></sup></span></td>
+</tr>
+<tr>
+<td><span class="merged" id="index.1tPOpL" title="原文 : Operator discovery">Operator <code>discovery</code></span></td>
+<td><span class="merged" id="index.3io9yD" title="原文 : Kubernetes system:discovery">Kubernetes <code>system:discovery</code></span></td>
+<td><span class="merged" id="index.2Lvd9A" title="原文 : See: Kubernetes Discovery Roles"><strong>次を参照</strong>: <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/#discovery-roles">Kubernetes検出ロール</a></span></td>
+<td><span class="merged" id="index.49JZJh.1" title="原文 : 3"><sup id="fnref:3"><a class="footnote-ref" href="index.html#fn:3" role="doc-noteref">3</a></sup></span></td>
+</tr>
+<tr>
+<td><span class="merged" id="index.3FeSO0" title="原文 : Operator auth-delegator">Operator <code>auth-delegator</code></span></td>
+<td><span class="merged" id="index.4SzSH7" title="原文 : Kubernetes system:auth-delegator">Kubernetes <code>system:auth-delegator</code></span></td>
+<td><span class="merged" id="index.3lr5HG" title="原文 : See: Kubernetes Component Roles"><strong>次を参照</strong>: <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/#other-component-roles">Kubernetesコンポーネント・ロール</a></span></td>
+<td><span class="merged" id="index.49JZJh.2" title="原文 : 3"><sup id="fnref:3"><a class="footnote-ref" href="index.html#fn:3" role="doc-noteref">3</a></sup></span></td>
+</tr>
+</tbody>
+</table>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><span class="merged" id="index.4P30Jt" title="原文 : The binding is assigned to the operator ServiceAccount. ↩︎">バインディングはオペレータ<code>ServiceAccount</code>に割り当てられます。<a class="footnote-backref" href="index.html#fnref:1" role="doc-backlink">↩︎</a></span></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><span class="merged" id="index.1uuDYQ.spl1" title="原文 : The binding is assigned to the operator ServiceAccount in each namespace that the operator is configured to manage.">バインディングは、オペレータが管理するように構成されている各ネームスペースのオペレータ<code>ServiceAccount</code>に割り当てられます。</span> <span class="merged" id="index.1uuDYQ.spl2" title="原文 : See Managing domain namespaces ↩︎"><a href="../../faq/namespace-management/index.html">「ドメイン・ネームスペースの管理」</a> <a class="footnote-backref" href="index.html#fnref:2" role="doc-backlink">↩︎</a>を参照</span> </p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><span class="merged" id="index.3oisPp.spl1" title="原文 : The binding is assigned to the operator ServiceAccount.">バインディングはオペレータ<code>ServiceAccount</code>に割り当てられます。</span> <span class="merged" id="index.3oisPp.spl2" title="原文 : In addition, the Kubernetes RBAC resources that the operator installation actually set up will be adjusted based on the value of the dedicated setting.">また、オペレータのインストールで実際に設定されたKubernetes RBACリソースは、<code>dedicated</code>設定の値に基づいて調整されます。</span> <span class="merged" id="index.3oisPp.spl3" title="原文 : By default, the dedicated value is set to false, those security resources are created as ClusterRole and ClusterRoleBindings.">デフォルトでは、<code>dedicated</code>値は<code>false</code>に設定されており、これらのセキュリティ・リソースは<code>ClusterRole</code>および<code>ClusterRoleBindings</code>として作成されます。</span> <span class="merged" id="index.3oisPp.spl4" title="原文 : If the dedicated value is set to true, those resources will be created as Roles and RoleBindings in the namespace of the operator. ↩︎"><code>dedicated</code>値が<code>true</code>に設定されている場合、これらのリソースはオペレータのネームスペースに<code>Roles</code>および<code>RoleBindings</code>として作成されます。<a class="footnote-backref" href="index.html#fnref:3" role="doc-backlink">↩︎</a></span> </p>
+</li>
+</ol>
+</section>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../service-accounts/index.html" > <i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="../secrets/index.html" style="margin-right: 0px;" ><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../js/clipboard.min.js?1614202517"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1614202517"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1614202517"></script>
+    <script src="../../js/jquery.sticky.js?1614202517"></script>
+    <script src="../../js/featherlight.min.js?1614202517"></script>
+    <script src="../../js/highlight.pack.js?1614202517"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1614202517"></script>
+    <script src="../../js/learn.js?1614202517"></script>
+    <script src="../../js/hugo-learn.js?1614202517"></script>
+
+    <link href="../../mermaid/mermaid.css?1614202517" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1614202517"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
