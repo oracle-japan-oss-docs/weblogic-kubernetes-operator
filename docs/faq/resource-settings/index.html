@@ -1869,7 +1869,7 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/branching/" title="分岐">
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/branching/" title="ブランチ">
         <span class="merged" id="index.132qGJ" title="原文 :  Branching "><a href="../../developerguide/branching/index.html">ブランチ</a></span>
     </li>
      
@@ -2544,7 +2544,8 @@
         
         <div id="body-inner">
           
-            <h1>
+            <div style="width:100%"> <div title="免責事項: ここに記載されているドキュメントは、お客様の利便性のために翻訳ソフトウエアにより機械的に翻訳(機械翻訳)したものです。オリジナルの英語版もあわせてご確認ください。" style="width:150px;padding-left:5px;padding-right:5px;border:#ff0000 solid 1px;border-color: gray;font-size: small;color:gray;margin: 0 auto 0 auto;text-align:center"><a href="https://docs.oracle.com/cd/E85181_01/mt_disclaimer.html">機械翻訳について</a></div> </div>
+<h1>
               
               <span class="merged" id="index.3AyyAw" title="原文 : Pod memory and CPU resources">ポッド・メモリーとCPUリソース</span>
             </h1>
@@ -2570,7 +2571,7 @@ if (!doNotTrack) {
 <ul>
 <li><span class="merged" id="index.3lso1I"  title="原文:: Introduction"><a href="index.html#introduction">導入</a></span></li>
 <li><span class="merged" id="index.4M7whA" title="原文 : Setting resource requests and limits in a Domain YAML file"><a href="index.html#setting-resource-requests-and-limits-in-a-domain">ドメインYAMLファイルでのリソース・リクエストおよび制限の設定</a></span></li>
-<li><span class="merged" id="index.1HvurG" title="原文 : Determining Pod Quality Of Service"><a href="index.html#determining-pod-quality-of-service">サービス品質の決定</a></span></li>
+<li><span class="merged" id="index.1HvurG" title="原文 : Determining Pod Quality Of Service"><a href="index.html#determining-pod-quality-of-service">サービスのポッド品質の決定</a></span></li>
 <li><span class="merged" id="index.44Hyh0" title="原文 : Java heap size and memory resource considerations"><a href="index.html#java-heap-size-and-memory-resource-considerations">Javaヒープ・サイズおよびメモリー・リソースに関する考慮事項</a></span>
 <ul>
 <li><span class="merged" id="index.2pn13X" title="原文 : Importance of setting heap size and memory resources"><a href="index.html#importance-of-setting-heap-size-and-memory-resources">ヒープ・サイズおよびメモリー・リソースの設定の重要性</a></span></li>
@@ -2600,7 +2601,7 @@ if (!doNotTrack) {
 </code></pre><p><span class="merged" id="index.4CYrDo.spl1" title="原文 : Limits and requests for CPU resources are measured in CPU units.">CPUリソースの制限およびリクエストは、CPU単位で測定されます。</span> <span class="merged" id="index.4CYrDo.spl2" title="原文 : One CPU, in Kubernetes, is equivalent to 1 vCPU/Core for cloud providers and 1 hyperthread on bare-metal Intel processors.">Kubernetesの1 CPUは、クラウド・プロバイダの場合は1 vCPU/Core、ベアメタルIntelプロセッサの場合は1ハイ・パー・スレッドと同等です。</span> <span class="merged" id="index.4CYrDo.spl3" title="原文 : An m suffix in a CPU attribute indicates &lsquo;milli-CPU&rsquo;, so 250m is 25% of a CPU.">CPU属性の<code>m</code>サフィクスはミリCPUを示すため、<code>250m</code>はCPUの25%です。</span> </p>
 <p><span class="merged" id="index.2O7pax" title="原文 : Memory can be expressed in various units, where one Mi is one IEC unit mega-byte (1024^2), and one Gi is one IEC unit giga-byte (1024^3).">メモリーはさまざまな単位で表現できます。ここで、<code>Mi</code>は1つのIECユニット・メガバイト(1024 ^ 2)で、<code>Gi</code>は1つのIECユニット・ギガバイト(1024 ^ 3)です。</span></p>
 <p><span class="merged" id="index.1LXlOu" title="原文 : See also Managing Resources for Containers, Assign Memory Resources to Containers and Pods and Assign CPU Resources to Containers and Pods in the Kubernetes documentation.">Kubernetesドキュメントの<a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">「コンテナのリソースの管理」</a>、<a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource">「コンテナおよびポッドへのメモリー・リソースの割当て」</a>および<a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource">「コンテナおよびポッドへのCPUリソースの割当て」</a>も参照してください。</span></p>
-<h4 id="determining-pod-quality-of-service"><span class="merged" id="index.3EwQUT" title="原文 : Determining Pod Quality Of Service">サービス品質の決定</span></h4>
+<h4 id="determining-pod-quality-of-service"><span class="merged" id="index.3EwQUT" title="原文 : Determining Pod Quality Of Service">サービスのポッド品質の決定</span></h4>
 <p><span class="merged" id="index.4Zb7b3" title="原文 : A Pod&rsquo;s Quality of Service (QoS) is based on whether it&rsquo;s configured with resource requests and limits:">ポッドのサービスのクオリティ(QoS)は、リソース・リクエストおよび制限付きで構成されているかどうかに基づきます:</span></p>
 <ul>
 <li>

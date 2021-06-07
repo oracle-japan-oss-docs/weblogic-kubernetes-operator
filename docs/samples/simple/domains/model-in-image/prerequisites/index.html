@@ -1869,7 +1869,7 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/branching/" title="分岐">
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/branching/" title="ブランチ">
         <span class="merged" id="index.2pFVZI" title="原文 :  Branching "><a href="../../../../../developerguide/branching/index.html">ブランチ</a></span>
     </li>
      
@@ -2545,7 +2545,8 @@
         
         <div id="body-inner">
           
-            <h1>
+            <div style="width:100%"> <div title="免責事項: ここに記載されているドキュメントは、お客様の利便性のために翻訳ソフトウエアにより機械的に翻訳(機械翻訳)したものです。オリジナルの英語版もあわせてご確認ください。" style="width:150px;padding-left:5px;padding-right:5px;border:#ff0000 solid 1px;border-color: gray;font-size: small;color:gray;margin: 0 auto 0 auto;text-align:center"><a href="https://docs.oracle.com/cd/E85181_01/mt_disclaimer.html">機械翻訳について</a></div> </div>
+<h1>
               
               <span class="merged" id="index.2LZvWc"  title="原文:: Prerequisites">前提条件</span>
             </h1>
@@ -2595,7 +2596,7 @@ $ git clone https://github.com/oracle/weblogic-kubernetes-operator.git
 <pre><code>$ mkdir /tmp/mii-sample
 $ cp -r /tmp/weblogic-kubernetes-operator/kubernetes/samples/scripts/create-weblogic-domain/model-in-image/* /tmp/mii-sample
 </code></pre><blockquote>
-<p><span class="merged" id="index.2bDk9Y" title="原文 : Note: We will refer to this working copy of the sample as /tmp/mii-sample; however, you can use a different location. "><strong>ノート</strong>: このサンプルの作業用コピーを<code>/tmp/mii-sample</code>と呼びますが、別のロケーションを使用することもできます。<a name="resume"></a></a></span>
+<p><span class="merged" id="index.2bDk9Y" title="原文 : Note: We will refer to this working copy of the sample as /tmp/mii-sample; however, you can use a different location. "><strong>ノート</strong>: このサンプルの作業用コピーを<code>/tmp/mii-sample</code>と呼びますが、別のロケーションを使用することもできます。<a name="resume"></a></span>
    </p>
 </blockquote>
 </li>
@@ -2693,7 +2694,7 @@ $ kubectl apply -f traefik-ingress-sample-domain2-cluster-cluster-1.yaml
 </li>
 <li>
 <p><span class="merged" id="index.2YtHgn.spl1" title="原文 : Download the latest WebLogic Deploying Tooling (WDT) and WebLogic Image Tool (WIT) installer ZIP files to your /tmp/mii-sample/model-images directory.">最新のWebLogic Deploying Tooling (WDT)およびWebLogic Image Tool (WIT)インストーラZIPファイルを<code>/tmp/mii-sample/model-images</code>ディレクトリにダウンロードします。</span> <span class="merged" id="index.2YtHgn.spl2" title="原文 : Both WDT and WIT are required to create your Model in Image container images.">Model in Imageコンテナ・イメージを作成するには、WDTとWITの両方が必要です。</span> </p>
-<p><span class="merged" id="index.1AFPn6" title="原文 : For example, visit the GitHub WebLogic Deploy Tooling Releases and WebLogic Image Tool Releases web pages to determine the latest release version for each, and then, assuming the version numbers are 1.9.1 and 1.9.1 respectively, call:">たとえば、GitHub <a href="https://github.com/oracle/weblogic-deploy-tooling/releases">「WebLogicデプロイ・ツール・リリース」</a>および<a href="https://github.com/oracle/weblogic-image-tool/releases">「WebLogic Image Toolのリリース」</a>のwebページにアクセスして、それぞれの最新リリース・バージョンを確認し、それぞれのバージョン番号が<code>1.9.1</code>および<code>1.9.1</code>であると仮定して、次のようにコールします:</span></p>
+<p><span class="merged" id="index.1AFPn6" title="原文 : For example, visit the GitHub WebLogic Deploy Tooling Releases and WebLogic Image Tool Releases web pages to determine the latest release version for each, and then, assuming the version numbers are 1.9.1 and 1.9.1 respectively, call:">たとえば、GitHub <a href="https://github.com/oracle/weblogic-deploy-tooling/releases">「WebLogic Deploy Toolingリリース」</a>および<a href="https://github.com/oracle/weblogic-image-tool/releases">「WebLogic Image Toolリリース」</a>のwebページにアクセスして、それぞれの最新リリース・バージョンを確認し、それぞれのバージョン番号が<code>1.9.1</code>および<code>1.9.1</code>であると仮定して、次のようにコールします:</span></p>
 <pre><code>$ cd /tmp/mii-sample/model-images
 
 $ curl -m 120 -fL https://github.com/oracle/weblogic-deploy-tooling/releases/download/release-1.9.7/weblogic-deploy.zip \
