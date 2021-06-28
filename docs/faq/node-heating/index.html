@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.80.0" />
-    <meta content="オペレータは、起動されるWebLogic Serverインスタンスごとにポッドを作成します。 次に、Kubernetesスケジューラはポッドごとにノードを選択します。 デフォルトのスケジューリング・アルゴリズムでは、必要なコンテナ・イメージがすでにプルされているノードを選択する場合に大幅に重み付けされるため、多くの場合、Kubernetesは同じノード上でWebLogic Serverインスタンスのポッドの多くを実行しますが、他のノードはあまり利用されません。 これは通常、ノードの加熱の問題と呼ばれます。 " name="description">
+    <meta content="オペレータは、起動されるWebLogic Serverインスタンスごとにポッドを作成します。 次に、Kubernetesスケジューラはポッドごとにノードを選択します。 デフォルトのスケジューリング・アルゴリズムでは、必要なコンテナ・イメージがすでにプルされているノードを選択する場合に大幅に重み付けされるため、多くの場合、Kubernetesは同じノード上でWebLogic Serverインスタンスのポッドの多くを実行しますが、他のノードはあまり利用されません。 これは通常、ノード・ヒーティングの問題と呼ばれます。 " name="description">
 
 
     <link rel="icon" href="../../images/favicon.png" type="image/png">
 
-    <title>ノードの加熱の問題 :: WebLogic Kubernetes Operator</title>
+    <title>ノード・ヒーティングの問題 :: WebLogic Kubernetes Operator</title>
 
     
     <link href="../../css/nucleus.css?1614202516" rel="stylesheet">
@@ -309,8 +309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計の方針">
-        <span class="merged" id="index.1K0IIO"  title="原文::  Design philosophy "><a href="../../userguide/introduction/design/index.html"> 設計の方針 </a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計理念">
+        <span class="merged" id="index.1K0IIO"  title="原文::  Design philosophy "><a href="../../userguide/introduction/design/index.html"> 設計理念 </a></span>
     </li>
      
   
@@ -2293,8 +2293,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="イメージをプルできません">
-        <span class="merged" id="index.1p75aq" title="原文 :  Cannot pull image "><a href="../cannot-pull-image/index.html">イメージをプルできません</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="Cannot pull image">
+        <span class="merged" id="index.1p75aq" title="原文 :  Cannot pull image "><a href="../cannot-pull-image/index.html">Cannot pull image</a></span>
     </li>
      
   
@@ -2309,8 +2309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="起動アイデンティティが無効">
-        <span class="merged" id="index.YgnEJ" title="原文 :  Boot identity not valid "><a href="../boot-identity-not-valid/index.html">起動アイデンティティが無効</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="Boot identity not valid">
+        <span class="merged" id="index.YgnEJ" title="原文 :  Boot identity not valid "><a href="../boot-identity-not-valid/index.html">Boot identity not valid</a></span>
     </li>
      
   
@@ -2325,8 +2325,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="ドメイン・シークレットの不一致">
-        <span class="merged" id="index.3Lt7Gv" title="原文 :  Domain secret mismatch "><a href="../domain-secret-mismatch/index.html">ドメイン・シークレットの不一致</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="Domain secret mismatch">
+        <span class="merged" id="index.3Lt7Gv" title="原文 :  Domain secret mismatch "><a href="../domain-secret-mismatch/index.html"> Domain secret mismatch </a></span>
     </li>
      
   
@@ -2559,9 +2559,9 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-<p><span class="merged" id="index.Qf2ep.spl1" title="原文 : The WebLogic Server Kubernetes Operator creates a Pod for each WebLogic Server instance that is started.">WebLogic Server Kubernetes Operatorは、起動されるWebLogic Serverインスタンスごとにポッドを作成します。</span> <span class="merged" id="index.Qf2ep.spl2" title="原文 : The Kubernetes Scheduler then selects a Node for each Pod.">次に、<a href="https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/">「Kubernetesスケジューラ」</a>はポッドごとにノードを選択します。</span> <span class="merged" id="index.Qf2ep.spl3" title="原文 : Because the default scheduling algorithm gives substantial weight to selecting a Node where the necessary container images have already been pulled, this often results in Kubernetes running many of the Pods for WebLogic Server instances on the same Node while other Nodes are not fairly utilized.">デフォルトのスケジューリング・アルゴリズムでは、必要なコンテナ・イメージがすでにプルされているノードを選択する場合に大幅に重み付けされるため、多くの場合、Kubernetesは同じノード上でWebLogic Serverインスタンスのポッドの多くを実行しますが、他のノードはあまり利用されません。</span> <span class="merged" id="index.Qf2ep.spl4" title="原文 : This is commonly known as the &ldquo;Node heating problem.&rdquo;">これは、一般的に「ノードの暖房の問題」と呼ばれます。</span> </p>
+<p><span class="merged" id="index.Qf2ep.spl1" title="原文 : The WebLogic Server Kubernetes Operator creates a Pod for each WebLogic Server instance that is started.">WebLogic Server Kubernetes Operatorは、起動されるWebLogic Serverインスタンスごとにポッドを作成します。</span> <span class="merged" id="index.Qf2ep.spl2" title="原文 : The Kubernetes Scheduler then selects a Node for each Pod.">次に、<a href="https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/">「Kubernetesスケジューラ」</a>はポッドごとにノードを選択します。</span> <span class="merged" id="index.Qf2ep.spl3" title="原文 : Because the default scheduling algorithm gives substantial weight to selecting a Node where the necessary container images have already been pulled, this often results in Kubernetes running many of the Pods for WebLogic Server instances on the same Node while other Nodes are not fairly utilized.">デフォルトのスケジューリング・アルゴリズムでは、必要なコンテナ・イメージがすでにプルされているノードを選択する場合に大幅に重み付けされるため、多くの場合、Kubernetesは同じノード上でWebLogic Serverインスタンスのポッドの多くを実行しますが、他のノードはあまり利用されません。</span> <span class="merged" id="index.Qf2ep.spl4" title="原文 : This is commonly known as the &ldquo;Node heating problem.&rdquo;">これは、一般的に「ノード・ヒーティングの問題」と呼ばれます。</span> </p>
 <p><span class="merged" id="index.92nOt.spl1" title="原文 : One solution is to ensure that all necessary container images are available on worker Nodes as part of node provisioning.">解決策の1つは、ノードのプロビジョニングの一環として、必要なすべてのコンテナ・イメージをワーカー・ノードで使用できるようにすることです。</span> <span class="merged" id="index.92nOt.spl2" title="原文 : When the necessary container images are available on each worker Node, the Kubernetes Scheduler will instead select a Node based on other factors such as available CPU and memory or a simple round-robin.">必要なコンテナ・イメージが各ワーカー・ノードで使用可能な場合、Kubernetesスケジューラは、かわりに、使用可能なCPUおよびメモリーや単純なラウンドロビンなどの他のファクタに基づいてノードを選択します。</span> </p>
-<p><span class="merged" id="index.1CXOoX.spl1" title="原文 : The operator team recommends a different solution that is based on inter-pod affinity and anti-affinity.">オペレータ・チームは、<a href="https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity">「インターポッド・アフィニティとアンチ・アフィニティ」</a>に基づく別のソリューションを推奨します。</span> <span class="merged" id="index.1CXOoX.spl2" title="原文 : This solution has the advantage of both resolving the Node heating problem and of explicitly directing the Kubernetes Scheduler to spread the Pods for WebLogic Server instances from a given cluster or domain more widely across the available Nodes.">このソリューションには、ノードの加熱問題の解決と、特定のクラスタまたはドメインからWebLogic Serverインスタンスのポッドをより広範囲に分散するようにKubernetesスケジューラに明示的に指示する利点があります。</span> <span class="merged" id="index.1CXOoX.spl3" title="原文 : Inter-pod affinity and anti-affinity are features of the Kubernetes Scheduler that allow the scheduler to choose a Node for a new Pod based on details of the Pods that are already running.">ポッド・アフィニティとアンチ・アフィニティは、スケジューラがすでに実行中のポッドの詳細に基づいて新しいポッドのノードを選択できるようにするKubernetesスケジューラの機能です。</span> <span class="merged" id="index.1CXOoX.spl4" title="原文 : For WebLogic Server use cases, the intent will often be for anti-affinity with the Pods for other WebLogic Server instances so that server instances spread over the available Nodes.">WebLogic Serverユースケースでは、多くの場合、サーバー・インスタンスが使用可能なノードに分散するように、他のWebLogic Serverインスタンスのポッドとのアンチ・アフィニティを目的とします。</span> </p>
+<p><span class="merged" id="index.1CXOoX.spl1" title="原文 : The operator team recommends a different solution that is based on inter-pod affinity and anti-affinity.">オペレータ・チームは、<a href="https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity">「インターポッド・アフィニティとアンチ・アフィニティ」</a>に基づく別のソリューションを推奨します。</span> <span class="merged" id="index.1CXOoX.spl2" title="原文 : This solution has the advantage of both resolving the Node heating problem and of explicitly directing the Kubernetes Scheduler to spread the Pods for WebLogic Server instances from a given cluster or domain more widely across the available Nodes.">このソリューションには、ノード・ヒーティング問題の解決と、特定のクラスタまたはドメインからWebLogic Serverインスタンスのポッドをより広範囲に分散するようにKubernetesスケジューラに明示的に指示する利点があります。</span> <span class="merged" id="index.1CXOoX.spl3" title="原文 : Inter-pod affinity and anti-affinity are features of the Kubernetes Scheduler that allow the scheduler to choose a Node for a new Pod based on details of the Pods that are already running.">ポッド・アフィニティとアンチ・アフィニティは、スケジューラがすでに実行中のポッドの詳細に基づいて新しいポッドのノードを選択できるようにするKubernetesスケジューラの機能です。</span> <span class="merged" id="index.1CXOoX.spl4" title="原文 : For WebLogic Server use cases, the intent will often be for anti-affinity with the Pods for other WebLogic Server instances so that server instances spread over the available Nodes.">WebLogic Serverユースケースでは、多くの場合、サーバー・インスタンスが使用可能なノードに分散するように、他のWebLogic Serverインスタンスのポッドとのアンチ・アフィニティを目的とします。</span> </p>
 <p><span class="merged" id="index.2jePY1" title="原文 : To use these features, edit the Domain Custom Resource to add content to the serverPod element, in this case at the scope of a cluster, as shown in the following example:">これらの機能を使用するには、次の例に示すように、ドメイン・カスタム・リソースを編集して、<code>serverPod</code>要素(この場合はクラスタのスコープ)にコンテンツを追加します:</span></p>
 <pre><code>clusters:
 - clusterName: cluster-1

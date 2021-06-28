@@ -309,8 +309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計の方針">
-        <span class="merged" id="index.5tV7K"  title="原文::  Design philosophy "><a href="../../introduction/design/index.html"> 設計の方針 </a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計理念">
+        <span class="merged" id="index.5tV7K"  title="原文::  Design philosophy "><a href="../../introduction/design/index.html"> 設計理念 </a></span>
     </li>
      
   
@@ -2293,8 +2293,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="イメージをプルできません">
-        <span class="merged" id="index.4D9OOz" title="原文 :  Cannot pull image "><a href="../../../faq/cannot-pull-image/index.html">イメージをプルできません</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="Cannot pull image">
+        <span class="merged" id="index.4D9OOz" title="原文 :  Cannot pull image "><a href="../../../faq/cannot-pull-image/index.html">Cannot pull image</a></span>
     </li>
      
   
@@ -2309,8 +2309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="起動アイデンティティが無効">
-        <span class="merged" id="index.2qYRYe" title="原文 :  Boot identity not valid "><a href="../../../faq/boot-identity-not-valid/index.html">起動アイデンティティが無効</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="Boot identity not valid">
+        <span class="merged" id="index.2qYRYe" title="原文 :  Boot identity not valid "><a href="../../../faq/boot-identity-not-valid/index.html">Boot identity not valid</a></span>
     </li>
      
   
@@ -2325,8 +2325,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="ドメイン・シークレットの不一致">
-        <span class="merged" id="index.CHnpG" title="原文 :  Domain secret mismatch "><a href="../../../faq/domain-secret-mismatch/index.html">ドメイン・シークレットの不一致</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="Domain secret mismatch">
+        <span class="merged" id="index.CHnpG" title="原文 :  Domain secret mismatch "><a href="../../../faq/domain-secret-mismatch/index.html"> Domain secret mismatch </a></span>
     </li>
      
   
@@ -2563,7 +2563,7 @@
 <p><span class="merged" id="index.1GX4C6.spl1" title="原文 : The name of the service created for a WebLogic cluster follows the pattern &lt;domainUID&gt;-cluster-&lt;clusterName&gt;.">WebLogicクラスタ用に作成されたサービスの名前は、パターン<code>&lt;domainUID>-cluster-&lt;clusterName></code>に従います。</span> <span class="merged" id="index.1GX4C6.spl2" title="原文 : For example, if the domainUID is domain1 and the cluster name is cluster-1, the corresponding service will be named domain1-cluster-cluster-1.">たとえば、<code>domainUID</code>が<code>domain1</code>で、クラスタ名が<code>cluster-1</code>の場合、対応するサービスの名前は<code>domain1-cluster-cluster-1</code>になります。</span> </p>
 <p><span class="merged" id="index.480WiA" title="原文 : The service name must comply with standard Kubernetes rules for naming of objects and in particular with DNS-1035:">サービス名は、オブジェクトのネーミングに関する標準のKubernetesルール、特にDNS-1035に準拠している必要があります:</span></p>
 <blockquote>
-<p><span class="merged" id="index.1YHzId" title="原文 : A DNS-1035 label must consist of lower case alphanumeric characters or &lsquo;-&rsquo;, start with an alphabetic character, and end with an alphanumeric character (e.g. my-name, or abc-123, regex used for validation is [a-z]([-a-z0-9]*[a-z0-9])?).">DNS-1035ラベルは、アルファベットで始まり、英数字で終わる小文字または'-'で構成されている必要があります(たとえば、検証に使用される<code>my-name</code>、<code>abc-123</code>などのregexは<code>[a-z]([-a-z0-9]*[a-z0-9])?</code>)。</span></p>
+<p><span class="merged" id="index.1YHzId" title="原文 : A DNS-1035 label must consist of lower case alphanumeric characters or &lsquo;-&rsquo;, start with an alphabetic character, and end with an alphanumeric character (e.g. my-name, or abc-123, regex used for validation is [a-z]([-a-z0-9]*[a-z0-9])?).">DNS-1035ラベルは、アルファベットで始まり、英数字で終わる小文字または'-'で構成されている必要があります(たとえば、<code>my-name</code>、<code>abc-123</code>、検証に使用される正規表現は<code>[a-z]([-a-z0-9]*[a-z0-9])?</code>)。</span></p>
 </blockquote>
 <p><span class="merged" id="index.2sI1oZ.spl1" title="原文 : To comply with these requirements, if the domainUID or the cluster name contains some upper-case characters or underscores, then in the service name the upper-case characters will be converted to lower-case and underscores will be converted to hyphens.">これらの要件に準拠するために、<code>domainUID</code>またはクラスタ名に大文字またはアンダースコアが含まれている場合、サービス名では大文字が小文字に変換され、アンダースコアがハイフンに変換されます。</span> <span class="merged" id="index.2sI1oZ.spl2" title="原文 : For example, if the domainUID is myDomain_1 and the cluster name is myCluster_1, the corresponding service will be named mydomain-1-cluster-mycluster-1.">たとえば、<code>domainUID</code>が<code>myDomain_1</code>で、クラスタ名が<code>myCluster_1</code>の場合、対応するサービスの名前は<code>mydomain-1-cluster-mycluster-1</code>になります。</span> </p>
 <p><span class="merged" id="index.3KIVnB" title="原文 : The service, serviceName and servicePort, of a WebLogic cluster will be used in the routing rules defined in the Ingress object and the load balancer will route traffic to the WebLogic Servers within the cluster based on the rules.">WebLogicクラスタのサービス、<code>serviceName</code>および<code>servicePort</code>はイングレス・オブジェクトで定義されたルーティング・ルールで使用され、ロード・バランサはルールに基づいてクラスタ内のWebLogic Serversにトラフィックをルーティングします。</span></p>
@@ -2596,7 +2596,7 @@
 <p><span class="merged" id="index.2Q2mvD" title="原文 : Information about how to install and configure these ingress controllers to load balance WebLogic clusters is provided here:">WebLogicクラスタをロード・バランシングするためにこれらのイングレス・コントローラをインストールおよび構成する方法の詳細は、次のとおりです:</span></p>
 <ul>
 <li><span class="merged" id="index.1q9frp" title="原文 : Traefik guide"><a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/master/kubernetes/samples/charts/traefik/README.md">Traefikガイド</a></span></li>
-<li><span class="merged" id="index.153SbY" title="原文 : Voyager guide"><a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/master/kubernetes/samples/charts/voyager/README.md">Voyager guide</a></span></li>
+<li><span class="merged" id="index.153SbY" title="原文 : Voyager guide"><a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/master/kubernetes/samples/charts/voyager/README.md">Voyagerガイド</a></span></li>
 <li><span class="merged" id="index.4DKaLs" title="原文 : NGINX guide"><a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/master/kubernetes/samples/charts/nginx/README.md">NGINXガイド</a></span></li>
 </ul>
 

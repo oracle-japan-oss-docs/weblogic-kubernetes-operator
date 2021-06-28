@@ -309,8 +309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計の方針">
-        <span class="merged" id="index.1K0IIO"  title="原文::  Design philosophy "><a href="../../userguide/introduction/design/index.html"> 設計の方針 </a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計理念">
+        <span class="merged" id="index.1K0IIO"  title="原文::  Design philosophy "><a href="../../userguide/introduction/design/index.html"> 設計理念 </a></span>
     </li>
      
   
@@ -2293,8 +2293,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="イメージをプルできません">
-        <span class="merged" id="index.1U2AFZ" title="原文 :  Cannot pull image "><a href="../../faq/cannot-pull-image/index.html">イメージをプルできません</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="Cannot pull image">
+        <span class="merged" id="index.1U2AFZ" title="原文 :  Cannot pull image "><a href="../../faq/cannot-pull-image/index.html">Cannot pull image</a></span>
     </li>
      
   
@@ -2309,8 +2309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="起動アイデンティティが無効">
-        <span class="merged" id="index.2cF2DH" title="原文 :  Boot identity not valid "><a href="../../faq/boot-identity-not-valid/index.html">起動アイデンティティが無効</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="Boot identity not valid">
+        <span class="merged" id="index.2cF2DH" title="原文 :  Boot identity not valid "><a href="../../faq/boot-identity-not-valid/index.html">Boot identity not valid</a></span>
     </li>
      
   
@@ -2325,8 +2325,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="ドメイン・シークレットの不一致">
-        <span class="merged" id="index.1LlQFB" title="原文 :  Domain secret mismatch "><a href="../../faq/domain-secret-mismatch/index.html">ドメイン・シークレットの不一致</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="Domain secret mismatch">
+        <span class="merged" id="index.1LlQFB" title="原文 :  Domain secret mismatch "><a href="../../faq/domain-secret-mismatch/index.html"> Domain secret mismatch </a></span>
     </li>
      
   
@@ -2648,7 +2648,7 @@ if (!doNotTrack) {
     <span style="color:#f92672">}</span>
 </code></pre></div><h4 id="call-builder-pattern"><span class="merged" id="index.3lBgEF" title="原文 : Call builder pattern">コール・ビルダー・パターン</span></h4>
 <p><span class="merged" id="index.33tIPU.spl1" title="原文 : The asynchronous call model is implemented by classes in the oracle.kubernetes.operator.helpers package, including CallBuilder and ResponseStep.">非同期コール・モデルは、<code>CallBuilder</code>や<code>ResponseStep</code>などの<code>oracle.kubernetes.operator.helpers</code>パッケージのクラスによって実装されます。</span> <span class="merged" id="index.33tIPU.spl2" title="原文 : The model is based on the Fiber suspend/resume pattern described above.">このモデルは、前述の<code>Fiber</code>の一時停止/再開パターンに基づいています。</span> <span class="merged" id="index.33tIPU.spl3" title="原文 : CallBuilder provides many methods having names ending with &ldquo;Async&rdquo;, such as listPodAsync() or deleteServiceAsync()."><code>CallBuilder</code>には、<code>listPodAsync()</code>や<code>deleteServiceAsync()</code>など、名前がAsyncで終わる多くのメソッドが用意されています。</span> <span class="merged" id="index.33tIPU.spl4" title="原文 : These methods return a Step that can be returned as part of a NextAction.">これらのメソッドは、<code>NextAction</code>の一部として返すことができる<code>Step</code>を返します。</span> <span class="merged" id="index.33tIPU.spl5" title="原文 : When creating these Steps, the developer must provide a ResponseStep.">これらの<code>Steps</code>を作成する場合、開発者は<code>ResponseStep</code>を提供する必要があります。</span> <span class="merged" id="index.33tIPU.spl6" title="原文 : Only ResponseStep.onSuccess() must be implemented; however, it is often useful to override onFailure() as Kubernetes treats 404 (Not Found) as a failure."><code>ResponseStep.onSuccess()</code>のみを実装する必要がありますが、Kubernetesは<code>404 (Not Found)</code>を障害として扱うため、<code>onFailure()</code>をオーバーライドすると便利な場合があります。</span> </p>
-<p><span class="merged" id="index.1Jrga" title="原文 : In this sample, the developer is using the pattern to list pods from the default namespace that are labeled as part of cluster-1.">このサンプルでは、開発者はパターンを使用して、<code>cluster-1</code>の一部としてラベル付けされているデフォルトのネームスペースからポッドをリストします。</span></p>
+<p><span class="merged" id="index.1Jrga" title="原文 : In this sample, the developer is using the pattern to list pods from the default namespace that are labeled as part of cluster-1.">このサンプルでは、開発者はパターンを使用して、<code>cluster-1</code>の一部としてラベル付けされているデフォルトのネームスペースからポッドを一覧表示します。</span></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StepOne</span> <span style="color:#66d9ef">extends</span> Step <span style="color:#f92672">{</span>
       <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">StepOne</span><span style="color:#f92672">(</span>Step next<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
         <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>next<span style="color:#f92672">);</span>

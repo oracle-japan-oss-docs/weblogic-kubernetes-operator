@@ -9,7 +9,7 @@
 
     <link rel="icon" href="../../images/favicon.png" type="image/png">
 
-    <title>ドメイン・シークレットの不一致 :: WebLogic Kubernetes Operator</title>
+    <title>Domain secret mismatch :: WebLogic Kubernetes Operator</title>
 
     
     <link href="../../css/nucleus.css?1614202516" rel="stylesheet">
@@ -309,8 +309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計の方針">
-        <span class="merged" id="index.1K0IIO"  title="原文::  Design philosophy "><a href="../../userguide/introduction/design/index.html"> 設計の方針 </a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計理念">
+        <span class="merged" id="index.1K0IIO"  title="原文::  Design philosophy "><a href="../../userguide/introduction/design/index.html"> 設計理念 </a></span>
     </li>
      
   
@@ -2293,8 +2293,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="イメージをプルできません">
-        <span class="merged" id="index.1p75aq" title="原文 :  Cannot pull image "><a href="../cannot-pull-image/index.html">イメージをプルできません</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="Cannot pull image">
+        <span class="merged" id="index.1p75aq" title="原文 :  Cannot pull image "><a href="../cannot-pull-image/index.html">Cannot pull image</a></span>
     </li>
      
   
@@ -2309,8 +2309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="起動アイデンティティが無効">
-        <span class="merged" id="index.YgnEJ" title="原文 :  Boot identity not valid "><a href="../boot-identity-not-valid/index.html">起動アイデンティティが無効</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="Boot identity not valid">
+        <span class="merged" id="index.YgnEJ" title="原文 :  Boot identity not valid "><a href="../boot-identity-not-valid/index.html">Boot identity not valid</a></span>
     </li>
      
   
@@ -2325,8 +2325,8 @@
  
   
     
-      <li class="dd-item active" data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="ドメイン・シークレットの不一致">
-        <span class="merged" id="index.V8gi6" title="原文 :  Domain secret mismatch "><a href="index.html">ドメイン・シークレットの不一致</a></span>
+      <li class="dd-item active" data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="Domain secret mismatch">
+        <span class="merged" id="index.V8gi6" title="原文 :  Domain secret mismatch "><a href="index.html"> Domain secret mismatch </a></span>
     </li>
      
   
@@ -2517,7 +2517,7 @@
                 
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <span class="merged" id="index.2GLfoA" title="原文 :  &gt; Frequently asked questions &gt; Domain secret mismatch "><span id="sidebar-toggle-span"><a data-sidebar-toggle="" href="index.html#" id="sidebar-toggle"><i class="fas fa-bars"></i></a></span> <span id="toc-menu"><i class="fas fa-list-alt"></i></span> <span class="links"><a href='../../index.html'></a> > <a href='../index.html'>よくある質問</a>&nbsp;>&nbsp;ドメイン・シークレットの不一致</span></span>
+                    <span class="merged" id="index.2GLfoA" title="原文 :  &gt; Frequently asked questions &gt; Domain secret mismatch "><span id="sidebar-toggle-span"><a data-sidebar-toggle="" href="index.html#" id="sidebar-toggle"><i class="fas fa-bars"></i></a></span> <span id="toc-menu"><i class="fas fa-list-alt"></i></span> <span class="links"><a href='../../index.html'></a> > <a href='../index.html'>よくある質問</a>&nbsp;>&nbsp;Domain secret mismatch</span></span>
                 </div>
                 
                     <div class="progress">
@@ -2547,7 +2547,7 @@
             <div style="width:100%"> <div title="免責事項: ここに記載されているドキュメントは、お客様の利便性のために翻訳ソフトウエアにより機械的に翻訳(機械翻訳)したものです。オリジナルの英語版もあわせてご確認ください。" style="width:150px;padding-left:5px;padding-right:5px;border:#ff0000 solid 1px;border-color: gray;font-size: small;color:gray;margin: 0 auto 0 auto;text-align:center"><a href="https://docs.oracle.com/cd/E85181_01/mt_disclaimer.html">機械翻訳について</a></div> </div>
 <h1>
               
-              <span class="merged" id="index.1VNv3W" title="原文 : Domain secret mismatch">ドメイン・シークレットの不一致</span>
+              <span class="merged" id="index.1VNv3W" title="原文 : Domain secret mismatch">Domain secret mismatch</span>
             </h1>
           
 
@@ -2569,18 +2569,18 @@ if (!doNotTrack) {
 
 <blockquote>
 <p><span class="merged" id="index.2NJpaw" title="原文 : One or more WebLogic Server instances in my domain will not start and the Domain status or the pod log reports errors like this:">ドメイン内の1つ以上のWebLogic Serverインスタンスが起動せず、ドメイン<code>status</code>またはポッド・ログで次のようなエラーが報告されます:</span></p>
-<p><span class="merged" id="index.2mppQY.spl1" title="原文 : Domain secret mismatch."><em><strong>ドメイン・シークレットが一致しません。</span> <span class="merged" id="index.2mppQY.spl2" title="原文 : The domain secret in DOMAIN_HOME/security/SerializedSystemIni.dat where DOMAIN_HOME=$DOMAIN_HOME does not match the domain secret found by the introspector job.">DOMAIN_HOME=<code>$DOMAIN_HOME</code>がイントロスペクタ・ジョブによって検出されたドメイン・シークレットと一致しない<code>DOMAIN_HOME/security/SerializedSystemIni.dat</code>のドメイン・シークレット。</span> <span class="merged" id="index.2mppQY.spl3" title="原文 : WebLogic requires that all WebLogic Servers in the same domain share the same domain secret.">WebLogicでは、同じドメイン内のすべてのWebLogic Serversが同じドメイン・シークレットを共有する必要があります。</strong></em></span> </p>
+<p><span class="merged" id="index.2mppQY.spl1" title="原文 : Domain secret mismatch."><em><strong>Domain secret mismatch</span> <span class="merged" id="index.2mppQY.spl2" title="原文 : The domain secret in DOMAIN_HOME/security/SerializedSystemIni.dat where DOMAIN_HOME=$DOMAIN_HOME does not match the domain secret found by the introspector job.">The domain secret in <code>DOMAIN_HOME/security/SerializedSystemIni.dat</code> where DOMAIN_HOME=<code>$DOMAIN_HOME</code> does not match the domain secret found by the introspector job.</span> <span class="merged" id="index.2mppQY.spl3" title="原文 : WebLogic requires that all WebLogic Servers in the same domain share the same domain secret.">WebLogic requires that all WebLogic Servers in the same domain share the same domain secret.</strong></em></span> </p>
 </blockquote>
 <p><span class="merged" id="index.O6Hl" title="原文 : When you see these kinds of errors, it means that the WebLogic domain directory&rsquo;s security configuration files have changed in an incompatible way between when the operator scanned the domain directory, which occurs during the &ldquo;introspection&rdquo; phase, and when the server instance attempted to start.">このようなエラーが表示された場合は、オペレータがドメイン・ディレクトリをスキャンしたときと、サーバー・インスタンスが起動しようとしたときとの間で、WebLogicドメイン・ディレクトリのセキュリティ構成ファイルが互換性のない方法で変更されていることを意味します。</span></p>
 <p><span class="merged" id="index.2nceob.spl1" title="原文 : To understand the &ldquo;incompatible domain security configuration&rdquo; type of failure, it&rsquo;s important to review the contents of the WebLogic domain directory.">「互換性のないドメイン・セキュリティ構成」タイプの障害を理解するには、<a href="https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/domcf/config_files.html#GUID-C8312BFA-340F-4B97-A12D-229DC2ADB1B3">「WebLogicドメイン・ディレクトリ」</a>の内容を確認することが重要です。</span> <span class="merged" id="index.2nceob.spl2" title="原文 : Each WebLogic domain directory contains a security subdirectory that contains a file called SerializedSystemIni.dat.">各WebLogicドメイン・ディレクトリには、<code>SerializedSystemIni.dat</code>というファイルを含む<code>security</code>サブディレクトリが含まれています。</span> <span class="merged" id="index.2nceob.spl3" title="原文 : This file contains security data to bootstrap the WebLogic domain, including a domain-specific encryption key.">このファイルには、ドメイン固有の暗号化キーなど、WebLogicドメインをブートストラップするためのセキュリティ・データが含まれています。</span> </p>
-<p><span class="merged" id="index.uLs8u.spl1" title="原文 : During introspection, the operator generates a Kubernetes Job that runs a pod in the domain&rsquo;s Kubernetes Namespace and with the same Kubernetes ServiceAccount that will be used later to run the Administration Server.">イントロスペクション時に、オペレータはドメインのKubernetesネームスペースでポッドを実行し、後で管理サーバーの実行に使用するのと同じKubernetes ServiceAccountでポッドを実行するKubernetesジョブを生成します。</span> <span class="merged" id="index.uLs8u.spl2" title="原文 : This pod has access to the Kubernetes secret referenced by weblogicCredentialsSecret and encrypts these values with the domain-specific encryption key so that the secured value can be injected in to the boot.properties files when starting server instances.">このポッドは、<code>weblogicCredentialsSecret</code>によって参照されるKubernetesシークレットにアクセスし、サーバー・インスタンスの起動時に保護された値を<code>boot.properties</code>ファイルにインジェクトできるように、これらの値をドメイン固有の暗号化キーで暗号化します。</span> </p>
+<p><span class="merged" id="index.uLs8u.spl1" title="原文 : During introspection, the operator generates a Kubernetes Job that runs a pod in the domain&rsquo;s Kubernetes Namespace and with the same Kubernetes ServiceAccount that will be used later to run the Administration Server.">オペレータはイントロスペクション時に、後で管理サーバを起動するために使用するServiceAccountでドメインのネームスペースにポッドを実行するジョブを生成します。</span> <span class="merged" id="index.uLs8u.spl2" title="原文 : This pod has access to the Kubernetes secret referenced by weblogicCredentialsSecret and encrypts these values with the domain-specific encryption key so that the secured value can be injected in to the boot.properties files when starting server instances.">このポッドは、<code>weblogicCredentialsSecret</code>によって参照されるKubernetesシークレットにアクセスし、サーバー・インスタンスの起動時に保護された値を<code>boot.properties</code>ファイルにインジェクトできるように、これらの値をドメイン固有の暗号化キーで暗号化します。</span> </p>
 <p><span class="merged" id="index.2AxNm4" title="原文 : When the domain directory is changed such that the domain-specific encryption key is different, the boot.properties entries generated during introspection will now be invalid.">ドメイン固有の暗号化キーが異なるようにドメイン・ディレクトリを変更すると、イントロスペクション中に生成された<code>boot.properties</code>エントリは無効になります。</span></p>
 <p><span class="merged" id="index.1vck8N" title="原文 : This can happen in a variety of ways, depending on the domain home source type.">これは、<a href="../../userguide/managing-domains/choosing-a-model/index.html">「ドメイン・ホーム・ソース・タイプ」</a>に応じて様々な方法で発生します。</span></p>
 <h4 id="domain-in-image"><span class="merged" id="index.CMey" title="原文 : Domain in Image">Domain in Image</span></h4>
 <h5 id="rolling-to-an-image-containing-new-or-unrelated-domain-directory"><span class="merged" id="index.3od9RA" title="原文 : Rolling to an image containing new or unrelated domain directory">新規または関連のないドメイン・ディレクトリを含むイメージへのローリング</span></h5>
 <p><span class="merged" id="index.3LIP2r" title="原文 : The error occurs while rolling pods have containers based on a new container image that contains an entirely new or unrelated domain directory.">ローリング・ポッドに、完全に新規または関連のないドメイン・ディレクトリを含む新しいコンテナ・イメージに基づくコンテナがあるときにエラーが発生します。</span></p>
-<p><span class="merged" id="index.AEWG2.spl1" title="原文 : The problem is that WebLogic cannot support server instances being part of the same WebLogic domain if the server instances do not all share the same domain-specific encryption key.">問題は、サーバー・インスタンスのすべてが同じドメイン固有の暗号化キーを共有していない場合、WebLogicが同じWebLogicドメインの一部であるサーバー・インスタンスをサポートできないことです。</span> <span class="merged" id="index.AEWG2.spl2" title="原文 : Additionally, operator introspection currently happens only when starting servers following a total shutdown.">また、オペレータのイントロスペクションは現在、合計停止後にサーバーを起動する場合にのみ発生します。</span> <span class="merged" id="index.AEWG2.spl3" title="原文 : Therefore, the boot.properites files generated from introspecting the image containing the original domain directory will be invalid when used with a container started with the updated container image containing the new or unrelated domain directory.">したがって、元のドメイン・ディレクトリを含むイメージのイントロスペクションから生成された<code>boot.properites</code>ファイルは、新規または関連のないドメイン・ディレクトリを含む更新されたコンテナ・イメージで起動されたコンテナで使用すると無効になります。</span> </p>
-<p><span class="merged" id="index.SZHJw" title="原文 : The solution is to follow either the recommended CI/CD guidelines so that the original and new container images contain domain directories with consistent domain-specific encryption keys and bootstrapping security details, or to perform a total shutdown of the domain so that introspection reoccurs as servers are restarted.">解決策は、元のコンテナ・イメージと新しいコンテナ・イメージに一貫性のあるドメイン固有の暗号化キーとブートストラップ・セキュリティの詳細を含むドメイン・ディレクトリが含まれるように推奨される<a href="../../userguide/cicd/index.html">「CI/CDガイドライン」</a>に従うか、サーバーの再起動時にイントロスペクションが再起動されるようにドメインの<a href="../../userguide/managing-domains/domain-lifecycle/startup/index.html#starting-and-stopping-servers">「合計停止の実行」</a>にすることです。</span></p>
+<p><span class="merged" id="index.AEWG2.spl1" title="原文 : The problem is that WebLogic cannot support server instances being part of the same WebLogic domain if the server instances do not all share the same domain-specific encryption key.">問題は、サーバー・インスタンスのすべてが同じドメイン固有の暗号化キーを共有していない場合、WebLogicが同じWebLogicドメインの一部であるサーバー・インスタンスをサポートできないことです。</span> <span class="merged" id="index.AEWG2.spl2" title="原文 : Additionally, operator introspection currently happens only when starting servers following a total shutdown.">また、オペレータのイントロスペクションは現在、完全シャットダウン後にサーバーを起動する場合にのみ発生します。</span> <span class="merged" id="index.AEWG2.spl3" title="原文 : Therefore, the boot.properites files generated from introspecting the image containing the original domain directory will be invalid when used with a container started with the updated container image containing the new or unrelated domain directory.">したがって、元のドメイン・ディレクトリを含むイメージのイントロスペクションから生成された<code>boot.properites</code>ファイルは、新規または関連のないドメイン・ディレクトリを含む更新されたコンテナ・イメージで起動されたコンテナで使用すると無効になります。</span> </p>
+<p><span class="merged" id="index.SZHJw" title="原文 : The solution is to follow either the recommended CI/CD guidelines so that the original and new container images contain domain directories with consistent domain-specific encryption keys and bootstrapping security details, or to perform a total shutdown of the domain so that introspection reoccurs as servers are restarted.">解決策は、元のコンテナ・イメージと新しいコンテナ・イメージに一貫性のあるドメイン固有の暗号化キーとブートストラップ・セキュリティの詳細を含むドメイン・ディレクトリが含まれるように推奨される<a href="../../userguide/cicd/index.html">「CI/CDガイドライン」</a>に従うか、サーバーの再起動時にイントロスペクションが再起動されるようにドメインの<a href="../../userguide/managing-domains/domain-lifecycle/startup/index.html#starting-and-stopping-servers">「完全シャットダウンの実行」</a>をすることです。</span></p>
 <h5 id="full-domain-shutdown-and-restart"><span class="merged" id="index.3mTcGH" title="原文 : Full domain shutdown and restart">ドメインの完全な停止と再起動</span></h5>
 <p><span class="merged" id="index.4Rt8wP" title="原文 : The error occurs while starting servers after a full domain shutdown.">ドメインが完全に停止した後、サーバーの起動中にエラーが発生します。</span></p>
 <p><span class="merged" id="index.2Kaylk" title="原文 : If your development model generates new container images with new and unrelated domain directories and then tags those images with the same tag, then different Kubernetes worker nodes may have different images under the same tag in their individual, local container repositories.">開発モデルで、新しい関連のないドメイン・ディレクトリを使用して新しいコンテナ・イメージを生成し、それらのイメージに同じタグを付けた場合、個々のローカル・コンテナ・リポジトリの同じタグの下に、異なるKubernetesワーカー・ノードのイメージが存在する可能性があります。</span></p>

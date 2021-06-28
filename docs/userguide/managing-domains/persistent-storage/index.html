@@ -309,8 +309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計の方針">
-        <span class="merged" id="index.5tV7K"  title="原文::  Design philosophy "><a href="../../introduction/design/index.html"> 設計の方針 </a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計理念">
+        <span class="merged" id="index.5tV7K"  title="原文::  Design philosophy "><a href="../../introduction/design/index.html"> 設計理念 </a></span>
     </li>
      
   
@@ -2293,8 +2293,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="イメージをプルできません">
-        <span class="merged" id="index.4D9OOz" title="原文 :  Cannot pull image "><a href="../../../faq/cannot-pull-image/index.html">イメージをプルできません</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="Cannot pull image">
+        <span class="merged" id="index.4D9OOz" title="原文 :  Cannot pull image "><a href="../../../faq/cannot-pull-image/index.html">Cannot pull image</a></span>
     </li>
      
   
@@ -2309,8 +2309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="起動アイデンティティが無効">
-        <span class="merged" id="index.2qYRYe" title="原文 :  Boot identity not valid "><a href="../../../faq/boot-identity-not-valid/index.html">起動アイデンティティが無効</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="Boot identity not valid">
+        <span class="merged" id="index.2qYRYe" title="原文 :  Boot identity not valid "><a href="../../../faq/boot-identity-not-valid/index.html">Boot identity not valid</a></span>
     </li>
      
   
@@ -2325,8 +2325,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="ドメイン・シークレットの不一致">
-        <span class="merged" id="index.CHnpG" title="原文 :  Domain secret mismatch "><a href="../../../faq/domain-secret-mismatch/index.html">ドメイン・シークレットの不一致</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="Domain secret mismatch">
+        <span class="merged" id="index.CHnpG" title="原文 :  Domain secret mismatch "><a href="../../../faq/domain-secret-mismatch/index.html"> Domain secret mismatch </a></span>
     </li>
      
   
@@ -2574,7 +2574,7 @@
 <p><span class="merged" id="index.2YqttO.spl1" title="原文 : The PersistentVolume for the domain must be created using the appropriate tools before running the script to create the domain.">スクリプトを実行してドメインを作成する前に、適切なツールを使用してドメインのPersistentVolumeを作成する必要があります。</span> <span class="merged" id="index.2YqttO.spl2" title="原文 : In the simplest case, namely the HOST_PATH provider, this means creating a directory on the Kubernetes master and ensuring that it has the correct permissions:">最も単純なケース、つまり<code>HOST_PATH</code>プロバイダでは、Kubernetesマスターにディレクトリを作成し、適切な権限があることを確認します:</span> </p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir -m <span style="color:#ae81ff">777</span> -p /path/to/domain1PersistentVolume
 </code></pre></div><p><span class="merged" id="index.1C5J4i.spl1" title="原文 : Note regarding NFS: In the current GA version, the OCI Container Engine for Kubernetes supports network block storage that can be shared across nodes with access permission RWOnce (meaning that only one can write, others can read only)."><strong>NFSに関するノート</strong>: 現在のGAバージョンでは、OCI Container Engine for Kubernetesは、アクセス権限RWOnceを持つノード間で共有できるネットワーク・ブロック・ストレージをサポートしています(つまり、一方のみが書込み可能で、他方は読取り専用です)。</span> <span class="merged" id="index.1C5J4i.spl2" title="原文 : At this time, the WebLogic on Kubernetes domain created by the WebLogic Server Kubernetes Operator, requires a shared file system to store the WebLogic domain configuration, which MUST be accessible from all the pods across the nodes.">現時点では、WebLogic Server Kubernetes Operatorによって作成されたKubernetesドメイン上のWebLogicには、WebLogicドメイン構成を格納するための共有ファイル・システムが必要です。これは、ノード全体のすべてのポッドからアクセスできる必要があります。</span> <span class="merged" id="index.1C5J4i.spl3" title="原文 : As a workaround, you need to install an NFS server on one node and share the file system across all the nodes.">回避策として、あるノードにNFSサーバーをインストールし、すべてのノードでファイル・システムを共有する必要があります。</span> </p>
-<p><span class="merged" id="index.2uy0F8.spl1" title="原文 : Currently, we recommend that you use NFS version 3.0 for running WebLogic Server on OCI Container Engine for Kubernetes.">現在、OCI Container Engine for KubernetesでWebLogic Serverを実行するには、NFSバージョン3.0を使用することをお薦めします。</span> <span class="merged" id="index.2uy0F8.spl2" title="原文 : During certification, we found that when using NFS 4.0, the servers in the WebLogic domain went into a failed state intermittently.">動作保証中に、NFS 4.0を使用すると、WebLogicドメイン内のサーバーが断続的に失敗状態になったことがわかりました。</span> <span class="merged" id="index.2uy0F8.spl3" title="原文 : Because multiple threads use NFS (default store, diagnostics store, Node Manager, logging, and domain_home), there are issues when accessing the file store.">複数のスレッドがNFS (デフォルト・ストア、診断ストア、ノード・マネージャ、ロギングおよび<code>domain_home</code>)を使用するため、ファイル・ストアへのアクセス時に問題が発生します。</span> <span class="merged" id="index.2uy0F8.spl4" title="原文 : These issues are removed by changing the NFS to version 3.0.">これらの問題は、NFSをバージョン3.0に変更することで削除されます。</span> </p>
+<p><span class="merged" id="index.2uy0F8.spl1" title="原文 : Currently, we recommend that you use NFS version 3.0 for running WebLogic Server on OCI Container Engine for Kubernetes.">現在、OCI Container Engine for KubernetesでWebLogic Serverを実行するには、NFSバージョン3.0を使用することをお薦めします。</span> <span class="merged" id="index.2uy0F8.spl2" title="原文 : During certification, we found that when using NFS 4.0, the servers in the WebLogic domain went into a failed state intermittently.">認証中に、NFS 4.0を使用すると、WebLogicドメイン内のサーバーが断続的に失敗状態になったことがわかりました。</span> <span class="merged" id="index.2uy0F8.spl3" title="原文 : Because multiple threads use NFS (default store, diagnostics store, Node Manager, logging, and domain_home), there are issues when accessing the file store.">複数のスレッドがNFS (デフォルト・ストア、診断ストア、ノード・マネージャ、ロギングおよび<code>domain_home</code>)を使用するため、ファイル・ストアへのアクセス時に問題が発生します。</span> <span class="merged" id="index.2uy0F8.spl4" title="原文 : These issues are removed by changing the NFS to version 3.0.">これらの問題は、NFSをバージョン3.0に変更することで解消されます。</span> </p>
 <h4 id="persistentvolume-gid-annotation"><span class="merged" id="index.CTps7" title="原文 : PersistentVolume GID annotation">PersistentVolume GID注釈</span></h4>
 <p><span class="merged" id="index.1P151V" title="原文 : The HOST_PATH directory permissions can be made more secure by using a Kubernetes annotation on the PersistentVolume that provides the group identifier (GID) which will be added to pods using the PersistentVolume."><code>HOST_PATH</code>ディレクトリ権限は、PersistentVolumeを使用してポッドに追加されるグループ識別子(GID)を提供するPersistentVolumeのKubernetes注釈を使用することで、よりセキュアにできます。</span></p>
 <p><span class="merged" id="index.3zPvLd" title="原文 : For example, if the GID of the directory is 6789, then the directory can be updated to remove permissions other than for the user and group along with the PersistentVolume being annotated with the specified GID:">たとえば、ディレクトリのGIDが<code>6789</code>の場合、ディレクトリを更新して、指定したGIDで注釈されているPersistentVolumeとともに、ユーザーおよびグループ以外の権限を削除できます:</span></p>

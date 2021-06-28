@@ -309,8 +309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計の方針">
-        <span class="merged" id="index.1K0IIO"  title="原文::  Design philosophy "><a href="../../userguide/introduction/design/index.html"> 設計の方針 </a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計理念">
+        <span class="merged" id="index.1K0IIO"  title="原文::  Design philosophy "><a href="../../userguide/introduction/design/index.html"> 設計理念 </a></span>
     </li>
      
   
@@ -2293,8 +2293,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="イメージをプルできません">
-        <span class="merged" id="index.1p75aq" title="原文 :  Cannot pull image "><a href="../cannot-pull-image/index.html">イメージをプルできません</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="Cannot pull image">
+        <span class="merged" id="index.1p75aq" title="原文 :  Cannot pull image "><a href="../cannot-pull-image/index.html">Cannot pull image</a></span>
     </li>
      
   
@@ -2309,8 +2309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="起動アイデンティティが無効">
-        <span class="merged" id="index.YgnEJ" title="原文 :  Boot identity not valid "><a href="../boot-identity-not-valid/index.html">起動アイデンティティが無効</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="Boot identity not valid">
+        <span class="merged" id="index.YgnEJ" title="原文 :  Boot identity not valid "><a href="../boot-identity-not-valid/index.html">Boot identity not valid</a></span>
     </li>
      
   
@@ -2325,8 +2325,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="ドメイン・シークレットの不一致">
-        <span class="merged" id="index.3Lt7Gv" title="原文 :  Domain secret mismatch "><a href="../domain-secret-mismatch/index.html">ドメイン・シークレットの不一致</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="Domain secret mismatch">
+        <span class="merged" id="index.3Lt7Gv" title="原文 :  Domain secret mismatch "><a href="../domain-secret-mismatch/index.html"> Domain secret mismatch </a></span>
     </li>
      
   
@@ -2624,14 +2624,14 @@ if (!doNotTrack) {
 
 <h4 id="java-heap-size-and-memory-resource-considerations"><span class="merged" id="index.46pP31" title="原文 : Java heap size and memory resource considerations">Javaヒープ・サイズおよびメモリー・リソースに関する考慮事項</span></h4>
 
-<div class="notices note" ><p><span class="merged" id="index.3Sqq0p" title="原文 : Oracle recommends configuring Java heap sizes for WebLogic JVMs instead of relying on the defaults.">Oracleでは、デフォルトに依存するのではなく、WebLogic JVMのJavaヒープ・サイズを構成することをお薦めします。</span></p>
+<div class="notices note" ><p><span class="merged" id="index.3Sqq0p" title="原文 : Oracle recommends configuring Java heap sizes for WebLogic JVMs instead of relying on the defaults.">Oracleは、デフォルトに依存するのではなく、WebLogic JVMのJavaヒープ・サイズを構成することをお薦めします。</span></p>
 </div>
 
 <h5 id="importance-of-setting-heap-size-and-memory-resources"><span class="merged" id="index.EKWQg" title="原文 : Importance of setting heap size and memory resources">ヒープ・サイズおよびメモリー・リソースの設定の重要性</span></h5>
 <p><span class="merged" id="index.1o8Y9f" title="原文 : It&rsquo;s extremely important to set correct heap sizes, memory requests, and memory limits for WebLogic JVMs and Pods.">WebLogic JVMおよびポッドの正しいヒープ・サイズ、メモリー・リクエストおよびメモリー制限を設定することが非常に重要です。</span></p>
 <p><span class="merged" id="index.yu7cH" title="原文 : A WebLogic JVM heap must be sufficiently sized to run its applications and services, but should not be sized too large so as not to waste memory resources.">WebLogic JVMヒープは、そのアプリケーションおよびサービスを実行するのに十分なサイズにする必要がありますが、メモリー・リソースを浪費しないように大きさを変更しないでください。</span></p>
 <p><span class="merged" id="index.B1RDf.spl1" title="原文 : A Pod memory limit must be sufficiently sized to accommodate the configured heap and native memory requirements, but should not be sized too large so as not to waste memory resources.">ポッド・メモリー制限は、構成されたヒープおよびネイティブ・メモリー要件に対応するのに十分なサイズにする必要がありますが、メモリー・リソースを浪費しないように大きさを変更しないでください。</span> <span class="merged" id="index.B1RDf.spl2" title="原文 : If a JVM&rsquo;s memory usage (sum of heap and native memory) exceeds its Pod&rsquo;s limit, then the JVM process will be abruptly killed due to an out-of-memory error and the WebLogic container will consequently automatically restart due to a liveness probe failure.">JVMのメモリー使用量(ヒープとネイティブ・メモリーの合計)がポッドの制限を超えると、メモリー不足エラーのためにJVMプロセスが突然強制終了され、その結果、WebLogicコンテナはリブネス・プローブの失敗によって自動的に再起動します。</span> </p>
-<p><span class="merged" id="index.2ULkj3" title="原文 : Oracle recommends setting minimum and maximum heap (or heap percentages) and at least a container memory request.">Oracleでは、最小ヒープと最大ヒープ(またはヒープ率)および少なくともコンテナ・メモリー・リクエストを設定することをお薦めします。</span></p>
+<p><span class="merged" id="index.2ULkj3" title="原文 : Oracle recommends setting minimum and maximum heap (or heap percentages) and at least a container memory request.">Oracleは、最小ヒープと最大ヒープ(またはヒープ率)および少なくともコンテナ・メモリー・リクエストを設定することをお薦めします。</span></p>
 
 <div class="notices warning" ><p><span class="merged" id="index.2EhJpb.spl1" title="原文 : If resource requests and resource limits are set too high, then your Pods may not be scheduled due to a lack of Node resources.">リソース・リクエストおよびリソース制限の設定が高すぎると、ノード・リソースが不足しているためにポッドがスケジュールされない場合があります。</span> <span class="merged" id="index.2EhJpb.spl2" title="原文 : It will unnecessarily use up CPU shared resources that could be used by other Pods, or may prevent other Pods from running.">他のポッドで使用できるCPU共有リソースを不必要に使用するか、他のポッドの実行を妨げる可能性があります。</span> </p>
 </div>
@@ -2655,7 +2655,7 @@ if (!doNotTrack) {
       env:
       - name: USER_MEM_ARGS
         value: &quot;-XX:MinRAMPercentage=25.0 -XX:MaxRAMPercentage=50.0 -Djava.security.egd=file:/dev/./urandom&quot;
-</code></pre><p><span class="merged" id="index.aSSw2.spl1" title="原文 : Additionally, there&rsquo;s a node-manager process that&rsquo;s running in the same container as the WebLogic Server, which has its own heap and native memory requirements.">また、独自のヒープおよびネイティブ・メモリー要件を持つWebLogic Serverと同じコンテナで実行されている<code>node-manager</code>プロセスがあります。</span> <span class="merged" id="index.aSSw2.spl2" title="原文 : Its heap is tuned by using -Xms and -Xmx in the NODEMGR_MEM_ARGS environment variable.">そのヒープは、<code>NODEMGR_MEM_ARGS</code>環境変数で<code>-Xms</code>および<code>-Xmx</code>を使用してチューニングされます。</span> <span class="merged" id="index.aSSw2.spl3" title="原文 : Oracle recommends setting the Node Manager heap memory to fixed sizes, instead of percentages, where the default tuning is usually sufficient.">Oracleでは、ノード・マネージャのヒープ・メモリーをパーセンテージではなく固定サイズに設定することをお薦めします。通常は、<a href="../../userguide/managing-domains/domain-resource/index.html#jvm-memory-and-java-option-environment-variables">「デフォルトのチューニング」</a>で十分です。</span> </p>
+</code></pre><p><span class="merged" id="index.aSSw2.spl1" title="原文 : Additionally, there&rsquo;s a node-manager process that&rsquo;s running in the same container as the WebLogic Server, which has its own heap and native memory requirements.">また、独自のヒープおよびネイティブ・メモリー要件を持つWebLogic Serverと同じコンテナで実行されている<code>node-manager</code>プロセスがあります。</span> <span class="merged" id="index.aSSw2.spl2" title="原文 : Its heap is tuned by using -Xms and -Xmx in the NODEMGR_MEM_ARGS environment variable.">そのヒープは、<code>NODEMGR_MEM_ARGS</code>環境変数で<code>-Xms</code>および<code>-Xmx</code>を使用してチューニングされます。</span> <span class="merged" id="index.aSSw2.spl3" title="原文 : Oracle recommends setting the Node Manager heap memory to fixed sizes, instead of percentages, where the default tuning is usually sufficient.">Oracleは、ノード・マネージャのヒープ・メモリーをパーセンテージではなく固定サイズに設定することをお薦めします。通常は、<a href="../../userguide/managing-domains/domain-resource/index.html#jvm-memory-and-java-option-environment-variables">「デフォルトのチューニング」</a>で十分です。</span> </p>
 
 <div class="notices note" ><p><span class="merged" id="index.DeRnS.spl1" title="原文 : Notice that the NODEMGR_MEM_ARGS and USER_MEM_ARGS environment variables both set -Djava.security.egd=file:/dev/./urandom by default, so we have also included them in the above example for specifying a USER_MEM_ARGS value."><code>NODEMGR_MEM_ARGS</code>環境変数と<code>USER_MEM_ARGS</code>環境変数はどちらもデフォルトで<code>-Djava.security.egd=file:/dev/./urandom</code>を設定しているため、<code>USER_MEM_ARGS</code>値を指定するための前述の例にも含まれていることに注意してください。</span> <span class="merged" id="index.DeRnS.spl2" title="原文 : This helps speed up Node Manager and WebLogic Server startup time on systems with low entropy.">これにより、エントロピが低いシステムでのノード・マネージャおよびWebLogic Serverの起動時間が短縮されます。</span> </p>
 </div>

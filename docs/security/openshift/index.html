@@ -309,8 +309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計の方針">
-        <span class="merged" id="index.1K0IIO"  title="原文::  Design philosophy "><a href="../../userguide/introduction/design/index.html"> 設計の方針 </a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計理念">
+        <span class="merged" id="index.1K0IIO"  title="原文::  Design philosophy "><a href="../../userguide/introduction/design/index.html"> 設計理念 </a></span>
     </li>
      
   
@@ -2293,8 +2293,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="イメージをプルできません">
-        <span class="merged" id="index.1U2AFZ" title="原文 :  Cannot pull image "><a href="../../faq/cannot-pull-image/index.html">イメージをプルできません</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="Cannot pull image">
+        <span class="merged" id="index.1U2AFZ" title="原文 :  Cannot pull image "><a href="../../faq/cannot-pull-image/index.html">Cannot pull image</a></span>
     </li>
      
   
@@ -2309,8 +2309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="起動アイデンティティが無効">
-        <span class="merged" id="index.2cF2DH" title="原文 :  Boot identity not valid "><a href="../../faq/boot-identity-not-valid/index.html">起動アイデンティティが無効</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="Boot identity not valid">
+        <span class="merged" id="index.2cF2DH" title="原文 :  Boot identity not valid "><a href="../../faq/boot-identity-not-valid/index.html">Boot identity not valid</a></span>
     </li>
      
   
@@ -2325,8 +2325,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="ドメイン・シークレットの不一致">
-        <span class="merged" id="index.1LlQFB" title="原文 :  Domain secret mismatch "><a href="../../faq/domain-secret-mismatch/index.html">ドメイン・シークレットの不一致</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="Domain secret mismatch">
+        <span class="merged" id="index.1LlQFB" title="原文 :  Domain secret mismatch "><a href="../../faq/domain-secret-mismatch/index.html"> Domain secret mismatch </a></span>
     </li>
      
   
@@ -2517,7 +2517,7 @@
                 
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <span class="merged" id="index.2d7Noh" title="原文 :  &gt; Security &gt; OpenShift "><span id="sidebar-toggle-span"> <a data-sidebar-toggle="" href="index.html#" id="sidebar-toggle"> <i class="fas fa-bars"></i> </a> </span> <span id="toc-menu"><i class="fas fa-list-alt"></i></span> <span class="links"> <a href='../../index.html'></a> > <a href='../index.html'>Security</a> > OpenShift </span></span>
+                    <span class="merged" id="index.2d7Noh" title="原文 :  &gt; Security &gt; OpenShift "><span id="sidebar-toggle-span"> <a data-sidebar-toggle="" href="index.html#" id="sidebar-toggle"> <i class="fas fa-bars"></i> </a> </span> <span id="toc-menu"><i class="fas fa-list-alt"></i></span> <span class="links"> <a href='../../index.html'></a> > <a href='../index.html'>セキュリティ</a> > OpenShift </span></span>
                 </div>
                 
                     <div class="progress">
@@ -2582,10 +2582,10 @@ COPY --from<span style="color:#f92672">=</span>builder --chown<span style="color
 </code></pre></div><p><span class="merged" id="index.h72Vg.spl1" title="原文 : OpenShift, by default, enforces the restricted security context constraint which allocates a high, random UID in the root group for each container.">OpenShiftでは、デフォルトで、コンテナごとに<code>root</code>グループに高いランダムUIDを割り当てる<code>restricted</code>セキュリティ・コンテキスト制約が適用されます。</span> <span class="merged" id="index.h72Vg.spl2" title="原文 : The standard images mentioned above are designed to work with the restricted security context constraint.">前述の標準イメージは、<code>restricted</code>セキュリティ・コンテキスト制約を使用するように設計されています。</span> </p>
 <p><span class="merged" id="index.2GUpHu.spl1" title="原文 : However, if you build your own image, have an older version of an image, or obtain an image from another source, it may not have the necessary permissions.">ただし、独自のイメージを構築する場合、古いバージョンのイメージを使用する場合、または別のソースからイメージを取得する場合は、必要な権限がない可能性があります。</span> <span class="merged" id="index.2GUpHu.spl2" title="原文 : You may need to configure similar file system permissions to allow your image to work in OpenShift.">OpenShiftでイメージを動作させるには、同様のファイル・システム権限を構成する必要がある場合があります。</span> <span class="merged" id="index.2GUpHu.spl3" title="原文 : Specifically, you need to make sure the following directories have root as their group, and that the group read, write and execute permissions are set (enabled):">具体的には、次のディレクトリにグループとして<code>root</code>があり、グループの読取り、書込みおよび実行権限が設定されている(有効化されている)ことを確認する必要があります:</span> </p>
 <ul>
-<li><span class="merged" id="index.1AjsgS" title="原文 : For the operator, /operator and /logs.">オペレータが<code>/operator</code>および<code>/logs</code>の場合。</span></li>
-<li><span class="merged" id="index.43Ay8n" title="原文 : For WebLogic Server images, /u01 (or the ultimate parent directory of your Oracle Home and domain if you put them in different locations).">WebLogic Serverイメージの場合、<code>/u01</code> (または、異なるロケーションに配置した場合はOracle Homeおよびドメインの最終的な親ディレクトリ)。</span></li>
+<li><span class="merged" id="index.1AjsgS" title="原文 : For the operator, /operator and /logs.">オペレータのための<code>/operator</code>および<code>/logs</code>。</span></li>
+<li><span class="merged" id="index.43Ay8n" title="原文 : For WebLogic Server images, /u01 (or the ultimate parent directory of your Oracle Home and domain if you put them in different locations).">WebLogic Serverイメージのための<code>/u01</code> (または、異なるロケーションに配置した場合はOracle Homeおよびドメインの最終的な親ディレクトリ)。</span></li>
 </ul>
-<p><span class="merged" id="index.3OmPzQ.spl1" title="原文 : If your OpenShift environment has a different default security context constraint, you may need to configure OpenShift to allow use of UID 1000 by creating a security context constraint.">OpenShift環境に異なるデフォルト・セキュリティ・コンテキスト制約がある場合は、セキュリティ・コンテキスト制約を作成してUID 1000を使用できるようにOpenShiftを構成する必要があります。</span> <span class="merged" id="index.3OmPzQ.spl2" title="原文 : Oracle recommends that you define a custom security context constraint that has just the permissions that are required and apply that to WebLogic pods.">Oracleでは、必要な権限のみを持つカスタム・セキュリティ・コンテキスト制約を定義し、それをWebLogicポッドに適用することをお薦めします。</span> <span class="merged" id="index.3OmPzQ.spl3" title="原文 : Oracle does not recommend using the built-in anyuid Security Context Constraint, because it provides more permissions than are needed, and is therefore less secure.">Oracleでは、組込みの<code>anyuid</code>セキュリティ・コンテキスト制約を使用することはお薦めしません。これは、必要以上に多くの権限が付与され、安全性が低いためです。</span> </p>
+<p><span class="merged" id="index.3OmPzQ.spl1" title="原文 : If your OpenShift environment has a different default security context constraint, you may need to configure OpenShift to allow use of UID 1000 by creating a security context constraint.">OpenShift環境に異なるデフォルト・セキュリティ・コンテキスト制約がある場合は、セキュリティ・コンテキスト制約を作成してUID 1000を使用できるようにOpenShiftを構成する必要があります。</span> <span class="merged" id="index.3OmPzQ.spl2" title="原文 : Oracle recommends that you define a custom security context constraint that has just the permissions that are required and apply that to WebLogic pods.">Oracleは、必要な権限のみを持つカスタム・セキュリティ・コンテキスト制約を定義し、それをWebLogicポッドに適用することをお薦めします。</span> <span class="merged" id="index.3OmPzQ.spl3" title="原文 : Oracle does not recommend using the built-in anyuid Security Context Constraint, because it provides more permissions than are needed, and is therefore less secure.">Oracleは、組込みの<code>anyuid</code>セキュリティ・コンテキスト制約を使用することはお薦めしません。これは、必要以上に多くの権限が付与され、安全性が低いためです。</span> </p>
 <h4 id="create-a-custom-security-context-constraint"><span class="merged" id="index.220vP6" title="原文 : Create a custom Security Context Constraint">カスタム・セキュリティ・コンテキスト制約の作成</span></h4>
 <p><span class="merged" id="index.1mzyfM.spl1" title="原文 : To create a custom security context constraint, create a YAML file with the following content.">カスタム・セキュリティ・コンテキスト制約を作成するには、次の内容のYAMLファイルを作成します。</span> <span class="merged" id="index.1mzyfM.spl2" title="原文 : This example assumes that your OpenShift project is called weblogic and that the service account you will use to run the operator and domains is called weblogic-operator.">この例では、OpenShiftプロジェクトが<code>weblogic</code>という名前で、オペレータおよびドメインの実行に使用するサービス・アカウントが<code>weblogic-operator</code>という名前であることを前提としています。</span> <span class="merged" id="index.1mzyfM.spl3" title="原文 : You should change these in the groups and users sections to match your environment.">これらは、ご使用の環境に合せて<code>groups</code>および<code>users</code>セクションで変更する必要があります。</span> </p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">SecurityContextConstraints</span>
@@ -2633,7 +2633,7 @@ COPY --from<span style="color:#f92672">=</span>builder --chown<span style="color
 </div>
 
 <h4 id="using-a-dedicated-namespace"><span class="merged" id="index.1MJUE9" title="原文 : Using a dedicated namespace">専用ネームスペースの使用</span></h4>
-<p><span class="merged" id="index.3XcGPP.spl1" title="原文 : When the user that installs an individual instance of the operator does not have the required privileges to create resources at the Kubernetes cluster level, a dedicated namespace can be used for the operator instance and all the WebLogic domains that it manages.">オペレータの個々のインスタンスをインストールするユーザーがKubernetesクラスタ・レベルでリソースを作成するために必要な権限を持っていない場合、オペレータ・インスタンスとそれが管理するすべてのWebLogicドメインに専用のネームスペースを使用できます。</span> <span class="merged" id="index.3XcGPP.spl2" title="原文 : For more details about the dedicated setting, please refer to Operator Helm configuration values."><code>dedicated</code>設定の詳細は、<a href="../../userguide/managing-operators/using-the-operator/using-helm/index.html#operator-helm-configuration-values">「Operator Helmの構成値」</a>を参照してください。</span> </p>
+<p><span class="merged" id="index.3XcGPP.spl1" title="原文 : When the user that installs an individual instance of the operator does not have the required privileges to create resources at the Kubernetes cluster level, a dedicated namespace can be used for the operator instance and all the WebLogic domains that it manages.">オペレータの個々のインスタンスをインストールするユーザーがKubernetesクラスタ・レベルでリソースを作成するために必要な権限を持っていない場合、オペレータ・インスタンスとそれが管理するすべてのWebLogicドメインに専用のネームスペースを使用できます。</span> <span class="merged" id="index.3XcGPP.spl2" title="原文 : For more details about the dedicated setting, please refer to Operator Helm configuration values."><code>dedicated</code>設定の詳細は、<a href="../../userguide/managing-operators/using-the-operator/using-helm/index.html#operator-helm-configuration-values">「Helmのオペレータ構成値」</a>を参照してください。</span> </p>
 
 
 <footer class=" footline" >

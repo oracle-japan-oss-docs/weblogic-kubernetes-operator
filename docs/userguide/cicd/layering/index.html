@@ -309,8 +309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計の方針">
-        <span class="merged" id="index.5tV7K"  title="原文::  Design philosophy "><a href="../../introduction/design/index.html"> 設計の方針 </a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計理念">
+        <span class="merged" id="index.5tV7K"  title="原文::  Design philosophy "><a href="../../introduction/design/index.html"> 設計理念 </a></span>
     </li>
      
   
@@ -2293,8 +2293,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="イメージをプルできません">
-        <span class="merged" id="index.4D9OOz" title="原文 :  Cannot pull image "><a href="../../../faq/cannot-pull-image/index.html">イメージをプルできません</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="Cannot pull image">
+        <span class="merged" id="index.4D9OOz" title="原文 :  Cannot pull image "><a href="../../../faq/cannot-pull-image/index.html">Cannot pull image</a></span>
     </li>
      
   
@@ -2309,8 +2309,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="起動アイデンティティが無効">
-        <span class="merged" id="index.2qYRYe" title="原文 :  Boot identity not valid "><a href="../../../faq/boot-identity-not-valid/index.html">起動アイデンティティが無効</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="Boot identity not valid">
+        <span class="merged" id="index.2qYRYe" title="原文 :  Boot identity not valid "><a href="../../../faq/boot-identity-not-valid/index.html">Boot identity not valid</a></span>
     </li>
      
   
@@ -2325,8 +2325,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="ドメイン・シークレットの不一致">
-        <span class="merged" id="index.CHnpG" title="原文 :  Domain secret mismatch "><a href="../../../faq/domain-secret-mismatch/index.html">ドメイン・シークレットの不一致</a></span>
+      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="Domain secret mismatch">
+        <span class="merged" id="index.CHnpG" title="原文 :  Domain secret mismatch "><a href="../../../faq/domain-secret-mismatch/index.html"> Domain secret mismatch </a></span>
     </li>
      
   
@@ -2570,18 +2570,18 @@ if (!doNotTrack) {
 <p><span class="merged" id="index.1BOdlf.spl1" title="原文 : Container images are composed of layers, as shown in the diagram below.">次の図に示すように、コンテナ・イメージはレイヤーで構成されます。</span> <span class="merged" id="index.1BOdlf.spl2" title="原文 : If you download the standard weblogic:12.2.1.4 image from the Oracle Container Registry, then you can see these layers using the command docker inspect container-registry.oracle.com/middleware/weblogic:12.2.1.4 (the domain layer will not be there)."><a href="https://container-registry.oracle.com">Oracle Container Registry</a>から標準の<code>weblogic:12.2.1.4</code>イメージをダウンロードすると、コマンド<code>docker inspect container-registry.oracle.com/middleware/weblogic:12.2.1.4</code>を使用してこれらのレイヤーを表示できます(ドメイン・レイヤーは表示されません)。</span> <span class="merged" id="index.1BOdlf.spl3" title="原文 : You are not required to use layers, but efficient use of layers is considered a best practice.">レイヤーを使用する必要はありませんが、レイヤーを効率的に使用することがベスト・プラクティスと考えられます。</span> </p>
 <p><img alt="コンテナ・イメージ・レイヤー" src="../../../images/layers.png"></p>
 <h4 id="why-is-it-important-to-maintain-the-layering-of-images"><span class="merged" id="index.2PqLDi" title="原文 : Why is it important to maintain the layering of images?">イメージのレイヤー化を維持することが重要なのはなぜですか。</span></h4>
-<p><span class="merged" id="index.1j8LQC.spl1" title="原文 : Layering is an important technique in container images.">レイヤー化は、コンテナ・イメージの重要な手法です。</span> <span class="merged" id="index.1j8LQC.spl2" title="原文 : Layers are important because they are shared between images.">レイヤーはイメージ間で共有されるため、重要です。</span> <span class="merged" id="index.1j8LQC.spl3" title="原文 : Let&rsquo;s consider an example.">例を考えてみましょう。</span> <span class="merged" id="index.1j8LQC.spl4" title="原文 : In the diagram below, we have two domains that we have built using layers.">次の図には、画層を使用して構築した2つのドメインがあります。</span> <span class="merged" id="index.1j8LQC.spl5" title="原文 : The second domain has some additional patches that we needed on top of those provided in the standard WebLogic image.">もう一方のドメインには、標準のWebLogicイメージで提供されているパッチの上に必要な追加パッチがいくつかあります。</span> <span class="merged" id="index.1j8LQC.spl6" title="原文 : Those are installed in their own layer, and then the second domain is created in another layer on top of that.">これらは独自のレイヤーにインストールされ、その上の別のレイヤーに2つ目のドメインが作成されます。</span> </p>
+<p><span class="merged" id="index.1j8LQC.spl1" title="原文 : Layering is an important technique in container images.">レイヤー化は、コンテナ・イメージの重要な手法です。</span> <span class="merged" id="index.1j8LQC.spl2" title="原文 : Layers are important because they are shared between images.">レイヤーはイメージ間で共有されるため、重要です。</span> <span class="merged" id="index.1j8LQC.spl3" title="原文 : Let&rsquo;s consider an example.">例を考えてみましょう。</span> <span class="merged" id="index.1j8LQC.spl4" title="原文 : In the diagram below, we have two domains that we have built using layers.">次の図には、レイヤーを使用して構築した2つのドメインがあります。</span> <span class="merged" id="index.1j8LQC.spl5" title="原文 : The second domain has some additional patches that we needed on top of those provided in the standard WebLogic image.">もう一方のドメインには、標準のWebLogicイメージで提供されているパッチの上に必要な追加パッチがいくつかあります。</span> <span class="merged" id="index.1j8LQC.spl6" title="原文 : Those are installed in their own layer, and then the second domain is created in another layer on top of that.">これらは独自のレイヤーにインストールされ、その上の別のレイヤーに2つ目のドメインが作成されます。</span> </p>
 <p><span class="merged" id="index.Thvjq.spl1" title="原文 : Let&rsquo;s assume we have a three-node Kubernetes cluster and we are running both domains in this cluster.">3ノードのKubernetesクラスタがあり、このクラスタで両方のドメインを実行しているとします。</span> <span class="merged" id="index.Thvjq.spl2" title="原文 : Sooner or later, we will end up with servers in each domain running on each node, so eventually all of the image layers are going to be needed on all of the nodes.">その後、各ノードで実行されている各ドメインのサーバーを使用して、最終的にすべてのイメージ・レイヤーがすべてのノードで必要になります。</span> <span class="merged" id="index.Thvjq.spl3" title="原文 : Using the approach shown below (that is, standard image layering techniques) we are going to need to store all six of these layers on each node.">次に示すアプローチ(つまり、標準的なイメージ・レイヤー化手法)を使用して、各ノードにこれら6つのレイヤーをすべて格納する必要があります。</span> <span class="merged" id="index.Thvjq.spl4" title="原文 : If you add up the sizes, then you will see that it comes out to about 1.5GB per node.">サイズを合計すると、ノード当たり約1.5 GBになります。</span> </p>
 <p><img alt="レイヤー付きコンテナ・イメージ" src="../../../images/more-layers.png"></p>
 <p><span class="merged" id="index.4OnlN3.spl1" title="原文 : Now, let&rsquo;s consider the alternative, where we do not use layers, but instead, build images for each domain and put everything in one big layer (this is often called &ldquo;squashing&rdquo; the layers).">ここで、レイヤーを使用せずに、各ドメインのイメージを構築し、すべてを1つの大きなレイヤーに配置する代替方法を考えてみましょう(多くの場合、これはレイヤーの「収縮」と呼ばれます)。</span> <span class="merged" id="index.4OnlN3.spl2" title="原文 : In this case, we have the same content, but if you add up the size of the images, you get 2.9GB per node.">この場合、コンテンツは同じですが、イメージのサイズを合計すると、ノードごとに2.9 GBが取得されます。</span> <span class="merged" id="index.4OnlN3.spl3" title="原文 : That&rsquo;s almost twice the size!">これはサイズの約2倍です。</span> </p>
-<p><img alt="画層のないコンテナ・イメージ" src="../../../images/no-layers.png"></p>
+<p><img alt="レイヤーのないコンテナ・イメージ" src="../../../images/no-layers.png"></p>
 <p><span class="merged" id="index.4Df53v.spl1" title="原文 : With only two domains, you start to see the problem.">2つのドメインのみで問題が発生し始めます。</span> <span class="merged" id="index.4Df53v.spl2" title="原文 : In the layered approach, each new domain is adding only a relatively very small increment.">レイヤー化アプローチでは、新しいドメインごとに比較的小さい増分のみが追加されます。</span> <span class="merged" id="index.4Df53v.spl3" title="原文 : In the non-layered approach, each new domain is essentially adding the entire stack over again.">非レイヤー化アプローチでは、新しい各ドメインは基本的にスタック全体を再度追加します。</span> <span class="merged" id="index.4Df53v.spl4" title="原文 : Imagine if we had ten domains, now the calculation looks like this:">10個のドメインがある場合、計算は次のようになります:</span> </p>
 <table>
 <thead>
 <tr>
 <th></th>
 <th><span class="merged" id="index.iBOFL" title="原文 : With Layers">レイヤーあり</span></th>
-<th><span class="merged" id="index.4aob7O" title="原文 : Without Layers">画層なし</span></th>
+<th><span class="merged" id="index.4aob7O" title="原文 : Without Layers">レイヤーなし</span></th>
 </tr>
 </thead>
 <tbody>
