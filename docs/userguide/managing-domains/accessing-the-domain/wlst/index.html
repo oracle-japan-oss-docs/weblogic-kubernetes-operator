@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.104.3" />
     <meta content="You can use the WebLogic Scripting Tool (WLST) to manage a domain running in Kubernetes." name="description">
 
 
@@ -12,36 +12,42 @@
     <title>WLSTの使用 :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../../../css/nucleus.css?1614202517" rel="stylesheet">
-    <link href="../../../../css/fontawesome-all.min.css?1614202517" rel="stylesheet">
-    <link href="../../../../css/hybrid.css?1614202517" rel="stylesheet">
-    <link href="../../../../css/featherlight.min.css?1614202517" rel="stylesheet">
-    <link href="../../../../css/perfect-scrollbar.min.css?1614202517" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1614202517" rel="stylesheet">
-    <link href="../../../../css/atom-one-dark-reasonable.css?1614202517" rel="stylesheet">
-    <link href="../../../../css/theme.css?1614202517" rel="stylesheet">
-    <link href="../../../../css/hugo-theme.css?1614202517" rel="stylesheet">
+    <link href="../../../../css/nucleus.css?1666991348" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1666991348" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1666991348" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1666991348" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1666991348" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1666991348" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1666991348" rel="stylesheet">
+    <link href="../../../../css/theme.css?1666991348" rel="stylesheet">
+    <link href="../../../../css/tabs.css?1666991348" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1666991348" rel="stylesheet">
+    
     
 
-    <script src="../../../../js/jquery-3.3.1.min.js?1614202517"></script>
+    <script src="../../../../js/jquery-3.6.0.min.js?1666991348"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
           display:none !important;
       }
       
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
     </style>
     
   <meta HTTP-EQUIV="Content-Type" Content="text/html; charset=utf-8"></head>
   <style type="text/css"> <!-- .merged:hover {text-decoration: underline;} --> </style>
-<body class="" data-url="/weblogic-kubernetes-operator/userguide/managing-domains/accessing-the-domain/wlst/">
+<body class="" data-url="https://oracle.github.io/weblogic-kubernetes-operator/userguide/managing-domains/accessing-the-domain/wlst/">
     <nav id="sidebar" class="">
 
 
 
   <div id="header-wrapper">
     <div id="header">
-      <span class="merged" id="index.1rIFvD" title="原文 :  Kubernetes Operator "><a href="../../../../index.html" id="logo"> <img height="60" src="../../../../images/logo.png"><br /> Kubernetes Operator </a></span>
+      <span class="merged" id="index.3zhOUv"  title="原文::  WebLogic Kubernetes Operator "><a href="https://oracle.github.io/weblogic-kubernetes-operator" id="logo"> <img height="90" src="../../../../images/logo.png"><br /> WebLogic Kubernetes Operator </a></span>
 
     </div>
     
@@ -51,84 +57,56 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../../js/lunr.min.js?1614202517"></script>
-<script type="text/javascript" src="../../../../js/auto-complete.js?1614202517"></script>
+<script type="text/javascript" src="../../../../js/lunr.min.js?1666991348"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1666991348"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/weblogic-kubernetes-operator\/";
+        var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator";
     
 </script>
-<script type="text/javascript" src="../../../../js/search.js?1614202517"></script>
+<script type="text/javascript" src="../../../../js/search.js?1666991348"></script>
 
     
   </div>
 
     <div class="highlightable">
     <ul class="topics">
-        <li><span class="merged" id="index.2NOtfg"  title="原文:: Home"><a class="padding" href="../../../../index.html">ホーム</a></span></li>
+      <li><span class="merged" id="index.2t7Bid"  title="原文:: Home"><a class="padding" href="https://oracle.github.io/weblogic-kubernetes-operator">ホーム</a></span></li>
         
           
           
+
+
 
 
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/quickstart/" title="クイック・スタート">
-      <span class="merged" id="index.8mnQa" title="原文 :  1. Quick Start "><a href="../../../../quickstart/index.html"><b>1. </b>クイック・スタート</a></span>
+        " data-nav-id="/quickstart/" title="クイック・スタート">
+      <span class="merged" id="index.1sTRq0"  title="原文::  Quick Start "><a href="../../../../quickstart/index.html"> <b> </b>クイック・スタート </a></span>
       
       
         <ul>
           
           
           
-          
+
         
           
             
             
 
 
- 
-  
-    
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/introduction/" title="導入">
-        <span class="merged" id="index.2Wlwiw"  title="原文::  Introduction "><a href="../../../../quickstart/introduction/index.html"> 導入 </a></span>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
 
 
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/prerequisites/" title="始める前に">
-        <span class="merged" id="index.3Xu5Rl"  title="原文::  Before you begin "><a href="../../../../quickstart/prerequisites/index.html"> 始める前に </a></span>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/get-images/" title="イメージの取得">
+      <li class="dd-item " data-nav-id="/quickstart/get-images/" title="イメージの取得">
         <span class="merged" id="index.4BFPO0" title="原文 :  Get images "><a href="../../../../quickstart/get-images/index.html">イメージの取得</a></span>
     </li>
      
@@ -141,10 +119,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/install/" title="オペレータおよびイングレス・コントローラのインストール">
+      <li class="dd-item " data-nav-id="/quickstart/install/" title="オペレータおよびイングレス・コントローラのインストール">
         <span class="merged" id="index.1Tksmc" title="原文 :  Install the operator and ingress controller "><a href="../../../../quickstart/install/index.html">オペレータおよびイングレス・コントローラのインストール</a></span>
     </li>
      
@@ -157,10 +137,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/prepare/" title="ドメインの準備">
+      <li class="dd-item " data-nav-id="/quickstart/prepare/" title="ドメインの準備">
         <span class="merged" id="index.23wtol" title="原文 :  Prepare for a domain "><a href="../../../../quickstart/prepare/index.html">ドメインの準備</a></span>
     </li>
      
@@ -173,10 +155,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/create-domain/" title="ドメインの作成">
+      <li class="dd-item " data-nav-id="/quickstart/create-domain/" title="ドメインの作成">
         <span class="merged" id="index.2zBrij"  title="原文::  Create a domain "><a href="../../../../quickstart/create-domain/index.html"> ドメインの作成 </a></span>
     </li>
      
@@ -189,10 +173,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/quickstart/cleanup/" title="クリーン・アップ">
+      <li class="dd-item " data-nav-id="/quickstart/cleanup/" title="クリーン・アップ">
         <span class="merged" id="index.1leqwj"  title="原文::  Clean up "><a href="../../../../quickstart/cleanup/index.html"> クリーン・アップ </a></span>
     </li>
      
@@ -203,7 +189,7 @@
           
         
         </ul>
-              
+      
     </li>
   
  
@@ -212,15 +198,17 @@
           
 
 
+
+
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         parent
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/" title="ユーザー・ガイド">
-      <span class="merged" id="index.cE6L2" title="原文 :  2. User Guide "><a href="../../../index.html"><b>2. </b>ユーザー・ガイド</a></span>
+        " data-nav-id="/userguide/" title="ユーザー・ガイド">
+      <span class="merged" id="index.38KyVw"  title="原文::  User Guide "><a href="../../../index.html"> <b> </b>ユーザー・ガイド </a></span>
       
       
         <ul>
@@ -229,40 +217,44 @@
             
           
           
-          
+
         
           
             
             
+
+
 
 
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/" title="導入">
-      <span class="merged" id="index.2UJPA7"  title="原文::  Introduction "><a href="../../../introduction/index.html"> 導入 </a></span>
+        " data-nav-id="/userguide/introduction/" title="導入">
+      <span class="merged" id="index.1oYMwE"  title="原文::  Introduction "><a href="../../../introduction/index.html"> <b> </b>概要 </a></span>
       
       
         <ul>
           
           
           
-          
+
         
           
             
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/introduction/" title="開始">
-        <span class="merged" id="index.hLMXR" title="原文 :  Get started "><a href="../../../introduction/introduction/index.html">開始</a></span>
+      <li class="dd-item " data-nav-id="/userguide/introduction/terms/" title="重要な用語">
+        <span class="merged" id="index.2WRIPt" title="原文 :  Important terms "><a href="../../../introduction/terms/index.html">重要な用語</a></span>
     </li>
      
   
@@ -274,11 +266,13 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/demo/" title="デモ">
-        <span class="merged" id="index.4HX1gH"  title="原文::  Demo "><a href="../../../introduction/demo/index.html"> デモ </a></span>
+      <li class="dd-item " data-nav-id="/userguide/introduction/design/" title="設計理念">
+        <span class="merged" id="index.38pYnq" title="原文 :  Design philosophy "><a href="../../../introduction/design/index.html"> 設計理念 </a></span>
     </li>
      
   
@@ -290,10 +284,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/architecture/" title="アーキテクチャ">
+      <li class="dd-item " data-nav-id="/userguide/introduction/architecture/" title="アーキテクチャ">
         <span class="merged" id="index.3gJyOU"  title="原文::  Architecture "><a href="../../../introduction/architecture/index.html"> アーキテクチャ </a></span>
     </li>
      
@@ -306,11 +302,13 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/introduction/design/" title="設計理念">
-        <span class="merged" id="index.38pYnq"  title="原文::  Design philosophy "><a href="../../../introduction/design/index.html"> 設計理念 </a></span>
+      <li class="dd-item " data-nav-id="/userguide/introduction/get-help/" title="ヘルプを表示">
+        <span class="merged" id="index.2OVAIQ"  title="原文::  Get help "><a href="../../../introduction/get-help/index.html"> ヘルプを表示 </a></span>
     </li>
      
   
@@ -320,7 +318,7 @@
           
         
         </ul>
-              
+      
     </li>
   
  
@@ -331,33 +329,96 @@
             
 
 
+
+
  
   
     
-    <li class="dd-item 
+      <li class="dd-item " data-nav-id="/userguide/prerequisites/introduction/" title="オペレータの前提条件">
+        <span class="merged" id="index.2f5CWY" title="原文 :  Operator prerequisites "><a href="../../../prerequisites/introduction/index.html">オペレータの前提条件</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/platforms/environments/" title="サポート対象環境">
+        <span class="merged" id="index.jzI16" title="原文 :  Supported environments "><a href="../../../platforms/environments/index.html">サポートされている環境</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/overview/" title="概要">
-      <span class="merged" id="index.HVKM1"  title="原文::  Overview "><a href="../../../overview/index.html"> 概要 </a></span>
+        " data-nav-id="/userguide/prepare/" title="設定チェックリスト">
+      <span class="merged" id="index.3bHG11" title="原文 :  Setup checklist "><a href="../../../prepare/index.html">設定チェックリスト</a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/userguide/managing-operators/" title="オペレータの管理">
+      <span class="merged" id="index.OAfyZ" title="原文 :  Manage operators "><a href="../../../managing-operators/index.html"><b></b>オペレータの管理</a></span>
       
       
         <ul>
           
           
           
-          
+
         
           
             
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/overview/prepare/" title="環境の準備">
-        <span class="merged" id="index.2dA8E8" title="原文 :  Prepare your environment "><a href="../../../overview/prepare/index.html">環境の準備</a></span>
+      <li class="dd-item " data-nav-id="/userguide/managing-operators/overview/" title="概要">
+        <span class="merged" id="index.40E4Wb"  title="原文::  Overview "><a href="../../../managing-operators/overview/index.html"> 概要 </a></span>
     </li>
      
   
@@ -369,11 +430,13 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/overview/k8s-setup/" title="Kubernetesの設定">
-        <span class="merged" id="index.3M3XyF" title="原文 :  Set up Kubernetes "><a href="../../../overview/k8s-setup/index.html">Kubernetesの設定</a></span>
+      <li class="dd-item " data-nav-id="/userguide/managing-operators/preparation/" title="インストールの準備">
+        <span class="merged" id="index.1L1Nyh"  title="原文::  Prepare for installation "><a href="../../../managing-operators/preparation/index.html"> インストールの準備 </a></span>
     </li>
      
   
@@ -385,11 +448,139 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/overview/database/" title="データベースの実行">
-        <span class="merged" id="index.29YnJx" title="原文 :  Run a database "><a href="../../../overview/database/index.html">データベースの実行</a></span>
+      <li class="dd-item " data-nav-id="/userguide/managing-operators/installation/" title="インストールとアップグレード">
+        <span class="merged" id="index.2NPyP2" title="原文 :  Installation and upgrade "><a href="../../../managing-operators/installation/index.html">インストールとアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/managing-operators/using-helm/" title="構成リファレンス">
+        <span class="merged" id="index.nLLFq" title="原文 :  Configuration reference "><a href="../../../managing-operators/using-helm/index.html">構成リファレンス</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/managing-operators/namespace-management/" title="ネームスペース管理">
+        <span class="merged" id="index.1nxB3U" title="原文 :  Namespace management "><a href="../../../managing-operators/namespace-management/index.html">ネームスペース管理</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/managing-operators/service-accounts/" title="サービス・アカウント">
+        <span class="merged" id="index.216alh" title="原文 :  Service accounts "><a href="../../../managing-operators/service-accounts/index.html">サービス・アカウント</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/managing-operators/rbac/" title="RBAC">
+        <span class="merged" id="index.1UJbTc"  title="原文::  RBAC "><a href="../../../managing-operators/rbac/index.html"> RBAC </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/managing-operators/the-rest-api/" title="RESTサービス">
+        <span class="merged" id="index.Ua1Lp" title="原文 :  REST services "><a href="../../../managing-operators/the-rest-api/index.html">RESTサービス</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/managing-operators/common-mistakes/" title="よくある間違いと解決策">
+        <span class="merged" id="index.3PkRas" title="原文 :  Common mistakes and solutions "><a href="../../../managing-operators/common-mistakes/index.html">よくある間違いと解決策</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/managing-operators/troubleshooting/" title="トラブルシューティング">
+        <span class="merged" id="index.2RM4GJ"  title="原文::  Troubleshooting "><a href="../../../managing-operators/troubleshooting/index.html"> トラブルシューティング </a></span>
     </li>
      
   
@@ -399,7 +590,7 @@
           
         
         </ul>
-              
+      
     </li>
   
  
@@ -410,78 +601,37 @@
             
 
 
+
+
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/" title="オペレータの管理">
-      <span class="merged" id="index.NJQX7" title="原文 :  Manage operators "><a href="../../../managing-operators/index.html">オペレータの管理</a></span>
+        " data-nav-id="/userguide/base-images/" title="WebLogicイメージ">
+      <span class="merged" id="index.1olJpz" title="原文 :  WebLogic images "><a href="../../../base-images/index.html"><b></b> WebLogicイメージ</a></span>
       
       
         <ul>
           
           
-            
           
-          
-          
+
         
           
             
             
+
+
 
 
  
   
     
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/installation/" title="オペレータのインストール">
-      <span class="merged" id="index.BaMPz" title="原文 :  Install the operator "><a href="../../../managing-operators/installation/index.html">オペレータのインストール</a></span>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/using-the-operator/" title="オペレータの使用">
-      <span class="merged" id="index.mCL7l" title="原文 :  Use the operator "><a href="../../../managing-operators/using-the-operator/index.html"><b></b>オペレータの使用</a></span>
-      
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/using-the-operator/using-helm/" title="Helmの使用">
-        <span class="merged" id="index.1TAAhp" title="原文 :  Use Helm "><a href="../../../managing-operators/using-the-operator/using-helm/index.html">Helmの使用</a></span>
+      <li class="dd-item " data-nav-id="/userguide/base-images/ocr-images/" title="OCRイメージ">
+        <span class="merged" id="index.msvkC" title="原文 :  OCR images "><a href="../../../base-images/ocr-images/index.html">OCRイメージ</a></span>
     </li>
      
   
@@ -493,11 +643,49 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-operators/using-the-operator/the-rest-api/" title="REST API">
-        <span class="merged" id="index.1YNctE" title="原文 :  The REST API "><a href="../../../managing-operators/using-the-operator/the-rest-api/index.html"> REST API </a></span>
+      <li class="dd-item " data-nav-id="/userguide/base-images/custom-images/" title="カスタム・イメージの作成">
+        <span class="merged" id="index.23dk4i" title="原文 :  Create custom images "><a href="../../../base-images/custom-images/index.html">カスタム・イメージの作成</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/base-images/patch-images/" title="実行中のドメインのパッチ">
+        <span class="merged" id="index.37Bc5E" title="原文 :  Patch running domains "><a href="../../../base-images/patch-images/index.html">実行中のドメインのパッチ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/base-images/access-images/" title="ドメイン・イメージへのアクセス">
+        <span class="merged" id="index.1mLTea" title="原文 :  Access domain images "><a href="../../../base-images/access-images/index.html">ドメイン・イメージへのアクセス</a></span>
     </li>
      
   
@@ -507,16 +695,7 @@
           
         
         </ul>
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
+      
     </li>
   
  
@@ -525,16 +704,18 @@
           
             
             
+
+
 
 
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         parent
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/" title="WebLogicドメインの管理">
+        " data-nav-id="/userguide/managing-domains/" title="WebLogicドメインの管理">
       <span class="merged" id="index.MDCXg" title="原文 :  Manage WebLogic domains "><a href="../../index.html">WebLogicドメインの管理</a></span>
       
       
@@ -544,24 +725,26 @@
             
           
           
-          
+
         
           
             
             
+
+
 
 
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/choosing-a-model/" title="ドメイン・ホーム・ソース・タイプの選択">
+        " data-nav-id="/userguide/managing-domains/choosing-a-model/" title="ドメイン・ホーム・ソース・タイプの選択">
       <span class="merged" id="index.1jVaVJ" title="原文 :  Choose a domain home source type "><a href="../../choosing-a-model/index.html"><b></b>ドメイン・ホーム・ソース・タイプの選択</a></span>
       
-              
+      
     </li>
   
  
@@ -572,11 +755,13 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/prepare/" title="ドメインを実行する準備">
-        <span class="merged" id="index.RW4j6" title="原文 :  Prepare to run a domain "><a href="../../prepare/index.html"><b></b>ドメイン実行の準備</a></span>
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/prepare/" title="ドメインを実行する準備">
+        <span class="merged" id="index.3lI0A6" title="原文 :  Prepare to run a domain "><a href="../../prepare/index.html">ドメインを実行する準備</a></span>
     </li>
      
   
@@ -588,10 +773,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-resource/" title="ドメイン・リソース">
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/domain-resource/" title="ドメイン・リソース">
         <span class="merged" id="index.3WMODm" title="原文 :  Domain resource "><a href="../../domain-resource/index.html"><b></b>ドメイン・リソース</a></span>
     </li>
      
@@ -604,17 +791,19 @@
             
 
 
+
+
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/persistent-storage/" title="永続ストレージ">
+        " data-nav-id="/userguide/managing-domains/persistent-storage/" title="永続ストレージ">
       <span class="merged" id="index.48CeYz" title="原文 :  Persistent storage "><a href="../../persistent-storage/index.html"><b></b>永続ストレージ</a></span>
       
-              
+      
     </li>
   
  
@@ -625,86 +814,36 @@
             
 
 
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-in-image/" title="Domain in Image">
-      <span class="merged" id="index.1ds0ny" title="原文 :  Domain in Image "><a href="../../domain-in-image/index.html"> <b> </b>Domain in Image </a></span>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
 
 
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-in-image/base-images/" title="ベース・イメージ">
-      <span class="merged" id="index.3BNJ8r" title="原文 :  Base images "><a href="../../domain-in-image/base-images/index.html">ベース・イメージ</a></span>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/" title="Model in Image">
-      <span class="merged" id="index.1VqOn6" title="原文 :  Model in Image "><a href="../../model-in-image/index.html"> <b> </b>Model in Image </a></span>
+        " data-nav-id="/userguide/managing-domains/model-in-image/" title="Model in Image">
+      <span class="merged" id="index.1VqOn6"  title="原文::  Model in Image "><a href="../../model-in-image/index.html"> <b> </b>Model in Image </a></span>
       
       
         <ul>
           
           
           
-          
+
         
           
             
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/overview/" title="概要">
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/model-in-image/overview/" title="概要">
         <span class="merged" id="index.Cx9ZZ"  title="原文::  Overview "><a href="../../model-in-image/overview/index.html"> <b> </b>概要 </a></span>
     </li>
      
@@ -717,11 +856,13 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/usage/" title="使用方法">
-        <span class="merged" id="index.4TcPE7"  title="原文::  Usage "><a href="../../model-in-image/usage/index.html"> <b> </b>使用方法 </a></span>
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/model-in-image/usage/" title="使用">
+        <span class="merged" id="index.4TcPE7"  title="原文::  Usage "><a href="../../model-in-image/usage/index.html"> <b> </b>使用 </a></span>
     </li>
      
   
@@ -733,10 +874,30 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/model-files/" title="モデル・ファイル">
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/model-in-image/auxiliary-images/" title="補助イメージ">
+        <span class="merged" id="index.2HmgIT" title="原文 :  Auxiliary images "><a href="../../model-in-image/auxiliary-images/index.html"><b></b>補助イメージ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/model-in-image/model-files/" title="モデル・ファイル">
         <span class="merged" id="index.44yEAa" title="原文 :  Model files "><a href="../../model-in-image/model-files/index.html"><b></b>モデル・ファイル</a></span>
     </li>
      
@@ -749,10 +910,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/runtime-updates/" title="ランタイムの更新">
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/model-in-image/runtime-updates/" title="ランタイムの更新">
         <span class="merged" id="index.9PJlI" title="原文 :  Runtime updates "><a href="../../model-in-image/runtime-updates/index.html"><b></b>ランタイムの更新</a></span>
     </li>
      
@@ -765,11 +928,13 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/model-in-image/debugging/" title="デバッグ">
-        <span class="merged" id="index.3OnYor"  title="原文::  Debugging "><a href="../../model-in-image/debugging/index.html"> <b> </b>デバッグ </a></span>
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/model-in-image/debugging/" title="ドメインのデバッグ">
+        <span class="merged" id="index.2ORAXU" title="原文 :  Domain debugging "><a href="../../model-in-image/debugging/index.html"><b></b>ドメインのデバッグ</a></span>
     </li>
      
   
@@ -779,7 +944,7 @@
           
         
         </ul>
-              
+      
     </li>
   
  
@@ -790,17 +955,19 @@
             
 
 
+
+
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/configoverrides/" title="構成のオーバーライド">
+        " data-nav-id="/userguide/managing-domains/configoverrides/" title="構成のオーバーライド">
       <span class="merged" id="index.1eP7N7" title="原文 :  Configuration overrides "><a href="../../configoverrides/index.html"><b></b>構成のオーバーライド</a></span>
       
-              
+      
     </li>
   
  
@@ -811,17 +978,19 @@
             
 
 
+
+
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/ingress/" title="イングレス">
+        " data-nav-id="/userguide/managing-domains/ingress/" title="イングレス">
       <span class="merged" id="index.3dlTD3"  title="原文::  Ingress "><a href="../../ingress/index.html"> <b> </b>イングレス </a></span>
       
-              
+      
     </li>
   
  
@@ -832,14 +1001,16 @@
             
 
 
+
+
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         parent
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/accessing-the-domain/" title="ドメインへのアクセス">
+        " data-nav-id="/userguide/managing-domains/accessing-the-domain/" title="ドメインへのアクセス">
       <span class="merged" id="index.jaiFB" title="原文 :  Access the domain "><a href="../index.html"><b></b>ドメインへのアクセス</a></span>
       
       
@@ -847,17 +1018,37 @@
           
           
           
-          
+
         
           
             
             
 
 
+
+
  
   
     
-      <li class="dd-item active" data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/accessing-the-domain/wlst/" title="WLSTの使用">
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/accessing-the-domain/admin-console/" title="リモート・コンソールの使用">
+        <span class="merged" id="index.4dSoaL" title="原文 :  Use the Remote Console "><a href="../admin-console/index.html">リモート・コンソールの使用</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item active" data-nav-id="/userguide/managing-domains/accessing-the-domain/wlst/" title="WLSTの使用">
         <span class="merged" id="index.E43OF"  title="原文::  Use WLST "><a href="index.html"> WLSTの使用 </a></span>
     </li>
      
@@ -866,9 +1057,27 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/accessing-the-domain/port-forward/" title="ポート転送の使用">
+        <span class="merged" id="index.1yfpRH" title="原文 :  Use port forwarding "><a href="../port-forward/index.html">ポート転送の使用</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
-              
+      
     </li>
   
  
@@ -879,14 +1088,16 @@
             
 
 
+
+
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/" title="ドメインのライフ・サイクル">
+        " data-nav-id="/userguide/managing-domains/domain-lifecycle/" title="ドメインのライフ・サイクル">
       <span class="merged" id="index.1jOTEw" title="原文 :  Domain life cycle "><a href="../../domain-lifecycle/index.html"><b></b>ドメインのライフ・サイクル</a></span>
       
       
@@ -894,17 +1105,19 @@
           
           
           
-          
+
         
           
             
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/startup/" title="起動と停止">
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/domain-lifecycle/startup/" title="起動と停止">
         <span class="merged" id="index.188NeV" title="原文 :  Startup and shutdown "><a href="../../domain-lifecycle/startup/index.html">起動と停止</a></span>
     </li>
      
@@ -917,10 +1130,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/restarting/" title="再起動">
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/domain-lifecycle/restarting/" title="再起動">
         <span class="merged" id="index.2rNr6Z"  title="原文::  Restarting "><a href="../../domain-lifecycle/restarting/index.html"> 再起動 </a></span>
     </li>
      
@@ -933,10 +1148,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/scaling/" title="スケーリング">
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/domain-lifecycle/scaling/" title="スケーリング">
         <span class="merged" id="index.3VCgnf"  title="原文::  Scaling "><a href="../../domain-lifecycle/scaling/index.html"> スケーリング </a></span>
     </li>
      
@@ -949,11 +1166,49 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-domains/domain-lifecycle/introspection/" title="ドメイン・イントロスペクション">
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/domain-lifecycle/introspection/" title="ドメイン・イントロスペクション">
         <span class="merged" id="index.47Ssql" title="原文 :  Domain introspection "><a href="../../domain-lifecycle/introspection/index.html">ドメイン・イントロスペクション</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/domain-lifecycle/liveness-readiness-probe-customization/" title="リブネスとレディネス・プローブのカスタマイズ">
+        <span class="merged" id="index.3jSJvj" title="原文 :  Liveness and readiness probes customization "><a href="../../domain-lifecycle/liveness-readiness-probe-customization/index.html">リブネスとレディネス・プローブのカスタマイズ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/domain-lifecycle/scripts/" title="ライフサイクル・スクリプト">
+        <span class="merged" id="index.4XDxss" title="原文 :  Lifecycle scripts "><a href="../../domain-lifecycle/scripts/index.html">ライフサイクル・スクリプト</a></span>
     </li>
      
   
@@ -963,8 +1218,26 @@
           
         
         </ul>
-              
+      
     </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/userguide/managing-domains/domain-events/" title="ドメイン・イベント">
+        <span class="merged" id="index.3GPJrn" title="原文 :  Domain events "><a href="../../domain-events/index.html"><b></b>ドメイン・イベント</a></span>
+    </li>
+     
   
  
 
@@ -972,7 +1245,7 @@
           
         
         </ul>
-              
+      
     </li>
   
  
@@ -983,50 +1256,19 @@
             
 
 
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-fmw-domains/" title="FMWドメインの管理">
-      <span class="merged" id="index.3R8Q9" title="原文 :  Manage FMW domains "><a href="../../../managing-fmw-domains/index.html">FMWドメインの管理</a></span>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
 
 
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/managing-fmw-domains/fmw-infra/" title="FMW Infrastructureドメインの管理">
-      <span class="merged" id="index.1PEJ0C" title="原文 :  Manage FMW Infrastructure domains "><a href="../../../managing-fmw-domains/fmw-infra/index.html">FMW Infrastructureドメインの管理</a></span>
+        " data-nav-id="/userguide/managing-fmw-domains/" title="FMW Infrastructureドメインの管理">
+      <span class="merged" id="index.496F6C" title="原文 :  Manage FMW Infrastructure domains "><a href="../../../managing-fmw-domains/index.html">FMW Infrastructureドメインの管理</a></span>
       
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
+      
     </li>
   
  
@@ -1037,14 +1279,39 @@
             
 
 
+
+
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/" title="CI/CDに関する考慮事項">
+        " data-nav-id="/userguide/aks/" title="Azure Kubernetes Service (AKS)">
+      <span class="merged" id="index.LQ2nt" title="原文 :  Azure Kubernetes Service (AKS) "><a href="../../../aks/index.html"> Azure Kubernetes Service (AKS) </a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/userguide/cicd/" title="CI/CDに関する考慮事項">
       <span class="merged" id="index.4aOA5Y" title="原文 :  CI/CD considerations "><a href="../../../cicd/index.html">CI/CDに関する考慮事項</a></span>
       
       
@@ -1052,17 +1319,19 @@
           
           
           
-          
+
         
           
             
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/layering/" title="コンテナ・イメージ・レイヤー化">
+      <li class="dd-item " data-nav-id="/userguide/cicd/layering/" title="コンテナ・イメージ・レイヤー化">
         <span class="merged" id="index.3OfjFR" title="原文 :  Container image layering "><a href="../../../cicd/layering/index.html">コンテナ・イメージ・レイヤー化</a></span>
     </li>
      
@@ -1075,10 +1344,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/why-layering-matters/" title="レイヤー化が重要な理由">
+      <li class="dd-item " data-nav-id="/userguide/cicd/why-layering-matters/" title="レイヤー化が重要な理由">
         <span class="merged" id="index.3qVq6d" title="原文 :  Why layering matters "><a href="../../../cicd/why-layering-matters/index.html">レイヤー化が重要な理由</a></span>
     </li>
      
@@ -1091,10 +1362,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/choose-an-approach/" title="アプローチの選択">
+      <li class="dd-item " data-nav-id="/userguide/cicd/choose-an-approach/" title="アプローチの選択">
         <span class="merged" id="index.jeRwr" title="原文 :  Choose an approach "><a href="../../../cicd/choose-an-approach/index.html">アプローチの選択</a></span>
     </li>
      
@@ -1107,10 +1380,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/mutate-the-domain-layer/" title="ドメイン・レイヤーの変更">
+      <li class="dd-item " data-nav-id="/userguide/cicd/mutate-the-domain-layer/" title="ドメイン・レイヤーの変更">
         <span class="merged" id="index.35mWhl" title="原文 :  Mutate the domain layer "><a href="../../../cicd/mutate-the-domain-layer/index.html">ドメイン・レイヤーの変更</a></span>
     </li>
      
@@ -1123,10 +1398,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/how-to-copy-domains/" title="ドメインのコピー">
+      <li class="dd-item " data-nav-id="/userguide/cicd/how-to-copy-domains/" title="ドメインのコピー">
         <span class="merged" id="index.4UxX5P" title="原文 :  Copy domains "><a href="../../../cicd/how-to-copy-domains/index.html">ドメインのコピー</a></span>
     </li>
      
@@ -1139,10 +1416,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/cicd/tools/" title="ツール">
+      <li class="dd-item " data-nav-id="/userguide/cicd/tools/" title="ツール">
         <span class="merged" id="index.2arLEm"  title="原文::  Tools "><a href="../../../cicd/tools/index.html"> ツール </a></span>
     </li>
      
@@ -1153,7 +1432,7 @@
           
         
         </ul>
-              
+      
     </li>
   
  
@@ -1164,10 +1443,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/userguide/istio/istio/" title="Istioサポート">
+      <li class="dd-item " data-nav-id="/userguide/istio/istio/" title="Istioサポート">
         <span class="merged" id="index.3dgEcn" title="原文 :  Istio support "><a href="../../../istio/istio/index.html">Istioサポート</a></span>
     </li>
      
@@ -1176,301 +1457,17 @@
 
             
           
-        
-        </ul>
-              
-    </li>
-  
- 
+            
+            
 
-          
-          
+
 
 
  
   
     
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/" title="サンプル">
-      <span class="merged" id="index.2uTZV5" title="原文 :  3. Samples "><a href="../../../../samples/index.html"><b>3. </b>サンプル</a></span>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/" title="単純なサンプル">
-      <span class="merged" id="index.3ViuZy" title="原文 :  Simple samples "><a href="../../../../samples/simple/index.html"><b></b>単純なサンプル</a></span>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/credentials/" title="資格証明">
-      <span class="merged" id="index.2XvTL3"  title="原文::  Credentials "><a href="../../../../samples/simple/credentials/index.html"> 資格証明 </a></span>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/storage/" title="ストレージ">
-      <span class="merged" id="index.bNUkN"  title="原文::  Storage "><a href="../../../../samples/simple/storage/index.html"> ストレージ </a></span>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/" title="ドメイン">
-      <span class="merged" id="index.3p8iIk" title="原文 :  Domains "><a href="../../../../samples/simple/domains/index.html">ドメイン</a></span>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/manually-create-domain/" title="手動">
-      <span class="merged" id="index.28XmnW" title="原文 :  Manually "><a href="../../../../samples/simple/domains/manually-create-domain/index.html">手動</a></span>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/domain-home-on-pv/" title="Domain home on a PV">
-      <span class="merged" id="index.27GkgY" title="原文 :  Domain home on a PV "><a href="../../../../samples/simple/domains/domain-home-on-pv/index.html"> Domain home on a PV </a></span>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/domain-home-in-image/" title="Domain home in image">
-      <span class="merged" id="index.4TXXac" title="原文 :  Domain home in image "><a href="../../../../samples/simple/domains/domain-home-in-image/index.html"> Domain home in image </a></span>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/" title="Model in image">
-      <span class="merged" id="index.9Iney" title="原文 :  Model in image "><a href="../../../../samples/simple/domains/model-in-image/index.html"> Model in image </a></span>
-      
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/prerequisites/" title="前提条件">
-        <span class="merged" id="index.3N9OUL"  title="原文::  Prerequisites "><a href="../../../../samples/simple/domains/model-in-image/prerequisites/index.html"> 前提条件 </a></span>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/initial/" title="初期状態のユース・ケース">
-        <span class="merged" id="index.31vmNM" title="原文 :  Initial use case "><a href="../../../../samples/simple/domains/model-in-image/initial/index.html">初期状態のユース・ケース</a></span>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/update1/" title="更新1">
-        <span class="merged" id="index.4DkrxR"  title="原文::  Update 1 "><a href="../../../../samples/simple/domains/model-in-image/update1/index.html"> 更新1 </a></span>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/update2/" title="更新2">
-        <span class="merged" id="index.1o8Z9M"  title="原文::  Update 2 "><a href="../../../../samples/simple/domains/model-in-image/update2/index.html"> 更新2 </a></span>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/update3/" title="更新3">
-        <span class="merged" id="index.34w7zs"  title="原文::  Update 3 "><a href="../../../../samples/simple/domains/model-in-image/update3/index.html"> 更新3 </a></span>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/model-in-image/cleanup/" title="クリーンアップ">
-        <span class="merged" id="index.3obdu0"  title="原文::  Cleanup "><a href="../../../../samples/simple/domains/model-in-image/cleanup/index.html"> クリーンアップ </a></span>
+      <li class="dd-item " data-nav-id="/userguide/kubernetes/k8s-setup/" title="Kubernetesの設定">
+        <span class="merged" id="index.44FPJt" title="原文 :  Set up Kubernetes "><a href="../../../kubernetes/k8s-setup/index.html">Kubernetesの設定</a></span>
     </li>
      
   
@@ -1480,140 +1477,26 @@
           
         
         </ul>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/fmw-domain/" title="FMW Infrastructureドメイン">
-      <span class="merged" id="index.3CzWnM" title="原文 :  FMW Infrastructure domain "><a href="../../../../samples/simple/domains/fmw-domain/index.html">FMW Infrastructureドメイン</a></span>
       
-              
     </li>
   
  
 
-            
           
-            
-            
+          
+
+
 
 
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/delete-domain/" title="ドメインに関連付けられたリソースの削除">
-      <span class="merged" id="index.IQirH" title="原文 :  Delete resources associated with the domain "><a href="../../../../samples/simple/domains/delete-domain/index.html">ドメインに関連付けられたリソースの削除</a></span>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/domains/lifecycle/" title="ドメイン・ライフサイクル操作">
-      <span class="merged" id="index.cuxWF" title="原文 :  Domain lifecycle operations "><a href="../../../../samples/simple/domains/lifecycle/index.html">ドメイン・ライフサイクル操作</a></span>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/rest/" title="REST API">
-      <span class="merged" id="index.1WDtuf"  title="原文::  REST APIs "><a href="../../../../samples/simple/rest/index.html"> REST API </a></span>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/ingress/" title="イングレス">
-      <span class="merged" id="index.2pbRkk"  title="原文::  Ingress "><a href="../../../../samples/simple/ingress/index.html"> イングレス </a></span>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/elastic-stack/" title="エラスティック・スタック">
-      <span class="merged" id="index.4d6XYT" title="原文 :  Elastic Stack "><a href="../../../../samples/simple/elastic-stack/index.html">エラスティック・スタック</a></span>
+        " data-nav-id="/samples/" title="サンプル">
+      <span class="merged" id="index.3V3zMJ"  title="原文::  Samples "><a href="../../../../samples/index.html"> <b> </b>サンプル </a></span>
       
       
         <ul>
@@ -1622,54 +1505,26 @@
             
           
           
-          
+
         
           
             
             
+
+
 
 
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/elastic-stack/operator/" title="オペレータ">
-      <span class="merged" id="index.JPsKD" title="原文 :  Operator "><a href="../../../../samples/simple/elastic-stack/operator/index.html">オペレータ</a></span>
+        " data-nav-id="/samples/credentials/" title="資格証明">
+      <span class="merged" id="index.4E4GX6"  title="原文::  Credentials "><a href="../../../../samples/credentials/index.html"> 資格証明 </a></span>
       
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/elastic-stack/weblogic-domain/" title="WebLogicドメイン">
-      <span class="merged" id="index.1n2prI" title="原文 :  WebLogic domain "><a href="../../../../samples/simple/elastic-stack/weblogic-domain/index.html">WebLogicドメイン</a></span>
       
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
     </li>
   
  
@@ -1678,35 +1533,180 @@
           
             
             
+
+
 
 
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/azure-kubernetes-service/" title="Azure Kubernetes Service">
-      <span class="merged" id="index.3JR9s6"  title="原文::  Azure Kubernetes Service "><a href="../../../../samples/simple/azure-kubernetes-service/index.html"> Azure Kubernetes Service </a></span>
+        " data-nav-id="/samples/storage/" title="ストレージ">
+      <span class="merged" id="index.2AelBZ"  title="原文::  Storage "><a href="../../../../samples/storage/index.html"> ストレージ </a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/database/" title="データベースの実行">
+      <span class="merged" id="index.46yBzN" title="原文 :  Run a database "><a href="../../../../samples/database/index.html">データベースの実行</a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/domains/" title="ドメイン">
+      <span class="merged" id="index.2StTWi" title="原文 :  Domains "><a href="../../../../samples/domains/index.html">ドメイン</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/domains/manually-create-domain/" title="手動">
+      <span class="merged" id="index.3l8yAg" title="原文 :  Manually "><a href="../../../../samples/domains/manually-create-domain/index.html">手動</a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/domains/domain-home-on-pv/" title="Domain home on a PV">
+      <span class="merged" id="index.2Mb6V5" title="原文 :  Domain home on a PV "><a href="../../../../samples/domains/domain-home-on-pv/index.html"> Domain home on a PV </a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/domains/domain-home-in-image/" title="Domain home in image">
+      <span class="merged" id="index.34NSbu" title="原文 :  Domain home in image "><a href="../../../../samples/domains/domain-home-in-image/index.html"> Domain home in image </a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/domains/model-in-image/" title="Model in image">
+      <span class="merged" id="index.oOv2k" title="原文 :  Model in image "><a href="../../../../samples/domains/model-in-image/index.html"> Model in image </a></span>
       
       
         <ul>
           
           
           
-          
+
         
           
             
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/azure-kubernetes-service/domain-on-pv/" title="Domain home on a PV">
-        <span class="merged" id="index.29yqXX" title="原文 :  Domain home on a PV "><a href="../../../../samples/simple/azure-kubernetes-service/domain-on-pv/index.html"> Domain home on a PV </a></span>
+      <li class="dd-item " data-nav-id="/samples/domains/model-in-image/prerequisites/" title="前提条件">
+        <span class="merged" id="index.4cYqiq"  title="原文::  Prerequisites "><a href="../../../../samples/domains/model-in-image/prerequisites/index.html"> 前提条件 </a></span>
     </li>
      
   
@@ -1718,11 +1718,13 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/azure-kubernetes-service/model-in-image/" title="Model in Image">
-        <span class="merged" id="index.3v4GlG" title="原文 :  Model in Image "><a href="../../../../samples/simple/azure-kubernetes-service/model-in-image/index.html"> Model in Image </a></span>
+      <li class="dd-item " data-nav-id="/samples/domains/model-in-image/initial/" title="初期状態のユース・ケース">
+        <span class="merged" id="index.9rUXe" title="原文 :  Initial use case "><a href="../../../../samples/domains/model-in-image/initial/index.html">初期状態のユース・ケース</a></span>
     </li>
      
   
@@ -1734,11 +1736,85 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/samples/simple/azure-kubernetes-service/troubleshooting/" title="トラブルシューティング">
-        <span class="merged" id="index.1kIjI4"  title="原文::  Troubleshooting "><a href="../../../../samples/simple/azure-kubernetes-service/troubleshooting/index.html"> トラブルシューティング </a></span>
+      <li class="dd-item " data-nav-id="/samples/domains/model-in-image/update1/" title="更新1">
+        <span class="merged" id="index.1kJ3nd"  title="原文::  Update 1 "><a href="../../../../samples/domains/model-in-image/update1/index.html"> 更新1 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/samples/domains/model-in-image/update2/" title="更新2">
+        <span class="merged" id="index.40q2Ns"  title="原文::  Update 2 "><a href="../../../../samples/domains/model-in-image/update2/index.html"> 更新2 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/samples/domains/model-in-image/update3/" title="更新3">
+        <span class="merged" id="index.K9h5k"  title="原文::  Update 3 "><a href="../../../../samples/domains/model-in-image/update3/index.html"> 更新3 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/samples/domains/model-in-image/update4/" title="更新4">
+        <span class="merged" id="index.9zMah"  title="原文::  Update 4 "><a href="../../../../samples/domains/model-in-image/update4/index.html"> 更新4 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/samples/domains/model-in-image/cleanup/" title="クリーンアップ">
+        <span class="merged" id="index.1h7HXO"  title="原文::  Cleanup "><a href="../../../../samples/domains/model-in-image/cleanup/index.html"> クリーンアップ </a></span>
     </li>
      
   
@@ -1748,81 +1824,276 @@
           
         
         </ul>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li class="dd-item 
-        
-        
-        
-        " data-nav-id="/weblogic-kubernetes-operator/samples/simple/tanzu-kubernetes-service/" title="Tanzu Kubernetes Service">
-      <span class="merged" id="index.3BPosm" title="原文 :  Tanzu Kubernetes Service "><a href="../../../../samples/simple/tanzu-kubernetes-service/index.html"> Tanzu Kubernetes Service </a></span>
       
-              
     </li>
   
  
 
             
           
-        
-        </ul>
-              
-    </li>
-  
- 
-
             
-          
-        
-        </ul>
-              
-    </li>
-  
- 
+            
 
-          
-          
+
 
 
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/developerguide/" title="開発者ガイド">
-      <span class="merged" id="index.1IzEck" title="原文 :  4. Developer Guide "><a href="../../../../developerguide/index.html"><b>4. </b>開発者ガイド</a></span>
+        " data-nav-id="/samples/domains/fmw-domain/" title="FMWインフラストラクチャdomain on a PV">
+      <span class="merged" id="index.2f4jzm" title="原文 :  FMW Infrastructure domain on a PV "><a href="../../../../samples/domains/fmw-domain/index.html">FMWインフラストラクチャdomain on a PV</a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/domains/fmw-domain-home-in-image/" title="FMWインフラストラクチャdomain home in image">
+      <span class="merged" id="index.8n4aG" title="原文 :  FMW Infrastructure domain home in image "><a href="../../../../samples/domains/fmw-domain-home-in-image/index.html">FMWインフラストラクチャdomain home in image</a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/domains/delete-domain/" title="ドメインに関連付けられたリソースの削除">
+      <span class="merged" id="index.QXyzz" title="原文 :  Delete resources associated with the domain "><a href="../../../../samples/domains/delete-domain/index.html">ドメインに関連付けられたリソースの削除</a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/domains/lifecycle/" title="ドメイン・ライフサイクル操作">
+      <span class="merged" id="index.3p2ur4" title="原文 :  Domain lifecycle operations "><a href="../../../../samples/domains/lifecycle/index.html">ドメイン・ライフサイクル操作</a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/rest/" title="REST API">
+      <span class="merged" id="index.2hvlWK"  title="原文::  REST APIs "><a href="../../../../samples/rest/index.html"> REST API </a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/ingress/" title="イングレス">
+      <span class="merged" id="index.3kb4Oi"  title="原文::  Ingress "><a href="../../../../samples/ingress/index.html"> イングレス </a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/elastic-stack/" title="Elastic Stack">
+      <span class="merged" id="index.10ahl0" title="原文 :  Elastic Stack "><a href="../../../../samples/elastic-stack/index.html">Elastic Stack</a></span>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/elastic-stack/operator/" title="オペレータ">
+      <span class="merged" id="index.3cnlsT" title="原文 :  Operator "><a href="../../../../samples/elastic-stack/operator/index.html">オペレータ</a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/elastic-stack/weblogic-domain/" title="WebLogicドメイン">
+      <span class="merged" id="index.2hFQQ9" title="原文 :  WebLogic domain "><a href="../../../../samples/elastic-stack/weblogic-domain/index.html">WebLogicドメイン</a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/azure-kubernetes-service/" title="Azure Kubernetes Service">
+      <span class="merged" id="index.4EVUZ0" title="原文 :  Azure Kubernetes Service "><a href="../../../../samples/azure-kubernetes-service/index.html"> Azure Kubernetes Service </a></span>
       
       
         <ul>
           
           
           
-          
+
         
           
             
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/requirements/" title="要件">
-        <span class="merged" id="index.4UsbBT"  title="原文::  Requirements "><a href="../../../../developerguide/requirements/index.html"> 要件 </a></span>
+      <li class="dd-item " data-nav-id="/samples/azure-kubernetes-service/domain-on-pv/" title="Domain home on a PV">
+        <span class="merged" id="index.w3lnf" title="原文 :  Domain home on a PV "><a href="../../../../samples/azure-kubernetes-service/domain-on-pv/index.html"> Domain home on a PV </a></span>
     </li>
      
   
@@ -1834,11 +2105,13 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/building/" title="ビルディング">
-        <span class="merged" id="index.4DVU2c"  title="原文::  Building "><a href="../../../../developerguide/building/index.html"> ビルディング </a></span>
+      <li class="dd-item " data-nav-id="/samples/azure-kubernetes-service/model-in-image/" title="Model in Image">
+        <span class="merged" id="index.2g9MWL"  title="原文::  Model in Image "><a href="../../../../samples/azure-kubernetes-service/model-in-image/index.html"> Model in Image </a></span>
     </li>
      
   
@@ -1850,10 +2123,147 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/integration-tests/" title="統合テスト">
+      <li class="dd-item " data-nav-id="/samples/azure-kubernetes-service/troubleshooting/" title="トラブルシューティング">
+        <span class="merged" id="index.2yRrvV"  title="原文::  Troubleshooting "><a href="../../../../samples/azure-kubernetes-service/troubleshooting/index.html"> トラブルシューティング </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/samples/tanzu-kubernetes-service/" title="Tanzu Kubernetes Service">
+      <span class="merged" id="index.4ePUPw" title="原文 :  Tanzu Kubernetes Service "><a href="../../../../samples/tanzu-kubernetes-service/index.html"> Tanzu Kubernetes Service </a></span>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
+        
+        
+        
+        " data-nav-id="/developerguide/" title="開発者ガイド">
+      <span class="merged" id="index.18kAB5"  title="原文::  Developer Guide "><a href="../../../../developerguide/index.html"> <b> </b>開発者ガイド </a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/developerguide/contributing/" title="オペレータへの貢献">
+        <span class="merged" id="index.1wwUbq" title="原文 :  Contribute to the operator "><a href="../../../../developerguide/contributing/index.html">オペレータへの貢献</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/developerguide/requirements/" title="要件">
+        <span class="merged" id="index.3f1HYl"  title="原文::  Requirements "><a href="../../../../developerguide/index.html"> 要件 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/developerguide/building/" title="ビルド">
+        <span class="merged" id="index.4DVU2c"  title="原文::  Building "><a href="../../../../developerguide/building/index.html"> ビルド </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/developerguide/integration-tests/" title="統合テスト">
         <span class="merged" id="index.159cvQ" title="原文 :  Integration tests "><a href="../../../../developerguide/integration-tests/index.html">統合テスト</a></span>
     </li>
      
@@ -1866,10 +2276,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/branching/" title="ブランチ">
+      <li class="dd-item " data-nav-id="/developerguide/branching/" title="ブランチ">
         <span class="merged" id="index.xJv5i" title="原文 :  Branching "><a href="../../../../developerguide/branching/index.html">ブランチ</a></span>
     </li>
      
@@ -1882,10 +2294,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/coding-standards/" title="コーディング標準">
+      <li class="dd-item " data-nav-id="/developerguide/coding-standards/" title="コーディング標準">
         <span class="merged" id="index.2CSWBg" title="原文 :  Coding standards "><a href="../../../../developerguide/coding-standards/index.html">コーディング標準</a></span>
     </li>
      
@@ -1898,10 +2312,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/code-structure/" title="コード構造">
+      <li class="dd-item " data-nav-id="/developerguide/code-structure/" title="コード構造">
         <span class="merged" id="index.17efaa" title="原文 :  Code structure "><a href="../../../../developerguide/code-structure/index.html">コード構造</a></span>
     </li>
      
@@ -1914,10 +2330,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/asynchronous-call-model/" title="非同期コール・モデル">
+      <li class="dd-item " data-nav-id="/developerguide/asynchronous-call-model/" title="非同期コール・モデル">
         <span class="merged" id="index.2yBs8x" title="原文 :  Asynchronous call model "><a href="../../../../developerguide/asynchronous-call-model/index.html">非同期コール・モデル</a></span>
     </li>
      
@@ -1930,10 +2348,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/domain-processing/" title="ドメイン処理">
+      <li class="dd-item " data-nav-id="/developerguide/domain-processing/" title="ドメイン処理">
         <span class="merged" id="index.2O0ryN" title="原文 :  Domain processing "><a href="../../../../developerguide/domain-processing/index.html">ドメイン処理</a></span>
     </li>
      
@@ -1946,10 +2366,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/documentation/" title="ドキュメント">
+      <li class="dd-item " data-nav-id="/developerguide/documentation/" title="ドキュメント">
         <span class="merged" id="index.16zL04"  title="原文::  Documentation "><a href="../../../../developerguide/documentation/index.html"> ドキュメント </a></span>
     </li>
      
@@ -1962,10 +2384,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/developerguide/backwards-compatibility/" title="下位互換性">
+      <li class="dd-item " data-nav-id="/developerguide/backwards-compatibility/" title="下位互換性">
         <span class="merged" id="index.3NK7Pg"  title="原文::  Backward compatibility "><a href="../../../../developerguide/backwards-compatibility/index.html"> 下位互換性 </a></span>
     </li>
      
@@ -1976,7 +2400,7 @@
           
         
         </ul>
-              
+      
     </li>
   
  
@@ -1985,48 +2409,36 @@
           
 
 
+
+
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/reference/" title="リファレンス">
-      <span class="merged" id="index.xXuTk" title="原文 :  5. Reference "><a href="../../../../reference/index.html"><b>5. </b>リファレンス</a></span>
+        " data-nav-id="/reference/" title="リファレンス">
+      <span class="merged" id="index.3wAWS6"  title="原文::  Reference "><a href="../../../../reference/index.html"> <b> </b>リファレンス </a></span>
       
       
         <ul>
           
           
           
-          
+
         
           
             
             
 
 
- 
-  
-    
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/reference/javadoc/" title="Javadoc">
-        <span class="merged" id="index.2wmCbu"  title="原文::  Javadoc "><a href="../../../../reference/javadoc/index.html"> Javadoc </a></span>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
 
 
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/reference/swagger/" title="Swagger">
+      <li class="dd-item " data-nav-id="/reference/swagger/" title="Swagger">
         <span class="merged" id="index.alJ2G"  title="原文::  Swagger "><a href="../../../../reference/swagger/index.html"> Swagger </a></span>
     </li>
      
@@ -2039,10 +2451,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/reference/domain-resource/" title="ドメイン・リソース">
+      <li class="dd-item " data-nav-id="/reference/domain-resource/" title="ドメイン・リソース">
         <span class="merged" id="index.1vymnO" title="原文 :  Domain resource "><a href="../../../../reference/domain-resource/index.html">ドメイン・リソース</a></span>
     </li>
      
@@ -2053,7 +2467,7 @@
           
         
         </ul>
-              
+      
     </li>
   
  
@@ -2062,15 +2476,17 @@
           
 
 
+
+
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/security/" title="セキュリティ">
-      <span class="merged" id="index.42OWob" title="原文 :  6. Security "><a href="../../../../security/index.html"><b>6. </b>セキュリティ</a></span>
+        " data-nav-id="/security/" title="セキュリティ">
+      <span class="merged" id="index.1bYp9r"  title="原文::  Security "><a href="../../../../security/index.html"> <b> </b>セキュリティ </a></span>
       
       
         <ul>
@@ -2079,17 +2495,19 @@
             
           
           
-          
+
         
           
             
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/certificates/" title="証明書">
+      <li class="dd-item " data-nav-id="/security/certificates/" title="証明書">
         <span class="merged" id="index.23unSt"  title="原文::  Certificates "><a href="../../../../security/certificates/index.html"> 証明書 </a></span>
     </li>
      
@@ -2102,14 +2520,16 @@
             
 
 
+
+
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/security/domain-security/" title="ドメイン・セキュリティ">
+        " data-nav-id="/security/domain-security/" title="ドメイン・セキュリティ">
       <span class="merged" id="index.dZyHE" title="原文 :  Domain security "><a href="../../../../security/domain-security/index.html">ドメイン・セキュリティ</a></span>
       
       
@@ -2117,17 +2537,19 @@
           
           
           
-          
+
         
           
             
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/domain-security/image-protection/" title="コンテナ・イメージ保護">
+      <li class="dd-item " data-nav-id="/security/domain-security/image-protection/" title="コンテナ・イメージ保護">
         <span class="merged" id="index.3DunY2" title="原文 :  Container image protection "><a href="../../../../security/domain-security/image-protection/index.html">コンテナ・イメージ保護</a></span>
     </li>
      
@@ -2140,11 +2562,13 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/domain-security/weblogic-channels/" title="チャネル">
-        <span class="merged" id="index.43gklE"  title="原文::  Channels "><a href="../../../../security/domain-security/weblogic-channels/index.html"> チャネル </a></span>
+      <li class="dd-item " data-nav-id="/security/domain-security/weblogic-channels/" title="外部ネットワーク・アクセスのセキュリティ">
+        <span class="merged" id="index.1oqzKf" title="原文 :  External network access security "><a href="../../../../security/domain-security/weblogic-channels/index.html">外部ネットワーク・アクセスのセキュリティ</a></span>
     </li>
      
   
@@ -2154,7 +2578,7 @@
           
         
         </ul>
-              
+      
     </li>
   
  
@@ -2165,10 +2589,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/encryption/" title="暗号化">
+      <li class="dd-item " data-nav-id="/security/encryption/" title="暗号化">
         <span class="merged" id="index.K0B1N"  title="原文::  Encryption "><a href="../../../../security/encryption/index.html"> 暗号化 </a></span>
     </li>
      
@@ -2181,11 +2607,13 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/service-accounts/" title="サービス・アカウント">
-        <span class="merged" id="index.11iaz9"  title="原文::  Service accounts "><a href="../../../../security/service-accounts/index.html"> サービス・アカウント </a></span>
+      <li class="dd-item " data-nav-id="/security/service-accounts/" title="サービス・アカウント">
+        <span class="merged" id="index.11iaz9" title="原文 :  Service accounts "><a href="../../../../security/service-accounts/index.html">サービス・アカウント</a></span>
     </li>
      
   
@@ -2197,10 +2625,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/rbac/" title="RBAC">
+      <li class="dd-item " data-nav-id="/security/rbac/" title="RBAC">
         <span class="merged" id="index.2eRqRD"  title="原文::  RBAC "><a href="../../../../security/rbac/index.html"> RBAC </a></span>
     </li>
      
@@ -2213,10 +2643,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/secrets/" title="シークレット">
+      <li class="dd-item " data-nav-id="/security/secrets/" title="シークレット">
         <span class="merged" id="index.2hkgWE"  title="原文::  Secrets "><a href="../../../../security/secrets/index.html"> シークレット </a></span>
     </li>
      
@@ -2229,11 +2661,13 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/security/openshift/" title="OpenShift">
-        <span class="merged" id="index.17WbUM"  title="原文::  OpenShift "><a href="../../../../security/openshift/index.html"> OpenShift </a></span>
+      <li class="dd-item " data-nav-id="/security/openshift/" title="OpenShift">
+        <span class="merged" id="index.17WbUM" title="原文 :  OpenShift "><a href="../../../../security/openshift/index.html"> OpenShift </a></span>
     </li>
      
   
@@ -2243,7 +2677,7 @@
           
         
         </ul>
-              
+      
     </li>
   
  
@@ -2252,14 +2686,16 @@
           
 
 
+
+
  
   
     
-    <li class="dd-item 
+    <li class="dd-item
         
         
         
-        " data-nav-id="/weblogic-kubernetes-operator/faq/" title=" よくある質問">
+        " data-nav-id="/faq/" title=" よくある質問">
       <span class="merged" id="index.1N7WAV"  title="原文::  Frequently asked questions "><a href="../../../../faq/index.html"> よくある質問 </a></span>
       
       
@@ -2267,18 +2703,20 @@
           
           
           
-          
+
         
           
             
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/namespace-management/" title="ドメイン・ネームスペースの管理">
-        <span class="merged" id="index.4Hg3xh" title="原文 :  Managing domain namespaces "><a href="../../../../faq/namespace-management/index.html">ドメイン・ネームスペースの管理</a></span>
+      <li class="dd-item " data-nav-id="/faq/newbie/" title="初心者への回答">
+        <span class="merged" id="index.3XC3Pm" title="原文 :  Answers for newcomers "><a href="../../../../faq/newbie/index.html">初心者への回答</a></span>
     </li>
      
   
@@ -2290,10 +2728,30 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/cannot-pull-image/" title="Cannot pull image">
+      <li class="dd-item " data-nav-id="/faq/namespace-management/" title="ネームスペース管理">
+        <span class="merged" id="index.4G5KiV" title="原文 :  Namespace management "><a href="../../../../faq/namespace-management/index.html">ネームスペース管理</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/faq/cannot-pull-image/" title="Cannot pull image">
         <span class="merged" id="index.3HggiJ" title="原文 :  Cannot pull image "><a href="../../../../faq/cannot-pull-image/index.html">Cannot pull image</a></span>
     </li>
      
@@ -2306,10 +2764,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/boot-identity-not-valid/" title="Boot identity not valid">
+      <li class="dd-item " data-nav-id="/faq/boot-identity-not-valid/" title="Boot identity not valid">
         <span class="merged" id="index.1jWDE9" title="原文 :  Boot identity not valid "><a href="../../../../faq/boot-identity-not-valid/index.html">Boot identity not valid</a></span>
     </li>
      
@@ -2322,10 +2782,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/domain-secret-mismatch/" title="Domain secret mismatch">
+      <li class="dd-item " data-nav-id="/faq/domain-secret-mismatch/" title="Domain secret mismatch">
         <span class="merged" id="index.3Dbhd1" title="原文 :  Domain secret mismatch "><a href="../../../../faq/domain-secret-mismatch/index.html"> Domain secret mismatch </a></span>
     </li>
      
@@ -2338,10 +2800,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/node-heating/" title="ノード・ヒーティングの問題">
+      <li class="dd-item " data-nav-id="/faq/node-heating/" title="ノード・ヒーティングの問題">
         <span class="merged" id="index.48rWr6" title="原文 :  Node heating problem "><a href="../../../../faq/node-heating/index.html">ノード・ヒーティングの問題</a></span>
     </li>
      
@@ -2354,10 +2818,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/fan/" title="高速アプリケーション通知の無効化">
+      <li class="dd-item " data-nav-id="/faq/fan/" title="高速アプリケーション通知の無効化">
         <span class="merged" id="index.dNkev" title="原文 :  Disabling Fast Application Notifications "><a href="../../../../faq/fan/index.html">高速アプリケーション通知の無効化</a></span>
     </li>
      
@@ -2370,10 +2836,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/oci-fss-pv/" title="永続ボリュームに対するOCIファイル・ストレージ(FSS)の使用">
+      <li class="dd-item " data-nav-id="/faq/oci-fss-pv/" title="永続ボリュームに対するOCIファイル・ストレージ(FSS)の使用">
         <span class="merged" id="index.3FGzDz" title="原文 :  Using OCI File Storage (FSS) for persistent volumes "><a href="../../../../faq/oci-fss-pv/index.html">永続ボリュームに対するOCIファイル・ストレージ(FSS)の使用</a></span>
     </li>
      
@@ -2386,10 +2854,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/oci-lb/" title="OCIロード・バランサの使用">
+      <li class="dd-item " data-nav-id="/faq/oci-lb/" title="OCIロード・バランサの使用">
         <span class="merged" id="index.35Sd9d" title="原文 :  Using an OCI load balancer "><a href="../../../../faq/oci-lb/index.html">OCIロード・バランサの使用</a></span>
     </li>
      
@@ -2402,10 +2872,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/volumes/" title="PersistentVolumeClaimへのアクセスの提供">
+      <li class="dd-item " data-nav-id="/faq/volumes/" title="PersistentVolumeClaimへのアクセスの提供">
         <span class="merged" id="index.1FlE1E" title="原文 :  Providing access to a PersistentVolumeClaim "><a href="../../../../faq/volumes/index.html">PersistentVolumeClaimへのアクセスの提供</a></span>
     </li>
      
@@ -2418,10 +2890,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/configmaps/" title="ConfigMapへのアクセスの提供">
+      <li class="dd-item " data-nav-id="/faq/configmaps/" title="ConfigMapへのアクセスの提供">
         <span class="merged" id="index.1Mix4e" title="原文 :  Providing access to a ConfigMap "><a href="../../../../faq/configmaps/index.html">ConfigMapへのアクセスの提供</a></span>
     </li>
      
@@ -2434,10 +2908,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/external-clients/" title="外部WebLogicクライアント">
+      <li class="dd-item " data-nav-id="/faq/external-clients/" title="外部WebLogicクライアント">
         <span class="merged" id="index.1VwPm6" title="原文 :  External WebLogic clients "><a href="../../../../faq/external-clients/index.html">外部WebLogicクライアント</a></span>
     </li>
      
@@ -2450,10 +2926,12 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/coherence-requirements/" title="Coherenceの要件">
+      <li class="dd-item " data-nav-id="/faq/coherence-requirements/" title="Coherenceの要件">
         <span class="merged" id="index.1HTclA" title="原文 :  Coherence requirements "><a href="../../../../faq/coherence-requirements/index.html">Coherenceの要件</a></span>
     </li>
      
@@ -2466,11 +2944,49 @@
             
 
 
+
+
  
   
     
-      <li class="dd-item " data-nav-id="/weblogic-kubernetes-operator/faq/resource-settings/" title="ポッド・メモリーとCPUリソース">
+      <li class="dd-item " data-nav-id="/faq/resource-settings/" title="ポッド・メモリーとCPUリソース">
         <span class="merged" id="index.2SgXhC" title="原文 :  Pod memory and CPU resources "><a href="../../../../faq/resource-settings/index.html">ポッド・メモリーとCPUリソース</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/faq/node-selector/" title="特定のノードへのポッドのスケジュール">
+        <span class="merged" id="index.723zq" title="原文 :  Scheduling pods to particular nodes "><a href="../../../../faq/node-selector/index.html">特定のノードへのポッドのスケジュール</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/faq/security-validation/" title="セキュリティ・バリデーションの処理">
+        <span class="merged" id="index.YF6Hw" title="原文 :  Handling security validations "><a href="../../../../faq/security-validation/index.html">セキュリティ・バリデーションの処理</a></span>
     </li>
      
   
@@ -2480,14 +2996,14 @@
           
         
         </ul>
-              
+      
     </li>
   
  
 
           
-         
-        <li><span class="merged" id="index.mwPZC"  title="原文:: Release Notes"><a class="padding" href="../../../../release-notes.html">リリース・ノート</a></span></li>
+        
+      <li><span class="merged" id="index.mwPZC"  title="原文:: Release Notes"><a class="padding" href="../../../../release-notes">リリース・ノート</a></span></li>
     </ul>
 
     
@@ -2496,14 +3012,13 @@
     
     <section id="footer">
       <p><span class="merged" id="index.4behA5" title="原文 : Created with from Oracle"><a href="https://www.oracle.com">Oracle</a>から<i class="fas fa-heart"></i>を使用して作成</span></p>
-<p>&nbsp;</p>
+<p><span class="merged" id="index.1OQYZy"  title="原文:: &nbsp">&nbsp</span></p>
 <p><span class="merged" id="index.3sNKIh" title="原文 :  GitHub repo"><a href="https://github.com/oracle/weblogic-kubernetes-operator"><i class="fab fa-github"></i> GitHubレポ</a></span></p>
 <p><span class="merged" id="index.3Imawx" title="原文 :  Public Slack #operator"><a href="https://weblogic-slack-inviter.herokuapp.com/"><i class="fab fa-slack"></i> パブリックSlack #operator</a></span></p>
 
     </section>
   </div>
 </nav>
-
 
 
 
@@ -2522,7 +3037,16 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><span class="merged" id="index.1sEmqo" title="原文 : Use kubectl exec"><a href="index.html#use-kubectl-exec"><code>kubectl exec</code>の使用</a></span></li>
+        <li><span class="merged" id="index.2RxKbm" title="原文 : Use a NodePort"><a href="index.html#use-a-nodeport"><code>NodePort</code>の使用</a></span></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -2546,53 +3070,115 @@
         
 
 
+<p><span class="merged" id="index.ecmgz" title="原文 : You can use the WebLogic Scripting Tool (WLST) to manage a domain running in Kubernetes.">WebLogic Scripting Tool (WLST)を使用して、Kubernetesで実行中のドメインを管理できます。</span></p>
+<p><span class="merged" id="index.27R6FS" title="原文 : To give WLST access to a domain running in Kubernetes, you can:">Kubernetesで実行されているドメインにWLSTへのアクセス権を付与するには、次を実行できます:</span></p>
+<ul>
+<li><span class="merged" id="index.15ilPo" title="原文 : Use kubectl exec"><a href="index.html#use-kubectl-exec">kubectl execの使用</a></span></li>
+<li><span class="merged" id="index.2RxKbm.1" title="原文 : Use a NodePort"><a href="index.html#use-a-nodeport"><code>NodePort</code>の使用</a></span></li>
+<li><span class="merged" id="index.4cTCxz" title="原文 : Use port forwarding"><a href="index.html#use-port-forwarding">ポート転送の使用</a></span></li>
+</ul>
+<h3 id="use-kubectl-exec"><span class="merged" id="index.3tgh6d" title="原文 : Use kubectl exec"><code>kubectl exec</code>の使用</span></h3>
+<p><span class="merged" id="index.LJWc2.spl1" title="原文 : You can use the kubectl exec command to start an interactive WLST session within a pod or to remotely run a WLST script on a pod."><code>kubectl exec</code>コマンドを使用して、ポッド内の対話型WLSTセッションを開始したり、ポッド上でリモートでWLSTスクリプトを実行できます。</span> <span class="merged" id="index.LJWc2.spl2" title="原文 : Typically, this is the preferred method.">通常、これは優先されるメソッドです。</span> </p>
+<p><span class="merged" id="index.1gry5P" title="原文 : For example, if a domainUID is sample-domain1, its Administration Server is named admin-server and is configured with default port 7001, and its pods are running in namespace sample-domain1-ns, then you can start an interactive WLST session this way:">たとえば、<code>domainUID</code>が<code>sample-domain1</code>の場合、その管理サーバーの名前は<code>admin-server</code>で、デフォルトのポート<code>7001</code>で構成され、そのポッドがネームスペース<code>sample-domain1-ns</code>で実行されていると、対話型WLSTセッションを次のように起動できます:</span></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ kubectl -n sample-domain1-ns exec -it sample-domain1-admin-server /bin/bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[oracle@sample-domain1-admin-server oracle]$ wlst.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Initializing WebLogic Scripting Tool (WLST) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Welcome to WebLogic Server Administration Scripting Shell
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Type help() for help on available commands
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wls:/offline&gt; connect(&#39;myusername&#39;,&#39;mypassword&#39;,&#39;t3://sample-domain1-admin-server:7001&#39;)
+</span></span><span style="display:flex;"><span>Connecting to t3://sample-domain1-admin-server:7001 with userid myusername ...
+</span></span><span style="display:flex;"><span>Successfully connected to Admin Server &#34;admin-server&#34; that belongs to domain &#34;base_domain&#34;.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Warning: An insecure protocol was used to connect to the server.
+</span></span><span style="display:flex;"><span>To ensure on-the-wire security, the SSL port or Admin port should be used instead.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wls:/base_domain/serverConfig/&gt; exit()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Exiting WebLogic Scripting Tool.
+</span></span><span style="display:flex;"><span>[oracle@sample-domain1-admin-server oracle]$ exit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$
+</span></span></code></pre></div><h3 id="use-a-nodeport"><span class="merged" id="index.eifbr" title="原文 : Use a NodePort"><code>NodePort</code>の使用</span></h3>
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-129126578-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<div class="notices tip" ><p><span class="merged" id="index.28174b" title="原文 : If you are setting up WLST access through a NodePort and your external port is not going to be the same as the port number on the WebLogic Administration Server Pod, then see Enabling WLST access when local and remote ports do not match for an additional required setup step."><code>NodePort</code>を介してWLSTアクセスを設定し、外部ポートがWebLogic管理サーバー・ポッドのポート番号と同じにならない場合は、<a href="../port-forward/index.html#enabling-wlst-access-when-local-and-remote-ports-do-not-match">「ローカル・ポートとリモート・ポートが一致しない場合のWLSTアクセスの有効化」</a>で追加の設定ステップを参照してください。</span></p>
+</div>
 
 
-<p><span class="merged" id="index.2vBc8a.spl1" title="原文 : You can use the WebLogic Scripting Tool (WLST) to manage a domain running in Kubernetes.">WebLogic Scripting Tool (WLST)を使用して、Kubernetesで実行中のドメインを管理できます。</span> <span class="merged" id="index.2vBc8a.spl2" title="原文 : If the Administration Server was configured to expose a T3 channel using the exposeAdminT3Channel setting when creating the domain, then the matching T3 service can be used to connect.">ドメインの作成時に<code>exposeAdminT3Channel</code>設定を使用してT3チャネルを公開するように管理サーバーが構成されている場合、一致するT3サービスを使用して接続できます。</span> <span class="merged" id="index.2vBc8a.spl3" title="原文 : For example, if the domainUID is domain1, and the Administration Server name is admin-server, then the service would be called:">たとえば、<code>domainUID</code>が<code>domain1</code>で、管理サーバー名が<code>admin-server</code>の場合、サービスは次のように呼び出されます:</span> </p>
-<pre><code>domain1-admin-server-ext
-</code></pre><p><span class="merged" id="index.29L4d1.spl1" title="原文 : This service will be in the same namespace as the domain.">このサービスは、ドメインと同じネームスペースにあります。</span> <span class="merged" id="index.29L4d1.spl2" title="原文 : The external port number can be obtained by checking this service&rsquo;s nodePort:">外部ポート番号は、このサービスの<code>nodePort</code>を確認することで取得できます:</span> </p>
-<pre><code>$ kubectl get service domain1-admin-server-ext -n domain1 -o jsonpath='{.spec.ports[0].nodePort}'
-30012
-</code></pre><p><span class="merged" id="index.kZ9oH.spl1" title="原文 : In this example, the nodePort is 30012.">この例では、<code>nodePort</code>は<code>30012</code>です。</span> <span class="merged" id="index.kZ9oH.spl2" title="原文 : If the Kubernetes server&rsquo;s address was kubernetes001, then WLST can connect to t3://kubernetes001:30012 as shown below:">Kubernetesサーバーのアドレスが<code>kubernetes001</code>の場合、WLSTは次に示すように<code>t3://kubernetes001:30012</code>に接続できます:</span> </p>
-<pre><code>$ ~/wls/oracle_common/common/bin/wlst.sh
+<div class="notices warning" ><p><span class="merged" id="index.24ft4x.spl1" title="原文 : A NodePort can expose a WebLogic T3 or administrative channel outside the Kubernetes cluster."><code>NodePort</code>は、WebLogic T3またはKubernetesクラスタの外部の管理チャネルを公開できます。</span> <span class="merged" id="index.24ft4x.spl2" title="原文 : For domain security considerations, see External network access security.">ドメインのセキュリティに関する考慮事項については、<a href="../../../../security/domain-security/weblogic-channels/index.html">「外部ネットワーク・アクセスのセキュリティ」</a>を参照してください。</span> </p>
+</div>
 
-Initializing WebLogic Scripting Tool (WLST) ...
+<p><span class="merged" id="index.YyIBR" title="原文 : You can configure an Administration Server to expose an externally accessible NodePort using these two steps:">次の2つのステップを使用して、外部でアクセス可能な<code>NodePort</code>を公開するように管理サーバーを構成できます:</span></p>
+<ol>
+<li><span class="merged" id="index.3UsXmL" title="原文 : Configure a Network Access Point (custom channel) with the T3 protocol on the Administration Server.">管理サーバーでT3プロトコルを使用してネットワーク・アクセス・ポイント(カスタム・チャネル)を構成します。</span></li>
+<li><span class="merged" id="index.1yY8N0" title="原文 : Expose this channel on a NodePort service using the domain.spec.adminServer.adminService.channels attribute."><code>domain.spec.adminServer.adminService.channels</code>属性を使用して、NodePortサービスでこのチャネルを公開します。</span></li>
+</ol>
+<p><span class="merged" id="index.4WA9hg" title="原文 : Here is an example snippet of a WebLogic domain config.xml file for T3 channel T3Channel defined for an Administration Server named admin-server:"><code>admin-server</code>という管理サーバー用に定義されたT3チャネル<code>T3Channel</code>のWebLogicドメイン<code>config.xml</code>ファイルのスニペットの例を次に示します:</span></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;server&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>admin-server<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;listen-port&gt;</span>7001<span style="color:#f92672">&lt;/listen-port&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;listen-address/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;network-access-point&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>T3Channel<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;protocol&gt;</span>t3<span style="color:#f92672">&lt;/protocol&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;public-address&gt;</span>kubernetes001<span style="color:#f92672">&lt;/public-address&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;listen-port&gt;</span>30012<span style="color:#f92672">&lt;/listen-port&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;public-port&gt;</span>30012<span style="color:#f92672">&lt;/public-port&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/network-access-point&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/server&gt;</span>
+</span></span></code></pre></div><p><span class="merged" id="index.g5vcW" title="原文 : Here is an example snippet of a domain resource that sets up a NodePort for the channel:">チャネルにNodePortを設定するドメイン・リソースのスニペットの例を次に示します:</span></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">adminServer</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">adminService</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">channels</span>:
+</span></span><span style="display:flex;"><span>       - <span style="color:#f92672">channelName</span>: <span style="color:#ae81ff">T3Channel</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">nodePort</span>: <span style="color:#ae81ff">30012</span>
+</span></span></code></pre></div><p><span class="merged" id="index.r0nbz" title="原文 : If you set the nodePort: value to 0, then Kubernetes will choose an open port for you."><code>nodePort:</code>値を<code>0</code>に設定すると、Kubernetesによってオープン・ポートが選択されます。</span></p>
+<p><span class="merged" id="index.4WFiAL" title="原文 : For more details on exposing the T3 channel using a NodePort service, run the kubectl explain domain.spec.adminServer.adminService.channels command or see the domain resource schema and documentation.">NodePortサービスを使用したT3チャネルの公開の詳細は、<code>kubectl explain domain.spec.adminServer.adminService.channels</code>コマンドを実行するか、ドメイン・リソース<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/3.4/documentation/domains/Domain.md">schema</a>および<a href="../../domain-resource/index.html">documentation</a>を参照してください。</span></p>
+<p><span class="merged" id="index.25M81I" title="原文 : For example, if a domainUID is domain1, the Administration Server name is admin-server, and you have set up a NodePort service on external port 30012 using the domain.spec.adminServer.adminService.channels attribute, then the service would be called:">たとえば、<code>domainUID</code>が<code>domain1</code>で、管理サーバー名が<code>admin-server</code>で、<code>domain.spec.adminServer.adminService.channels</code>属性を使用して外部ポート<code>30012</code>でNodePortサービスを設定した場合、サービスは次のようにコールされます:</span></p>
+<pre tabindex="0"><code>domain1-admin-server-ext
+</code></pre><p><span class="merged" id="index.1q8FBf" title="原文 : This service will be in the same namespace as the domain, and its external port number can be obtained by checking its nodePort field:">このサービスはドメインと同じネームスペースにあり、<code>nodePort</code>フィールドをチェックすることで外部ポート番号を取得できます:</span></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ kubectl get service domain1-admin-server-ext -n mynamespace -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.spec.ports[0].nodePort}&#39;</span>
+</span></span></code></pre></div><pre tabindex="0"><code>30012
+</code></pre><p><span class="merged" id="index.2rMWAh" title="原文 : If the Kubernetes node machine address is kubernetes001, then WLST can connect to the WebLogic Server Administration Server pod through the NodePort as shown below:">Kubernetesノードのマシン・アドレスが<code>kubernetes001</code>の場合、WLSTは、次に示すように、<code>NodePort</code>を介してWebLogic Server管理サーバー・ポッドに接続できます:</span></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ $ORACLE_HOME/oracle_common/common/bin/wlst.sh
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Initializing WebLogic Scripting Tool (WLST) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Welcome to WebLogic Server Administration Scripting Shell
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Type help() for help on available commands
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wls:/offline&gt; connect(&#39;myusername&#39;,&#39;mypassword&#39;,&#39;t3://kubernetes001:30012&#39;)
+</span></span><span style="display:flex;"><span>Connecting to t3://kubernetes001:30012 with userid myusername ...
+</span></span><span style="display:flex;"><span>Successfully connected to Admin Server &#34;admin-server&#34; that belongs to domain &#34;base_domain&#34;.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Warning: An insecure protocol was used to connect to the server.
+</span></span><span style="display:flex;"><span>To ensure on-the-wire security, the SSL port or Admin port should be used instead.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wls:/base_domain/serverConfig/&gt; exit()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Exiting WebLogic Scripting Tool.
+</span></span></code></pre></div><h4 id="use-port-forwarding"><span class="merged" id="index.3BW4cT" title="原文 : Use port forwarding">ポート転送の使用</span></h4>
+<p><span class="merged" id="index.2WyHj3.spl1" title="原文 : One way to provide external access to WLST is to forward network traffic from a local port on your local machine to the administration port of an Administration Server Pod.">WLSTへの外部アクセスを提供する方法の1つは、ローカル・マシンのローカル・ポートから管理サーバー・ポッドの管理ポートにネットワーク・トラフィックを転送する方法です。</span> <span class="merged" id="index.2WyHj3.spl2" title="原文 : See these instructions."><a href="../port-forward/index.html">「手順」</a>を参照してください。</span> </p>
 
-Welcome to WebLogic Server Administration Scripting Shell
-
-Type help() for help on available commands
-
-wls:/offline&gt; connect('weblogic','*password*','t3:// kubernetes001:30012')
-Connecting to t3:// kubernetes001:30012 with userid weblogic ...
-Successfully connected to Admin Server &quot;admin-server&quot; that belongs to domain &quot;base_domain&quot;.
-
-Warning: An insecure protocol was used to connect to the server.
-To ensure on-the-wire security, the SSL port or Admin port should be used instead.
-
-wls:/base_domain/serverConfig/&gt; exit()
+<div class="notices warning" ><p><span class="merged" id="index.3sIKNY.spl1" title="原文 : Port forwarding can expose a WebLogic T3 or administrative channel outside the Kubernetes cluster.">ポート転送では、WebLogic T3またはKubernetesクラスタの外部の管理チャネルを公開できます。</span> <span class="merged" id="index.3sIKNY.spl2" title="原文 : For domain security considerations, see External network access security.">ドメインのセキュリティに関する考慮事項については、<a href="../../../../security/domain-security/weblogic-channels/index.html">「外部ネットワーク・アクセスのセキュリティ」</a>を参照してください。</span> </p>
+</div>
 
 
-Exiting WebLogic Scripting Tool.
-</code></pre>
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-
         
-        </div> 
+        </div>
         
 
       </div>
@@ -2600,7 +3186,7 @@ Exiting WebLogic Scripting Tool.
     <div id="navigation">
         
         
-        
+
         
             
             
@@ -2709,15 +3295,50 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
+                    
+            
+        
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
                     
                         
             
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -2744,33 +3365,107 @@ Exiting WebLogic Scripting Tool.
                     
             
         
+                    
+                        
+            
+            
+                
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
                         
             
             
+                
+                    
                 
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
                     
+                        
+            
+            
+                
                     
                 
                 
 
                     
+                    
+                    
+
+                    
+            
+        
                     
                         
+            
+            
+                
+                    
+                
+                
+
                     
                     
+                    
 
+                    
+            
+        
                     
                         
             
             
+                
+                    
                 
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
+            
+            
+                
                     
                 
                 
@@ -2779,6 +3474,9 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
+                    
+            
+        
                     
                         
             
@@ -2843,6 +3541,19 @@ Exiting WebLogic Scripting Tool.
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
             
         
@@ -2859,6 +3570,9 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
+                    
+            
+        
                     
                         
             
@@ -2919,9 +3633,7 @@ Exiting WebLogic Scripting Tool.
                 
                 
 
-                    
                     
-                        
                     
                     
 
@@ -2954,6 +3666,9 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
+                    
+            
+        
                     
                         
             
@@ -2983,9 +3698,6 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
-                    
-            
-        
                     
             
         
@@ -3086,9 +3798,7 @@ Exiting WebLogic Scripting Tool.
 
                     
                     
-                        
                     
-                    
 
                     
                         
@@ -3103,9 +3813,6 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
-                    
-            
-        
                     
             
         
@@ -3122,6 +3829,9 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
+                    
+            
+        
                     
                         
             
@@ -3183,6 +3893,9 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
+                    
+            
+        
                     
             
         
@@ -3199,9 +3912,6 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
-                    
-            
-        
                     
             
         
@@ -3221,11 +3931,28 @@ Exiting WebLogic Scripting Tool.
                     
             
         
+                    
+                        
+            
+            
+                
+                    
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3252,11 +3979,16 @@ Exiting WebLogic Scripting Tool.
                     
 
                     
+            
+        
+                    
                         
             
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -3277,8 +4009,18 @@ Exiting WebLogic Scripting Tool.
             
                 
                     
-                        
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
+            
+            
+                
                     
                 
                 
@@ -3287,6 +4029,9 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
+                    
+            
+        
                     
                         
             
@@ -3351,7 +4096,20 @@ Exiting WebLogic Scripting Tool.
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                     
+
+                    
             
         
                     
@@ -3368,10 +4126,14 @@ Exiting WebLogic Scripting Tool.
 
                     
                     
-                        
                     
-                    
 
+                    
+            
+        
+                    
+            
+        
                     
                         
             
@@ -3388,7 +4150,20 @@ Exiting WebLogic Scripting Tool.
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                     
+
+                    
             
         
                     
@@ -3497,10 +4272,26 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
+                    
+            
+        
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                     
+
+                    
             
         
                     
@@ -3546,12 +4337,13 @@ Exiting WebLogic Scripting Tool.
                 
                 
 
-                    
                     
-                        
                     
                     
 
+                    
+            
+        
                     
                         
             
@@ -3647,7 +4439,20 @@ Exiting WebLogic Scripting Tool.
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
                     
+                    
+
+                    
                         
             
             
@@ -3660,6 +4465,9 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
+                    
+            
+        
                     
                         
             
@@ -3753,9 +4561,25 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
+                    
+            
+        
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
             
         
@@ -3969,9 +4793,6 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
-                    
-            
-        
                     
             
         
@@ -4148,9 +4969,6 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
-                    
-            
-        
                     
             
         
@@ -4167,7 +4985,13 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
+                    
+            
+        
                     
+            
+        
+                    
                         
             
             
@@ -4180,9 +5004,6 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -4374,10 +5195,39 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
+                    
+            
+        
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
                     
+                    
+
+                    
             
         
                     
@@ -4393,6 +5243,9 @@ Exiting WebLogic Scripting Tool.
                     
                     
 
+                    
+            
+        
                     
                         
             
@@ -4601,45 +5454,63 @@ Exiting WebLogic Scripting Tool.
                     
             
         
+                    
+                        
+            
+            
+                
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
             
         
+                    
+            
         
+
         
 
 
 	 
 	 
 		
-			<a class="nav nav-prev" href="../index.html" > <i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="../../domain-lifecycle/index.html" style="margin-right: 0px;" ><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-prev" href="../admin-console/index.html" > <i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="../port-forward/index.html" style="margin-right: 0px;" ><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
 
     </section>
-    
+
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../../js/clipboard.min.js?1614202517"></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1614202517"></script>
-    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1614202517"></script>
-    <script src="../../../../js/jquery.sticky.js?1614202517"></script>
-    <script src="../../../../js/featherlight.min.js?1614202517"></script>
-    <script src="../../../../js/highlight.pack.js?1614202517"></script>
+    <script src="../../../../js/clipboard.min.js?1666991348"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1666991348"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1666991348"></script>
+    <script src="../../../../js/jquery.sticky.js?1666991348"></script>
+    <script src="../../../../js/featherlight.min.js?1666991348"></script>
+    <script src="../../../../js/highlight.pack.js?1666991348"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../../js/modernizr.custom-3.6.0.js?1614202517"></script>
-    <script src="../../../../js/learn.js?1614202517"></script>
-    <script src="../../../../js/hugo-learn.js?1614202517"></script>
-
-    <link href="../../../../mermaid/mermaid.css?1614202517" rel="stylesheet" />
-    <script src="../../../../mermaid/mermaid.js?1614202517"></script>
-    <script>
-        mermaid.initialize({ startOnLoad: true });
-    </script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1666991348"></script>
+    <script src="../../../../js/learn.js?1666991348"></script>
+    <script src="../../../../js/hugo-learn.js?1666991348"></script>
+    
+        
+            <script src="../../../../mermaid/mermaid.js?1666991348"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
     
 
   </body>

@@ -24,10 +24,6 @@ WebLogic Kubernetes Operator (オペレータ)は、業界標準のクラウド�
 
 オペレータを最も速く体験するには、[「クイックスタート・ガイド」](https://oracle.github.io/weblogic-kubernetes-operator/quickstart/)をフォローするか、[ドキュメンテーション](https://oracle.github.io/weblogic-kubernetes-operator)を使用するか、[「ブログ」](https://blogs.oracle.com/weblogicserver/how-to-weblogic-server-on-kubernetes)を読むか、[例](https://oracle.github.io/weblogic-kubernetes-operator/samples/simple/)を試します。
 
-***
-[「オペレータの現在のリリース」](https://github.com/oracle/weblogic-kubernetes-operator/releases)は3.2.2です。このリリースは2021年4月27日に公開されました。
-***
-
 # ドキュメンテーション
 
 オペレータのドキュメントは、[「こちらから入手可能」](https://oracle.github.io/weblogic-kubernetes-operator)です。
