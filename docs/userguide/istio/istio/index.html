@@ -3491,10 +3491,10 @@ sample-domain1-managed-server2   2/2     Running   0          153m
 </table>
 <h5 id="added-network-channel-for-istio-versions-v110-and-later"><span class="merged" id="index.2NCDO8" title="原文 : Added network channel for Istio versions v1.10 and later">Istioバージョンv1.10以降にネットワーク・チャネルを追加しました</span></h5>
 <p><span class="merged" id="index.29116Q"  title="原文:: Background:"><em>Background</em>:</span></p>
-<p><span class="merged" id="index.4WwFEU.spl1" title="原文 : Beginning with Istio version 1.10, Istio&rsquo;s networking behavior was simplified.">Istioバージョン1.10以降、Istioのネットワーキング動作が簡素化されました。</span> <span class="merged" id="index.4WwFEU.spl2" title="原文 : It changed so that the Istio network proxy that runs in each Istio sidecar (the Envoy proxy) no longer redirects network traffic to the current pod&rsquo;s localhost interface, but instead directly forwards it to the network interface associated with the pod&rsquo;s IP.">各Istioサイドカー(Envoyプロキシ)で動作するIstioネットワーク・プロキシが、現在のポッドのlocalhostインタフェースにネットワーク・トラフィックをリダイレクトしなくなり、ポッドのIPに関連付けられたネットワーク・インタフェースに直接転送されるように変更されました。</span> <span class="merged" id="index.4WwFEU.spl3" title="原文 : This means that the operator does not need to create additional localhost network channels on each WebLogic pod except to enable readiness probe.">つまり、レディネス・プローブを有効にする以外は、オペレータが各WebLogicポッドに追加のlocalhostネットワーク・チャネルを作成する必要はありません。</span> </p>
+<p><span class="merged" id="index.4WwFEU.spl1" title="原文 : Beginning with Istio version 1.10, Istio’s networking behavior was simplified.">Istioバージョン1.10以降、Istioのネットワーキング動作が簡素化されました。</span> <span class="merged" id="index.4WwFEU.spl2" title="原文 : It changed so that the Istio network proxy that runs in each Istio sidecar (the Envoy proxy) no longer redirects network traffic to the current pod’s localhost interface, but instead directly forwards it to the network interface associated with the pod’s IP.">各Istioサイドカー(Envoyプロキシ)で動作するIstioネットワーク・プロキシが、現在のポッドのlocalhostインタフェースにネットワーク・トラフィックをリダイレクトしなくなり、ポッドのIPに関連付けられたネットワーク・インタフェースに直接転送されるように変更されました。</span> <span class="merged" id="index.4WwFEU.spl3" title="原文 : This means that the operator does not need to create additional localhost network channels on each WebLogic pod except to enable readiness probe.">つまり、レディネス・プローブを有効にする以外は、オペレータが各WebLogicポッドに追加のlocalhostネットワーク・チャネルを作成する必要はありません。</span> </p>
 <p><span class="merged" id="index.2gA8Rx" title="原文 : To learn more about changes to Istio networking beginning with Istio 1.10, see Upcoming networking changes in Istio 1.10.">Istio 1.10で始まるIstioネットワークの変更の詳細については、<a href="https://istio.io/latest/blog/2021/upcoming-networking-changes/">「Istio 1.10での今後のネットワークの変更」</a>を参照してください。</span></p>
 <p><span class="merged" id="index.2Ltq3r" title="原文 : Channel behavior:"><em>チャネル動作</em>:</span></p>
-<p><span class="merged" id="index.Dz9C7" title="原文 : When deploying a domain that is configured to support Istio versions 1.10 and later, the operator automatically adds an HTTP protocol network channel (also known as Network Access Points) to your WebLogic configuration for each server so that the pod&rsquo;s readiness probe is bound to the server pod&rsquo;s network interface:">Istioバージョン1.10以降をサポートするように構成されたドメインをデプロイすると、ポッドのレディネス・プローブがサーバー・ポッドのネットワーク・インタフェースにバインドされるように、オペレータは各サーバーのWebLogic構成にHTTPプロトコル・ネットワーク・チャネル(ネットワーク・アクセス・ポイントとも呼ばれます)を自動的に追加します:</span></p>
+<p><span class="merged" id="index.Dz9C7" title="原文 : When deploying a domain that is configured to support Istio versions 1.10 and later, the operator automatically adds an HTTP protocol network channel (also known as Network Access Points) to your WebLogic configuration for each server so that the pod’s readiness probe is bound to the server pod’s network interface:">Istioバージョン1.10以降をサポートするように構成されたドメインをデプロイすると、ポッドのレディネス・プローブがサーバー・ポッドのネットワーク・インタフェースにバインドされるように、オペレータは各サーバーのWebLogic構成にHTTPプロトコル・ネットワーク・チャネル(ネットワーク・アクセス・ポイントとも呼ばれます)を自動的に追加します:</span></p>
 <table>
 <thead>
 <tr>
@@ -3509,7 +3509,7 @@ sample-domain1-managed-server2   2/2     Running   0          153m
 <tr>
 <td><span class="merged" id="index.3Eyihl"  title="原文: http-probe-ext"><code>http-probe-ext</code></span></td>
 <td><span class="merged" id="index.csJu7.1" title="原文 : From configuration Istio readinessPort">構成Istio <code>readinessPort</code>から</span></td>
-<td><span class="merged" id="index.3wyqup" title="原文 : Server Pod&rsquo;s IP address">サーバー・ポッドのIPアドレス</span></td>
+<td><span class="merged" id="index.3wyqup" title="原文 : Server Pod’s IP address">サーバー・ポッドのIPアドレス</span></td>
 <td><span class="merged" id="index.3Ur1dT.3"  title="原文: http"><code>http</code></span></td>
 <td><span class="merged" id="index.4QyN0X.6"  title="原文:: No">いいえ</span></td>
 </tr>
@@ -3541,7 +3541,7 @@ sample-domain1-managed-server2   2/2     Running   0          153m
 </span></span><span style="display:flex;"><span>   &lt;replication-channel&gt;istiorepl&lt;/replication-channel&gt;
 </span></span><span style="display:flex;"><span>&lt;cluster&gt;
 </span></span></code></pre></div>
-<div class="notices note" ><p><span class="merged" id="index.1leDZd.spl1" title="原文 : The operator will not create a replication channel or alter a cluster&rsquo;s replication-channel configuration if such a channel is already configured for a WebLogic cluster.">そのようなチャネルがすでにWebLogicクラスタ用に構成されている場合、オペレータはレプリケーション・チャネルを作成したり、クラスタの<code>replication-channel</code>構成を変更したりしません。</span> <span class="merged" id="index.1leDZd.spl2" title="原文 : (This is unnecessary when the channel already exists.)">(チャネルがすでに存在する場合は不要です。)</span> </p>
+<div class="notices note" ><p><span class="merged" id="index.1leDZd.spl1" title="原文 : The operator will not create a replication channel or alter a cluster’s replication-channel configuration if such a channel is already configured for a WebLogic cluster.">そのようなチャネルがすでにWebLogicクラスタ用に構成されている場合、オペレータはレプリケーション・チャネルを作成したり、クラスタの<code>replication-channel</code>構成を変更したりしません。</span> <span class="merged" id="index.1leDZd.spl2" title="原文 : (This is unnecessary when the channel already exists.)">(チャネルがすでに存在する場合は不要です。)</span> </p>
 </div>
 
 <h4 id="security"><span class="merged" id="index.17B62B"  title="原文:: Security">セキュリティ</span></h4>

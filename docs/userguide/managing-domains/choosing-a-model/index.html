@@ -3103,7 +3103,7 @@
 </ul>
 </li>
 </ul>
-<p><span class="merged" id="index.RGRHb" title="原文 : Note that you can use different domain home types for different domains; there&rsquo;s no restriction on having domains with different domain home types in the same Kubernetes cluster or namespace.">ドメインごとに異なるドメイン・ホーム・タイプを使用できます。同じKubernetesクラスタまたはネームスペースに異なるドメイン・ホーム・タイプを持つドメインを使用することに制限はありません。</span></p>
+<p><span class="merged" id="index.RGRHb" title="原文 : Note that you can use different domain home types for different domains; there’s no restriction on having domains with different domain home types in the same Kubernetes cluster or namespace.">ドメインごとに異なるドメイン・ホーム・タイプを使用できます。同じKubernetesクラスタまたはネームスペースに異なるドメイン・ホーム・タイプを持つドメインを使用することに制限はありません。</span></p>
 <p><span class="merged" id="index.1fWSdt.spl1" title="原文 : There are advantages for each domain home source type where Model in Image is the most popular choice, but sometimes there are also technical limitations of various cloud providers that may make one type better suited to your needs.">Model in Imageが最も一般的な選択肢であるドメイン・ホーム・ソース・タイプごとに利点がありますが、1つのタイプをお客様のニーズに合う可能性がある様々なクラウド・プロバイダの技術的な制限もあります。</span> <span class="merged" id="index.1fWSdt.spl2" title="原文 : The following table compares the types:">次の表に、タイプを比較します:</span> </p>
 <table>
 <thead>
@@ -3127,7 +3127,7 @@
 <tr>
 <td><span class="merged" id="index.3XJ0Ok" title="原文 : You can deploy new applications using the Administration Console or WLST.">新しいアプリケーションは、管理コンソールまたはWLSTを使用してデプロイできます。</span></td>
 <td><span class="merged" id="index.1t8eN6" title="原文 : If you want to deploy application updates, then you must create a new image.">アプリケーション更新をデプロイする場合は、新しいイメージを作成する必要があります。</span></td>
-<td><span class="merged" id="index.425oqj" title="原文 : If you want to deploy application updates, then you must create a new image, which optionally can be an auxiliary image that doesn&rsquo;t include a WebLogic installation.">アプリケーション更新をデプロイする場合は、新しいイメージを作成する必要があります。オプションで、WebLogicインストールを含まない<a href="../model-in-image/auxiliary-images/index.html">「補助イメージ」</a>にできます。</span></td>
+<td><span class="merged" id="index.425oqj" title="原文 : If you want to deploy application updates, then you must create a new image, which optionally can be an auxiliary image that doesn’t include a WebLogic installation.">アプリケーション更新をデプロイする場合は、新しいイメージを作成する必要があります。オプションで、WebLogicインストールを含まない<a href="../model-in-image/auxiliary-images/index.html">「補助イメージ」</a>にできます。</span></td>
 </tr>
 <tr>
 <td><span class="merged" id="index.3V4yH8" title="原文 : You can use configuration overrides to mutate the domain configuration before it is deployed, but there are limitations.">構成のオーバーライドを使用して、ドメイン構成をデプロイする前に変更できますが、<a href="../configoverrides/index.html#unsupported-overrides">「制限事項」</a>があります。</span></td>
@@ -3140,8 +3140,8 @@
 <td><span class="merged" id="index.3kpiAt.spl1" title="原文 : You can change configuration at runtime using model YAML file snippets supplied in runtime updates (which are substantially easier to specify than configuration overrides); however, non-dynamic configuration attributes will change only when servers are restarted (rolled) and some changes may require a full domain restart."><a href="../model-in-image/runtime-updates/index.html">「ランタイム更新」</a>で提供されているモデルYAMLファイル・スニペットを使用して、実行時に構成を変更できます(構成オーバーライドよりも指定が非常に簡単です)。ただし、動的でない構成属性は、サーバーが再起動(ロール)された場合にのみ変更され、一部の変更で完全なドメイン再起動が必要になる場合があります。</span> <span class="merged" id="index.3kpiAt.spl2" title="原文 : You should not use the Administration Console or WLST for these domains as changes are ephemeral and will be lost when servers restart.">変更は一時的であり、サーバーの再起動時に失われるため、これらのドメインには管理コンソールまたはWLSTを使用しないでください。</span> </td>
 </tr>
 <tr>
-<td><span class="merged" id="index.4RBhVP" title="原文 : Logs are automatically placed on persistent storage and sent to the pod&rsquo;s stdout.">ログは自動的に永続ストレージに配置され、ポッドのstdoutに送信されます。</span></td>
-<td><span class="merged" id="index.2YvJiG.spl1" title="原文 : Logs are kept in the containers and sent to the pod&rsquo;s log (stdout) by default.">ログはコンテナに保持され、デフォルトでポッドのログ(<code>stdout</code>)に送信されます。</span> <span class="merged" id="index.2YvJiG.spl2" title="原文 : To change the log location, you can set the Domain logHomeEnabled to true and configure the desired directory using logHome.">ログのロケーションを変更するには、ドメイン<code>logHomeEnabled</code>をtrueに設定し、<code>logHome</code>を使用して目的のディレクトリを構成します。</span> </td>
+<td><span class="merged" id="index.4RBhVP" title="原文 : Logs are automatically placed on persistent storage and sent to the pod’s stdout.">ログは自動的に永続ストレージに配置され、ポッドのstdoutに送信されます。</span></td>
+<td><span class="merged" id="index.2YvJiG.spl1" title="原文 : Logs are kept in the containers and sent to the pod’s log (stdout) by default.">ログはコンテナに保持され、デフォルトでポッドのログ(<code>stdout</code>)に送信されます。</span> <span class="merged" id="index.2YvJiG.spl2" title="原文 : To change the log location, you can set the Domain logHomeEnabled to true and configure the desired directory using logHome.">ログのロケーションを変更するには、ドメイン<code>logHomeEnabled</code>をtrueに設定し、<code>logHome</code>を使用して目的のディレクトリを構成します。</span> </td>
 <td><span class="merged" id="index.2cIhz8" title="原文 : Same as Domain in Image.">Domain in Imageと同じです。</span></td>
 </tr>
 <tr>
@@ -3156,8 +3156,8 @@
 </tr>
 <tr>
 <td><span class="merged" id="index.214AfJ" title="原文 : CI/CD pipelines may be more complicated because you would need to run WLST against the live domain directory to effect changes.">CI/CDパイプラインは、変更を有効にするためにライブ・ドメイン・ディレクトリに対してWLSTを実行する必要があるため、より複雑な場合があります。</span></td>
-<td><span class="merged" id="index.3QsMGQ" title="原文 : CI/CD pipelines are simpler because you can create the whole domain in the image and don&rsquo;t have to worry about a persistent copy of the domain.">CI/CDパイプラインは、イメージ内にドメイン全体を作成でき、ドメインの永続的なコピーについて心配する必要がないため、より簡単です。</span></td>
-<td><span class="merged" id="index.1tTO80.spl1" title="原文 : CI/CD pipelines are even simpler because you don&rsquo;t need to generate a domain home.">CI/CDパイプラインは、ドメイン・ホームを生成する必要がないため、さらに単純です。</span> <span class="merged" id="index.1tTO80.spl2" title="原文 : The operator will create a domain home for you based on the model that you supply.">オペレータは、指定されたモデルに基づいてドメイン・ホームを作成します。</span> </td>
+<td><span class="merged" id="index.3QsMGQ" title="原文 : CI/CD pipelines are simpler because you can create the whole domain in the image and don’t have to worry about a persistent copy of the domain.">CI/CDパイプラインは、イメージ内にドメイン全体を作成でき、ドメインの永続的なコピーについて心配する必要がないため、より簡単です。</span></td>
+<td><span class="merged" id="index.1tTO80.spl1" title="原文 : CI/CD pipelines are even simpler because you don’t need to generate a domain home.">CI/CDパイプラインは、ドメイン・ホームを生成する必要がないため、さらに単純です。</span> <span class="merged" id="index.1tTO80.spl2" title="原文 : The operator will create a domain home for you based on the model that you supply.">オペレータは、指定されたモデルに基づいてドメイン・ホームを作成します。</span> </td>
 </tr>
 <tr>
 <td><span class="merged" id="index.2shZyd" title="原文 : There are fewer images to manage and store, which could provide significant storage and network savings.">管理および格納するイメージが少なくなるため、ストレージおよびネットワークが大幅に節約される可能性があります。</span></td>

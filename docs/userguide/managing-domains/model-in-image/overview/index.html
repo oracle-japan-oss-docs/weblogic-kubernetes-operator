@@ -3085,7 +3085,7 @@
 <li><span class="merged" id="index.2wRiTF.1"  title="原文:: References"><a href="index.html#references">参考資料</a></span></li>
 </ul>
 <h3 id="introduction"><span class="merged" id="index.4LJMHk"  title="原文:: Introduction">導入</span></h3>
-<p><span class="merged" id="index.4Sen4w.spl1" title="原文 : Model in Image is an alternative to the operator&rsquo;s Domain in Image and Domain in PV domain types.">Model in Imageは、オペレータのDomain in ImageおよびDomain in PVドメイン・タイプにかわるものです。</span> <span class="merged" id="index.4Sen4w.spl2" title="原文 : See Choose a domain home source type for a comparison of operator domain types.">オペレータ・ドメイン・タイプの比較については、<a href="../../choosing-a-model/index.html">「ドメイン・ホーム・ソース・タイプの選択」</a>を参照してください。</span> </p>
+<p><span class="merged" id="index.4Sen4w.spl1" title="原文 : Model in Image is an alternative to the operator’s Domain in Image and Domain in PV domain types.">Model in Imageは、オペレータのDomain in ImageおよびDomain in PVドメイン・タイプにかわるものです。</span> <span class="merged" id="index.4Sen4w.spl2" title="原文 : See Choose a domain home source type for a comparison of operator domain types.">オペレータ・ドメイン・タイプの比較については、<a href="../../choosing-a-model/index.html">「ドメイン・ホーム・ソース・タイプの選択」</a>を参照してください。</span> </p>
 <p><span class="merged" id="index.48WbSG" title="原文 : Unlike Domain in PV and Domain in Image, Model in Image eliminates the need to pre-create your WebLogic domain home prior to deploying your Domain YAML file.">Domain in PVおよびDomain in Imageとは異なり、Model in Imageでは、ドメインYAMLファイルをデプロイする前にWebLogicドメイン・ホームを事前作成する必要がありません。</span></p>
 <p><span class="merged" id="index.h7tbx" title="原文 : It enables:">次のことが可能です:</span></p>
 <ul>
@@ -3103,7 +3103,7 @@
 <p><span class="merged" id="index.40ZKYc" title="原文 : When you deploy a Model in Image domain resource YAML file:">Model in Imageドメイン・リソースYAMLファイルをデプロイする場合:</span></p>
 <ul>
 <li>
-<p><span class="merged" id="index.3BW3Qr" title="原文 : The operator will run a Kubernetes Job called the &lsquo;introspector job&rsquo; that:">オペレータは、イントロスペクタ・ジョブと呼ばれる次のKubernetesジョブを実行します:</span></p>
+<p><span class="merged" id="index.3BW3Qr" title="原文 : The operator will run a Kubernetes Job called the ‘introspector job’ that:">オペレータは、イントロスペクタ・ジョブと呼ばれる次のKubernetesジョブを実行します:</span></p>
 <ul>
 <li><span class="merged" id="index.2kapjO" title="原文 : Merges your WDT artifacts.">WDTアーティファクトをマージします。</span></li>
 <li><span class="merged" id="index.4dKR90" title="原文 : Runs WDT tooling to generate a domain home.">WDTツールを実行してドメイン・ホームを生成します。</span></li>
@@ -3114,14 +3114,14 @@
 <p><span class="merged" id="index.2OTv4z" title="原文 : After the introspector job completes:">イントロスペクタ・ジョブが完了したら、次の手順を実行します:</span></p>
 <ul>
 <li><span class="merged" id="index.3UFpaX" title="原文 : The operator creates a ConfigMap named DOMAIN_UID-weblogic-domain-introspect-cm (possibly with some additional maps distinguished by serial names) and puts the packaged domain home in it.">オペレータは、<code>DOMAIN_UID-weblogic-domain-introspect-cm</code>という名前のConfigMap (シリアル名によって区別される追加のマップとともに)を作成し、パッケージ化されたドメインをホームに配置します。</span></li>
-<li><span class="merged" id="index.4NAWRJ" title="原文 : The operator subsequently boots your domain&rsquo;s WebLogic Server pods.">その後、オペレータはドメインのWebLogic Serverポッドをブートします。</span></li>
+<li><span class="merged" id="index.4NAWRJ" title="原文 : The operator subsequently boots your domain’s WebLogic Server pods.">その後、オペレータはドメインのWebLogic Serverポッドをブートします。</span></li>
 <li><span class="merged" id="index.3PTvSS" title="原文 : The pods will obtain their domain home from the ConfigMap.">ポッドは、ConfigMapからドメイン・ホームを取得します。</span></li>
 </ul>
 </li>
 </ul>
 <h3 id="runtime-updates"><span class="merged" id="index.28Gyv9" title="原文 : Runtime updates">ランタイムの更新</span></h3>
 <p><span class="merged" id="index.34txd" title="原文 : Model updates can be applied at runtime by changing an image, secrets, a domain resource, or a WDT model ConfigMap after initial deployment.">モデル更新は、初期デプロイメント後にイメージ、シークレット、ドメイン・リソースまたはWDTモデルConfigMapを変更することで、実行時に適用できます。</span></p>
-<p><span class="merged" id="index.1N9pbw.spl1" title="原文 : Some updates may be applied to a running domain without requiring any WebLogic pod restarts (an online update), but others may require rolling the pods to propagate the update&rsquo;s changes (an offline update), and still others may require shutting down the entire domain before applying the update (a full domain restart update).">一部の更新は、WebLogicポッドの再起動(オンライン更新)を必要とせずに実行中のドメインに適用できますが、更新の変更を伝播するためにポッドをローリングする必要がある場合があります(オフライン更新)。また、更新を適用する前にドメイン全体を停止する必要がある場合があります(完全なドメイン再起動更新)。</span> <span class="merged" id="index.1N9pbw.spl2" title="原文 : It is the administrator&rsquo;s responsibility to make the necessary changes to a domain resource to initiate the correct type of update."><em>正しいタイプの更新を開始するために、ドメイン・リソースに必要な変更を行うことは管理者責任です。</em></span> </p>
+<p><span class="merged" id="index.1N9pbw.spl1" title="原文 : Some updates may be applied to a running domain without requiring any WebLogic pod restarts (an online update), but others may require rolling the pods to propagate the update’s changes (an offline update), and still others may require shutting down the entire domain before applying the update (a full domain restart update).">一部の更新は、WebLogicポッドの再起動(オンライン更新)を必要とせずに実行中のドメインに適用できますが、更新の変更を伝播するためにポッドをローリングする必要がある場合があります(オフライン更新)。また、更新を適用する前にドメイン全体を停止する必要がある場合があります(完全なドメイン再起動更新)。</span> <span class="merged" id="index.1N9pbw.spl2" title="原文 : It is the administrator’s responsibility to make the necessary changes to a domain resource to initiate the correct type of update."><em>正しいタイプの更新を開始するために、ドメイン・リソースに必要な変更を行うことは管理者責任です。</em></span> </p>
 <p><span class="merged" id="index.21bO35" title="原文 : See Runtime updates."><a href="../runtime-updates/index.html">「ランタイムの更新」</a>を参照してください。</span></p>
 <h3 id="continuous-integration-and-delivery-cicd"><span class="merged" id="index.2RC3VU" title="原文 : Continuous integration and delivery (CI/CD)">継続的インテグレーションと継続的デリバリ(CI/CD)</span></h3>
 <p><span class="merged" id="index.19BZx5" title="原文 : To understand how Model in Image works with CI/CD, see CI/CD considerations.">Model in ImageとCI/CDの連携の仕組みを理解するには、<a href="../../../cicd/index.html">「CI/CDに関する考慮事項」</a>を参照してください。</span></p>
