@@ -4,28 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.108.0">
-    <meta content="Use a Kubernetes PersistentVolume (PV) and PersistentVolumeClaim (PVC) to store WebLogic domain homes and log files." name="description">
+    <meta content="Instructions for using Domain on PV." name="description">
 
 
     <link rel="icon" href="../../../images/favicon.png" type="image/png">
 
-    <title>ホスト・パスおよびその他のPV :: WebLogic Kubernetes Operator</title>
+    <title>使用 :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../../css/nucleus.css?1684120790" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1684120790" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1684120790" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1684120790" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1684120790" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1684120790" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1684120790" rel="stylesheet">
-    <link href="../../../css/theme.css?1684120790" rel="stylesheet">
-    <link href="../../../css/tabs.css?1684120790" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1684120790" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1695266414" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1695266414" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1695266414" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1695266414" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1695266414" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1695266414" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1695266414" rel="stylesheet">
+    <link href="../../../css/theme.css?1695266414" rel="stylesheet">
+    <link href="../../../css/tabs.css?1695266414" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1695266414" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.6.0.min.js?1684120790"></script>
+    <script src="../../../js/jquery-3.6.0.min.js?1695266414"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -40,7 +40,7 @@
     
   <meta HTTP-EQUIV="Content-Type" Content="text/html; charset=utf-8"></head>
   <style type="text/css"> <!-- .merged:hover {text-decoration: underline;} --> </style>
-<body class="" data-url="https://oracle.github.io/weblogic-kubernetes-operator/managing-domains/persistent-storage/host-paths/">
+<body class="" data-url="https://oracle.github.io/weblogic-kubernetes-operator/managing-domains/domain-on-pv/usage/">
     <nav id="sidebar" class="">
 
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1684120790"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1684120790"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1695266414"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1695266414"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1684120790"></script>
+<script type="text/javascript" src="../../../js/search.js?1695266414"></script>
 
     
   </div>
@@ -420,8 +420,8 @@
  
   
     
-      <li class="dd-item " data-nav-id="/managing-operators/conversion-webhook/" title="ドメイン・アップグレード">
-        <span class="merged" id="index.z3oGR" title="原文 :  Domain upgrade "><a href="../../../managing-operators/conversion-webhook/index.html">ドメイン・アップグレード</a></span>
+      <li class="dd-item " data-nav-id="/managing-operators/conversion-webhook/" title="オペレータのバージョン3.xから4.xへのアップグレード">
+        <span class="merged" id="index.2GWkd4" title="原文 :  Upgrade operator from version 3.x to 4.x "><a href="../../../managing-operators/conversion-webhook/index.html">オペレータのバージョン3.xから4.xへのアップグレード</a></span>
     </li>
      
   
@@ -716,6 +716,129 @@
   
     
     <li class="dd-item
+        parent
+        
+        
+        " data-nav-id="/managing-domains/domain-on-pv/" title="永続ボリューム(PV)上のドメイン">
+      <span class="merged" id="index.1vrQNl" title="原文 :  Domain on Persistent Volume (PV) "><a href="../index.html"><b></b>永続ボリューム(PV)上のドメイン</a></span>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/domain-on-pv/overview/" title="概要">
+        <span class="merged" id="index.483HVq"  title="原文::  Overview "><a href="../overview/index.html"> <b> </b>概要 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item active" data-nav-id="/managing-domains/domain-on-pv/usage/" title="使用">
+        <span class="merged" id="index.1vmWyJ"  title="原文::  Usage "><a href="index.html"> <b> </b>使用 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/domain-on-pv/domain-creation-images/" title="ドメイン作成イメージ">
+        <span class="merged" id="index.2FS8aR" title="原文 :  Domain creation images "><a href="../domain-creation-images/index.html"><b></b>ドメイン作成イメージ</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/domain-on-pv/model-files/" title="WDTモデル・ファイルの操作">
+        <span class="merged" id="index.1TBeBk" title="原文 :  Working with WDT model files "><a href="../model-files/index.html"><b></b> WDTモデル・ファイルの操作</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/domain-on-pv/jrf-domain/" title="JRFドメイン">
+        <span class="merged" id="index.ZzGEq" title="原文 :  JRF domains "><a href="../jrf-domain/index.html"><b></b> JRFドメイン</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li class="dd-item
         
         
         
@@ -862,11 +985,11 @@
   
     
     <li class="dd-item
-        parent
         
         
-        " data-nav-id="/managing-domains/persistent-storage/" title="永続ボリューム">
-      <span class="merged" id="index.2xRJqU" title="原文 :  Persistent volumes "><a href="../index.html"><b></b>永続ボリューム</a></span>
+        
+        " data-nav-id="/managing-domains/persistent-storage/" title="永続ストレージ">
+      <span class="merged" id="index.48CeYz" title="原文 :  Persistent storage "><a href="../../persistent-storage/index.html"><b></b>永続ストレージ</a></span>
       
       
         <ul>
@@ -885,8 +1008,8 @@
  
   
     
-      <li class="dd-item active" data-nav-id="/managing-domains/persistent-storage/host-paths/" title="ホスト・パスおよびその他のPV">
-        <span class="merged" id="index.f67Tx" title="原文 :  Host paths and other PVs "><a href="index.html">ホスト・パスおよびその他のPV</a></span>
+      <li class="dd-item " data-nav-id="/managing-domains/persistent-storage/pv-pvc/" title="PersistentVolumesおよびPersistentVolumeClaims">
+        <span class="merged" id="index.2WTx2e" title="原文 :  PersistentVolumes and PersistentVolumeClaims "><a href="../../persistent-storage/pv-pvc/index.html">PersistentVolumesおよびPersistentVolumeClaims</a></span>
     </li>
      
   
@@ -904,7 +1027,7 @@
   
     
       <li class="dd-item " data-nav-id="/managing-domains/persistent-storage/oci-fss-pv/" title="永続ボリュームにOCI File Storage (FSS)を使用">
-        <span class="merged" id="index.4JYyrX" title="原文 :  Use OCI File Storage (FSS) for persistent volumes "><a href="../oci-fss-pv/index.html">永続ボリュームにOCI File Storage (FSS)を使用</a></span>
+        <span class="merged" id="index.179zwT" title="原文 :  Use OCI File Storage (FSS) for persistent volumes "><a href="../../persistent-storage/oci-fss-pv/index.html">永続ボリュームにOCI File Storage (FSS)を使用</a></span>
     </li>
      
   
@@ -922,7 +1045,7 @@
   
     
       <li class="dd-item " data-nav-id="/managing-domains/persistent-storage/volumes/" title="PersistentVolumeClaimへのアクセス権の付与">
-        <span class="merged" id="index.3Egrn8" title="原文 :  Provide access to a PersistentVolumeClaim "><a href="../volumes/index.html">PersistentVolumeClaimへのアクセス権の付与</a></span>
+        <span class="merged" id="index.1pmWDL" title="原文 :  Provide access to a PersistentVolumeClaim "><a href="../../persistent-storage/volumes/index.html">PersistentVolumeClaimへのアクセス権の付与</a></span>
     </li>
      
   
@@ -940,7 +1063,7 @@
   
     
       <li class="dd-item " data-nav-id="/managing-domains/persistent-storage/configmaps/" title="ConfigMapへのアクセス権の付与">
-        <span class="merged" id="index.4gYcA8" title="原文 :  Provide access to a ConfigMap "><a href="../configmaps/index.html">ConfigMapへのアクセス権の付与</a></span>
+        <span class="merged" id="index.fDmDD" title="原文 :  Provide access to a ConfigMap "><a href="../../persistent-storage/configmaps/index.html">ConfigMapへのアクセス権の付与</a></span>
     </li>
      
   
@@ -1821,11 +1944,30 @@
         
         
         
-        " data-nav-id="/samples/domains/manually-create-domain/" title="手動">
-      <span class="merged" id="index.2Z2Bxr" title="原文 :  Manually "><a href="../../../samples/domains/manually-create-domain/index.html">手動</a></span>
+        " data-nav-id="/samples/domains/domain-home-on-pv/" title="Domain on PV">
+      <span class="merged" id="index.3e2AcP" title="原文 :  Domain on PV "><a href="../../../samples/domains/domain-home-on-pv/index.html"> Domain on PV </a></span>
       
       
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/samples/domains/domain-home-on-pv/prerequisites/" title="前提条件">
+        <span class="merged" id="index.3zfs7X"  title="原文::  Prerequisites "><a href="../../../samples/domains/domain-home-on-pv/prerequisites/index.html"> 前提条件 </a></span>
     </li>
+     
   
  
 
@@ -1840,15 +1982,10 @@
  
   
     
-    <li class="dd-item
-        
-        
-        
-        " data-nav-id="/samples/domains/domain-home-on-pv/" title="Domain home on a PV">
-      <span class="merged" id="index.1lejJ3" title="原文 :  Domain home on a PV "><a href="../../../samples/domains/domain-home-on-pv/index.html"> Domain home on a PV </a></span>
-      
-      
+      <li class="dd-item " data-nav-id="/samples/domains/domain-home-on-pv/build-domain-creation-image/" title="ビルド・ドメイン作成イメージ">
+        <span class="merged" id="index.2CRq3B" title="原文 :  Build domain creation image "><a href="../../../samples/domains/domain-home-on-pv/build-domain-creation-image/index.html">ビルド・ドメイン作成イメージ</a></span>
     </li>
+     
   
  
 
@@ -1863,13 +2000,35 @@
  
   
     
-    <li class="dd-item
+      <li class="dd-item " data-nav-id="/samples/domains/domain-home-on-pv/sample/" title="サンプル">
+        <span class="merged" id="index.2zOfaQ"  title="原文::  Sample "><a href="../../../samples/domains/domain-home-on-pv/sample/index.html"> サンプル </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/samples/domains/domain-home-on-pv/cleanup/" title="クリーンアップ">
+        <span class="merged" id="index.41lNKD"  title="原文::  Cleanup "><a href="../../../samples/domains/domain-home-on-pv/cleanup/index.html"> クリーンアップ </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
         
-        
-        
-        " data-nav-id="/samples/domains/domain-home-in-image/" title="Domain home in image">
-      <span class="merged" id="index.3UauvZ" title="原文 :  Domain home in image "><a href="../../../samples/domains/domain-home-in-image/index.html"> Domain home in image </a></span>
-      
+        </ul>
       
     </li>
   
@@ -1912,6 +2071,24 @@
     
       <li class="dd-item " data-nav-id="/samples/domains/model-in-image/prerequisites/" title="前提条件">
         <span class="merged" id="index.45uyCv"  title="原文::  Prerequisites "><a href="../../../samples/domains/model-in-image/prerequisites/index.html"> 前提条件 </a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/samples/domains/model-in-image/auxiliary-image-creation/" title="補助イメージの作成">
+        <span class="merged" id="index.18spiR" title="原文 :  Auxiliary image creation "><a href="../../../samples/domains/model-in-image/auxiliary-image-creation/index.html">補助イメージの作成</a></span>
     </li>
      
   
@@ -2029,52 +2206,6 @@
           
         
         </ul>
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li class="dd-item
-        
-        
-        
-        " data-nav-id="/samples/domains/fmw-domain/" title="FMWインフラストラクチャdomain on a PV">
-      <span class="merged" id="index.2eGZ3h" title="原文 :  FMW Infrastructure domain on a PV "><a href="../../../samples/domains/fmw-domain/index.html">FMWインフラストラクチャdomain on a PV</a></span>
-      
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li class="dd-item
-        
-        
-        
-        " data-nav-id="/samples/domains/fmw-domain-home-in-image/" title="FMWインフラストラクチャdomain home in image">
-      <span class="merged" id="index.1v5zLL" title="原文 :  FMW Infrastructure domain home in image "><a href="../../../samples/domains/fmw-domain-home-in-image/index.html">FMWインフラストラクチャdomain home in image</a></span>
-      
       
     </li>
   
@@ -2900,7 +3031,7 @@
         
         
         
-        " data-nav-id="/faq/" title=" よくある質問">
+        " data-nav-id="/faq/" title="よくある質問">
       <span class="merged" id="index.l0Zmb"  title="原文::  Frequently asked questions "><a href="../../../faq/index.html"> よくある質問 </a></span>
       
       
@@ -3100,7 +3231,7 @@
 
           
         
-      <li><span class="merged" id="index.1X27Sv"  title="原文:: Release Notes"><a class="padding" href="../../../release-notes.html">リリース・ノート</a></span></li>
+      <li><span class="merged" id="index.2X2rVR"  title="原文:: Release Notes"><a class="padding" href="https://github.com/oracle/weblogic-kubernetes-operator/releases">リリース・ノート</a></span></li>
     </ul>
 
     
@@ -3108,9 +3239,9 @@
 
     
     <section id="footer">
-      <p><span class="merged" id="index.4behA5" title="原文 : Created with from Oracle"><a href="https://www.oracle.com">Oracle</a>から<i class="fas fa-heart"></i>を使用して作成</span></p>
+      <p><span class="merged" id="index.4behA5" title="原文 : Created with from Oracle"><a href="https://www.oracle.com">Oracle</a>から<i class="fas fa-heart"></i>で作成</span></p>
 <p><span class="merged" id="index.1OQYZy"  title="原文:: &nbsp">&nbsp</span></p>
-<p><span class="merged" id="index.3sNKIh" title="原文 :  GitHub repo"><a href="https://github.com/oracle/weblogic-kubernetes-operator"><i class="fab fa-github"></i> GitHubレポ</a></span></p>
+<p><span class="merged" id="index.3sNKIh" title="原文 :  GitHub repo"><a href="https://github.com/oracle/weblogic-kubernetes-operator"><i class="fab fa-github"></i>GitHubリポジトリ</a></span></p>
 <p><span class="merged" id="index.fmNEH" title="原文 :  Public Slack #operator"><a href="https://join.slack.com/t/oracle-weblogic/shared_invite/zt-1ni1gtjv6-PGC6CQ4uIte3KBdm_67~aQ"><i class="fab fa-slack"></i> パブリックSlack #operator</a></span></p>
 
     </section>
@@ -3129,33 +3260,41 @@
                 
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <span class="merged" id="index.2fqBie" title="原文 :  &gt; Manage domains &gt; Persistent volumes &gt; Host paths and other PVs "><span id="sidebar-toggle-span"><a data-sidebar-toggle="" href="index.html#" id="sidebar-toggle"><i class="fas fa-bars"></i></a></span> <span id="toc-menu"><i class="fas fa-list-alt"></i></span> <span class="links"><a href='../../../index.html'></a> > <a href='../../index.html'>ドメインの管理</a> > <a href='../index.html'>永続ボリューム</a> > ホスト・パスおよびその他のPV</span></span>
+                    <span class="merged" id="index.13Ggwu" title="原文 :  &gt; Manage domains &gt; Domain on Persistent Volume (PV) &gt; Usage "><span id="sidebar-toggle-span"><a data-sidebar-toggle="" href="index.html#" id="sidebar-toggle"><i class="fas fa-bars"></i></a></span> <span id="toc-menu"><i class="fas fa-list-alt"></i></span> <span class="links"><a href='../../../index.html'></a> > <a href='../../index.html'>ドメインの管理</a> > <a href='../index.html'>永続ボリューム(PV)上のドメイン</a> > 使用方法</span></span>
                 </div>
                 
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><span class="merged" id="index.4FVNbw"  title="原文:: WebLogic Kubernetes Operator"><a href="index.html#weblogic-kubernetes-operator">WebLogic Kubernetes Operator</a></span></li>
+    <li><span class="merged" id="index.1Z1Pt2"  title="原文:: Configuration"><a href="index.html#configuration">構成</a></span>
       <ul>
-        <li><span class="merged" id="index.qG0s2"  title="原文:: Prerequisites"><a href="index.html#prerequisites">前提条件</a></span></li>
+        <li><span class="merged" id="index.3Z0lBA" title="原文 : WebLogic base image"><a href="index.html#weblogic-base-image">WebLogicベース・イメージ</a></span></li>
+        <li><span class="merged" id="index.4XoMCn" title="原文 : Domain creation WDT models"><a href="index.html#domain-creation-wdt-models">ドメイン作成のWDTモデル</a></span></li>
+        <li><span class="merged" id="index.2zR0Qa" title="原文 : Optional WDT models ConfigMap"><a href="index.html#optional-wdt-models-configmap">オプションのWDTモデルConfigMap</a></span></li>
+        <li><span class="merged" id="index.2kuGfj" title="原文 : Volumes and VolumeMounts information"><a href="index.html#volumes-and-volumemounts-information">ボリュームおよびVolumeMounts情報</a></span></li>
+        <li><span class="merged" id="index.RmXcu" title="原文 : Persistent Volume and Persistent Volume Claim"><a href="index.html#persistent-volume-and-persistent-volume-claim">永続ボリュームおよび永続ボリューム要求</a></span>
+          <ul>
+            <li><span class="merged" id="index.2qy5af" title="原文 : PV and PVC requirements"><a href="index.html#pv-and-pvc-requirements">PVおよびPVCの要件</a></span></li>
+          </ul>
+        </li>
+        <li><span class="merged" id="index.2wRiTF"  title="原文:: References"><a href="index.html#references">参考資料</a></span></li>
+        <li><span class="merged" id="index.2J63WB"  title="原文:: Domain information"><a href="index.html#domain-information">ドメイン情報</a></span></li>
       </ul>
     </li>
-    <li><span class="merged" id="index.1hvBdf"  title="原文:: Storage locations"><a href="index.html#storage-locations">ストレージの場所</a></span>
+    <li><span class="merged" id="index.1SimB7"  title="原文:: Best practices"><a href="index.html#best-practices">ベスト・プラクティス</a></span>
       <ul>
-        <li><span class="merged" id="index.4NErP9" title="原文 : PersistentVolume GID annotation"><a href="index.html#persistentvolume-gid-annotation">PersistentVolume GID注釈</a></span></li>
+        <li><span class="merged" id="index.YrxlX" title="原文 : Back up the JRF domain home directory and database"><a href="index.html#back-up-the-jrf-domain-home-directory-and-database">JRFドメイン・ホーム・ディレクトリおよびデータベースのバックアップ</a></span></li>
+        <li><span class="merged" id="index.KMksp" title="原文 : Store the OPSS wallet in a Kubernetes Secret and update opss.walletFileSecret in the domain resource"><a href="index.html#store-the-opss-wallet-in-a-kubernetes-secret-and-update-opsswalletfilesecret-in-the-domain-resource">OPSSウォレットをKubernetesシークレットに格納し、ドメイン・リソースの<code>opss.walletFileSecret</code>を更新</a></span></li>
+        <li><span class="merged" id="index.1cxIiz" title="原文 : Recovering the domain when it’s corrupted or in other disaster scenarios"><a href="index.html#recovering-the-domain-when-its-corrupted-or-in-other-disaster-scenarios">ドメインが破損した場合または他の障害シナリオでリカバリする場合</a></span></li>
       </ul>
     </li>
-    <li><span class="merged" id="index.1fSwrs" title="原文 : YAML files"><a href="index.html#yaml-files">YAMLファイル</a></span></li>
-    <li><span class="merged" id="index.1iFguc"  title="原文:: Kubernetes resources"><a href="index.html#kubernetes-resources">Kubernetesリソース</a></span>
+    <li><span class="merged" id="index.201AJO"  title="原文:: Troubleshooting"><a href="index.html#troubleshooting">トラブルシューティング</a></span></li>
+    <li><span class="merged" id="index.3M3NVJ"  title="原文:: Cleanup"><a href="index.html#cleanup">クリーンアップ</a></span></li>
+    <li><span class="merged" id="index.3L6sLb" title="原文 : Configuration example"><a href="index.html#configuration-example">構成例</a></span>
       <ul>
-        <li><span class="merged" id="index.1HDbyz"  title="原文:: Verify the results"><a href="index.html#verify-the-results">結果を検証します</a></span></li>
-      </ul>
-    </li>
-    <li><span class="merged" id="index.Xq4Vq" title="原文 : Common problems"><a href="index.html#common-problems">一般的な問題</a></span>
-      <ul>
-        <li><span class="merged" id="index.2QZDMq" title="原文 : PersistentVolume provider not configured correctly"><a href="index.html#persistentvolume-provider-not-configured-correctly">PersistentVolumeプロバイダが正しく構成されていません</a></span></li>
-        <li><span class="merged" id="index.17nUPt"  title="原文:: Further reading"><a href="index.html#further-reading">その他の情報</a></span></li>
+        <li><span class="merged" id="index.3UDyUY"  title="原文:: Basic configuration"><a href="index.html#basic-configuration">基本構成</a></span></li>
       </ul>
     </li>
   </ul>
@@ -3176,59 +3315,487 @@
             <div style="width:100%"> <div title="免責事項: ここに記載されているドキュメントは、お客様の利便性のために翻訳ソフトウエアにより機械的に翻訳(機械翻訳)したものです。オリジナルの英語版もあわせてご確認ください。" style="width:150px;padding-left:5px;padding-right:5px;border:#ff0000 solid 1px;border-color: gray;font-size: small;color:gray;margin: 0 auto 0 auto;text-align:center"><a href="https://docs.oracle.com/cd/E85181_01/mt_disclaimer.html">機械翻訳について</a></div> </div>
 <h1>
               
-              <span class="merged" id="index.3VnSuR" title="原文 : Host paths and other PVs">ホスト・パスおよびその他のPV</span>
+              <span class="merged" id="index.JUOSC"  title="原文:: Usage">使用</span>
             </h1>
           
 
         
 
 
-<p><span class="merged" id="index.3vYQ4z.spl1" title="原文 : This document show you how to set up a Kubernetes PersistentVolume and PersistentVolumeClaim, which can be used as storage for WebLogic domain homes and log files.">このドキュメントでは、WebLogicドメイン・ホームおよびログ・ファイルのストレージとして使用できるKubernetes PersistentVolumeおよびPersistentVolumeClaimの設定方法を示します。</span> <span class="merged" id="index.3vYQ4z.spl2" title="原文 : A PersistentVolume can be shared by multiple WebLogic domains or dedicated to a particular domain.">PersistentVolumeは、複数のWebLogicドメインで共有することも、特定のドメイン専用にすることもできます。</span> </p>
-<h4 id="prerequisites"><span class="merged" id="index.2LZvWc"  title="原文:: Prerequisites">前提条件</span></h4>
-<p><span class="merged" id="index.2eSsgt" title="原文 : The following prerequisites must be fulfilled before proceeding with the creation of the volume:">ボリュームの作成を続行する前に、次の前提条件を満たす必要があります:</span></p>
+<p><span class="merged" id="index.11uOaB" title="原文 : This document describes how to create and deploy a typical Domain home on persistent volume (Domain on PV).">このドキュメントでは、通常のドメイン・ホームを永続ボリューム(Domain on PV)に作成およびデプロイする方法について説明します。</span></p>
+<h3 id="contents"><span class="merged" id="index.1Q34Zl"  title="原文:: Contents">目次</span></h3>
+<div class="toc"><nav id="TableOfContents">
+  <ul>
+    <li><span class="merged" id="index.4FVNbw.1"  title="原文:: WebLogic Kubernetes Operator"><a href="index.html#weblogic-kubernetes-operator">WebLogic Kubernetes Operator</a></span></li>
+    <li><span class="merged" id="index.1Z1Pt2.1"  title="原文:: Configuration"><a href="index.html#configuration">構成</a></span>
+      <ul>
+        <li><span class="merged" id="index.3Z0lBA.1" title="原文 : WebLogic base image"><a href="index.html#weblogic-base-image">WebLogicベース・イメージ</a></span></li>
+        <li><span class="merged" id="index.4XoMCn.1" title="原文 : Domain creation WDT models"><a href="index.html#domain-creation-wdt-models">ドメイン作成のWDTモデル</a></span></li>
+        <li><span class="merged" id="index.2zR0Qa.1" title="原文 : Optional WDT models ConfigMap"><a href="index.html#optional-wdt-models-configmap">オプションのWDTモデルConfigMap</a></span></li>
+        <li><span class="merged" id="index.2kuGfj.1" title="原文 : Volumes and VolumeMounts information"><a href="index.html#volumes-and-volumemounts-information">ボリュームおよびVolumeMounts情報</a></span></li>
+        <li><span class="merged" id="index.RmXcu.1" title="原文 : Persistent Volume and Persistent Volume Claim"><a href="index.html#persistent-volume-and-persistent-volume-claim">永続ボリュームおよび永続ボリューム要求</a></span>
+          <ul>
+            <li><span class="merged" id="index.2qy5af.1" title="原文 : PV and PVC requirements"><a href="index.html#pv-and-pvc-requirements">PVおよびPVCの要件</a></span></li>
+          </ul>
+        </li>
+        <li><span class="merged" id="index.2wRiTF.1"  title="原文:: References"><a href="index.html#references">参考資料</a></span></li>
+        <li><span class="merged" id="index.2J63WB.1"  title="原文:: Domain information"><a href="index.html#domain-information">ドメイン情報</a></span></li>
+      </ul>
+    </li>
+    <li><span class="merged" id="index.1SimB7.1"  title="原文:: Best practices"><a href="index.html#best-practices">ベスト・プラクティス</a></span>
+      <ul>
+        <li><span class="merged" id="index.YrxlX.1" title="原文 : Back up the JRF domain home directory and database"><a href="index.html#back-up-the-jrf-domain-home-directory-and-database">JRFドメイン・ホーム・ディレクトリおよびデータベースのバックアップ</a></span></li>
+        <li><span class="merged" id="index.KMksp.1" title="原文 : Store the OPSS wallet in a Kubernetes Secret and update opss.walletFileSecret in the domain resource"><a href="index.html#store-the-opss-wallet-in-a-kubernetes-secret-and-update-opsswalletfilesecret-in-the-domain-resource">OPSSウォレットをKubernetesシークレットに格納し、ドメイン・リソースの<code>opss.walletFileSecret</code>を更新</a></span></li>
+        <li><span class="merged" id="index.1cxIiz.1" title="原文 : Recovering the domain when it’s corrupted or in other disaster scenarios"><a href="index.html#recovering-the-domain-when-its-corrupted-or-in-other-disaster-scenarios">ドメインが破損した場合または他の障害シナリオでリカバリする場合</a></span></li>
+      </ul>
+    </li>
+    <li><span class="merged" id="index.201AJO.1"  title="原文:: Troubleshooting"><a href="index.html#troubleshooting">トラブルシューティング</a></span></li>
+    <li><span class="merged" id="index.3M3NVJ.1"  title="原文:: Cleanup"><a href="index.html#cleanup">クリーンアップ</a></span></li>
+    <li><span class="merged" id="index.3L6sLb.1" title="原文 : Configuration example"><a href="index.html#configuration-example">構成例</a></span>
+      <ul>
+        <li><span class="merged" id="index.3UDyUY.1"  title="原文:: Basic configuration"><a href="index.html#basic-configuration">基本構成</a></span></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+<h3 id="weblogic-kubernetes-operator"><span class="merged" id="index.27JERd"  title="原文:: WebLogic Kubernetes Operator">WebLogic Kubernetes Operator</span></h3>
+<p><span class="merged" id="index.4YhB7s.spl1" title="原文 : Deploy the operator and ensure that it is monitoring the desired namespace for your Domain on PV domain.">演算子をデプロイし、Domain on PVドメインの目的のネームスペースをモニタリングしていることを確認します。</span> <span class="merged" id="index.4YhB7s.spl2" title="原文 : See Manage operators and Quick Start."><a href="../../../managing-operators/index.html">「オペレータの管理」</a>および<a href="../../../quickstart/index.html">「クイック・スタート」</a>を参照してください。</span> </p>
+<h3 id="configuration"><span class="merged" id="index.Pfqvy"  title="原文:: Configuration">構成</span></h3>
+<p><span class="merged" id="index.3v3zHz.spl1" title="原文 : Beginning with operator version 4.1.0, you can provide a section, domain.spec.configuraiton.initializeDomainOnPV, to initialize a WebLogic domain on a persistent volume when it is first deployed.">オペレータ・バージョン4.1.0から、セクション<code>domain.spec.configuraiton.initializeDomainOnPV</code>を指定して、永続ボリュームが最初にデプロイされたときに、永続ボリュームのWebLogicドメインを初期化できます。</span> <span class="merged" id="index.3v3zHz.spl2" title="原文 : This is a one time only initialization.">これは<em>「1回のみ」</em>の初期化です。</span> <span class="merged" id="index.3v3zHz.spl3" title="原文 : After the domain is created, subsequent updates to this section in the domain resource YAML file will not recreate or update the WebLogic domain.">ドメインの作成後、ドメイン・リソースYAMLファイルのこのセクションに対する後続の更新では、WebLogicドメインの再作成または更新は行われません。</span> </p>
+<p><span class="merged" id="index.kOPdU" title="原文 : To use this feature, provide the following information:">この機能を使用するには、次の情報を指定します:</span></p>
 <ul>
-<li><span class="merged" id="index.3q37vw.spl1" title="原文 : Create a Kubernetes Namespace for the PersistentVolumeClaim unless the intention is to use the default namespace.">デフォルトのネームスペースを使用する予定がないかぎり、PersistentVolumeClaimのKubernetesネームスペースを作成します。</span> <span class="merged" id="index.3q37vw.spl2" title="原文 : Note that a PersistentVolumeClaim has to be in the same namespace as the Domain that uses it.">PersistentVolumeClaimは、それを使用するドメインと同じネームスペース内にある必要があります。</span> </li>
-<li><span class="merged" id="index.2vQbTP" title="原文 : Make sure that all the servers in the WebLogic domain are able to reach the storage location.">WebLogicドメイン内のすべてのサーバーがストレージのロケーションに到達できることを確認します。</span></li>
-<li><span class="merged" id="index.2p3ixa" title="原文 : Make sure that the host directory that will be used, already exists and has the appropriate file permissions set.">使用するホスト・ディレクトリがすでに存在し、適切なファイル権限が設定されていることを確認してください。</span></li>
+<li><span class="merged" id="index.3WtAkM" title="原文 : WebLogic base image - This is the Fusion Middleware Software to be used, for example, WebLogic Server or Fusion Middleware Infrastructure."><a href="index.html#weblogic-base-image">「WebLogicベース・イメージ」</a> - これは、WebLogic ServerやFusion Middleware Infrastructureなど、使用するFusion Middlewareソフトウェアです。</span></li>
+<li><span class="merged" id="index.4Z7xlb" title="原文 : Volumes and VolumeMounts information - This follows the standard Kubernetes pod requirements for mounting persistent volumes."><a href="index.html#volumes-and-volumemounts-information">「ボリュームおよびVolumeMounts情報」</a> - これは、永続ボリュームをマウントするための標準のKubernetesポッド要件に従います。</span></li>
+<li><span class="merged" id="index.1DGuhj" title="原文 : PersistentVolume and PersistentVolumeClaim - This is environment specific and usually requires assistance from your administrator to provide the underlying details, such as storageClass or any permissions."><a href="index.html#persistent-volume-and-persistent-volume-claim">「PersistentVolumeおよびPersistentVolumeClaim」</a> - これは環境固有であり、通常は、<code>storageClass</code>や任意の権限などの基礎となる詳細を提供するための管理者からの支援が必要です。</span></li>
+<li><span class="merged" id="index.1rbtsk" title="原文 : Domain information - This describes the domain type and whether the operator should create the RCU schema."><a href="index.html#domain-information">「ドメイン情報」</a> - ここでは、ドメイン・タイプと、オペレータがRCUスキーマを作成する必要があるかどうかについて説明します。</span></li>
+<li><span class="merged" id="index.15t2zw" title="原文 : Domain WDT models - This is where the WDT Home, WDT model, WDT archive, and WDT variables files reside."><a href="index.html#domain-creation-models">「ドメインのWDTモデル」</a> - WDTホーム、WDTモデル、WDTアーカイブ、およびWDT変数ファイルが存在する場所です。</span></li>
+<li><span class="merged" id="index.4J5IYs" title="原文 : Optional WDT models ConfigMap - Optional, WDT model, WDT variables files."><a href="index.html#optional-wdt-models-configmap">「オプションのWDTモデルConfigMap」</a> - オプションのWDTモデル、WDT変数ファイル。</span></li>
+<li><span class="merged" id="index.1aKXVW" title="原文 : Domain resource YAML file - This is for deploying the domain in WebLogic Kubernetes Operator."><a href="../../../reference/domain-resource/index.html">「ドメイン・リソースYAMLファイル」</a> - これは、WebLogic Kubernetes Operatorにドメインをデプロイするためのものです。</span></li>
 </ul>
-<h3 id="storage-locations"><span class="merged" id="index.3v6X3S"  title="原文:: Storage locations">ストレージの場所</span></h3>
-<p><span class="merged" id="index.4ZoXdR.spl1" title="原文 : PersistentVolumes can point to different storage locations, for example NFS servers or a local directory path.">PersistentVolumesは、NFSサーバーやローカル・ディレクトリ・パスなど、様々なストレージのロケーションを指すことができます。</span> <span class="merged" id="index.4ZoXdR.spl2" title="原文 : For a list of available options, see the Kubernetes documentation.">使用可能なオプションのリストについては、<a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/">「Kubernetesのドキュメント」</a>を参照してください。</span> </p>
-<p><span class="merged" id="index.2R6UGD.spl1" title="原文 : Note regarding HostPath: In a single-node Kubernetes cluster, such as may be used for testing or proof of concept activities, HOST_PATH provides the simplest configuration."><strong>HostPathに関するノート</strong>: たとえば、単一ノードのKubernetesクラスタは、概念アクティビティのテストや証明に使用できますが、<code>HOST_PATH</code>は最も単純な構成を提供します。</span> <span class="merged" id="index.2R6UGD.spl2" title="原文 : In a multinode Kubernetes cluster, a HOST_PATH that is located on shared storage mounted by all nodes in the Kubernetes cluster is the simplest configuration.">マルチ・ノードKubernetesクラスタでは、Kubernetesクラスタ内のすべてのノードによってマウントされた共有ストレージにある<code>HOST_PATH</code>が最も単純な構成です。</span> <span class="merged" id="index.2R6UGD.spl3" title="原文 : If nodes do not have shared storage, then NFS is probably the most widely available option.">ノードに共有ストレージがない場合は、NFSが最も広く使用可能なオプションである可能性があります。</span> <span class="merged" id="index.2R6UGD.spl4" title="原文 : There are other options listed in the referenced table.">参照表には、他のオプションもリストされています。</span> </p>
-<p><span class="merged" id="index.2YqttO.spl1" title="原文 : The PersistentVolume for the domain must be created using the appropriate tools before running the script to create the domain.">スクリプトを実行してドメインを作成する前に、適切なツールを使用してドメインのPersistentVolumeを作成する必要があります。</span> <span class="merged" id="index.2YqttO.spl2" title="原文 : In the simplest case, namely the HOST_PATH provider, this means creating a directory on the Kubernetes master and ensuring that it has the correct permissions:">最も単純なケース、つまり<code>HOST_PATH</code>プロバイダでは、Kubernetesマスターにディレクトリを作成し、適切な権限があることを確認します:</span> </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ mkdir -m <span style="color:#ae81ff">777</span> -p /path/to/domain1PersistentVolume
-</span></span></code></pre></div><p><span class="merged" id="index.4CwR8G.spl1" title="原文 : Note regarding NFS: In the current GA version, the Oracle Container Engine for Kubernetes supports network block storage that can be shared across nodes with access permission RWOnce (meaning that only one can write, others can read only)."><strong>NFSに関するノート</strong>: 現在のGAバージョンでは、Oracle Container Engine for Kubernetesは、アクセス権限RWOnceを持つノード間で共有できるネットワーク・ブロック・ストレージをサポートしています(つまり、書込みできるのは1つのみで、他のユーザーは読取り専用です)。</span> <span class="merged" id="index.4CwR8G.spl2" title="原文 : At this time, the WebLogic on Kubernetes domain created by the WebLogic Kubernetes Operator, requires a shared file system to store the WebLogic domain configuration, which MUST be accessible from all the pods across the nodes.">現時点では、WebLogic Kubernetes Operatorによって作成されたKubernetesドメインのWebLogicには、共有ファイル・システムでWebLogicドメイン構成を格納する必要があります。これは、ノード全体のすべてのポッドからアクセス可能である必要があります。</span> <span class="merged" id="index.4CwR8G.spl3" title="原文 : As a workaround, you need to install an NFS server on one node and share the file system across all the nodes.">回避策として、あるノードにNFSサーバーをインストールし、すべてのノードでファイル・システムを共有する必要があります。</span> </p>
-<h4 id="persistentvolume-gid-annotation"><span class="merged" id="index.CTps7" title="原文 : PersistentVolume GID annotation">PersistentVolume GID注釈</span></h4>
-<p><span class="merged" id="index.1P151V" title="原文 : The HOST_PATH directory permissions can be made more secure by using a Kubernetes annotation on the PersistentVolume that provides the group identifier (GID) which will be added to pods using the PersistentVolume."><code>HOST_PATH</code>ディレクトリ権限は、PersistentVolumeを使用してポッドに追加されるグループ識別子(GID)を提供するPersistentVolumeのKubernetes注釈を使用することで、よりセキュアにできます。</span></p>
-<p><span class="merged" id="index.3zPvLd" title="原文 : For example, if the GID of the directory is 6789, then the directory can be updated to remove permissions other than for the user and group along with the PersistentVolume being annotated with the specified GID:">たとえば、ディレクトリのGIDが<code>6789</code>の場合、ディレクトリを更新して、指定したGIDで注釈されているPersistentVolumeとともに、ユーザーおよびグループ以外の権限を削除できます:</span></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ chmod <span style="color:#ae81ff">770</span> /path/to/domain1PersistentVolume
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ kubectl annotate pv domain1-weblogic-sample-pv pv.beta.kubernetes.io/gid<span style="color:#f92672">=</span><span style="color:#ae81ff">6789</span>
-</span></span></code></pre></div><p><span class="merged" id="index.RQaBk.spl1" title="原文 : After the domain is created and servers are running, the group ownership of the PersistentVolume files can be updated to the specified GID which will provide read access to the group members.">ドメインが作成され、サーバーが実行されたら、PersistentVolumeファイルのグループ所有権を指定されたGIDに更新できます。これにより、グループ・メンバーに読取りアクセス権が付与されます。</span> <span class="merged" id="index.RQaBk.spl2" title="原文 : Typically, files created from a pod onto the PersistentVolume will have UID 1000 and GID 1000 which is the oracle user from the WebLogic Server image.">通常、ポッドからPersistentVolumeに作成されるファイルには、WebLogic Serverイメージの<code>oracle</code>ユーザーであるUID <code>1000</code>およびGID <code>1000</code>が含まれます。</span> </p>
-<p><span class="merged" id="index.2hbeMd" title="原文 : An example of updating the group ownership on the PersistentVolume would be as follows:">PersistentVolumeでグループ所有権を更新する例を次に示します:</span></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cd /path/to/domain1PersistentVolume
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo chgrp <span style="color:#ae81ff">6789</span> applications domains logs stores
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo chgrp -R <span style="color:#ae81ff">6789</span> domains/
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo chgrp -R <span style="color:#ae81ff">6789</span> logs/
-</span></span></code></pre></div><h3 id="yaml-files"><span class="merged" id="index.2ol2Id" title="原文 : YAML files">YAMLファイル</span></h3>
-<p><span class="merged" id="index.2IQKHR.spl1" title="原文 : Persistent volumes and claims are described in YAML files.">永続的なボリュームおよびクレームについては、YAMLファイルを参照してください。</span> <span class="merged" id="index.2IQKHR.spl2" title="原文 : For each PersistentVolume, you should create one PersistentVolume YAML file and one PersistentVolumeClaim YAML file.">PersistentVolumeごとに、PersistentVolume YAMLファイルとPersistentVolumeClaim YAMLファイルを作成する必要があります。</span> <span class="merged" id="index.2IQKHR.spl3" title="原文 : In the following example, you will find two YAML templates, one for the volume and one for the claim.">次の例では、2つのYAMLテンプレートがあります。1つはボリューム用、もう1つはクレーム用です。</span> <span class="merged" id="index.2IQKHR.spl4" title="原文 : As stated previously, they either can be dedicated to a specific domain, or shared across multiple domains.">前述のとおり、これらは特定のドメイン専用にすることも、複数のドメインで共有することもできます。</span> <span class="merged" id="index.2IQKHR.spl5" title="原文 : For the use cases where a volume will be dedicated to a particular domain, it is a best practice to label it with weblogic.domainUID=[domain name].">ボリュームを特定のドメイン専用にするユースケースでは、<code>weblogic.domainUID=[domain name]</code>でラベル付けすることをお薦めします。</span> <span class="merged" id="index.2IQKHR.spl6" title="原文 : This makes it easy to search for, and clean up resources associated with that particular domain.">これにより、その特定のドメインに関連付けられたリソースの検索およびクリーンアップが容易になります。</span> </p>
-<p><span class="merged" id="index.3CBZSi" title="原文 : For sample YAML templates, refer to the PersistentVolumes example.">YAMLテンプレートのサンプルは、<a href="../../../samples/storage/index.html">「PersistentVolumesの例」</a>を参照してください。</span></p>
-<h3 id="kubernetes-resources"><span class="merged" id="index.1Ac8x4"  title="原文:: Kubernetes resources">Kubernetesリソース</span></h3>
-<p><span class="merged" id="index.2akrhI" title="原文 : After you have written your YAML files, use them to create the PersistentVolume by creating Kubernetes resources using the kubectl create -f command:">YAMLファイルを書き込んだ後、<code>kubectl create -f</code>コマンドを使用してKubernetesリソースを作成することで、YAMLファイルを使用してPersistentVolumeを作成します:</span></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ kubectl create -f pv.yaml
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ kubectl create -f pvc.yaml
-</span></span></code></pre></div><h4 id="verify-the-results"><span class="merged" id="index.hR5nZ"  title="原文:: Verify the results">結果の検証</span></h4>
-<p><span class="merged" id="index.2JKdsr" title="原文 : To confirm that the PersistentVolume was created, use these commands:">PersistentVolumeが作成されたことを確認するには、次のコマンドを使用します:</span></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ kubectl describe pv &lt;persistent volume name&gt;
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ kubectl describe pvc -n NAMESPACE &lt;persistent volume claim name&gt;
-</span></span></code></pre></div><h3 id="common-problems"><span class="merged" id="index.1OttJg" title="原文 : Common problems">一般的な問題</span></h3>
-<p><span class="merged" id="index.483wS7" title="原文 : This section provides details of common problems that might occur while running the script and how to resolve them.">この項では、スクリプトの実行中に発生する可能性のある一般的な問題とその解決方法について説明します。</span></p>
-<h4 id="persistentvolume-provider-not-configured-correctly"><span class="merged" id="index.1qtuzE" title="原文 : PersistentVolume provider not configured correctly">PersistentVolumeプロバイダが正しく構成されていません</span></h4>
-<p><span class="merged" id="index.22jmfs.spl1" title="原文 : Possibly the most common problem experienced during testing was the incorrect configuration of the PersistentVolume provider.">テスト中に発生する最も一般的な問題は、PersistentVolumeプロバイダの不適切な構成である可能性があります。</span> <span class="merged" id="index.22jmfs.spl2" title="原文 : The PersistentVolume must be accessible to all Kubernetes Nodes, and must be able to be mounted as Read/Write/Many.">PersistentVolumeは、すべてのKubernetesノードからアクセス可能であり、Read/Write/Manyとしてマウントできる必要があります。</span> <span class="merged" id="index.22jmfs.spl3" title="原文 : If this is not the case, the PersistentVolume creation will fail.">そうでない場合、PersistentVolumeの作成は失敗します。</span> </p>
-<p><span class="merged" id="index.42TgmN.spl1" title="原文 : The simplest case is where the HOST_PATH provider is used.">最も簡単なケースは、<code>HOST_PATH</code>プロバイダが使用される場合です。</span> <span class="merged" id="index.42TgmN.spl2" title="原文 : This can be either with one Kubernetes Node, or with the HOST_PATH residing in shared storage available at the same location on every node (for example, on an NFS mount).">これは、いずれかのKubernetesノードを使用するか、すべてのノードの同じロケーション(NFSマウントなど)にある共有ストレージにある<code>HOST_PATH</code>を使用して行うことができます。</span> <span class="merged" id="index.42TgmN.spl3" title="原文 : In this case, the path used for the PersistentVolume must have its permission bits set to 777.">この場合、PersistentVolumeに使用されるパスのアクセス権ビットは777に設定されている必要があります。</span> </p>
-<h4 id="further-reading"><span class="merged" id="index.BsQ4N"  title="原文:: Further reading">その他の情報</span></h4>
+<p><span class="merged" id="index.4LHsbH" title="原文 : For details about each field, see the initializeDomainOnPV section in the domain resource schema, or use the command kubectl explain domain.spec.configuration.initializeDomainOnPV.">各フィールドの詳細は、ドメイン・リソース<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.1/documentation/domains/Domain.md">schema</a>の<code>initializeDomainOnPV</code>セクションを参照するか、コマンド<code>kubectl explain domain.spec.configuration.initializeDomainOnPV</code>を使用します。</span></p>
+<p><span class="merged" id="index.4diZ2o" title="原文 : For a basic configuration example, see Basic configuration.">基本的な構成の例は、<a href="index.html#basic-configuration">「基本構成」</a>を参照してください。</span></p>
+<h4 id="weblogic-base-image"><span class="merged" id="index.psQqh" title="原文 : WebLogic base image">WebLogicベース・イメージ</span></h4>
+<p><span class="merged" id="index.3P7V3t" title="原文 : Because the domain will be created on a persistent volume, the base image should contain only the FMW product binary and the JDK.">ドメインは永続ボリュームに作成されるため、ベース・イメージにはFMW製品バイナリとJDKのみを含める必要があります。</span></p>
+<pre tabindex="0"><code>spec:
+  image: &#34;container-registry.oracle.com/middleware/fmw-infrastructure_cpu:12.2.1.4-jdk8-ol8-221014&#34;
+</code></pre><p><span class="merged" id="index.4JZHYv" title="原文 : You can specify your own image, use a patched image from container-registry.oracle.com, or create and patch an image using the WebLogic Image Tool (WIT).">独自のイメージを指定したり、<code>container-registry.oracle.com</code>からパッチを適用したイメージを使用したり、<a href="https://github.com/oracle/weblogic-image-tool">WebLogic Image Tool</a> (WIT)を使用してイメージを作成してパッチ適用できます。</span></p>
+<h4 id="domain-creation-wdt-models"><span class="merged" id="index.3wgoMK" title="原文 : Domain creation WDT models">ドメイン作成のWDTモデル</span></h4>
+<p><span class="merged" id="index.8NFfE" title="原文 : Specify an image that describes the domain topology, resources, and applications in the domain resource YAML file.">ドメイン・リソースYAMLファイル内のドメイン・トポロジ、リソースおよびアプリケーションを記述するイメージを指定します。</span></p>
+<pre tabindex="0"><code>     domain:
+          domainCreationImages:
+            - image: &#39;myrepo/domain-images:v1&#39;
+</code></pre><table>
+<thead>
+<tr>
+<th><span class="merged" id="index.2p5Jka"  title="原文:: Field">フィールド</span></th>
+<th><span class="merged" id="index.3Wy1iS"  title="原文:: Notes">ノート</span></th>
+<th><span class="merged" id="index.17JEBs"  title="原文:: Values">値</span></th>
+<th><span class="merged" id="index.TRGsJ"  title="原文:: Required">必須</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="merged" id="index.1HOfZk"  title="原文: domainCreationImages"><code>domainCreationImages</code></span></td>
+<td><span class="merged" id="index.1QEv1S" title="原文 : WDT domain images.">WDTドメイン・イメージ。</span></td>
+<td><span class="merged" id="index.2SnRMV" title="原文 : An array of images.">イメージの配列。</span></td>
+<td><span class="merged" id="index.3WniCj"  title="原文: Y">Y</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="merged" id="index.xQvGs.spl1" title="原文 : In this image or images, you must provide the required WDT installer, and also the WDT model files, WDT variables files, and WDT archive files.">このイメージでは、必要なWDT <a href="https://github.com/oracle/weblogic-deploy-tooling/releases">「インストーラ」</a>、およびWDTモデル・ファイル、WDT変数ファイル、およびWDTアーカイブ・ファイルを指定する必要があります。</span> <span class="merged" id="index.xQvGs.spl2" title="原文 : The operator will use them to create the initial domain.">オペレータはこれらを使用して初期ドメインを作成します。</span> </p>
+<p><span class="merged" id="index.2kEThg" title="原文 : For additional options in domainCreationImages, use the following command to obtain the details."><code>domainCreationImages</code>内の追加オプションについては、次のコマンドを使用して詳細を取得します。</span></p>
+<pre tabindex="0"><code>$ kubectl explain domain.spec.configuration.initializeDomainOnPV.domain.domainCreationImages
+</code></pre><p><span class="merged" id="index.3SwbJR" title="原文 : The image layout follows this directory structure:">イメージ・レイアウトは、次のディレクトリ構造に従います:</span></p>
+<pre tabindex="0"><code>/auxiliary/weblogic-deploy - The directory where the WebLogic Deploy Tooling software is installed.
+/auxiliary/models -  WDT model, WDT archive, and WDT variables files.
+</code></pre><p><span class="merged" id="index.2NML5D" title="原文 : You can create your own image using your familiar method or use the WebLogic Image Tool (WIT).">使い慣れたメソッドを使用して独自のイメージを作成することも、<a href="https://github.com/oracle/weblogic-image-tool">WebLogic Image Tool(WIT)</a>を使用することもできます。</span></p>
+<p><span class="merged" id="index.2Zs5D7" title="原文 : For example, because the file structure is the same as an Auxiliary Image that’s used in the Model in Image domain home source type, you can use the same WIT command createAuxImage.">たとえば、ファイル構造はModel in Imageドメイン・ホームのソース・タイプで使用される<a href="../../model-in-image/auxiliary-images/index.html">「補助イメージ」</a>と同じであるため、同じWITコマンド<code>createAuxImage</code>を使用できます。</span></p>
+<pre tabindex="0"><code>$ imagetool.sh createAuxImage --wdtArchive /home/acme/myapp/wdt/myapp.zip \
+   --wdtVersion latest \
+   --wdtModel /home/acme/myapp/wdt/model1.yaml \
+   --wdtVariables /home/acme/myapp/wdt/model1.properties \
+   --tag myrepo/domain-images:v1   
+</code></pre><h4 id="optional-wdt-models-configmap"><span class="merged" id="index.1RscyC" title="原文 : Optional WDT models ConfigMap">オプションのWDTモデルConfigMap</span></h4>
+<p><span class="merged" id="index.1u2w0q" title="原文 : Optionally, you can provide a Kubernetes ConfigMap with additional WDT models and WDT variables files as supplements or overrides to those in domainCreationImages.">オプションで、Kubernetes ConfigMapに、追加のWDTモデルおよびWDT変数ファイルを補足として提供したり、<code>domainCreationImages</code>のものにオーバーライドすることができます。</span></p>
+<pre tabindex="0"><code>     domain:
+          ...
+          domainCreationImages:
+              ...
+          domainCreationConfigMap: mymodel-domain-configmap
+</code></pre><table>
+<thead>
+<tr>
+<th><span class="merged" id="index.2p5Jka.1"  title="原文:: Field">フィールド</span></th>
+<th><span class="merged" id="index.3Wy1iS.1"  title="原文:: Notes">ノート</span></th>
+<th><span class="merged" id="index.17JEBs.1"  title="原文:: Values">値</span></th>
+<th><span class="merged" id="index.TRGsJ.1"  title="原文:: Required">必須</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="merged" id="index.4feb3e"  title="原文: domainCreationConfigMap"><code>domainCreationConfigMap</code></span></td>
+<td><span class="merged" id="index.1WwjZ2" title="原文 : Optional WDT models and WDT variables files in ConfigMap.">ConfigMap内のオプションのWDTモデルおよびWDT変数ファイル。</span></td>
+<td><span class="merged" id="index.4ve7e" title="原文 : ConfigMap name.">ConfigMap名。</span></td>
+<td><span class="merged" id="index.1EWgZu"  title="原文: N">N</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="merged" id="index.2xGNPv" title="原文 : The files inside this ConfigMap must have file extensions, .yaml, .properties, or .zip.">このConfigMap内のファイルには、ファイル拡張子<code>.yaml</code>、<code>.properties</code>または<code>.zip</code>が必要です。</span></p>
+<h4 id="volumes-and-volumemounts-information"><span class="merged" id="index.JK20S" title="原文 : Volumes and VolumeMounts information">ボリュームおよびVolumeMounts情報</span></h4>
+<p><span class="merged" id="index.3mYwjl.spl1" title="原文 : You must provide the volumes and volumeMounts information in domain.spec.serverPod."><code>domain.spec.serverPod</code>に<code>volumes</code>および<code>volumeMounts</code>情報を指定する必要があります。</span> <span class="merged" id="index.3mYwjl.spl2" title="原文 : This allows the pod to mount the persistent storage at runtime.">これにより、ポッドは実行時に永続ストレージをマウントできます。</span> <span class="merged" id="index.3mYwjl.spl3" title="原文 : The mountPath needs to be part of the domain home and log home and persistentVolumeClaim.claimName needs to be a valid PVC name, whether it is a pre-existing PVC or one to be created by the operator."><code>mountPath</code>は、ドメイン・ホームおよびログ・ホームの一部である必要があります。<code>persistentVolumeClaim.claimName</code>は、既存のPVCであるか、オペレータが作成するPVCであるかに関係なく、有効なPVC名である必要があります。</span> <span class="merged" id="index.3mYwjl.spl4" title="原文 : See Creating PVC by the operator."><a href="index.html#persistent-volume-and-persistent-volume-claim">「オペレータによるPVCの作成」</a>を参照してください。</span> </p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">domainHome</span>: <span style="color:#ae81ff">/share/domains/domain1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">logHome</span>: <span style="color:#ae81ff">/share/logs/domain1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">serverPod</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">weblogic-domain-storage-volume</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">persistentVolumeClaim</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">claimName</span>: <span style="color:#ae81ff">sample-domain1-pvc-rwm1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumeMounts</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">mountPath</span>: <span style="color:#ae81ff">/share</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">weblogic-domain-storage-volume</span>
+</span></span></code></pre></div><h4 id="persistent-volume-and-persistent-volume-claim"><span class="merged" id="index.VuPtr" title="原文 : Persistent Volume and Persistent Volume Claim">永続ボリュームおよび永続ボリューム要求</span></h4>
+<p><span class="merged" id="index.2C4XqS.spl1" title="原文 : The Kubernetes PersistentVolume (PV) and PersistentVolumeClaim (PVC) is used by Kubernetes to access persistent storage in the Kubernetes environment.">Kubernetes PersistentVolume (PV)およびPersistentVolumeClaim (PVC)は、Kubernetes環境内の永続ストレージにアクセスするためにKubernetesで使用されます。</span> <span class="merged" id="index.2C4XqS.spl2" title="原文 : You can either use an existing PV/PVC or request that the operator create them for you.">既存のPV/PVCを使用するか、オペレータがそれらを作成するようにリクエストできます。</span> </p>
+<p><span class="merged" id="index.1DgmWJ.spl1" title="原文 : The specifications of PersistentVolume and PersistentVolumeClaim are environment specific and often require information from your Kubernetes cluster administrator."><code>PersistentVolume</code>および<code>PersistentVolumeClaim</code>の指定は環境固有であり、多くの場合、Kubernetesクラスタ管理者からの情報が必要です。</span> <span class="merged" id="index.1DgmWJ.spl2" title="原文 : See Persistent Storage in different environments.">様々な環境での<a href="index.html#references">「永続ストレージ」</a>を参照してください。</span> </p>
+<h5 id="pv-and-pvc-requirements"><span class="merged" id="index.1s5JuH" title="原文 : PV and PVC requirements">PVおよびPVCの要件</span></h5>
 <ul>
-<li><span class="merged" id="index.NFmh6" title="原文 : See the blog, How to run WebLogic clusters on the Oracle Cloud Infrastructure Container Engine for Kubernetes.">ブログ<a href="https://blogs.oracle.com/weblogicserver/how-to-run-weblogic-clusters-on-the-oracle-cloud-infrastructure-container-engine-for-kubernetes">「Oracle Cloud Infrastructure Container Engine for KubernetesでWebLogicクラスタを実行する方法」</a>を参照してください。</span></li>
+<li><span class="merged" id="index.DLgwU" title="原文 : Domain on PV requires that the PV and PVC are created with Filesystem volume mode; Block volume mode is not supported.">Domain on PVでは、PVおよびPVCが<code>Filesystem</code>ボリューム・モードで作成されている必要があります。<code>Block</code>ボリューム・モードはサポートされていません。</span>
+<ul>
+<li><span class="merged" id="index.P76L0" title="原文 : If you request that the operator creates the PV and PVC, then it uses the default Filesystem volume mode.">オペレータがPVおよびPVCを作成するようにリクエストした場合は、デフォルトの<code>Filesystem</code>ボリューム・モードが使用されます。</span></li>
+<li><span class="merged" id="index.2Mhm3a" title="原文 : If you plan to use an existing PV and PVC, then ensure that it was created with Filesystem volume mode.">既存のPVおよびPVCを使用する予定の場合は、<code>Filesystem</code>ボリューム・モードで作成されたことを確認します。</span></li>
 </ul>
+</li>
+<li><span class="merged" id="index.3OY2MD" title="原文 : You must use a storage provider that supports the ReadWriteMany option."><code>ReadWriteMany</code>オプションをサポートするストレージ・プロバイダを使用する必要があります。</span></li>
+<li><span class="merged" id="index.3jLc7W.spl1" title="原文 : The operator will automatically set the owner of all files in the domain home on the persistent volume to uid 1000 with gid 0.">オペレータは、永続ボリュームのドメイン・ホーム内のすべてのファイルの所有者を、<code>gid 0</code>を使用して<code>uid 1000</code>に自動的に設定します。</span> <span class="merged" id="index.3jLc7W.spl2" title="原文 : If you want to use a different user and group, then configure the desired runAsUser and runAsGroup in the security context under the spec.serverPod.podSecurityContext section of the Domain YAML file.">別のユーザーおよびグループを使用する場合は、ドメインYAMLファイルの<code>spec.serverPod.podSecurityContext</code>セクションにあるセキュリティ・コンテキストで、必要な<code>runAsUser</code>および<code>runAsGroup</code>を構成します。</span> <span class="merged" id="index.3jLc7W.spl3" title="原文 : The operator will use these values when setting the owner for files in the domain home directory.">オペレータは、ドメイン・ホーム・ディレクトリ内のファイルの所有者を設定するときにこれらの値を使用します。</span> </li>
+</ul>
+<p><span class="merged" id="index.1ynCNe" title="原文 : For example, if you provide the specification of the Persistent Volume and Persistent Volume Claim in the domain resource YAML file, then the operator will create the PV and PVC, and mount the persistent volume to the /share directory.">たとえば、ドメイン・リソースYAMLファイルで<code>Persistent Volume</code>および<code>Persistent Volume Claim</code>を指定した場合、<br>次に、オペレータは<code>PV</code>および<code>PVC</code>を作成し、永続ボリュームを<code>/share</code>ディレクトリにマウントします。</span></p>
+<pre tabindex="0"><code>spec:
+  domainHome: /share/domains/domain1
+  serverPod:
+    volumes:
+    - name: weblogic-domain-storage-volume
+      persistentVolumeClaim:
+         claimName: sample-domain1-pvc-rwm1
+    volumeMounts:
+    - mountPath: /share
+      name: weblogic-domain-storage-volume
 
+  configuration:
+    initializeDomainOnPV:
+      waitForPvcToBind: true
+      persistentVolume:
+        metadata:
+            name: sample-domain1-pv-rwm1
+        spec:
+            storageClassName: my-storage-class
+            capacity:
+                storage: 20Gi
+            persistentVolumeReclaimPolicy: Retain
+            hostPath:
+                path: &#34;/share&#34;
+      persistentVolumeClaim:
+        metadata:
+            name: sample-domain1-pvc-rwm1
+        spec:
+            storageClassName: my-storage-class
+            resources:
+                requests:
+                    storage: 10Gi
+</code></pre><table>
+<thead>
+<tr>
+<th><span class="merged" id="index.2p5Jka.2"  title="原文:: Field">フィールド</span></th>
+<th><span class="merged" id="index.3Wy1iS.2"  title="原文:: Notes">ノート</span></th>
+<th><span class="merged" id="index.17JEBs.2"  title="原文:: Values">値</span></th>
+<th><span class="merged" id="index.TRGsJ.2"  title="原文:: Required">必須</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="merged" id="index.23nQX0"  title="原文: waitForPvcToBind"><code>waitForPvcToBind</code></span></td>
+<td><span class="merged" id="index.3adocD.spl1" title="原文 : Specify whether the operator will wait for the PVC to reach the bound state when it is creating it.">オペレータがPVCの作成時にPVCが<code>bound</code>状態になるまで待機するかどうかを指定します。</span> <span class="merged" id="index.3adocD.spl2" title="原文 : In some cloud environments, the PVC is in the pending state until it is actually used in a running pod; set it to false if necessary.">一部のクラウド環境では、PVCが実行中のポッドで実際に使用されるまで、PVCは<code>pending</code>状態になります。必要に応じて<code>false</code>に設定します。</span> </td>
+<td><span class="merged" id="index.1GasUO"  title="原文:: Boolean">Boolean</span></td>
+<td><span class="merged" id="index.1gdWAC" title="原文 : N (default true)">N (デフォルト<code>true</code>)</span></td>
+</tr>
+<tr>
+<td><span class="merged" id="index.c0LiW"  title="原文: persistentVolume"><code>persistentVolume</code></span></td>
+<td><span class="merged" id="index.35FuTE" title="原文 : Specification of the persistent volume if the operator is creating it.">オペレータが作成している場合の永続ボリュームの指定。</span></td>
+<td><span class="merged" id="index.2PdsCH" title="原文 : Specification of the persistent volume if you want the operator to create it.">オペレータで永続ボリュームを作成する場合の永続ボリュームの指定。</span></td>
+<td><span class="merged" id="index.3HGdf9" title="原文 : N (operator will not create any persistent volume)">N (オペレータは永続ボリュームを作成しません)</span></td>
+</tr>
+<tr>
+<td><span class="merged" id="index.2s8E51"  title="原文: persistentVolumeClaim"><code>persistentVolumeClaim</code></span></td>
+<td><span class="merged" id="index.1G9CU1" title="原文 : Specification of the persistent volume claim if the operator is creating it.">オペレータが作成している場合の永続ボリューム要求の指定。</span></td>
+<td><span class="merged" id="index.3kHLVA" title="原文 : Specification of the persistent volume claim if you want operator to create it.">オペレータで永続ボリューム要求を作成する場合は、その指定。</span></td>
+<td><span class="merged" id="index.2Bb76q" title="原文 : N (operator will not create any persistent volume claim)">N (オペレータは永続ボリューム要求を作成しません)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="merged" id="index.2wsCiB.spl1" title="原文 : Not all the fields in the standard Kubernetes PV and PVC are supported.">標準のKubernetes PVおよびPVCのすべてのフィールドがサポートされているわけではありません。</span> <span class="merged" id="index.2wsCiB.spl2" title="原文 : For the list of supported fields in persistentVolume and persistentVolumeClaim, see the initializeDomainOnPV.peristentVolume and initializeDomainOnPV.peristentVolumeClaim section in the domain resource schema, or use the commands:"><code>persistentVolume</code>および<code>persistentVolumeClaim</code>でサポートされているフィールドのリストについては、ドメイン・リソース<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.1/documentation/domains/Domain.md">schema</a>の<code>initializeDomainOnPV.peristentVolume</code>および<code>initializeDomainOnPV.peristentVolumeClaim</code>の項を参照するか、次のコマンドを使用します:</span> </p>
+<pre tabindex="0"><code> $ kubectl explain domain.spec.configuration.initializeDomainOnPV.persistentVolume
+ $ kubectl explain domain.spec.configuration.initializeDomainOnPV.persistentVolumeClaim
+</code></pre><p><span class="merged" id="index.1wR4ON" title="原文 : If the PV and PVC already exist in your environment, you do not need to specify any persistentVolume or persistentVolumeClaim under the intializedDomainOnPV section.">PVおよびPVCが環境内にすでに存在する場合は、<code>intializedDomainOnPV</code>セクションの下に<code>persistentVolume</code>または<code>persistentVolumeClaim</code>を指定する必要はありません。</span></p>
+<h4 id="references"><span class="merged" id="index.3oSja0"  title="原文:: References">参照</span></h4>
+<ul>
+<li><span class="merged" id="index.41ToH2" title="原文 : Oracle Kubernetes Engine Persistent Storage"><a href="https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingpersistentvolumeclaim.htm">Oracle Kubernetesエンジン永続ストレージ</a></span></li>
+<li><span class="merged" id="index.32Qkh8" title="原文 : Azure Kubernetes Service Persistent Storage"><a href="https://learn.microsoft.com/en-us/azure/aks/concepts-storage">Azure Kubernetes Service永続ストレージ</a></span></li>
+<li><span class="merged" id="index.jjWhW" title="原文 : Amazon Kubernetes Service Persistent Storage"><a href="https://aws.amazon.com/blogs/storage/persistent-storage-for-kubernetes/">Amazon Kubernetes Service永続ストレージ</a></span></li>
+<li><span class="merged" id="index.3lQRH5" title="原文 : OpenShift Persistent Storage"><a href="https://docs.openshift.com/container-platform/4.12/storage/understanding-persistent-storage.html">OpenShift永続ストレージ</a></span></li>
+</ul>
+<h4 id="domain-information"><span class="merged" id="index.fkpYD"  title="原文:: Domain information">ドメイン情報</span></h4>
+<p><span class="merged" id="index.2Eh84V" title="原文 : For JRF-based domains, before proceeding, please be sure to read this document, JRF domains."><strong>JRFベースのドメインの場合は、先に進む前に、必ずこのドキュメントをお読みください</strong>、<a href="../jrf-domain/index.html">「JRFドメイン」</a>。</span></p>
+<p><span class="merged" id="index.3sHsAn.spl1" title="原文 : This is the section describing the WebLogic domain.">これは、WebLogicドメインについて説明する項です。</span> <span class="merged" id="index.3sHsAn.spl2"  title="原文:: For example:">例えば:</span> </p>
+<pre tabindex="0"><code>spec:
+  domainHome: /share/domains/sample-domain1
+  domainHomeSourceType: PersistentVolume
+
+  configuration:
+    secrets: [ sample-domain1-rcu-access ]
+    initializeDomainOnPV:
+      ...
+      domain:
+          # Domain | DomainAndRCU
+          createIfNotExists: DomainAndRCU
+          domainCreationImages:
+            - image: &#39;myrepo/domain-images:v1&#39;
+          domainType: JRF
+          domainCreationConfigMap: sample-domain1-wdt-config-map
+          opss:
+           walletPasswordSecret: sample-domain1-opss-wallet-password-secret
+</code></pre><table>
+<thead>
+<tr>
+<th><span class="merged" id="index.2p5Jka.3"  title="原文:: Field">フィールド</span></th>
+<th><span class="merged" id="index.3Wy1iS.3"  title="原文:: Notes">ノート</span></th>
+<th><span class="merged" id="index.17JEBs.3"  title="原文:: Values">値</span></th>
+<th><span class="merged" id="index.TRGsJ.3"  title="原文:: Required">必須</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="merged" id="index.wW7EF"  title="原文: domainType"><code>domainType</code></span></td>
+<td><span class="merged" id="index.4K3kH3" title="原文 : Type of domain being created.">作成されたドメインのタイプ。</span></td>
+<td><span class="merged" id="index.2xz5c7" title="原文 : JRF or WLS"><code>JRF</code> または<code>WLS</code></span></td>
+<td><span class="merged" id="index.2xcK1u" title="原文 : N (default WLS)">N (デフォルト<code>WLS</code>)</span></td>
+</tr>
+<tr>
+<td><span class="merged" id="index.4Eh1dx"  title="原文: createIfNotExists"><code>createIfNotExists</code></span></td>
+<td><span class="merged" id="index.20FgWh" title="原文 : Specifies whether the operator should create the RCU schema first, before creating the domain.">オペレータがドメインを作成する前に、最初にRCUスキーマを作成する必要があるかどうかを指定します。</span></td>
+<td><span class="merged" id="index.2VprBl" title="原文 : Domain or DomainAndRCU (drop existing RCU schema and create new RCU schema)"><code>Domain</code>または<code>DomainAndRCU</code> (既存のRCUスキーマの削除および新しいRCUスキーマの作成)</span></td>
+<td><span class="merged" id="index.375WMs" title="原文 : N (default Domain)">N (デフォルト<code>Domain</code>)</span></td>
+</tr>
+<tr>
+<td><span class="merged" id="index.1HOfZk.1"  title="原文: domainCreationImages"><code>domainCreationImages</code></span></td>
+<td><span class="merged" id="index.1QEv1S.1" title="原文 : WDT domain images.">WDTドメイン・イメージ。</span></td>
+<td><span class="merged" id="index.2SnRMV.1" title="原文 : An array of images.">イメージの配列。</span></td>
+<td><span class="merged" id="index.3WniCj.1"  title="原文: Y">Y</span></td>
+</tr>
+<tr>
+<td><span class="merged" id="index.4feb3e.1"  title="原文: domainCreationConfigMap"><code>domainCreationConfigMap</code></span></td>
+<td><span class="merged" id="index.E5eYX" title="原文 : Optional ConfigMap containing extra WDT models.">追加のWDTモデルを含むオプションのConfigMap。</span></td>
+<td><span class="merged" id="index.1ObmQY" title="原文 : Kubernetes ConfigMap name.">Kubernetes ConfigMap名。</span></td>
+<td><span class="merged" id="index.1EWgZu.1"  title="原文: N">N</span></td>
+</tr>
+<tr>
+<td><span class="merged" id="index.4lsFC"  title="原文: osss.walletPasswordSecret"><code>osss.walletPasswordSecret</code></span></td>
+<td><span class="merged" id="index.1hq70o" title="原文 : Password for extracting OPSS wallet for JRF domain.">JRFドメインのOPSSウォレットを抽出するためのパスワード。</span></td>
+<td><span class="merged" id="index.3ZEN85" title="原文 : Kubernetes Secret name with the key walletPassword.">Kubernetesキー<code>walletPassword</code>のシークレット名。</span></td>
+<td><span class="merged" id="index.3WniCj.2"  title="原文: Y">Y</span></td>
+</tr>
+<tr>
+<td><span class="merged" id="index.o9X8q"  title="原文: osss.walletFileSecret"><code>osss.walletFileSecret</code></span></td>
+<td><span class="merged" id="index.OFAy7" title="原文 : Extracted OPSS wallet file.">OPSSウォレット・ファイルを抽出しました。</span></td>
+<td><span class="merged" id="index.4PgG35" title="原文 : Kubernetes Secret name with the key walletFile.">Kubernetesキー<code>walletFile</code>のシークレット名。</span></td>
+<td><span class="merged" id="index.ljc47" title="原文 : N (Only needed when recreating the domain during disaster recovery)">N (障害リカバリ中にドメインを再作成する場合にのみ必要)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="merged" id="index.2zOzZb" title="原文 : After a JRF domain is successfully deployed: follow the next section, Best practices, to download and back up the OPSS wallet."><strong>JRFドメインが正常にデプロイされた後</strong>: 次の項<a href="index.html#best-practices">ベスト・プラクティス</a>に従って、OPSSウォレットをダウンロードしてバックアップします。</span></p>
+<h3 id="best-practices"><span class="merged" id="index.1hRRLx"  title="原文:: Best practices">ベスト・プラクティス</span></h3>
+<p><span class="merged" id="index.3KpNBW.spl1" title="原文 : Oracle recommends that you save the OPSS wallet file in a safe, backed-up location immediately after the initial JRF domain is created.">Oracleでは、最初のJRFドメインの作成後に、OPSSウォレット・ファイルを安全なバックアップ・ロケーション<strong>「すぐに」</strong>に保存することをお薦めします。</span> <span class="merged" id="index.3KpNBW.spl2" title="原文 : In addition, you should make sure to store the wallet in a Kubernetes Secret in the same namespace.">また、必ず同じネームスペースのKubernetesシークレットにウォレットを格納してください。</span> <span class="merged" id="index.3KpNBW.spl3" title="原文 : This will allow the secret to be available when the domain needs to be recovered in a disaster scenario or if the domain directory gets corrupted.">これにより、ディザスタ・シナリオでドメインをリカバリする必要がある場合、またはドメイン・ディレクトリが破損した場合に、シークレットを使用できるようになります。</span> <span class="merged" id="index.3KpNBW.spl4" title="原文 : There is no way to reuse the original RCU schema without this specific wallet key.">この特定のウォレット・キーなしで元のRCUスキーマを再利用する方法はありません。</span> <span class="merged" id="index.3KpNBW.spl5" title="原文 : Therefore, for disaster recovery, you should back up this OPSS wallet.">したがって、障害時リカバリの場合は、<strong>「このOPSSウォレットをバックアップする必要があります」</strong>です。</span> </p>
+<h4 id="back-up-the-jrf-domain-home-directory-and-database"><span class="merged" id="index.1T0NGY" title="原文 : Back up the JRF domain home directory and database">JRFドメイン・ホーム・ディレクトリおよびデータベースのバックアップ</span></h4>
+<p><span class="merged" id="index.2AiNC3" title="原文 : Oracle recommends that you back up the domain home directory and database after the initial JRF domain is created, and then periodically, making sure all the latest changes are backed up.">Oracleでは、初期JRFドメインの作成後にドメイン・ホーム・ディレクトリおよびデータベースをバックアップしてから、定期的にすべての最新の変更がバックアップされるようにすることをお薦めします。</span></p>
+<p><span class="merged" id="index.4YgDQ7.spl1" title="原文 : A JRF domain has a one-to-one relationship with the RCU schema.">JRFドメインは、RCUスキーマと1対1の関係を持ちます。</span> <span class="merged" id="index.4YgDQ7.spl2" title="原文 : After a domain is created using a particular RCU schema, that schema cannot be reused by another domain and the same schema cannot be shared across different domains.">特定のRCUスキーマを使用してドメインを作成した後、そのスキーマを別のドメインで再利用することはできず、同じスキーマを異なるドメイン間で共有することもできません。</span> <span class="merged" id="index.4YgDQ7.spl3" title="原文 : Any attempts to create a new domain using the existing RCU schema will result in an error.">既存のRCUスキーマを使用して新しいドメインを作成しようとすると、エラーが発生します。</span> </p>
+
+<div class="notices warning" ><p><span class="merged" id="index.2rUeTx.spl1" title="原文 : If the domain home is not properly backed up, you potentially can lose existing data if the domain home is corrupted or deleted.">ドメイン・ホームが正しくバックアップされていない場合、ドメイン・ホームが破損または削除されると、既存のデータが失われる可能性があります。</span> <span class="merged" id="index.2rUeTx.spl2" title="原文 : That’s because recreating the domain requires dropping the existing RCU schema and creating a new RCU schema.">これは、ドメインを再作成するには、既存のRCUスキーマを削除し、新しいRCUスキーマを作成する必要があるためです。</span> <span class="merged" id="index.2rUeTx.spl3" title="原文 : Therefore, backing up the existing domain home should be the highest priority in your Kubernetes environment.">したがって、既存のドメイン・ホームのバックアップは、Kubernetes環境で最も高い優先度である必要があります。</span> </p>
+</div>
+
+<p><span class="merged" id="index.wG5H7.spl1" title="原文 : A Domain on PV domain configuration might get updated after its initial deployment.">Domain on PVドメイン構成は、初期デプロイメント後に更新される場合があります。</span> <span class="merged" id="index.wG5H7.spl2" title="原文 : For example, using WLST or the console, you might have deployed new applications, added custom OPSS keystores, and added OWSM policies, and such.">たとえば、WLSTまたはコンソールを使用して、新しいアプリケーションのデプロイ、カスタムOPSSキーストアの追加、OWSMポリシーの追加などを行ったとします。</span> <span class="merged" id="index.wG5H7.spl3" title="原文 : In that case, the original WDT model files used to create the initial domain will not match the current state of the domain (the WDT model files are not the source of truth).">この場合、初期ドメインの作成に使用される元のWDTモデル・ファイルは、ドメインの現在の状態とは一致しません(WDTモデル・ファイルは正しいソースではありません)。</span> <span class="merged" id="index.wG5H7.spl4" title="原文 : Therefore, if you recreate the domain using the original WDT model files, you will lose all the subsequent updates.">したがって、元のWDTモデル・ファイルを使用してドメインを再作成すると、その後の更新がすべて失われます。</span> <span class="merged" id="index.wG5H7.spl5" title="原文 : In order to preserve the domain updates, you should restore the domain from the backup copy of the domain home directory and connect to the existing RCU schema from the database backup.">ドメインの更新を保持するには、ドメイン・ホーム・ディレクトリのバックアップ・コピーからドメインをリストアし、データベース・バックアップから既存のRCUスキーマに接続する必要があります。</span> </p>
+<h4 id="store-the-opss-wallet-in-a-kubernetes-secret-and-update-opsswalletfilesecret-in-the-domain-resource"><span class="merged" id="index.IIvB9" title="原文 : Store the OPSS wallet in a Kubernetes Secret and update opss.walletFileSecret in the domain resource">OPSSウォレットをKubernetesシークレットに格納し、ドメイン・リソースの<code>opss.walletFileSecret</code>を更新</span></h4>
+<p><span class="merged" id="index.3irk1t.spl1" title="原文 : After the domain is created, the operator automatically exports the OPSS wallet and stores it in an introspector ConfigMap; the name of the ConfigMap follows the pattern &lt;domain uid&gt;-weblogic-domain-introspect-cm with the key ewallet.p12.">ドメインの作成後、オペレータはOPSSウォレットを自動的にエクスポートし、イントロスペクタConfigMapに格納します。ConfigMapの名前は、パターン<code>&lt;domain uid>-weblogic-domain-introspect-cm</code>の後にキー<code>ewallet.p12</code>が付きます。</span> <span class="merged" id="index.3irk1t.spl2" title="原文 : Oracle recommends that you save the OPSS wallet file in a safe, backed-up location immediately after the initial JRF domain is created.">Oracleでは、最初のJRFドメインの作成後に、OPSSウォレット・ファイルを安全なバックアップ・ロケーション<strong>「すぐに」</strong>に保存することをお薦めします。</span> <span class="merged" id="index.3irk1t.spl3" title="原文 : In addition, you should make sure to store the wallet in a Kubernetes Secret in the same namespace.">また、必ず同じネームスペースのKubernetesシークレットにウォレットを格納してください。</span> <span class="merged" id="index.3irk1t.spl4" title="原文 : This will allow the secret to be available when the domain needs to be recovered in a disaster scenario or if the domain directory gets corrupted.">これにより、ディザスタ・シナリオでドメインをリカバリする必要がある場合、またはドメイン・ディレクトリが破損した場合に、シークレットを使用できるようになります。</span> </p>
+<p><span class="merged" id="index.2Wl7UG" title="原文 : The following are the high-level steps for storing the OPSS wallet in a Kubernetes Secret.">KubernetesシークレットにOPSSウォレットを格納するステップの概要を次に示します。</span></p>
+<ol>
+<li>
+<p><span class="merged" id="index.TdmHt.spl1" title="原文 : The operator provides a utility script, OPSS wallet utility, for extracting the wallet file and storing it in a Kubernetes walletFileSecret.">オペレータには、ウォレット・ファイルを抽出してKubernetes <code>walletFileSecret</code>に格納するためのユーティリティ・スクリプト<a href="https://orahub.oci.oraclecorp.com/weblogic-cloud/weblogic-kubernetes-operator/-/blob/main/kubernetes/samples/scripts/domain-lifecycle/opss-wallet.sh">「OPSSウォレット・ユーティリティ」</a>が用意されています。</span> <span class="merged" id="index.TdmHt.spl2" title="原文 : In addition, you should also save the wallet file in a safely backed-up location outside of Kubernetes.">また、Kubernetesの外部で安全にバックアップされたロケーションにウォレット・ファイルを保存する必要もあります。</span> <span class="merged" id="index.TdmHt.spl3" title="原文 : For example, the following command saves the OPSS wallet for the sample-domain1 domain in the sample-ns namespace to a file named ewallet.p12 in the /tmp directory and also stores it in the wallet secret named jrf-wallet-file-secret.">たとえば、次のコマンドは、<code>sample-ns</code>ネームスペースの<code>sample-domain1</code>ドメインのOPSSウォレットを<code>/tmp</code>ディレクトリの<code>ewallet.p12</code>という名前のファイルに保存し、<code>jrf-wallet-file-secret</code>という名前のウォレット・シークレットにも格納します。</span> </p>
+<pre tabindex="0"><code>$ opss-wallet.sh -n sample-ns -d sample-domain1 -s -r -wf /tmp/ewallet.p12 -ws jrf-wallet-file-secret
+</code></pre><p><span class="merged" id="index.4fDO4.spl1" title="原文 : Replace /tmp/ewallet.p12 in the previous command with the name of the file to be stored in a safe location and replace jrf-wallet-file-secret with the Secret name of your choice.">前のコマンドの<code>/tmp/ewallet.p12</code>を安全なロケーションに格納するファイルの名前に置き換え、<code>jrf-wallet-file-secret</code>を任意のシークレット名に置き換えます。</span> <span class="merged" id="index.4fDO4.spl2" title="原文 : For more information, see the OPSS wallet utility section in the README file.">詳細は、<a href="https://github.com/oracle/weblogic-kubernetes-operator/tree/release/4.1/kubernetes/samples/scripts/domain-lifecycle/README.md">README</a>ファイルの<code>OPSS wallet utility</code>セクションを参照してください。</span> </p>
+</li>
+<li>
+<p><span class="merged" id="index.19G6Gs" title="原文 : Save the extracted wallet file (/tmp/ewallet.p12 in the example) to a safe location, outside of Kubernetes.">抽出したウォレット・ファイル(この例では<code>/tmp/ewallet.p12</code>)を、Kubernetesの外部の安全なロケーションに保存します。</span></p>
+</li>
+<li>
+<p><span class="merged" id="index.3ZnM1x" title="原文 : Add the opss.walletFileSecret to the domain resource YAML file under configuration.initializeDomainOnPV.domain."><code>configuration.initializeDomainOnPV.domain</code>の下のドメイン・リソースYAMLファイルに<code>opss.walletFileSecret</code>を追加します。</span></p>
+<pre tabindex="0"><code>  ...
+  configuration:
+    initializeDomainOnPV:
+    ...
+      domain:
+        ...
+        opss:
+          walletFileSecret: jrf-wallet-file-secret
+          ...
+</code></pre><p><span class="merged" id="index.2siFkl" title="原文 : You can use the following patch command to add it to the domain resource.">次の<code>patch</code>コマンドを使用して、ドメイン・リソースに追加できます。</span></p>
+<pre tabindex="0"><code>$ kubectl -n sample-ns patch domain sample-domain1 --type=&#39;JSON&#39; -p=&#39;[ { &#34;op&#34; : &#34;add&#34;, &#34;path&#34; : &#34;/spec/configuration/initializeDomainOnPV/domain/opss/walletFileSecret&#34;, &#34;value&#34; : &#34;jrf-wallet-file-secret&#34; }]&#39;
+</code></pre></li>
+</ol>
+<h4 id="recovering-the-domain-when-its-corrupted-or-in-other-disaster-scenarios"><span class="merged" id="index.46cXKi" title="原文 : Recovering the domain when it’s corrupted or in other disaster scenarios">ドメインが破損した場合または他の障害シナリオでリカバリする場合</span></h4>
+<p><span class="merged" id="index.4aow3m" title="原文 : If the domain home directory is corrupted, and you have a recent backup of the domain home directory, then perform the following steps to recover the domain.">ドメイン・ホーム・ディレクトリが破損しており、ドメイン・ホーム・ディレクトリの最近のバックアップがある場合は、次のステップを実行してドメインをリカバリします。</span></p>
+<ol>
+<li>
+<p><span class="merged" id="index.UnBP8" title="原文 : Restore the domain home directory from the backup copy.">バックアップ・コピーからドメイン・ホーム・ディレクトリをリストアします。</span></p>
+</li>
+<li>
+<p><span class="merged" id="index.1jIWMx.spl1" title="原文 : Update the restartVersion of the domain resource to restart the domain.">ドメインを再起動するには、ドメイン・リソースの<code>restartVersion</code>を更新します。</span> <span class="merged" id="index.1jIWMx.spl2"  title="原文:: For example,">たとえば、</span> </p>
+<pre tabindex="0"><code>$ kubectl -n sample-ns patch domain sample-domain1 --type=&#39;JSON&#39; -p=&#39;[ { &#34;op&#34; : &#34;replace&#34;, &#34;path&#34; : &#34;/spec/restartVersion&#34;, &#34;value&#34; : &#34;15&#34; }]&#39;
+</code></pre></li>
+<li>
+<p><span class="merged" id="index.170p7k.spl1" title="原文 : After the domain is restarted, check the WebLogic domain configuration to ensure that it has the latest changes.">ドメインの再起動後、WebLogicドメイン構成を確認し、最新の変更があることを確認します。</span> <span class="merged" id="index.170p7k.spl2" title="原文 : NOTE: If you made any changes that are persisted in the domain home directory after your last backup, you must reapply those changes to the domain home directory."><strong>ノート</strong>:&nbsp;前回のバックアップ後にドメイン・ホーム・ディレクトリに保持されている変更を行った場合は、それらの変更をドメイン・ホーム・ディレクトリに再適用する必要があります。</span> <span class="merged" id="index.170p7k.spl3" title="原文 : However, because the operator will reconnect to the same RCU schema, the data stored in the OPSS, MDS, or OWSM tables will be current.">ただし、オペレータが同じRCUスキーマに再接続されるため、OPSS表、MDS表またはOWSM表に格納されているデータが最新になります。</span> </p>
+</li>
+<li>
+<p><span class="merged" id="index.2cgnOT.spl1" title="原文 : Reapply any domain configuration changes persisted to the domain home directory, such as data source connections, JMS destinations, or new application EAR deployments, after your last backup.">最後のバックアップの後、ドメイン・ホーム・ディレクトリ(データ・ソース接続、JMS宛先、新しいアプリケーションEARデプロイメントなど)に保持されているドメイン構成の変更をすべて再適用します。</span> <span class="merged" id="index.2cgnOT.spl2" title="原文 : To make these changes, use WLST, the WebLogic Server Administration Console, or Enterprise Manager.">これらの変更を行うには、WLST、WebLogic Server管理コンソールまたはEnterprise Managerを使用します。</span> </p>
+</li>
+</ol>
+<p><span class="merged" id="index.JlBXt" title="原文 : In the rare scenario where the domain home directory is corrupted, and you do not have a recent backup of the domain home directory, or if the backup copy is also corrupted, then you can recreate the domain from the WDT model files without losing any RCU schema data.">ドメイン・ホーム・ディレクトリが破損し、ドメイン・ホーム・ディレクトリの最新のバックアップがない場合、またはバックアップ・コピーも破損している場合は、RCUスキーマ・データを失うことなく、WDTモデル・ファイルからドメインを再作成できます。</span></p>
+<ol>
+<li>
+<p><span class="merged" id="index.3C4QKE" title="原文 : Delete the domain home directory from the persistent volume.">永続ボリュームからドメイン・ホーム・ディレクトリを削除します。</span></p>
+</li>
+<li>
+<p><span class="merged" id="index.mQ57d.spl1" title="原文 : Add or replace the domain.spec.introspectVersion in the domain resource with a new value.">ドメイン・リソースの<code>domain.spec.introspectVersion</code>を新しい値で追加または置換します。</span> <span class="merged" id="index.mQ57d.spl2" title="原文 : The following is a sample patch command to update the introspectVersion for the sample domain.">次に、サンプル・ドメインの<code>introspectVersion</code>を更新するためのサンプル<code>patch</code>コマンドを示します。</span> </p>
+<pre tabindex="0"><code>$ kubectl -n sample-ns patch domain sample-domain1 --type=&#39;JSON&#39; -p=&#39;[ { &#34;op&#34; : &#34;replace&#34;, &#34;path&#34; : &#34;/spec/intropsectVersion&#34;, &#34;value&#34; : &#34;15&#34; }]&#39;
+</code></pre></li>
+<li>
+<p><span class="merged" id="index.1JzSug" title="原文 : The operator will then create a new domain from the existing WDT models and reuse the original RCU schema.">オペレータは、既存のWDTモデルから新しいドメインを作成し、元のRCUスキーマを再利用します。</span></p>
+<p><span class="merged" id="index.4E9Lu.spl1" title="原文 : NOTE: All the updates made to the domain after the initial deployment will not be available in the recovered domain."><strong>ノート</strong>:&nbsp;最初のデプロイメント後にドメインに加えられたすべての更新は、回復されたドメインでは使用できません。</span> <span class="merged" id="index.4E9Lu.spl2" title="原文 : However, this allows you to access the original RCU schema database without losing all its data.">ただし、これにより、すべてのデータを失うことなく、元のRCUスキーマ・データベースにアクセスできます。</span> </p>
+</li>
+<li>
+<p><span class="merged" id="index.2uy94t.spl1" title="原文 : Apply all the domain configuration changes persisted to the domain home file system, such as data source connections, JMS destinations, or new application EAR deployments, that are not in the WDT model files.">ドメイン・ホーム・ファイル・システムに保持されているすべてのドメイン構成変更(データ・ソース接続、JMS宛先、新しいアプリケーションEARデプロイメントなど)を適用します。この変更は、WDTモデル・ファイルには含まれません。</span> <span class="merged" id="index.2uy94t.spl2" title="原文 : These are the changes you have made after the initial domain deployment.">これらは、初期ドメイン・デプロイメント後に行った変更です。</span> </p>
+</li>
+<li>
+<p><span class="merged" id="index.3lQ7w2" title="原文 : Update the restartVersion of the domain resource to restart the domain.">ドメインを再起動するには、ドメイン・リソースの<code>restartVersion</code>を更新します。</span></p>
+<pre tabindex="0"><code>$ kubectl -n sample-ns patch domain sample-domain1 --type=&#39;JSON&#39; -p=&#39;[ { &#34;op&#34; : &#34;replace&#34;, &#34;path&#34; : &#34;/spec/restartVersion&#34;, &#34;value&#34; : &#34;15&#34; }]&#39;
+</code></pre></li>
+</ol>
+<p><span class="merged" id="index.f7477" title="原文 : For more information, see Disaster Recovery.">詳細については、<a href="../jrf-domain/index.html#disaster-recovery-for-domain-on-pv-deployment">「障害時リカバリ」</a>を参照してください。</span></p>
+<h3 id="troubleshooting"><span class="merged" id="index.1y3Rd3"  title="原文:: Troubleshooting">トラブルシューティング</span></h3>
+<p><span class="merged" id="index.DNvKd" title="原文 : Problem: An error in the introspector job."><strong>問題</strong>: イントロスペクタ・ジョブでエラーが発生しました。</span></p>
+<ul>
+<li>
+<p><span class="merged" id="index.1H1mjO" title="原文 : Check the domain status of the domain.">ドメインのドメイン・ステータスを確認します。</span></p>
+<pre tabindex="0"><code>$ kubectl -n &lt;domain namespace&gt; get domain &lt;domain uid&gt;
+</code></pre></li>
+<li>
+<p><span class="merged" id="index.2xbuN4" title="原文 : Check the domain log files in logHome."><code>logHome</code>のドメイン・ログ・ファイルを確認します。</span></p>
+<p><span class="merged" id="index.2Suk3h" title="原文 : By default, the operator persists the log files for the introspector job, RCU logs, and WebLogic server logs in domain.spec.logHome (default: /share/logs/&lt;domain uid&gt;).">デフォルトでは、オペレータはイントロスペクタ・ジョブ、RCUログおよびWebLogicサーバー・ログのログ・ファイルを<code>domain.spec.logHome</code>に保持します(デフォルト): <code>/share/logs/&lt;domain uid></code> ).</span></p>
+<p><span class="merged" id="index.35zTRb.spl1" title="原文 : If there are errors, the related output files can be found in the logHome directory.">エラーがある場合は、関連する出力ファイルが<code>logHome</code>ディレクトリにあります。</span> <span class="merged" id="index.35zTRb.spl2"  title="原文:: For example:">例えば:</span> </p>
+<pre tabindex="0"><code>admin-server.log                  
+introspector_script.out
+createDomain.log
+wdt_output.log             
+admin-server.out
+...                 
+rculogdir/**
+</code></pre></li>
+<li>
+<p><span class="merged" id="index.IPjvC.spl1" title="原文 : Check the operator log.">オペレータ・ログを確認してください。</span> <span class="merged" id="index.IPjvC.spl2" title="原文 : Additional error messages may be available in the operator log.">オペレータ・ログで追加のエラー・メッセージが使用できる場合があります。</span> </p>
+<pre tabindex="0"><code>$ kubectl -n &lt;operator namespace&gt; logs &lt;operator pod name&gt;
+</code></pre></li>
+<li>
+<p><span class="merged" id="index.MKFME" title="原文 : Check the Kubernetes events.">Kubernetesイベントを確認します。</span></p>
+<pre tabindex="0"><code>$ kubectl -n &lt;domain namespace&gt; get events
+</code></pre></li>
+</ul>
+<p><span class="merged" id="index.2tcfoA" title="原文 : Problem: Updated the WDT models but changes are not reflected in the domain."><strong>問題</strong>: WDTモデルを更新しましたが、変更はドメインに反映されません。</span></p>
+<p><span class="merged" id="index.2eBeoK.spl1"  title="原文: This is the expected behavior.">これは予想された動作です。</span> <span class="merged" id="index.2eBeoK.spl2" title="原文 : The WDT domain models specified in the domain image or ConfigMap is a one time only operation.">ドメイン・イメージまたはConfigMapで指定されたWDTドメイン・モデルは、<strong>「1回のみ」</strong>操作です。</span> <span class="merged" id="index.2eBeoK.spl3" title="原文 : They are used only for creating the initial domain.">これらは初期ドメインの作成にのみ使用されます。</span> <span class="merged" id="index.2eBeoK.spl4" title="原文 : After the domain is created, they do not participate in the lifecycle operations.">ドメインの作成後は、ライフサイクル操作に参加しません。</span> <span class="merged" id="index.2eBeoK.spl5" title="原文 : You should use the WebLogic console, WLST, or other means to update the domain.">WebLogicコンソール、WLSTまたはその他の方法を使用して、ドメインを更新する必要があります。</span> <span class="merged" id="index.2eBeoK.spl6" title="原文 : In order to use the updated models to recreate the domain, you must delete the domain home directory and also the applications directory for the JRF domain (applications/&lt;domain uid&gt; under the parent of the domain home directory) before trying to create the domain again.">更新されたモデルを使用してドメインを再作成するには、ドメインを再作成する前に、ドメイン・ホーム・ディレクトリおよびJRFドメイン(ドメイン・ホーム・ディレクトリの親の下にある<code>applications/&lt;domain uid></code>)のアプリケーション・ディレクトリも削除する必要があります。</span> </p>
+<p><span class="merged" id="index.4aBzYe" title="原文 : If you see any other error, then consult Debugging">その他のエラーが表示された場合は、<a href="../../debugging/index.html">「デバッグ」</a>を参照してください</span></p>
+<h3 id="cleanup"><span class="merged" id="index.6lMSz"  title="原文:: Cleanup">クリーンアップ</span></h3>
+<p><span class="merged" id="index.3pSqKq" title="原文 : If you need to delete the domain home and the application directory for a JRF domain, to recover from an error or if there is a need to recreate the domain home, the domain home is in the directory specified in domain.spec.domainHome, and the application directory for JRF domains (if not specified in your WDT model) is in &lt;parent directory of domain home&gt;/applications/&lt;domain uid&gt;, you can:">JRFドメインのドメイン・ホームおよびアプリケーション・ディレクトリを削除する必要がある場合、エラーからリカバリする場合、またはドメイン・ホームを再作成する必要がある場合、ドメイン・ホームは<code>domain.spec.domainHome</code>で指定されたディレクトリにあり、JRFドメインのアプリケーション・ディレクトリ(WDTモデルで指定されていない場合)は<code>&lt;parent directory of domain home>/applications/&lt;domain uid></code>にあります。次の操作を実行できます:</span></p>
+<ol>
+<li>
+<p><span class="merged" id="index.10ewTX" title="原文 : If the underlying storage volume is dynamically allocated, then delete the PVC with ReclaimPolcy: delete and recreate the PVC.">基礎となるストレージ・ボリュームが動的に割り当てられる場合は、<code>ReclaimPolcy: delete</code>を使用してPVCを削除し、PVCを再作成します。</span></p>
+</li>
+<li>
+<p><span class="merged" id="index.2wu4cJ.spl1" title="原文 : Attach a pod to the shared volume and then access the pod to remove the contents.">共有ボリュームにポッドをアタッチし、ポッドにアクセスしてコンテンツを削除します。</span> <span class="merged" id="index.2wu4cJ.spl2" title="原文 : See the sample script, PV and PVC helper script.">サンプル・スクリプト<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/main/kubernetes/samples/scripts/domain-lifecycle/pv-pvc-helper.sh">「PVおよびPVCヘルパー・スクリプト」</a>を参照してください。</span> </p>
+</li>
+<li>
+<p><span class="merged" id="index.LFQyf" title="原文 : Delete the domain resource.">ドメイン・リソースを削除します。</span></p>
+<pre tabindex="0"><code>$ kubectl -n &lt;namespace&gt; delete -f &lt;domain resource YAML&gt;
+</code></pre></li>
+</ol>
+<h3 id="configuration-example"><span class="merged" id="index.2Oklh" title="原文 : Configuration example">構成例</span></h3>
+<p><span class="merged" id="index.2xpj8" title="原文 : The following configuration example illustrates a basic configuration.">次の構成例は、基本構成を示しています。</span></p>
+<h4 id="basic-configuration"><span class="merged" id="index.EEPvS"  title="原文:: Basic configuration">基本構成</span></h4>
+<pre tabindex="0"><code>spec:
+  domainHome: /share/domains/sample-domain1
+  domainHomeSourceType: PersistentVolume
+  image: &#34;container-registry.oracle.com/middleware/fmw-infrastructure_cpu:12.2.1.4-jdk8-ol8-221014&#34;
+  imagePullPolicy: &#34;IfNotPresent&#34;
+  imagePullSecrets:
+  - name: ocir-credentials
+  webLogicCredentialsSecret:
+    name: sample-domain1-weblogic-credentials
+  logHomeEnabled: true
+  logHome: /share/logs/sample-domain1
+  serverPod:
+    env:
+    - name: JAVA_OPTIONS
+      value: &#34;-Dweblogic.StdoutDebugEnabled=false -Dweblogic.security.SSL.ignoreHostnameVerification=true -Dweblogic.security.TrustKeyStore=DemoTrust -Dweblogic.debug.DebugManagementServicesResource=true&#34;
+    - name: USER_MEM_ARGS
+      value: &#34;-XX:+UseContainerSupport -Djava.security.egd=file:/dev/./urandom &#34;
+    # set up pod to use persistent storage using pvc
+    # domain home must be under the mountPath  
+    volumes:
+    - name: weblogic-domain-storage-volume
+      persistentVolumeClaim:
+         claimName: sample-domain1-pvc-rwm1
+    volumeMounts:
+    - mountPath: /share
+      name: weblogic-domain-storage-volume
+  clusters:
+  - name: sample-domain1-cluster-1
+  replicas: 2
+
+  configuration:
+    secrets: [ sample-domain1-rcu-access ]
+    initializeDomainOnPV:
+      persistentVolume:
+        metadata:
+            name: sample-domain1-pv-rwm1
+        spec:
+            storageClassName: my-storage-class
+            capacity:
+                storage: 20Gi
+            persistentVolumeReclaimPolicy: Retain
+            hostPath:
+                path: &#34;/share&#34;
+      persistentVolumeClaim:
+        metadata:
+            name: sample-domain1-pvc-rwm1
+        spec:
+            storageClassName: my-storage-class
+            resources:
+                requests:
+                    storage: 10Gi
+      domain:
+          # Domain | DomainAndRCU
+          createIfNotExists: DomainAndRCU
+          domainCreationImages:
+            - image: &#39;myrepo/domain-images:v1&#39;
+          domainType: JRF
+          domainCreationConfigMap: sample-domain1-wdt-config-map
+          opss:
+           walletPasswordSecret: sample-domain1-opss-wallet-password-secret
+</code></pre>
 
 <footer class="footline">
 	
@@ -3783,6 +4350,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -3795,6 +4363,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3811,6 +4382,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -3827,6 +4399,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3867,10 +4442,39 @@
                     
                     
 
+                    
+            
+        
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                     
+
+                    
             
         
                     
@@ -3893,8 +4497,23 @@
                         
             
             
+                
+                    
                 
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
+                        
+            
+            
+                
                     
                 
                 
@@ -3903,12 +4522,33 @@
                     
                     
 
+                    
+            
+        
                     
                         
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -3924,10 +4564,36 @@
                         
             
             
+                
+                    
                 
+                
+
+                    
+                    
                     
+
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
                     
                 
                 
@@ -4647,9 +5313,6 @@
                     
 
                     
-            
-        
-                    
                         
             
             
@@ -4694,6 +5357,9 @@
                     
                     
 
+                    
+            
+        
                     
                         
             
@@ -4707,6 +5373,9 @@
                     
                     
 
+                    
+            
+        
                     
             
         
@@ -4723,9 +5392,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -4807,6 +5473,19 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -4838,6 +5517,9 @@
                     
                     
 
+                    
+            
+        
                     
             
         
@@ -5629,7 +6311,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="../index.html" > <i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="../oci-fss-pv/index.html" style="margin-right: 0px;" ><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-prev" href="../overview/index.html" > <i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="../domain-creation-images/index.html" style="margin-right: 0px;" ><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -5639,19 +6321,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1684120790"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1684120790"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1684120790"></script>
-    <script src="../../../js/jquery.sticky.js?1684120790"></script>
-    <script src="../../../js/featherlight.min.js?1684120790"></script>
-    <script src="../../../js/highlight.pack.js?1684120790"></script>
+    <script src="../../../js/clipboard.min.js?1695266414"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1695266414"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1695266414"></script>
+    <script src="../../../js/jquery.sticky.js?1695266414"></script>
+    <script src="../../../js/featherlight.min.js?1695266414"></script>
+    <script src="../../../js/highlight.pack.js?1695266414"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1684120790"></script>
-    <script src="../../../js/learn.js?1684120790"></script>
-    <script src="../../../js/hugo-learn.js?1684120790"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1695266414"></script>
+    <script src="../../../js/learn.js?1695266414"></script>
+    <script src="../../../js/hugo-learn.js?1695266414"></script>
     
         
-            <script src="../../../mermaid/mermaid.js?1684120790"></script>
+            <script src="../../../mermaid/mermaid.js?1695266414"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
