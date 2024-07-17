@@ -12,20 +12,20 @@
     <title>Kubernetesの設定 :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../css/nucleus.css?1703128863" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/hybrid.css?1703128863" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1703128863" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1703128863" rel="stylesheet">
-    <link href="../../css/theme.css?1703128863" rel="stylesheet">
-    <link href="../../css/tabs.css?1703128863" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1703128863" rel="stylesheet">
+    <link href="../../css/nucleus.css?1720668207" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1720668207" rel="stylesheet">
+    <link href="../../css/hybrid.css?1720668207" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1720668207" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1720668207" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1720668207" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1720668207" rel="stylesheet">
+    <link href="../../css/theme.css?1720668207" rel="stylesheet">
+    <link href="../../css/tabs.css?1720668207" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1720668207" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.6.0.min.js?1703128863"></script>
+    <script src="../../js/jquery-3.6.0.min.js?1720668207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1703128863"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1703128863"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1720668207"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1720668207"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1703128863"></script>
+<script type="text/javascript" src="../../js/search.js?1720668207"></script>
 
     
   </div>
@@ -722,6 +722,34 @@
         " data-nav-id="/managing-domains/major-weblogic-version-upgrade/" title="管理対象ドメインのアップグレード">
       <span class="merged" id="index.19dJBN" title="原文 :  Upgrade managed domains "><a href="../../managing-domains/major-weblogic-version-upgrade/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
       
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
+        <span class="merged" id="index.e22m" title="原文 :  Upgrade managed domains "><a href="../../managing-domains/major-weblogic-version-upgrade/upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
       
     </li>
   
@@ -3421,112 +3449,62 @@
 </ul>
 <p><span class="merged" id="index.1xlvJo" title="原文 : We have provided our hints and tips for several of these options in the following sections.">次の各項では、これらのオプションのヒントをいくつか紹介しています。</span></p>
 <h3 id="set-up-kubernetes-on-bare-compute-resources-in-a-cloud"><span class="merged" id="index.3cwzWm" title="原文 : Set up Kubernetes on bare compute resources in a cloud">クラウドのベア・コンピュート・リソースでのKubernetesの設定</span></h3>
-<p><span class="merged" id="index.DfkzN" title="原文 : Follow the basic steps from the Terraform Kubernetes installer for Oracle Cloud Infrastructure."><a href="https://github.com/oracle/terraform-kubernetes-installer">「Oracle Cloud Infrastructure用のTerraform Kubernetesインストーラ」</a>の基本ステップに従います。</span></p>
+<p><span class="merged" id="index.5XAEi" title="原文 : Follow the basic steps from the Terraform OKE Module Installer for Oracle Cloud Infrastructure."><a href="https://oracle-terraform-modules.github.io/terraform-oci-oke/">「Terraform Oracle Cloud InfrastructureのOKEモジュール・インストーラ」</a>の基本ステップに従います。</span></p>
 <h4 id="prerequisites"><span class="merged" id="index.2LZvWc"  title="原文:: Prerequisites">前提条件</span></h4>
 <ol>
-<li><span class="merged" id="index.3RtPWz" title="原文 : Download and install Terraform (v0.10.3 or later)."><a href="https://www.terraform.io/">Terraform</a> (v0.10.3以降)をダウンロードしてインストールします。</span></li>
-<li><span class="merged" id="index.3YzUwQ" title="原文 : Download and install the Terraform Provider for Oracle Cloud Infrastructure (v2.0.0 or later)."><a href="https://github.com/terraform-providers/terraform-provider-oci">「Terraform Oracle Cloud Infrastructureのプロバイダ」</a> (v 2.0.0以降)をダウンロードしてインストールします。</span></li>
-<li><span class="merged" id="index.2LoJ2F" title="原文 : Create an Terraform configuration file at ~/.terraformrc that specifies the path to the Oracle Cloud Infrastructure provider:">Oracle Cloud Infrastructureプロバイダへのパスを指定するTerraform構成ファイルを<code>~/.terraformrc</code>に作成します:</span>
-<pre tabindex="0"><code>providers {
-  oci = &#34;&lt;path_to_provider_binary&gt;/terraform-provider-oci&#34;
-}
+<li><span class="merged" id="index.1zRIDG" title="原文 : Download and install the Terraform OKE Module Installer for Oracle Cloud Infrastructure."><a href="https://github.com/oracle-terraform-modules/terraform-oci-oke">「Terraform Oracle Cloud InfrastructureのOKEモジュール・インストーラ」</a>をダウンロードしてインストールします。</span></li>
+<li><span class="merged" id="index.39b8AH" title="原文 : Create directory for the Terraform module:">Terraformモジュールのディレクトリを作成します:</span>
+<pre tabindex="0"><code>$ mkdir terraformmodule
+$ cd terraformmodule
 </code></pre></li>
 <li><span class="merged" id="index.2FcnM3" title="原文 : Ensure that you have kubectl installed if you plan to interact with the cluster locally.">クラスタとローカルで対話する場合は、<a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">kubectl</a>がインストールされていることを確認します。</span></li>
 </ol>
 <h4 id="quick-start"><span class="merged" id="index.3QYkvI"  title="原文:: Quick start">クイック・スタート</span></h4>
+<p><span class="merged" id="index.4LkyAE" title="原文 : The quick start uses the sample provided in Multi-region service mesh with Istio and OKE.">クイック・スタートでは、<a href="https://github.com/oracle-terraform-modules/terraform-oci-oke/tree/main/examples/istio-mc">「IstioおよびOKEとの複数リージョン・サービス・メッシュ」</a>で提供されているサンプルを使用します。</span></p>
 <ol>
 <li>
 <p><span class="merged" id="index.3ydy3g" title="原文 : Do a git clone of the Terraform Kubernetes Installer project:">Terraform Kubernetes Installerプロジェクトの<code>git clone</code>を実行します:</span></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ git clone https://github.com/oracle/terraform-kubernetes-installer.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ git clone https://github.com/oracle-terraform-modules/terraform-oci-oke.git
 </span></span></code></pre></div></li>
 <li>
-<p><span class="merged" id="index.1UUVQ0" title="原文 : Initialize your project:">プロジェクトを初期化します:</span></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cd terraform-kubernetes-installer
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ terraform init
+<p><span class="merged" id="index.NPEK6"  title="原文: Run the following commands:">次のコマンドを実行します:</span></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cd terraform-oci-oke/examples
+</span></span><span style="display:flex;"><span>$ mkdir okewko
+</span></span><span style="display:flex;"><span>$ cp -rf istio-mc okewko
+</span></span><span style="display:flex;"><span>$ cd okewko
 </span></span></code></pre></div></li>
 <li>
-<p><span class="merged" id="index.421pCb" title="原文 : Copy the example terraform.tvfars:"><code>terraform.tvfars</code>の例をコピーします:</span></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cp terraform.example.tfvars terraform.tfvars
+<p><span class="merged" id="index.3aWrnB" title="原文 : Edit c1.tf and c2.tf to add:"><code>c1.tf</code>および<code>c2.tf</code>を編集して、次を追加します:</span></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>allow_bastion_cluster_access <span style="color:#f92672">=</span> true
+</span></span><span style="display:flex;"><span>bastion_is_public <span style="color:#f92672">=</span> true
+</span></span><span style="display:flex;"><span>control_plane_is_public <span style="color:#f92672">=</span> true
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cp terraform.tfvars.example terraform.tfvars
 </span></span></code></pre></div></li>
 <li>
-<p><span class="merged" id="index.1Wpbne.spl1" title="原文 : Edit the terraform.tvfars file to include values for your tenancy, user, and compartment."><code>terraform.tvfars</code>ファイルを編集して、テナンシ、ユーザーおよびコンパートメントの値を含めます。</span> <span class="merged" id="index.1Wpbne.spl2" title="原文 : Optionally, edit the variables to change the Shape of the VMs for your Kubernetes master and workers, and your etcd cluster.">オプションで、変数を編集して、Kubernetesマスターとワーカー、および<code>etcd</code>クラスタのVMの<code>Shape</code>を変更します。</span> <span class="merged" id="index.1Wpbne.spl3"  title="原文:: For example:">例えば:</span> </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#75715e">#give a label to your cluster to help identify it if you have multiple</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">label_prefix</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;weblogic-operator-1-&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#identification/authorization info</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">tenancy_ocid</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ocid1.tenancy....&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">compartment_ocid</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ocid1.compartment....&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fingerprint</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;...&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">private_key_path</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/Users/username/.oci/oci_api_key.pem&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">user_ocid</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ocid1.user...&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#shapes for your VMs</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">etcdShape</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;VM.Standard1.2&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">k8sMasterShape</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;VM.Standard1.8&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">k8sWorkerShape</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;VM.Standard1.8&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">k8sMasterAd1Count</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">k8sWorkerAd1Count</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#this ingress is set to wide-open for testing **not secure**</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">etcd_ssh_ingress</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0.0.0.0/0&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">master_ssh_ingress</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0.0.0.0/0&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">worker_ssh_ingress</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0.0.0.0/0&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">master_https_ingress</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0.0.0.0/0&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">worker_nodeport_ingress</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0.0.0.0/0&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#create iscsi volumes to store your etcd and /var/lib/docker info</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">worker_iscsi_volume_create</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">worker_iscsi_volume_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">100</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">etcd_iscsi_volume_create</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">etcd_iscsi_volume_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">50</span>
-</span></span></code></pre></div></li>
-<li>
-<p><span class="merged" id="index.1d4u1B" title="原文 : Test and apply your changes:">変更のテストおよび適用:</span></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ terraform plan
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ terraform apply
-</span></span></code></pre></div></li>
-<li>
-<p><span class="merged" id="index.biXm8" title="原文 : Test your cluster using the built-in script scripts/cluster-check.sh:">組込みスクリプト<code>scripts/cluster-check.sh</code>を使用してクラスタをテストします:</span></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ scripts/cluster-check.sh
-</span></span></code></pre></div></li>
-<li>
-<p><span class="merged" id="index.1zXdmq" title="原文 : Output the SSH private key:">SSH秘密キーを出力します:</span></p>
-<pre tabindex="0"><code># output the ssh private key for use later
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ rm -f generated/instances_id_rsa <span style="color:#f92672">&amp;&amp;</span> terraform output ssh_private_key &gt; generated/instances_id_rsa <span style="color:#f92672">&amp;&amp;</span> chmod <span style="color:#ae81ff">600</span> generated/instances_id_rsa
-</span></span></code></pre></div></li>
-<li>
-<p><span class="merged" id="index.3dNSAr" title="原文 : If you need shared storage between your Kubernetes worker nodes, enable and configure NFS:">Kubernetesワーカー・ノード間で共有ストレージが必要な場合は、NFSを有効にして構成します:</span></p>
+<p><span class="merged" id="index.Gbidz" title="原文 : In the terraform.tfvars file, update all values with the correct paths to the keys and IDs."><code>terraform.tfvars</code>ファイルで、すべての値をキーおよびIDへの正しいパスで更新します。</span></p>
 </li>
+<li>
+<p><span class="merged" id="index.1wkpNl"  title="原文:: Run the commands:">次のコマンドを実行します。</span></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ terraform init
+</span></span><span style="display:flex;"><span>$ terraform plan
+</span></span><span style="display:flex;"><span>$ terraform apply --auto-approve
+</span></span></code></pre></div><p><span class="merged" id="index.3qYSVX" title="原文 : This will create two OKE clusters.">これにより、2つのOKEクラスタが作成されます。</span></p>
+</li>
+<li>
+<p><span class="merged" id="index.2hyjKT" title="原文 : Log in to the OCI dashboard.">OCIダッシュボードにログインします。</span></p>
+<p><span class="merged" id="index.36mEic.spl1"  title="原文:: a.">a.</span> <span class="merged" id="index.36mEic.spl2" title="原文 : Go to Developer Services &gt; OKE clusters.">「開発者サービス」>「OKEクラスタ」に移動します。</span> </p>
+<p><span class="merged" id="index.2FDItd.spl1"  title="原文:: b.">b.</span> <span class="merged" id="index.2FDItd.spl2" title="原文 : Select c1 cluster &gt; Access Cluster.">「c1クラスタ」>「アクセス・クラスタ」を選択します。</span> </p>
+<p><span class="merged" id="index.2jXQPJ.spl1"  title="原文:: c.">c.</span> <span class="merged" id="index.2jXQPJ.spl2" title="原文 : Copy and paste this command to create the kubeconfig, for example:">次のように、このコマンドをコピーして貼り付けてkubeconfigを作成します:</span> </p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1...... --file $HOME/.kube/config --region us-phoenix-1 --token-version 2.0.0 --kube-endpoint PUBLIC_ENDPOINT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ export KUBECONFIG<span style="color:#f92672">=</span> $HOME/.kube/config
+</span></span></code></pre></div></li>
+<li>
+<p><span class="merged" id="index.4HO0S2" title="原文 : Verify that the cluster is accessible:">クラスタにアクセスできることを確認します:</span></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ kubectl get nodes
+</span></span></code></pre></div></li>
 </ol>
-<p><span class="merged" id="index.2xPEGB.spl1" title="原文 : In the current GA version, the Oracle Container Engine for Kubernetes supports network block storage that can be shared across nodes with access permission RWOnce (meaning that only one can write, others can read only).">現在のGAバージョンでは、Oracle Container Engine for Kubernetesは、アクセス権限RWOnceを持つノード間で共有できるネットワーク・ブロック・ストレージをサポートしています(つまり、書込みできるのは1つのみで、他のユーザーは読取り専用です)。</span> <span class="merged" id="index.2xPEGB.spl2" title="原文 : If you choose to place your domain on a persistent volume, you must use a shared file system to store the WebLogic domain configuration, which MUST be accessible from all the pods across the nodes.">永続ボリュームにドメインを配置することを選択した場合は、共有ファイル・システムを使用して、ノード全体のすべてのポッドからアクセスできるWebLogicドメイン構成を格納する必要があります。</span> <span class="merged" id="index.2xPEGB.spl3" title="原文 : Oracle recommends that you use the Oracle Cloud Infrastructure File Storage Service (or equivalent on other cloud providers).">Oracleは、Oracle Cloud Infrastructure File Storage Service (または他のクラウド・プロバイダと同等のもの)を使用することをお薦めします。</span> <span class="merged" id="index.2xPEGB.spl4" title="原文 : Alternatively, you may install an NFS server on one node and share the file system across all the nodes.">または、あるノードにNFSサーバーをインストールし、すべてのノードでファイル・システムを共有することもできます。</span> </p>
-
-<div class="notices note" ><p><span class="merged" id="index.1IKOtF.spl1" title="原文 : Currently, we recommend that you use NFS version 3.0 for running WebLogic Server on Oracle Container Engine for Kubernetes.">現在、Oracle Container Engine for KubernetesでWebLogic Serverを実行する場合は、NFSバージョン3.0を使用することをお薦めします。</span> <span class="merged" id="index.1IKOtF.spl2" title="原文 : During certification, we found that when using NFS 4.0, the servers in the WebLogic domain went into a failed state intermittently.">認証中に、NFS 4.0を使用すると、WebLogicドメイン内のサーバーが断続的に失敗状態になったことがわかりました。</span> <span class="merged" id="index.1IKOtF.spl3" title="原文 : Because multiple threads use NFS (default store, diagnostics store, Node Manager, logging, and domain_home), there are issues when accessing the file store.">複数のスレッドがNFS (デフォルト・ストア、診断ストア、ノード・マネージャ、ロギングおよびdomain_home)を使用するため、ファイル・ストアへのアクセス時に問題が発生します。</span> <span class="merged" id="index.1IKOtF.spl4" title="原文 : These issues are removed by changing the NFS to version 3.0.">これらの問題は、NFSをバージョン3.0に変更することで解消されます。</span> </p>
-</div>
-
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ terraform output worker_public_ips
-</span></span></code></pre></div><pre tabindex="0"><code>IP1,
-IP2
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ terraform output worker_private_ips
-</span></span></code></pre></div><pre tabindex="0"><code>PRIVATE_IP1,
-PRIVATE_IP2
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ ssh -i <span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>/generated/instances_id_rsa opc@IP1
-</span></span></code></pre></div><pre tabindex="0"><code>worker-1$ sudo su -
-worker-1# yum install -y nfs-utils
-worker-1# mkdir /scratch
-worker-1# echo &#34;/scratch PRIVATE_IP2(rw)&#34; &gt;&gt; /etc/exports
-worker-1# systemctl restart nfs
-worker-1# exit
-worker-1$ exit
-# configure worker-2 to mount the share from worker-1
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ ssh -i <span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>/generated/instances_id_rsa opc@IP2
-</span></span></code></pre></div><pre tabindex="0"><code>worker-2$ sudo su -
-worker-2# yum install -y nfs-utils
-worker-2# mkdir /scratch
-worker-2# echo &#34;PRIVATE_IP1:/scratch /scratch  nfs nfsvers=3 0 0&#34; &gt;&gt; /etc/fstab
-worker-2# mount /scratch
-worker-2# exit
-worker-2$ exit
-</code></pre><h3 id="install-kubernetes-on-your-own-compute-resources"><span class="merged" id="index.25ljwD" title="原文 : Install Kubernetes on your own compute resources">独自のコンピュート・リソースにKubernetesをインストール</span></h3>
+<h3 id="install-kubernetes-on-your-own-compute-resources"><span class="merged" id="index.25ljwD" title="原文 : Install Kubernetes on your own compute resources">独自のコンピュート・リソースにKubernetesをインストール</span></h3>
 <p><span class="merged" id="index.Si6ya" title="原文 : For example, on Oracle Linux servers outside a cloud.">たとえば、クラウド外のOracle Linuxサーバーの場合。</span></p>
 <p><span class="merged" id="index.23NhGE.spl1" title="原文 : These instructions are for Oracle Linux 7u2+.">これらの手順はOracle Linux 7u2+用です。</span> <span class="merged" id="index.23NhGE.spl2" title="原文 : If you are using a different flavor of Linux, you will need to adjust them accordingly.">別のフレーバのLinuxを使用している場合は、それに応じて調整する必要があります。</span> </p>
 
@@ -4341,6 +4319,22 @@ To further debug and diagnose cluster problems, use &#39;kubectl cluster-info du
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -6361,19 +6355,19 @@ To further debug and diagnose cluster problems, use &#39;kubectl cluster-info du
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1703128863"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1703128863"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1703128863"></script>
-    <script src="../../js/jquery.sticky.js?1703128863"></script>
-    <script src="../../js/featherlight.min.js?1703128863"></script>
-    <script src="../../js/highlight.pack.js?1703128863"></script>
+    <script src="../../js/clipboard.min.js?1720668207"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1720668207"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1720668207"></script>
+    <script src="../../js/jquery.sticky.js?1720668207"></script>
+    <script src="../../js/featherlight.min.js?1720668207"></script>
+    <script src="../../js/highlight.pack.js?1720668207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1703128863"></script>
-    <script src="../../js/learn.js?1703128863"></script>
-    <script src="../../js/hugo-learn.js?1703128863"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1720668207"></script>
+    <script src="../../js/learn.js?1720668207"></script>
+    <script src="../../js/hugo-learn.js?1720668207"></script>
     
         
-            <script src="../../mermaid/mermaid.js?1703128863"></script>
+            <script src="../../mermaid/mermaid.js?1720668207"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

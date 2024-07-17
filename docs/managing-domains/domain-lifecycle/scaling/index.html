@@ -12,20 +12,20 @@
     <title>スケーリング :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../../css/nucleus.css?1703128863" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1703128863" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1703128863" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1703128863" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1703128863" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1703128863" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1703128863" rel="stylesheet">
-    <link href="../../../css/theme.css?1703128863" rel="stylesheet">
-    <link href="../../../css/tabs.css?1703128863" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1703128863" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1720668206" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1720668206" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1720668206" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1720668206" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1720668206" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1720668206" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1720668206" rel="stylesheet">
+    <link href="../../../css/theme.css?1720668206" rel="stylesheet">
+    <link href="../../../css/tabs.css?1720668206" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1720668206" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.6.0.min.js?1703128863"></script>
+    <script src="../../../js/jquery-3.6.0.min.js?1720668206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1703128863"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1703128863"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1720668206"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1720668206"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1703128863"></script>
+<script type="text/javascript" src="../../../js/search.js?1720668206"></script>
 
     
   </div>
@@ -722,6 +722,34 @@
         " data-nav-id="/managing-domains/major-weblogic-version-upgrade/" title="管理対象ドメインのアップグレード">
       <span class="merged" id="index.4P1OkX" title="原文 :  Upgrade managed domains "><a href="../../major-weblogic-version-upgrade/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
       
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
+        <span class="merged" id="index.2hALNM" title="原文 :  Upgrade managed domains "><a href="../../major-weblogic-version-upgrade/upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
       
     </li>
   
@@ -3602,7 +3630,7 @@
 </div>
 
 <ol start="4">
-<li><span class="merged" id="index.4AJXV2" title="原文 : Verify the status of the autoscaler and its behavior by inspecting the HPA resource.">HPAリソースを検査して、自動スケーラのステータスとその動作を確認します。</span></li>
+<li><span class="merged" id="index.4AJXV2"  title="原文: Verify the status of the autoscaler and its behavior by inspecting the HPA resource.">HPAリソースを検査して、自動スケーラのステータスとその動作を確認します。</span></li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ kubectl get hpa
 </span></span><span style="display:flex;"><span>  NAME                       REFERENCE                          TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
@@ -3617,7 +3645,7 @@
 </ol>
 <p><span class="merged" id="index.Cposy" title="原文 : For more in-depth information on the Kubernetes Horizontal Pod Autoscaler, see Horizontal Pod Autoscaling.">Kubernetes Horizontal Pod Autoscalerの詳細は、<a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/">「水平ポッド自動スケーリング」</a>を参照してください。</span></p>
 <h4 id="using-a-wldf-policy-rule-and-script-action-to-call-the-operators-rest-scale-api"><span class="merged" id="index.2OhmlQ" title="原文 : Using a WLDF policy rule and script action to call the operator’s REST scale API">WLDFポリシー・ルールおよびスクリプト・アクションを使用したオペレータのRESTスケールAPIの呼出し</span></h4>
-<p><span class="merged" id="index.3Ifhk5.spl1" title="原文 : The WebLogic Diagnostics Framework (WLDF) is a suite of services and APIs that collect and surface metrics that provide visibility into server and application performance.">WebLogic Diagnostics Framework (WLDF)は、サーバーおよびアプリケーションのパフォーマンスを可視化するメトリックを収集および表示する一連のサービスおよびAPIです。</span> <span class="merged" id="index.3Ifhk5.spl2" title="原文 : To support automatic scaling of WebLogic clusters in Kubernetes, WLDF provides the Policies and Actions component, which lets you write policy expressions for automatically executing scaling operations on a cluster.">KubernetesでWebLogicクラスタの自動スケーリングをサポートするために、WLDFには、クラスタでスケーリング操作を自動的に実行するためのポリシー式を記述できるポリシーおよびアクション・コンポーネントが用意されています。</span> <span class="merged" id="index.3Ifhk5.spl3" title="原文 : These policies monitor one or more types of WebLogic Server metrics, such as memory, idle threads, and CPU load.">これらのポリシーは、メモリー、アイドル・スレッド、CPU負荷など、1つ以上のタイプのWebLogic Serverメトリックを監視します。</span> <span class="merged" id="index.3Ifhk5.spl4" title="原文 : When the configured threshold in a policy is met, the policy is triggered, and the corresponding scaling action is executed.">ポリシーで構成されたしきい値に達すると、ポリシーがトリガーされ、対応するスケーリング・アクションが実行されます。</span> <span class="merged" id="index.3Ifhk5.spl5" title="原文 : The WebLogic Kubernetes Operator project provides a shell script, scalingAction.sh, for use as a Script Action, which illustrates how to issue a request to the operator’s REST endpoint.">WebLogic Kubernetes Operatorプロジェクトは、スクリプト・アクションとして使用するためのシェル・スクリプト<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.1/operator/scripts/scaling/scalingAction.sh"><code>scalingAction.sh</code></a>を提供します。これは、オペレータのRESTエンドポイントにリクエストを発行する方法を示しています。</span> </p>
+<p><span class="merged" id="index.4Z2i2n.spl1" title="原文 : The WebLogic Diagnostics Framework (WLDF) is a suite of services and APIs that collect and surface metrics that provide visibility into server and application performance.">WebLogic Diagnostics Framework (WLDF)は、サーバーおよびアプリケーションのパフォーマンスを可視化するメトリックを収集および表示する一連のサービスおよびAPIです。</span> <span class="merged" id="index.4Z2i2n.spl2" title="原文 : To support automatic scaling of WebLogic clusters in Kubernetes, WLDF provides the Policies and Actions component, which lets you write policy expressions for automatically executing scaling operations on a cluster.">KubernetesでWebLogicクラスタの自動スケーリングをサポートするために、WLDFには、クラスタでスケーリング操作を自動的に実行するためのポリシー式を記述できるポリシーおよびアクション・コンポーネントが用意されています。</span> <span class="merged" id="index.4Z2i2n.spl3" title="原文 : These policies monitor one or more types of WebLogic Server metrics, such as memory, idle threads, and CPU load.">これらのポリシーは、メモリー、アイドル・スレッド、CPU負荷など、1つ以上のタイプのWebLogic Serverメトリックを監視します。</span> <span class="merged" id="index.4Z2i2n.spl4" title="原文 : When the configured threshold in a policy is met, the policy is triggered, and the corresponding scaling action is executed.">ポリシーで構成されたしきい値に達すると、ポリシーがトリガーされ、対応するスケーリング・アクションが実行されます。</span> <span class="merged" id="index.4Z2i2n.spl5" title="原文 : The WebLogic Kubernetes Operator project provides a shell script, scalingAction.sh, for use as a Script Action, which illustrates how to issue a request to the operator’s REST endpoint.">WebLogic Kubernetes Operatorプロジェクトは、スクリプト・アクションとして使用するためのシェル・スクリプト<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.2/operator/scripts/scaling/scalingAction.sh"><code>scalingAction.sh</code></a>を提供します。これは、オペレータのRESTエンドポイントにリクエストを発行する方法を示しています。</span> </p>
 
 <div class="notices note" ><p><span class="merged" id="index.2KEZXe.spl1" title="原文 : Beginning with operator version 4.0.5, the operator’s REST endpoint is disabled by default.">オペレータ・バージョン4.0.5以降、オペレータのRESTエンドポイントはデフォルトで無効になっています。</span> <span class="merged" id="index.2KEZXe.spl2" title="原文 : Install the operator with the Helm install option --set &quot;enableRest=true&quot; to enable the REST endpoint.">Helmインストール・オプション<code>--set "enableRest=true"</code>を指定してオペレータをインストールし、RESTエンドポイントを有効にします。</span> </p>
 </div>
@@ -3626,12 +3654,12 @@
 <p><span class="merged" id="index.CBIC4" title="原文 : The following steps are provided as a guideline on how to configure a WLDF Policy and Script Action component for issuing scaling requests to the operator’s REST endpoint:">オペレータのRESTエンドポイントにスケーリング・リクエストを発行するためのWLDFポリシーおよびスクリプト・アクション・コンポーネントの構成方法に関するガイドラインとして、次のステップを示します:</span></p>
 <ol>
 <li>
-<p><span class="merged" id="index.IUbMV.spl1" title="原文 : Copy the scalingAction.sh script to $DOMAIN_HOME/bin/scripts so that it’s accessible within the Administration Server pod."><a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.1/operator/scripts/scaling/scalingAction.sh"><code>scalingAction.sh</code></a>スクリプトを<code>$DOMAIN_HOME/bin/scripts</code>にコピーして、管理サーバーポッド内でアクセスできるようにします。</span> <span class="merged" id="index.IUbMV.spl2" title="原文 : For more information, see Configuring Script Actions in Configuring and Using the Diagnostics Framework for Oracle WebLogic Server.">詳細は、<em>「Oracle WebLogic ServerのためのDiagnostics Frameworkの構成および使用」</em>の<a href="https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/wldfc/config_notifications.html#GUID-5CC52534-13CD-40D9-915D-3380C86580F1">「スクリプト・アクションの構成」</a>を参照してください。</span> </p>
+<p><span class="merged" id="index.4BpSXG.spl1" title="原文 : Copy the scalingAction.sh script to $DOMAIN_HOME/bin/scripts so that it’s accessible within the Administration Server pod."><a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.2/operator/scripts/scaling/scalingAction.sh"><code>scalingAction.sh</code></a>スクリプトを<code>$DOMAIN_HOME/bin/scripts</code>にコピーして、管理サーバーポッド内でアクセスできるようにします。</span> <span class="merged" id="index.4BpSXG.spl2" title="原文 : For more information, see Configuring Script Actions in Configuring and Using the Diagnostics Framework for Oracle WebLogic Server.">詳細は、<em>「Oracle WebLogic ServerのためのDiagnostics Frameworkの構成および使用」</em>の<a href="https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/wldfc/config_notifications.html#GUID-5CC52534-13CD-40D9-915D-3380C86580F1">「スクリプト・アクションの構成」</a>を参照してください。</span> </p>
 </li>
 <li>
 <p><span class="merged" id="index.1TjA9n.spl1" title="原文 : Configure a WLDF policy and action as part of a diagnostic module targeted to the Administration Server.">WLDFポリシーおよびアクションを、管理サーバーにターゲット指定された診断モジュールの一部として構成します。</span> <span class="merged" id="index.1TjA9n.spl2" title="原文 : For information about configuring the WLDF Policies and Actions component, see Configuring Policies and Actions in Configuring and Using the Diagnostics Framework for Oracle WebLogic Server.">WLDFポリシーおよびアクション・コンポーネントの構成の詳細は、<em>「Oracle WebLogic ServerのためのDiagnostics Frameworkの構成および使用」</em>での<a href="https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/wldfc/config_watch_notif.html#GUID-D3FA8301-AAF2-41CE-A6A5-AB4005849913">「ポリシーおよびアクションの構成」</a>を参照してください。</span> </p>
 <p><span class="merged" id="index.12a0Tp.spl1"  title="原文:: a.">a.</span> <span class="merged" id="index.12a0Tp.spl2" title="原文 : Configure a WLDF policy with a rule expression for monitoring WebLogic Server metrics, such as memory, idle threads, and CPU load for example.">メモリー、アイドル・スレッド、CPU負荷などのWebLogic Serverメトリックをモニタリングするためのルール式を使用してWLDFポリシーを構成します。</span> </p>
-<p><span class="merged" id="index.4WbuvG.spl1"  title="原文:: b.">b.</span> <span class="merged" id="index.4WbuvG.spl2" title="原文 : Configure a WLDF script action and associate the scalingAction.sh script.">WLDFスクリプト・アクションを構成し、<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.1/operator/scripts/scaling/scalingAction.sh"><code>scalingAction.sh</code></a>スクリプトを関連付けます。</span> </p>
+<p><span class="merged" id="index.2PLJf7.spl1"  title="原文:: b.">b.</span> <span class="merged" id="index.2PLJf7.spl2" title="原文 : Configure a WLDF script action and associate the scalingAction.sh script.">WLDFスクリプト・アクションを構成し、<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.2/operator/scripts/scaling/scalingAction.sh"><code>scalingAction.sh</code></a>スクリプトを関連付けます。</span> </p>
 </li>
 </ol>
 <p><span class="merged" id="index.1EgEu7" title="原文 : Important notes about the configuration properties for the Script Action:">スクリプト・アクションの構成プロパティに関する重要なノート:</span></p>
@@ -3755,12 +3783,12 @@ LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUR3akNDQXFxZ0F3SUJBZ0lFRzhYT1N6QU...
 <p><span class="merged" id="index.284DII.spl1" title="原文 : In addition to using the WebLogic Diagnostic Framework for automatic scaling of a dynamic cluster, you can use a third-party monitoring application like Prometheus.">WebLogic診断フレームワークを使用した動的クラスタの自動スケーリングに加えて、Prometheusなどのサード・パーティのモニタリング・アプリケーションを使用できます。</span> <span class="merged" id="index.284DII.spl2" title="原文 : Please read the following blog for details about Using Prometheus to Automatically Scale WebLogic Clusters on Kubernetes."><a href="https://blogs.oracle.com/weblogicserver/using-prometheus-to-automatically-scale-weblogic-clusters-on-kubernetes-v5">「Prometheusを使用したKubernetesでのWebLogicクラスタの自動スケーリング」</a>の詳細は、次のブログを参照してください。</span> </p>
 <h3 id="helpful-tips"><span class="merged" id="index.4aNwf" title="原文 : Helpful tips">役立つヒント</span></h3>
 <h4 id="debugging-scalingactionsh"><span class="merged" id="index.NBQBa" title="原文 : Debugging scalingAction.sh">scalingAction.shのデバッグ</span></h4>
-<p><span class="merged" id="index.2bujl6" title="原文 : The scalingAction.sh script was designed to be executed within a container of the Administration Server Pod because the associated diagnostic module is targeted to the Administration Server."><a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.1/operator/scripts/scaling/scalingAction.sh"><code>scalingAction.sh</code></a>スクリプトは、関連付けられた診断モジュールが管理サーバーにターゲット指定されているため、管理サーバーポッドのコンテナ内で実行されるように設計されています。</span></p>
+<p><span class="merged" id="index.20xsOk" title="原文 : The scalingAction.sh script was designed to be executed within a container of the Administration Server Pod because the associated diagnostic module is targeted to the Administration Server."><a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.2/operator/scripts/scaling/scalingAction.sh"><code>scalingAction.sh</code></a>スクリプトは、関連付けられた診断モジュールが管理サーバーにターゲット指定されているため、管理サーバーポッドのコンテナ内で実行されるように設計されています。</span></p>
 <p><span class="merged" id="index.1PUehe" title="原文 : The easiest way to verify and debug the scalingAction.sh script is to open a shell on the running Administration Server pod and execute the script on the command line."><code>scalingAction.sh</code>スクリプトを検証およびデバッグする最も簡単な方法は、実行中の管理サーバーのポッドでシェルを開き、コマンドラインでスクリプトを実行することです。</span></p>
 <p><span class="merged" id="index.2iktOh.spl1" title="原文 : The following example illustrates how to open a bash shell on a running Administration Server pod named domain1-admin-server and execute the scriptAction.sh script.">次の例は、<code>domain1-admin-server</code>という名前の実行中の管理サーバーポッドでbashシェルを開き、<code>scriptAction.sh</code>スクリプトを実行する方法を示しています。</span> <span class="merged" id="index.2iktOh.spl2" title="原文 : It assumes that:">次のことを前提としています:</span> </p>
 <ul>
 <li><span class="merged" id="index.6O3Pz" title="原文 : The domain home is in /u01/oracle/user-projects/domains/domain1 (that is, the domain home is inside an image).">ドメイン・ホームは<code>/u01/oracle/user-projects/domains/domain1</code>内にあること(つまり、ドメイン・ホームはイメージ内にあります)。</span></li>
-<li><span class="merged" id="index.3FpQoq" title="原文 : The Dockerfile copied scalingAction.sh to /u01/oracle/user-projects/domains/domain1/bin/scripts/scalingAction.sh.">Dockerfileは、<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.1/operator/scripts/scaling/scalingAction.sh"><code>scalingAction.sh</code></a>を<code>/u01/oracle/user-projects/domains/domain1/bin/scripts/scalingAction.sh</code>にコピーされていること。</span></li>
+<li><span class="merged" id="index.3WHm7H" title="原文 : The Dockerfile copied scalingAction.sh to /u01/oracle/user-projects/domains/domain1/bin/scripts/scalingAction.sh.">Dockerfileは、<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.2/operator/scripts/scaling/scalingAction.sh"><code>scalingAction.sh</code></a>を<code>/u01/oracle/user-projects/domains/domain1/bin/scripts/scalingAction.sh</code>にコピーされていること。</span></li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ kubectl exec -it domain1-admin-server /bin/bash
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cd /u01/oracle/user-projects/domains/domain1/bin/scripts <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
@@ -4392,6 +4420,22 @@ LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUR3akNDQXFxZ0F3SUJBZ0lFRzhYT1N6QU...
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -6420,19 +6464,19 @@ LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUR3akNDQXFxZ0F3SUJBZ0lFRzhYT1N6QU...
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1703128863"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1703128863"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1703128863"></script>
-    <script src="../../../js/jquery.sticky.js?1703128863"></script>
-    <script src="../../../js/featherlight.min.js?1703128863"></script>
-    <script src="../../../js/highlight.pack.js?1703128863"></script>
+    <script src="../../../js/clipboard.min.js?1720668207"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1720668207"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1720668207"></script>
+    <script src="../../../js/jquery.sticky.js?1720668207"></script>
+    <script src="../../../js/featherlight.min.js?1720668207"></script>
+    <script src="../../../js/highlight.pack.js?1720668207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1703128863"></script>
-    <script src="../../../js/learn.js?1703128863"></script>
-    <script src="../../../js/hugo-learn.js?1703128863"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1720668207"></script>
+    <script src="../../../js/learn.js?1720668207"></script>
+    <script src="../../../js/hugo-learn.js?1720668207"></script>
     
         
-            <script src="../../../mermaid/mermaid.js?1703128863"></script>
+            <script src="../../../mermaid/mermaid.js?1720668207"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

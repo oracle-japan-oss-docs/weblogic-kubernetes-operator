@@ -12,20 +12,20 @@
     <title>実行中のドメインのパッチ :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../css/nucleus.css?1703128863" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/hybrid.css?1703128863" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1703128863" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1703128863" rel="stylesheet">
-    <link href="../../css/theme.css?1703128863" rel="stylesheet">
-    <link href="../../css/tabs.css?1703128863" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1703128863" rel="stylesheet">
+    <link href="../../css/nucleus.css?1720668206" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1720668206" rel="stylesheet">
+    <link href="../../css/hybrid.css?1720668206" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1720668206" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1720668206" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1720668206" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1720668206" rel="stylesheet">
+    <link href="../../css/theme.css?1720668206" rel="stylesheet">
+    <link href="../../css/tabs.css?1720668206" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1720668206" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.6.0.min.js?1703128863"></script>
+    <script src="../../js/jquery-3.6.0.min.js?1720668206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1703128863"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1703128863"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1720668206"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1720668206"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1703128863"></script>
+<script type="text/javascript" src="../../js/search.js?1720668206"></script>
 
     
   </div>
@@ -722,6 +722,34 @@
         " data-nav-id="/managing-domains/major-weblogic-version-upgrade/" title="管理対象ドメインのアップグレード">
       <span class="merged" id="index.19dJBN" title="原文 :  Upgrade managed domains "><a href="../../managing-domains/major-weblogic-version-upgrade/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
       
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
+        <span class="merged" id="index.e22m" title="原文 :  Upgrade managed domains "><a href="../../managing-domains/major-weblogic-version-upgrade/upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
       
     </li>
   
@@ -3419,7 +3447,7 @@
 <p><span class="merged" id="index.2PLcYj.spl1" title="原文 : If you need to update the image for a running Model in Image domain, then simply follow the same steps that you used to create the original image as described in Create a custom image with patches applied, and edit the domain resource’s domain.spec.image attribute with the new image’s name/tag (mydomain:v2).">実行中のModel in Imageドメインのイメージを更新する必要がある場合は、<a href="../custom-images/index.html#create-a-custom-image-with-patches-applied">「パッチを適用したカスタム・イメージの作成」</a>で説明されているように、元のイメージの作成に使用したものと同じステップを実行し、ドメイン・リソースの<code>domain.spec.image</code>属性を新しいイメージの名前/タグ(<code>mydomain:v2</code>)で編集します。</span> <span class="merged" id="index.2PLcYj.spl2" title="原文 : The operator will then perform a rolling restart of the WebLogic domain to update the Oracle Home of the servers.">オペレータは、WebLogicドメインの<a href="../../managing-domains/domain-lifecycle/restarting/index.html#overview">「ローリング再起動」</a>を実行してサーバーのOracle Homeを更新します。</span> </p>
 <h4 id="domain-in-image"><span class="merged" id="index.CMey"  title="原文:: Domain in Image">Domain in Image</span></h4>
 <p><span class="merged" id="index.2JnSpA.spl1" title="原文 : NOTE: The Domain in Image domain home source type is deprecated in WebLogic Kubernetes Operator version 4.0."><strong>ノート</strong>:&nbsp;Domain in Image <a href="../../managing-domains/choosing-a-model/index.html">ドメイン・ホーム・ソース・タイプ</a>は、WebLogic Kubernetes Operatorバージョン4.0では非推奨です。</span> <span class="merged" id="index.2JnSpA.spl2" title="原文 : Oracle recommends that you choose either Domain on PV or Model in Image, depending on your needs.">Oracleでは、必要に応じてDomain on PVまたはModel in Imageを選択することをお薦めします。</span> </p>
-<p><span class="merged" id="index.1k7cmc.spl1" title="原文 : If you need to update the image for a running Domain in Image domain, then use the WIT rebase command to update the Oracle Home for an existing domain image using the patched Oracle Home from a patched container image.">実行中のDomain in Imageドメインのイメージを更新する必要がある場合は、WIT <a href="../../../weblogic-image-tool/userguide/tools/rebase-image/index.html"><code>rebase</code></a>コマンドを使用して、パッチが適用されたコンテナ・イメージからパッチが適用されたOracle Homeを使用して、既存のドメイン・イメージのOracle Homeを更新します。</span> <span class="merged" id="index.1k7cmc.spl2" title="原文 : For Domain in Image domains:">Domain in Imageドメインの場合:</span> </p>
+<p><span class="merged" id="index.1Dbc9P.spl1" title="原文 : If you need to update the image for a running Domain in Image domain, then use the WIT rebase command to update the Oracle Home for an existing domain image using the patched Oracle Home from a patched container image.">実行中のDomain in Imageドメインのイメージを更新する必要がある場合は、WIT <a href="https://oracle.github.io/weblogic-image-tool/userguide/tools/rebase-image/"><code>rebase</code></a>コマンドを使用して、パッチが適用されたコンテナ・イメージからパッチが適用されたOracle Homeを使用して、既存のドメイン・イメージのOracle Homeを更新します。</span> <span class="merged" id="index.1Dbc9P.spl2" title="原文 : For Domain in Image domains:">Domain in Imageドメインの場合:</span> </p>
 <ul>
 <li>
 <p><span class="merged" id="index.2r6ou6" title="原文 : The container image contains the JDK, WebLogic Server binaries, and domain home.">コンテナ・イメージには、JDK、WebLogic Serverバイナリおよびドメイン・ホームが含まれます。</span></p>
@@ -3444,7 +3472,7 @@
 <ul>
 <li>
 <p><span class="merged" id="index.2hyOMX" title="原文 : As a new WebLogic image from a base OS image (similar to the create command; recommended).">ベースOSイメージからの新しいWebLogicイメージとして(<code>create</code>コマンドと同様、推奨)。</span></p>
-<p><span class="merged" id="index.4ZcAZf" title="原文 : NOTE: Oracle strongly recommends rebasing your images with the latest security patches by applying the --recommendedPatches option."><strong>ノート</strong>:&nbsp;Oracleでは、<a href="../../../weblogic-image-tool/userguide/tools/rebase-image/index.html"><code>--recommendedPatches</code></a>オプションを適用して最新のセキュリティ・パッチでイメージをリベースすることをお薦めします。</span></p>
+<p><span class="merged" id="index.zukv6" title="原文 : NOTE: Oracle strongly recommends rebasing your images with the latest security patches by applying the --recommendedPatches option."><strong>ノート</strong>:&nbsp;Oracleでは、<a href="https://oracle.github.io/weblogic-image-tool/userguide/tools/rebase-image/"><code>--recommendedPatches</code></a>オプションを適用して最新のセキュリティ・パッチでイメージをリベースすることをお薦めします。</span></p>
 <p><span class="merged" id="index.2fpxx4" title="原文 : To activate:">アクティブ化するには:</span></p>
 <ul>
 <li><span class="merged" id="index.14i9G8" title="原文 : Set --tag to the name of the final new image."><code>--tag</code>を最終的な新しいイメージの名前に設定します。</span></li>
@@ -4042,6 +4070,22 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -6070,19 +6114,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1703128863"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1703128863"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1703128863"></script>
-    <script src="../../js/jquery.sticky.js?1703128863"></script>
-    <script src="../../js/featherlight.min.js?1703128863"></script>
-    <script src="../../js/highlight.pack.js?1703128863"></script>
+    <script src="../../js/clipboard.min.js?1720668206"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1720668206"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1720668206"></script>
+    <script src="../../js/jquery.sticky.js?1720668206"></script>
+    <script src="../../js/featherlight.min.js?1720668206"></script>
+    <script src="../../js/highlight.pack.js?1720668206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1703128863"></script>
-    <script src="../../js/learn.js?1703128863"></script>
-    <script src="../../js/hugo-learn.js?1703128863"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1720668206"></script>
+    <script src="../../js/learn.js?1720668206"></script>
+    <script src="../../js/hugo-learn.js?1720668206"></script>
     
         
-            <script src="../../mermaid/mermaid.js?1703128863"></script>
+            <script src="../../mermaid/mermaid.js?1720668206"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

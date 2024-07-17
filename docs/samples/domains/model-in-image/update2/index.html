@@ -12,20 +12,20 @@
     <title>更新2 :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../../../css/nucleus.css?1703128863" rel="stylesheet">
-    <link href="../../../../css/fontawesome-all.min.css?1703128863" rel="stylesheet">
-    <link href="../../../../css/hybrid.css?1703128863" rel="stylesheet">
-    <link href="../../../../css/featherlight.min.css?1703128863" rel="stylesheet">
-    <link href="../../../../css/perfect-scrollbar.min.css?1703128863" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1703128863" rel="stylesheet">
-    <link href="../../../../css/atom-one-dark-reasonable.css?1703128863" rel="stylesheet">
-    <link href="../../../../css/theme.css?1703128863" rel="stylesheet">
-    <link href="../../../../css/tabs.css?1703128863" rel="stylesheet">
-    <link href="../../../../css/hugo-theme.css?1703128863" rel="stylesheet">
+    <link href="../../../../css/nucleus.css?1720668207" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1720668207" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1720668207" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1720668207" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1720668207" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1720668207" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1720668207" rel="stylesheet">
+    <link href="../../../../css/theme.css?1720668207" rel="stylesheet">
+    <link href="../../../../css/tabs.css?1720668207" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1720668207" rel="stylesheet">
     
     
 
-    <script src="../../../../js/jquery-3.6.0.min.js?1703128863"></script>
+    <script src="../../../../js/jquery-3.6.0.min.js?1720668207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../../js/lunr.min.js?1703128863"></script>
-<script type="text/javascript" src="../../../../js/auto-complete.js?1703128863"></script>
+<script type="text/javascript" src="../../../../js/lunr.min.js?1720668207"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1720668207"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator";
     
 </script>
-<script type="text/javascript" src="../../../../js/search.js?1703128863"></script>
+<script type="text/javascript" src="../../../../js/search.js?1720668207"></script>
 
     
   </div>
@@ -722,6 +722,34 @@
         " data-nav-id="/managing-domains/major-weblogic-version-upgrade/" title="管理対象ドメインのアップグレード">
       <span class="merged" id="index.3VMK9P" title="原文 :  Upgrade managed domains "><a href="../../../../managing-domains/major-weblogic-version-upgrade/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
       
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
+        <span class="merged" id="index.328O3v" title="原文 :  Upgrade managed domains "><a href="../../../../managing-domains/major-weblogic-version-upgrade/upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
       
     </li>
   
@@ -3410,7 +3438,7 @@
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ kubectl -n sample-domain1-ns label configmap sample-domain2-wdt-config-map <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  weblogic.domainUID<span style="color:#f92672">=</span>sample-domain2
 </span></span></code></pre></div><p><span class="merged" id="index.2Jhijz.spl1" title="原文 : If you’ve created your own data source file in the Update 1 use case, then substitute the file name in the --from-file= parameter (we suggested /tmp/sample/mydatasource.yaml earlier).">Update 1ユース・ケースで独自のデータ・ソース・ファイルを作成した場合は、<code>--from-file=</code>パラメータでファイル名を置換します(前述の<code>/tmp/sample/mydatasource.yaml</code>をお薦めします)。</span> <span class="merged" id="index.2Jhijz.spl2" title="原文 : Note that the -from-file= parameter can reference a single file, in which case it puts the designated file in the ConfigMap, or it can reference a directory, in which case it populates the ConfigMap with all of the files in the designated directory."><code>-from-file=</code>パラメータは、指定されたファイルをConfigMapに配置する単一のファイルを参照することも、指定されたディレクトリ内のすべてのファイルをConfigMapに移入するディレクトリを参照することもできます。</span> </p>
-<p><span class="merged" id="index.2L4ppr"  title="原文:: Observations:">内容:</span></p>
+<p><span class="merged" id="index.2L4ppr"  title="原文:: Observations:">観察結果:</span></p>
 <ul>
 <li><span class="merged" id="index.StC3Y" title="原文 : We are leaving the namespace sample-domain1-ns unchanged for the ConfigMap because you will deploy domain sample-domain2 to the same namespace as sample-domain1."><code>sample-domain1</code>と同じネームスペースにドメイン<code>sample-domain2</code>をデプロイするため、ConfigMapのネームスペース<code>sample-domain1-ns</code>は変更しません。</span></li>
 <li><span class="merged" id="index.2632M2" title="原文 : You name and label the ConfigMap using its associated domain UID for two reasons:">次の2つの理由で、関連付けられたドメインUIDを使用してConfigMapに名前を付け、ラベルを付けます:</span>
@@ -3456,7 +3484,7 @@
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ kubectl -n sample-domain1-ns label  secret <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   sample-domain2-datasource-secret <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   weblogic.domainUID<span style="color:#f92672">=</span>sample-domain2
-</span></span></code></pre></div><p><span class="merged" id="index.2L4ppr.1"  title="原文:: Observations:">内容:</span></p>
+</span></span></code></pre></div><p><span class="merged" id="index.2L4ppr.1"  title="原文:: Observations:">観察結果:</span></p>
 <ul>
 <li><span class="merged" id="index.1N7Eiw" title="原文 : We are leaving the namespace sample-domain1-ns unchanged for each secret because you will deploy domain sample-domain2 to the same namespace as sample-domain1."><code>sample-domain1</code>と同じネームスペースにドメイン<code>sample-domain2</code>をデプロイするため、各シークレットのネームスペース<code>sample-domain1-ns</code>は変更されません。</span></li>
 <li><span class="merged" id="index.1WPoqx" title="原文 : You name and label the secrets using their associated domain UID for two reasons:">シークレットには、次の2つの理由で、関連付けられたドメインUIDを使用して名前を付け、ラベルを付けます:</span>
@@ -4272,6 +4300,22 @@ sample-domain2-managed-server2               1/1     Running             0      
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -6308,19 +6352,19 @@ sample-domain2-managed-server2               1/1     Running             0      
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../../js/clipboard.min.js?1703128863"></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1703128863"></script>
-    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1703128863"></script>
-    <script src="../../../../js/jquery.sticky.js?1703128863"></script>
-    <script src="../../../../js/featherlight.min.js?1703128863"></script>
-    <script src="../../../../js/highlight.pack.js?1703128863"></script>
+    <script src="../../../../js/clipboard.min.js?1720668207"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1720668207"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1720668207"></script>
+    <script src="../../../../js/jquery.sticky.js?1720668207"></script>
+    <script src="../../../../js/featherlight.min.js?1720668207"></script>
+    <script src="../../../../js/highlight.pack.js?1720668207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../../js/modernizr.custom-3.6.0.js?1703128863"></script>
-    <script src="../../../../js/learn.js?1703128863"></script>
-    <script src="../../../../js/hugo-learn.js?1703128863"></script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1720668207"></script>
+    <script src="../../../../js/learn.js?1720668207"></script>
+    <script src="../../../../js/hugo-learn.js?1720668207"></script>
     
         
-            <script src="../../../../mermaid/mermaid.js?1703128863"></script>
+            <script src="../../../../mermaid/mermaid.js?1720668207"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

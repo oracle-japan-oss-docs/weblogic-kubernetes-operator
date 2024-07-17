@@ -12,20 +12,20 @@
     <title>PersistentVolumesおよびPersistentVolumeClaims :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../../css/nucleus.css?1703128863" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1703128863" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1703128863" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1703128863" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1703128863" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1703128863" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1703128863" rel="stylesheet">
-    <link href="../../../css/theme.css?1703128863" rel="stylesheet">
-    <link href="../../../css/tabs.css?1703128863" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1703128863" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1720668207" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1720668207" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1720668207" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1720668207" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1720668207" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1720668207" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1720668207" rel="stylesheet">
+    <link href="../../../css/theme.css?1720668207" rel="stylesheet">
+    <link href="../../../css/tabs.css?1720668207" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1720668207" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.6.0.min.js?1703128863"></script>
+    <script src="../../../js/jquery-3.6.0.min.js?1720668207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1703128863"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1703128863"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1720668207"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1720668207"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1703128863"></script>
+<script type="text/javascript" src="../../../js/search.js?1720668207"></script>
 
     
   </div>
@@ -722,6 +722,34 @@
         " data-nav-id="/managing-domains/major-weblogic-version-upgrade/" title="管理対象ドメインのアップグレード">
       <span class="merged" id="index.4P1OkX" title="原文 :  Upgrade managed domains "><a href="../../major-weblogic-version-upgrade/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
       
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
+        <span class="merged" id="index.2hALNM" title="原文 :  Upgrade managed domains "><a href="../../major-weblogic-version-upgrade/upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
       
     </li>
   
@@ -3406,7 +3434,7 @@
 <h3 id="persistent-volume-storage-locations"><span class="merged" id="index.KJDgT" title="原文 : Persistent volume storage locations">永続ボリューム・ストレージのロケーション</span></h3>
 <p><span class="merged" id="index.4ZoXdR.spl1" title="原文 : PersistentVolumes can point to different storage locations, for example NFS servers or a local directory path.">PersistentVolumesは、NFSサーバーやローカル・ディレクトリ・パスなど、様々なストレージのロケーションを指すことができます。</span> <span class="merged" id="index.4ZoXdR.spl2" title="原文 : For a list of available options, see the Kubernetes documentation.">使用可能なオプションのリストについては、<a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/">「Kubernetesのドキュメント」</a>を参照してください。</span> </p>
 <p><span class="merged" id="index.YKNnI.spl1" title="原文 : Note regarding HostPath: In a single-node Kubernetes cluster, such as may be used for testing or proof of concept activities, HOST_PATH provides the simplest configuration."><strong>HostPathに関するノート</strong>: たとえば、単一ノードのKubernetesクラスタは、概念アクティビティのテストや証明に使用できますが、<code>HOST_PATH</code>は最も単純な構成を提供します。</span> <span class="merged" id="index.YKNnI.spl2" title="原文 : In a multinode Kubernetes cluster, a HOST_PATH that is located on shared storage mounted by all nodes in the Kubernetes cluster is the simplest configuration.">マルチ・ノードKubernetesクラスタでは、Kubernetesクラスタ内のすべてのノードによってマウントされた共有ストレージにある<code>HOST_PATH</code>が最も単純な構成です。</span> <span class="merged" id="index.YKNnI.spl3" title="原文 : If nodes do not have shared storage, then NFS is probably the most widely-available option.">ノードに共有ストレージがない場合、NFSはおそらくもっとも広く使用可能なオプションです。</span> <span class="merged" id="index.YKNnI.spl4" title="原文 : There are other options listed in the referenced table.">参照表には、他のオプションもリストされています。</span> </p>
-<p><span class="merged" id="index.42vT40.spl1" title="原文 : The operator provides a sample script to create the PersistentVolume and PersistentVolumeClaim for the domain.">オペレータには、ドメインのPersistentVolumeおよびPersistentVolumeClaimを作成するためのサンプル・スクリプトが用意されています。</span> <span class="merged" id="index.42vT40.spl2" title="原文 : This script must be executed before creating the domain.">このスクリプトは、ドメインを作成する前に実行する必要があります。</span> <span class="merged" id="index.42vT40.spl3" title="原文 : Beginning with operator version 4.1.0, for the Domain on PV domain home source type, the operator provides options to create the PV and PVC during the domain initialization.">オペレータは、Domain on PV <a href="../../choosing-a-model/index.html">「ドメイン・ホーム・ソース・タイプ」</a>のオペレータ・バージョン4.1.0から、ドメインの初期化中にPVとPVCを作成するオプションを提供します。</span> <span class="merged" id="index.42vT40.spl4" title="原文 : See the Domain on PV documentation or the domain.spec.configuration.initializeDomainOnPV section in the domain resource schema for more details.">詳細は、ドメイン・リソース<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.1/documentation/domains/Domain.md">schema</a>の<a href="../../domain-on-pv/index.html">「Domain on PVドキュメント」</a>または<code>domain.spec.configuration.initializeDomainOnPV</code>の項を参照してください。</span> </p>
+<p><span class="merged" id="index.ou6yW.spl1" title="原文 : The operator provides a sample script to create the PersistentVolume and PersistentVolumeClaim for the domain.">オペレータには、ドメインのPersistentVolumeおよびPersistentVolumeClaimを作成するためのサンプル・スクリプトが用意されています。</span> <span class="merged" id="index.ou6yW.spl2" title="原文 : This script must be executed before creating the domain.">このスクリプトは、ドメインを作成する前に実行する必要があります。</span> <span class="merged" id="index.ou6yW.spl3" title="原文 : Beginning with operator version 4.1.0, for the Domain on PV domain home source type, the operator provides options to create the PV and PVC during the domain initialization.">オペレータは、Domain on PV <a href="../../choosing-a-model/index.html">「ドメイン・ホーム・ソース・タイプ」</a>のオペレータ・バージョン4.1.0から、ドメインの初期化中にPVとPVCを作成するオプションを提供します。</span> <span class="merged" id="index.ou6yW.spl4" title="原文 : See the Domain on PV documentation or the domain.spec.configuration.initializeDomainOnPV section in the domain resource schema for more details.">詳細は、ドメイン・リソース<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.2/documentation/domains/Domain.md">schema</a>の<a href="../../domain-on-pv/index.html">「Domain on PVドキュメント」</a>または<code>domain.spec.configuration.initializeDomainOnPV</code>の項を参照してください。</span> </p>
 <h4 id="persistent-volumes-using-hostpath-approach"><span class="merged" id="index.3Ui4OM" title="原文 : Persistent volumes using HostPath approach">HostPathアプローチを使用した永続ボリューム</span></h4>
 <p><span class="merged" id="index.T26rE.spl1" title="原文 : The HOST_PATH provider is the simplest case for creating a PersistentVolume."><code>HOST_PATH</code>プロバイダは、PersistentVolumeを作成する最も単純なケースです。</span> <span class="merged" id="index.T26rE.spl2" title="原文 : It requires creating a directory on the Kubernetes master and ensuring that it has the correct permissions:">Kubernetesマスターにディレクトリを作成し、適切な権限を持っていることを確認する必要があります:</span> </p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ mkdir -m <span style="color:#ae81ff">777</span> -p /path/to/domain1PersistentVolume
@@ -3985,6 +4013,22 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -6010,19 +6054,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1703128863"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1703128863"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1703128863"></script>
-    <script src="../../../js/jquery.sticky.js?1703128863"></script>
-    <script src="../../../js/featherlight.min.js?1703128863"></script>
-    <script src="../../../js/highlight.pack.js?1703128863"></script>
+    <script src="../../../js/clipboard.min.js?1720668207"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1720668207"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1720668207"></script>
+    <script src="../../../js/jquery.sticky.js?1720668207"></script>
+    <script src="../../../js/featherlight.min.js?1720668207"></script>
+    <script src="../../../js/highlight.pack.js?1720668207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1703128863"></script>
-    <script src="../../../js/learn.js?1703128863"></script>
-    <script src="../../../js/hugo-learn.js?1703128863"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1720668207"></script>
+    <script src="../../../js/learn.js?1720668207"></script>
+    <script src="../../../js/hugo-learn.js?1720668207"></script>
     
         
-            <script src="../../../mermaid/mermaid.js?1703128863"></script>
+            <script src="../../../mermaid/mermaid.js?1720668207"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

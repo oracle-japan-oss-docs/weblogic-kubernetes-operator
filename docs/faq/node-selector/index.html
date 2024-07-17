@@ -12,20 +12,20 @@
     <title>特定のノードへのポッドのスケジュール :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../css/nucleus.css?1703128863" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/hybrid.css?1703128863" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1703128863" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1703128863" rel="stylesheet">
-    <link href="../../css/theme.css?1703128863" rel="stylesheet">
-    <link href="../../css/tabs.css?1703128863" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1703128863" rel="stylesheet">
+    <link href="../../css/nucleus.css?1720668206" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1720668206" rel="stylesheet">
+    <link href="../../css/hybrid.css?1720668206" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1720668206" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1720668206" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1720668206" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1720668206" rel="stylesheet">
+    <link href="../../css/theme.css?1720668206" rel="stylesheet">
+    <link href="../../css/tabs.css?1720668206" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1720668206" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.6.0.min.js?1703128863"></script>
+    <script src="../../js/jquery-3.6.0.min.js?1720668206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1703128863"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1703128863"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1720668206"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1720668206"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1703128863"></script>
+<script type="text/javascript" src="../../js/search.js?1720668206"></script>
 
     
   </div>
@@ -722,6 +722,34 @@
         " data-nav-id="/managing-domains/major-weblogic-version-upgrade/" title="管理対象ドメインのアップグレード">
       <span class="merged" id="index.19dJBN" title="原文 :  Upgrade managed domains "><a href="../../managing-domains/major-weblogic-version-upgrade/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
       
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
+        <span class="merged" id="index.e22m" title="原文 :  Upgrade managed domains "><a href="../../managing-domains/major-weblogic-version-upgrade/upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
       
     </li>
   
@@ -3379,7 +3407,7 @@
 <p><span class="merged" id="index.yKScN.spl1" title="原文 : First, set a label on the nodes on which the WebLogic Server pods will run.">まず、WebLogic Serverポッドが実行されるノードにラベルを設定します。</span> <span class="merged" id="index.yKScN.spl2"  title="原文:: For example:">例えば:</span> </p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ kubectl label nodes name<span style="color:#f92672">=</span>weblogic-pods
 </span></span></code></pre></div><p><span class="merged" id="index.1LUES5.spl1" title="原文 : In the Domain CR, set a nodeSelector: a selector which must match a node’s labels for the pod to be scheduled on that node.">ドメインCRで、<code>nodeSelector</code>を設定: ノードでスケジュールされるポッドのノード・ラベルと一致する必要があるセレクタ。</span> <span class="merged" id="index.1LUES5.spl2" title="原文 : See kubectl explain pods.spec.nodeSelector."><code>kubectl explain pods.spec.nodeSelector</code>を参照してください。</span> </p>
-<p><span class="merged" id="index.4ZQ4vv" title="原文 : You can set nodeSelector labels for WebLogic Server pods, all server pods in a cluster, or all server pods in a domain. nodeSelector is a field under the serverPod element, which occurs at several points in the Domain CR schema:">WebLogic Serverポッド、クラスタ内のすべてのサーバー・ポッドまたはドメイン内のすべてのサーバー・ポッドに<code>nodeSelector</code>ラベルを設定できます。<code>nodeSelector</code>は、ドメインCR <a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.1/documentation/domains/Domain.md">schema</a>の複数のポイントで発生する<code>serverPod</code>要素の下のフィールドです:</span></p>
+<p><span class="merged" id="index.2EFoYM" title="原文 : You can set nodeSelector labels for WebLogic Server pods, all server pods in a cluster, or all server pods in a domain. nodeSelector is a field under the serverPod element, which occurs at several points in the Domain CR schema:">WebLogic Serverポッド、クラスタ内のすべてのサーバー・ポッドまたはドメイン内のすべてのサーバー・ポッドに<code>nodeSelector</code>ラベルを設定できます。<code>nodeSelector</code>は、ドメインCR <a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.2/documentation/domains/Domain.md">schema</a>の複数のポイントで発生する<code>serverPod</code>要素の下のフィールドです:</span></p>
 <ul>
 <li><span class="merged" id="index.4K9a7o" title="原文 : At the top-level spec.severPod for the entire domain">ドメイン全体の最上位レベルの<code>spec.severPod</code></span></li>
 <li><span class="merged" id="index.1REbJe" title="原文 : At spec.adminServer.serverPod for the Administration Server">管理サーバーの<code>spec.adminServer.serverPod</code></span></li>
@@ -3951,6 +3979,22 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -5979,19 +6023,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1703128863"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1703128863"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1703128863"></script>
-    <script src="../../js/jquery.sticky.js?1703128863"></script>
-    <script src="../../js/featherlight.min.js?1703128863"></script>
-    <script src="../../js/highlight.pack.js?1703128863"></script>
+    <script src="../../js/clipboard.min.js?1720668206"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1720668206"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1720668206"></script>
+    <script src="../../js/jquery.sticky.js?1720668206"></script>
+    <script src="../../js/featherlight.min.js?1720668206"></script>
+    <script src="../../js/highlight.pack.js?1720668206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1703128863"></script>
-    <script src="../../js/learn.js?1703128863"></script>
-    <script src="../../js/hugo-learn.js?1703128863"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1720668206"></script>
+    <script src="../../js/learn.js?1720668206"></script>
+    <script src="../../js/hugo-learn.js?1720668206"></script>
     
         
-            <script src="../../mermaid/mermaid.js?1703128863"></script>
+            <script src="../../mermaid/mermaid.js?1720668206"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

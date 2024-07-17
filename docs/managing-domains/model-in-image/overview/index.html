@@ -12,20 +12,20 @@
     <title>概要 :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../../css/nucleus.css?1703128863" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1703128863" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1703128863" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1703128863" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1703128863" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1703128863" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1703128863" rel="stylesheet">
-    <link href="../../../css/theme.css?1703128863" rel="stylesheet">
-    <link href="../../../css/tabs.css?1703128863" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1703128863" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1720668207" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1720668207" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1720668207" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1720668207" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1720668207" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1720668207" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1720668207" rel="stylesheet">
+    <link href="../../../css/theme.css?1720668207" rel="stylesheet">
+    <link href="../../../css/tabs.css?1720668207" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1720668207" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.6.0.min.js?1703128863"></script>
+    <script src="../../../js/jquery-3.6.0.min.js?1720668207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1703128863"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1703128863"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1720668207"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1720668207"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1703128863"></script>
+<script type="text/javascript" src="../../../js/search.js?1720668207"></script>
 
     
   </div>
@@ -722,6 +722,34 @@
         " data-nav-id="/managing-domains/major-weblogic-version-upgrade/" title="管理対象ドメインのアップグレード">
       <span class="merged" id="index.4P1OkX" title="原文 :  Upgrade managed domains "><a href="../../major-weblogic-version-upgrade/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
       
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
+        <span class="merged" id="index.2hALNM" title="原文 :  Upgrade managed domains "><a href="../../major-weblogic-version-upgrade/upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
       
     </li>
   
@@ -3411,17 +3439,27 @@
 <li>
 <p><span class="merged" id="index.3BW3Qr" title="原文 : The operator will run a Kubernetes Job called the ‘introspector job’ that:">オペレータは、イントロスペクタ・ジョブと呼ばれる次のKubernetesジョブを実行します:</span></p>
 <ul>
-<li><span class="merged" id="index.4e86L0" title="原文 : Merges your WDT models.">WDTモデルをマージします。</span></li>
-<li><span class="merged" id="index.4dKR90" title="原文 : Runs WDT tooling to generate a domain home.">WDTツールを実行してドメイン・ホームを生成します。</span></li>
-<li><span class="merged" id="index.2bqduP" title="原文 : Packages the domain home and passes it to the operator.">ドメイン・ホームをパッケージ化し、オペレータに渡します。</span></li>
+<li><span class="merged" id="index.E48mb" title="原文 : For an Auxiliary Image deployment, an init container is used to copy and set up the WDT installer in the main container, and all the WDT models are also copied to the main container."><a href="../auxiliary-images/index.html">「補助イメージ」</a>デプロイメントの場合、initコンテナを使用して、メイン・コンテナでWDTインストーラをコピーおよび設定し、すべてのWDTモデルもメイン・コンテナにコピーされます。</span></li>
+<li><span class="merged" id="index.WIxRn.spl1" title="原文 : Sets up the call parameters for WDT to create the domain.">ドメインを作成するためのWDTのコール・パラメータを設定します。</span> <span class="merged" id="index.WIxRn.spl2" title="原文 : The ordering of the models follow the pattern Model files naming and ordering.">モデルの順序は、パターン<a href="../model-files/index.html#model-file-naming-and-loading-order">「モデル・ファイルのネーミングおよび順序付け」</a>に従います。</span> </li>
+<li><span class="merged" id="index.4HALL" title="原文 : Runs WDT tooling to generate a domain home using the parameters from the previous step.">WDTツールを実行して、前のステップのパラメータを使用してドメイン・ホームを生成します。</span></li>
+<li><span class="merged" id="index.1N6whT" title="原文 : Encrypts the domain salt key SerializedSystemIni.dat.">ドメインのソルト・キー<code>SerializedSystemIni.dat</code>を暗号化します。</span></li>
+<li><span class="merged" id="index.2JF2tY.spl1" title="原文 : Packages the domain home and passes it to the operator.">ドメイン・ホームをパッケージ化し、オペレータに渡します。</span> <span class="merged" id="index.2JF2tY.spl2" title="原文 : The packaged domain has two parts.">パッケージ化されたドメインには2つの部分があります。</span> <span class="merged" id="index.2JF2tY.spl3" title="原文 : The first part primordial domain contains the basic configuration including the encrypted salt key.">最初の部分<code>primordial domain</code>には、暗号化されたsaltキーを含む基本構成が含まれます。</span> <span class="merged" id="index.2JF2tY.spl4" title="原文 : The second part domain config contains the rest of the configuration config/**/*.xml.">2番目の部分<code>domain config</code>には、残りの構成<code>config/**/*.xml</code>が含まれます。</span> <span class="merged" id="index.2JF2tY.spl5" title="原文 : These files are compressed but do not contain any applications, libraries, key stores, and such, because they can be restored from the WDT archives.">これらのファイルは圧縮されますが、WDTアーカイブからリストアできるため、アプリケーション、ライブラリ、キー・ストアなどは含まれません。</span> </li>
 </ul>
 </li>
 <li>
 <p><span class="merged" id="index.2OTv4z" title="原文 : After the introspector job completes:">イントロスペクタ・ジョブが完了したら、次の手順を実行します:</span></p>
 <ul>
-<li><span class="merged" id="index.4AId9c" title="原文 : The operator creates one or more ConfigMaps following the pattern DOMAIN_UID-weblogic-domain-introspect-cm***.">オペレータは、パターン<code>DOMAIN_UID-weblogic-domain-introspect-cm***</code>の後に1つ以上のConfigMapsを作成します。</span></li>
-<li><span class="merged" id="index.4NAWRJ" title="原文 : The operator subsequently boots your domain’s WebLogic Server pods.">その後、オペレータはドメインのWebLogic Serverポッドをブートします。</span></li>
-<li><span class="merged" id="index.3PTvSS" title="原文 : The pods will obtain their domain home from the ConfigMap.">ポッドは、ConfigMapからドメイン・ホームを取得します。</span></li>
+<li><span class="merged" id="index.2NoEbg.spl1" title="原文 : The operator creates one or more ConfigMaps following the pattern DOMAIN_UID-weblogic-domain-introspect-cm***.">オペレータは、パターン<code>DOMAIN_UID-weblogic-domain-introspect-cm***</code>の後に1つ以上のConfigMapsを作成します。</span> <span class="merged" id="index.2NoEbg.spl2" title="原文 : These ConfigMaps contain the packaged domains from the introspector job and other information for starting the domain.">これらのConfigMapsには、イントロスペクタ・ジョブからのパッケージ・ドメインと、ドメインを起動するためのその他の情報が含まれます。</span> </li>
+</ul>
+</li>
+<li>
+<p><span class="merged" id="index.BVJ9l" title="原文 : After completion of the introspector job, the operator will start the domain:">イントロスペクタ・ジョブが完了すると、オペレータはドメインを起動します:</span></p>
+<ul>
+<li><span class="merged" id="index.3G91pk" title="原文 : For an Auxiliary Image deployment, an init container is used to copy and set up the WDT installer in the main container, and all the WDT models are also copied to the main container first."><a href="../auxiliary-images/index.html">「補助イメージ」</a>デプロイメントの場合、initコンテナを使用してメイン・コンテナでWDTインストーラをコピーおよび設定し、すべてのWDTモデルも最初にメイン・コンテナにコピーされます。</span></li>
+<li><span class="merged" id="index.1wGWNE" title="原文 : Restore the packaged domains in the server pod.">サーバーポッド内のパッケージ化されたドメインをリストアします。</span></li>
+<li><span class="merged" id="index.4FzqcA" title="原文 : Restore applications, libraries, key stores, and such, from the WDT archives.">アプリケーション、ライブラリ、キー・ストアなどをWDTアーカイブからリストアします。</span></li>
+<li><span class="merged" id="index.19h6Nn" title="原文 : Decrypt the domain salt key.">ドメインのsaltキーを復号化します。</span></li>
+<li><span class="merged" id="index.qGfcj"  title="原文:: Start the domain.">ドメインを起動します。</span></li>
 </ul>
 </li>
 </ul>
@@ -3431,12 +3469,12 @@
 <p><span class="merged" id="index.21bO35" title="原文 : See Runtime updates."><a href="../runtime-updates/index.html">「ランタイムの更新」</a>を参照してください。</span></p>
 <h3 id="continuous-integration-and-delivery-cicd"><span class="merged" id="index.2RC3VU" title="原文 : Continuous integration and delivery (CI/CD)">継続的インテグレーションと継続的デリバリ(CI/CD)</span></h3>
 <p><span class="merged" id="index.2yJCY8" title="原文 : To understand how Model in Image works with CI/CD, see CI/CD considerations.">Model in ImageとCI/CDの連携の仕組みを理解するには、<a href="../../cicd/index.html">「CI/CDに関する考慮事項」</a>を参照してください。</span></p>
-<h3 id="references"><span class="merged" id="index.3oSja0"  title="原文:: References">参照</span></h3>
+<h3 id="references"><span class="merged" id="index.3oSja0"  title="原文:: References">リファレンス</span></h3>
 <ul>
 <li><span class="merged" id="index.1bLRkg" title="原文 : Model in Image sample"><a href="../../../samples/domains/model-in-image/index.html">Model in Imageサンプル</a></span></li>
 <li><span class="merged" id="index.rSCRS" title="原文 : WebLogic Deploy Tooling (WDT)"><a href="https://oracle.github.io/weblogic-deploy-tooling/">WebLogic Deploy Tooling (WDT)</a></span></li>
-<li><span class="merged" id="index.2uDVXE" title="原文 : WebLogic Image Tool (WIT)"><a href="../../../../weblogic-image-tool/index.html">WebLogic Image Tool (WIT)</a></span></li>
-<li><span class="merged" id="index.3T3T7g" title="原文 : Domain schema, documentation">ドメイン<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.1/documentation/domains/Domain.md">「スキーマ」</a>、<a href="../../domain-resource/index.html">「ドキュメンテーション」</a></span></li>
+<li><span class="merged" id="index.25WBPQ" title="原文 : WebLogic Image Tool (WIT)"><a href="https://oracle.github.io/weblogic-image-tool/">WebLogic Image Tool (WIT)</a></span></li>
+<li><span class="merged" id="index.2BPbVe" title="原文 : Domain schema, documentation">ドメイン<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/release/4.2/documentation/domains/Domain.md">「スキーマ」</a>、<a href="../../domain-resource/index.html">「ドキュメンテーション」</a></span></li>
 <li><span class="merged" id="index.48l6zW" title="原文 : HTTP load balancers: Ingress documentation, sample">HTTPロード・バランサ: イングレス<a href="../../accessing-the-domain/ingress/index.html">「ドキュメンテーション」</a>、<a href="../../../samples/ingress/index.html">「サンプル」</a></span></li>
 <li><span class="merged" id="index.23F2qI" title="原文 : CI/CD considerations"><a href="../../cicd/index.html">CI/CDに関する考慮事項</a></span></li>
 </ul>
@@ -4002,6 +4040,22 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -6027,19 +6081,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1703128863"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1703128863"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1703128863"></script>
-    <script src="../../../js/jquery.sticky.js?1703128863"></script>
-    <script src="../../../js/featherlight.min.js?1703128863"></script>
-    <script src="../../../js/highlight.pack.js?1703128863"></script>
+    <script src="../../../js/clipboard.min.js?1720668207"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1720668207"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1720668207"></script>
+    <script src="../../../js/jquery.sticky.js?1720668207"></script>
+    <script src="../../../js/featherlight.min.js?1720668207"></script>
+    <script src="../../../js/highlight.pack.js?1720668207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1703128863"></script>
-    <script src="../../../js/learn.js?1703128863"></script>
-    <script src="../../../js/hugo-learn.js?1703128863"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1720668207"></script>
+    <script src="../../../js/learn.js?1720668207"></script>
+    <script src="../../../js/hugo-learn.js?1720668207"></script>
     
         
-            <script src="../../../mermaid/mermaid.js?1703128863"></script>
+            <script src="../../../mermaid/mermaid.js?1720668207"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

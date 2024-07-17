@@ -12,20 +12,20 @@
     <title>RESTサービス :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../css/nucleus.css?1703128863" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/hybrid.css?1703128863" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1703128863" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1703128863" rel="stylesheet">
-    <link href="../../css/theme.css?1703128863" rel="stylesheet">
-    <link href="../../css/tabs.css?1703128863" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1703128863" rel="stylesheet">
+    <link href="../../css/nucleus.css?1720668207" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1720668207" rel="stylesheet">
+    <link href="../../css/hybrid.css?1720668207" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1720668207" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1720668207" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1720668207" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1720668207" rel="stylesheet">
+    <link href="../../css/theme.css?1720668207" rel="stylesheet">
+    <link href="../../css/tabs.css?1720668207" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1720668207" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.6.0.min.js?1703128863"></script>
+    <script src="../../js/jquery-3.6.0.min.js?1720668207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1703128863"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1703128863"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1720668207"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1720668207"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1703128863"></script>
+<script type="text/javascript" src="../../js/search.js?1720668207"></script>
 
     
   </div>
@@ -722,6 +722,34 @@
         " data-nav-id="/managing-domains/major-weblogic-version-upgrade/" title="管理対象ドメインのアップグレード">
       <span class="merged" id="index.19dJBN" title="原文 :  Upgrade managed domains "><a href="../../managing-domains/major-weblogic-version-upgrade/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
       
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
+        <span class="merged" id="index.e22m" title="原文 :  Upgrade managed domains "><a href="../../managing-domains/major-weblogic-version-upgrade/upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
       
     </li>
   
@@ -3437,7 +3465,7 @@
 <li><span class="merged" id="index.4DrceV" title="原文 : To obtain a list of domains, send a GET request to the URL /operator/latest/domains">ドメインのリストを取得するには、<code>GET</code>リクエストをURL <code>/operator/latest/domains</code>に送信</span></li>
 <li><span class="merged" id="index.3jc9U0" title="原文 : To obtain a list of clusters in a domain, send a GET request to the URL /operator/latest/domains/&lt;domainUID&gt;/clusters">ドメイン内のクラスタのリストを取得するには、<code>GET</code>リクエストをURL <code>/operator/latest/domains/&lt;domainUID>/clusters</code>に送信</span></li>
 </ul>
-<p><span class="merged" id="index.2GwHTE.spl1" title="原文 : All of the REST services require authentication.">すべてのRESTサービスに認証が必要です。</span> <span class="merged" id="index.2GwHTE.spl2" title="原文 : Callers must pass in a valid token header and must have a properly configured CA certificate in their trust store, so that the X.509 certificate presented by the server is trusted by the client (see How to add your certificate to your operating system trust store).">コール元は有効なトークン・ヘッダーを渡す必要があり、サーバーによって提示されるX.509証明書がクライアントによって信頼されるように、信頼ストアに適切に構成されたCA証明書が必要です(<a href="index.html#how-to-add-your-certificate-to-your-operating-system-trust-store">「オペレーティング・システムのトラスト・ストアに証明書を追加する方法」</a>を参照)。</span> <span class="merged" id="index.2GwHTE.spl3" title="原文 : In previous operator versions, the operator performed checks using the Kubernetes token review and subject access review APIs, and then updated the Domain resource using the operator’s privileges.">以前のオペレータ・バージョンでは、オペレータはKubernetesトークン・レビューおよびサブジェクト・アクセス・レビューAPIを使用してチェックを実行した後、オペレータの権限を使用してドメイン・リソースを更新しました。</span> <span class="merged" id="index.2GwHTE.spl4" title="原文 : Now, by default, the operator will use the caller’s bearer token to perform the underlying update to the Domain resource using the caller’s privileges and thus delegating authentication and authorization checks directly to the Kubernetes API Server (see REST interface configuration).">デフォルトでは、オペレータはコール元のベアラー・トークンを使用して、コール元の権限を使用してドメイン・リソースに対する基礎となる更新を実行するため、認証および認可チェックをKubernetes APIサーバーに直接委任します(<a href="../using-helm/index.html#rest-interface-configuration">「RESTインタフェース構成」</a>を参照)。</span> <span class="merged" id="index.2GwHTE.spl5" title="原文 : Depending on your Kubernetes cluster authentication and authorization configuration, there are multiple ways of getting a valid token.">Kubernetesクラスタ認証および認可構成に応じて、有効なトークンを取得する方法が複数あります。</span> <span class="merged" id="index.2GwHTE.spl6" title="原文 : For an example using a Kubernetes service account, see the Sample operator REST client script.">Kubernetesサービス・アカウントの使用例については、<a href="index.html#sample-operator-rest-client-script">「サンプルのオペレータRESTクライアント・スクリプト」</a>を参照してください。</span> </p>
+<p><span class="merged" id="index.2GwHTE.spl1" title="原文 : All of the REST services require authentication.">すべてのRESTサービスに認証が必要です。</span> <span class="merged" id="index.2GwHTE.spl2" title="原文 : Callers must pass in a valid token header and must have a properly configured CA certificate in their trust store, so that the X.509 certificate presented by the server is trusted by the client (see How to add your certificate to your operating system trust store).">コール元は有効なトークン・ヘッダーを渡す必要があり、サーバーによって提示されるX.509証明書がクライアントによって信頼されるように、トラスト・ストアに適切に構成されたCA証明書が必要です(<a href="index.html#how-to-add-your-certificate-to-your-operating-system-trust-store">「オペレーティング・システムのトラスト・ストアに証明書を追加する方法」</a>を参照)。</span> <span class="merged" id="index.2GwHTE.spl3" title="原文 : In previous operator versions, the operator performed checks using the Kubernetes token review and subject access review APIs, and then updated the Domain resource using the operator’s privileges.">以前のオペレータ・バージョンでは、オペレータはKubernetesトークン・レビューおよびサブジェクト・アクセス・レビューAPIを使用してチェックを実行した後、オペレータの権限を使用してドメイン・リソースを更新しました。</span> <span class="merged" id="index.2GwHTE.spl4" title="原文 : Now, by default, the operator will use the caller’s bearer token to perform the underlying update to the Domain resource using the caller’s privileges and thus delegating authentication and authorization checks directly to the Kubernetes API Server (see REST interface configuration).">デフォルトでは、オペレータはコール元のベアラー・トークンを使用して、コール元の権限を使用してドメイン・リソースに対する基礎となる更新を実行するため、認証および認可チェックをKubernetes APIサーバーに直接委任します(<a href="../using-helm/index.html#rest-interface-configuration">「RESTインタフェース構成」</a>を参照)。</span> <span class="merged" id="index.2GwHTE.spl5" title="原文 : Depending on your Kubernetes cluster authentication and authorization configuration, there are multiple ways of getting a valid token.">Kubernetesクラスタ認証および認可構成に応じて、有効なトークンを取得する方法が複数あります。</span> <span class="merged" id="index.2GwHTE.spl6" title="原文 : For an example using a Kubernetes service account, see the Sample operator REST client script.">Kubernetesサービス・アカウントの使用例については、<a href="index.html#sample-operator-rest-client-script">「サンプルのオペレータRESTクライアント・スクリプト」</a>を参照してください。</span> </p>
 
 <div class="notices note" ><p><span class="merged" id="index.2lzZ7l.spl1" title="原文 : When using the operator’s REST services to scale up or down a WebLogic cluster, you may need to grant patch access to the user or service account associated with the caller’s bearer token.">オペレータのRESTサービスを使用してWebLogicクラスタをスケール・アップまたはスケール・ダウンする場合、コール元のベアラー・トークンに関連付けられたユーザーまたはサービス・アカウントに<code>patch</code>アクセス権を付与する必要がある場合があります。</span> <span class="merged" id="index.2lzZ7l.spl2" title="原文 : This can be done with an RBAC ClusterRoleBinding between the user or service account and the ClusterRole that defines the permissions for the WebLogic domains resource.">これは、ユーザーまたはサービス・アカウントと、WebLogic <code>domains</code>リソースのアクセス権を定義するClusterRoleの間のRBAC ClusterRoleBindingを使用して実行できます。</span> <span class="merged" id="index.2lzZ7l.spl3" title="原文 : For more information, see Using RBAC Authorization in the Kubernetes documentation.">詳細は、Kubernetesドキュメントの<a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">「RBAC認可の使用」</a>を参照してください。</span> </p>
 </div>
@@ -4159,6 +4187,22 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -6179,19 +6223,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1703128863"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1703128863"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1703128863"></script>
-    <script src="../../js/jquery.sticky.js?1703128863"></script>
-    <script src="../../js/featherlight.min.js?1703128863"></script>
-    <script src="../../js/highlight.pack.js?1703128863"></script>
+    <script src="../../js/clipboard.min.js?1720668207"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1720668207"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1720668207"></script>
+    <script src="../../js/jquery.sticky.js?1720668207"></script>
+    <script src="../../js/featherlight.min.js?1720668207"></script>
+    <script src="../../js/highlight.pack.js?1720668207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1703128863"></script>
-    <script src="../../js/learn.js?1703128863"></script>
-    <script src="../../js/hugo-learn.js?1703128863"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1720668207"></script>
+    <script src="../../js/learn.js?1720668207"></script>
+    <script src="../../js/hugo-learn.js?1720668207"></script>
     
         
-            <script src="../../mermaid/mermaid.js?1703128863"></script>
+            <script src="../../mermaid/mermaid.js?1720668207"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -12,20 +12,20 @@
     <title>トラブルシューティング :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../css/nucleus.css?1703128863" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/hybrid.css?1703128863" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1703128863" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1703128863" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1703128863" rel="stylesheet">
-    <link href="../../css/theme.css?1703128863" rel="stylesheet">
-    <link href="../../css/tabs.css?1703128863" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1703128863" rel="stylesheet">
+    <link href="../../css/nucleus.css?1720668207" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1720668207" rel="stylesheet">
+    <link href="../../css/hybrid.css?1720668207" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1720668207" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1720668207" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1720668207" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1720668207" rel="stylesheet">
+    <link href="../../css/theme.css?1720668207" rel="stylesheet">
+    <link href="../../css/tabs.css?1720668207" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1720668207" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.6.0.min.js?1703128863"></script>
+    <script src="../../js/jquery-3.6.0.min.js?1720668207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1703128863"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1703128863"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1720668207"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1720668207"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1703128863"></script>
+<script type="text/javascript" src="../../js/search.js?1720668207"></script>
 
     
   </div>
@@ -722,6 +722,34 @@
         " data-nav-id="/managing-domains/major-weblogic-version-upgrade/" title="管理対象ドメインのアップグレード">
       <span class="merged" id="index.19dJBN" title="原文 :  Upgrade managed domains "><a href="../../managing-domains/major-weblogic-version-upgrade/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
       
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
+        <span class="merged" id="index.e22m" title="原文 :  Upgrade managed domains "><a href="../../managing-domains/major-weblogic-version-upgrade/upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
       
     </li>
   
@@ -3444,7 +3472,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ kubectl get deployment --all-namespaces=true -l weblogic.operatorName
 </span></span></code></pre></div><p><span class="merged" id="index.2fBs5E" title="原文 : Check the operator deployment’s detailed status:">オペレータ・デプロイメントの詳細ステータスを確認します:</span></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ kubectl -n OP_NAMESPACE get deployments/weblogic-operator -o yaml
-</span></span></code></pre></div><p><span class="merged" id="index.1CNzBX"  title="原文:: And/or:">And/or:</span></p>
+</span></span></code></pre></div><p><span class="merged" id="index.1CNzBX" title="原文 : And/or:">And/or:</span></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ kubectl -n OP_NAMESPACE describe deployments/weblogic-operator
 </span></span></code></pre></div><p><span class="merged" id="index.10y2bR" title="原文 : Each operator deployment will have a corresponding Kubernetes pod with a name that has a prefix that matches the deployment name, plus a unique suffix that changes every time the deployment restarts.">各オペレータ・デプロイメントには、対応するKubernetesポッドと、デプロイメント名に一致するプレフィクスを持つ名前、およびデプロイメントの再起動時に変わる一意のサフィクスが含まれます。</span></p>
 <p><span class="merged" id="index.4YJEnu" title="原文 : To find operator pods and check their high-level status:">オペレータ・ポッドを検索し、上位レベルのステータスをチェックするには:</span></p>
@@ -3458,7 +3486,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ kubectl get deployment --all-namespaces=true -l weblogic.webhookName
 </span></span></code></pre></div><p><span class="merged" id="index.TDTGz" title="原文 : Check the conversion webhook deployment’s detailed status:">変換webフック・デプロイメントの詳細ステータスを確認します:</span></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ kubectl -n WH_NAMESPACE get deployments/weblogic-operator-webhook -o yaml
-</span></span></code></pre></div><p><span class="merged" id="index.1CNzBX.1"  title="原文:: And/or:">And/or:</span></p>
+</span></span></code></pre></div><p><span class="merged" id="index.1CNzBX.1" title="原文 : And/or:">And/or:</span></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ kubectl -n WH_NAMESPACE describe deployments/weblogic-operator-webhook
 </span></span></code></pre></div><p><span class="merged" id="index.3R4Iy3" title="原文 : Each conversion webhook deployment will have a corresponding Kubernetes pod with a name that has a prefix that matches the deployment name, plus a unique suffix that changes every time the deployment restarts.">各変換webフック・デプロイメントには、対応するKubernetesポッドと、デプロイメント名に一致するプレフィクスを持つ名前、およびデプロイメントが再起動されるたびに変化する一意のサフィクスが含まれます。</span></p>
 <p><span class="merged" id="index.1Djdoa" title="原文 : To find conversion webhook pods and check their high-level status:">変換webフック・ポッドを検索し、その高レベルのステータスを確認するには:</span></p>
@@ -4179,6 +4207,22 @@ $ kubectl get events -n sample-weblogic-operator-ns
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -6199,19 +6243,19 @@ $ kubectl get events -n sample-weblogic-operator-ns
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1703128863"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1703128863"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1703128863"></script>
-    <script src="../../js/jquery.sticky.js?1703128863"></script>
-    <script src="../../js/featherlight.min.js?1703128863"></script>
-    <script src="../../js/highlight.pack.js?1703128863"></script>
+    <script src="../../js/clipboard.min.js?1720668207"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1720668207"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1720668207"></script>
+    <script src="../../js/jquery.sticky.js?1720668207"></script>
+    <script src="../../js/featherlight.min.js?1720668207"></script>
+    <script src="../../js/highlight.pack.js?1720668207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1703128863"></script>
-    <script src="../../js/learn.js?1703128863"></script>
-    <script src="../../js/hugo-learn.js?1703128863"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1720668207"></script>
+    <script src="../../js/learn.js?1720668207"></script>
+    <script src="../../js/hugo-learn.js?1720668207"></script>
     
         
-            <script src="../../mermaid/mermaid.js?1703128863"></script>
+            <script src="../../mermaid/mermaid.js?1720668207"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

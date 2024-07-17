@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.108.0">
-    <meta content="Upgrade managed domains to a higher, major version." name="description">
+    <meta content="Upgrade managed domains, general and specific guidelines." name="description">
 
 
     <link rel="icon" href="../../images/favicon.png" type="image/png">
@@ -12,20 +12,20 @@
     <title>管理対象ドメインのアップグレード :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../css/nucleus.css?1703128864" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1703128864" rel="stylesheet">
-    <link href="../../css/hybrid.css?1703128864" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1703128864" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1703128864" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1703128864" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1703128864" rel="stylesheet">
-    <link href="../../css/theme.css?1703128864" rel="stylesheet">
-    <link href="../../css/tabs.css?1703128864" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1703128864" rel="stylesheet">
+    <link href="../../css/nucleus.css?1720668207" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1720668207" rel="stylesheet">
+    <link href="../../css/hybrid.css?1720668207" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1720668207" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1720668207" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1720668207" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1720668207" rel="stylesheet">
+    <link href="../../css/theme.css?1720668207" rel="stylesheet">
+    <link href="../../css/tabs.css?1720668207" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1720668207" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.6.0.min.js?1703128864"></script>
+    <script src="../../js/jquery-3.6.0.min.js?1720668207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1703128864"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1703128864"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1720668207"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1720668207"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1703128864"></script>
+<script type="text/javascript" src="../../js/search.js?1720668207"></script>
 
     
   </div>
@@ -722,6 +722,34 @@
         " data-nav-id="/managing-domains/major-weblogic-version-upgrade/" title="管理対象ドメインのアップグレード">
       <span class="merged" id="index.1yNRtN" title="原文 :  Upgrade managed domains "><a href="index.html"><b></b>管理対象ドメインのアップグレード</a></span>
       
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
+        <span class="merged" id="index.1BorMP" title="原文 :  Upgrade managed domains "><a href="upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
       
     </li>
   
@@ -3373,49 +3401,51 @@
 
 
 
-	<p><span class="merged" id="index.3hzoFx" title="原文 : This document provides guidelines for upgrading WLS and FMW/JRF infrastructure domains to a higher, major version.">このドキュメントでは、WLSおよびFMW/JRFインフラストラクチャ・ドメインを上位のメジャー・バージョンにアップグレードするためのガイドラインを示します。</span></p>
-<p><span class="merged" id="index.2efLlu.spl1" title="原文 : In general, the process for upgrading WLS and FMW/JRF infrastructure domains in Kubernetes is similar to upgrading domains on premises.">一般に、KubernetesでWLSおよびFMW/JRFインフラストラクチャ・ドメインをアップグレードするプロセスは、オンプレミスのドメインをアップグレードするプロセスと似ています。</span> <span class="merged" id="index.2efLlu.spl2" title="原文 : For a thorough understanding, we suggest that you read the Fusion Middleware Upgrade Guide.">詳しくは、<a href="https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/asmas/planning-upgrade-oracle-fusion-middleware-12c.html#GUID-D9CEE7E2-5062-4086-81C7-79A33A200080">「Fusion Middlewareアップグレード・ガイド」</a>をお読みください。</span> </p>
-<p><span class="merged" id="index.3Q99Yt" title="原文 : Before the upgrade, you must do the following:"><strong>「アップグレード前に」</strong>、次の操作を実行する必要があります:</span></p>
-<ul>
-<li>
-<p><span class="merged" id="index.3WyLL1" title="原文 : If your domain home source type is Domain on Persistent Volume (DoPV), then back up the domain home."><a href="../choosing-a-model/index.html">「ドメイン・ホーム・ソース・タイプ」</a>が永続ボリューム上のドメイン(DoPV)の場合は、ドメイン・ホームをバックアップします。</span></p>
-</li>
-<li>
-<p><span class="merged" id="index.1FD08T" title="原文 : If your domain type is JRF:">ドメイン・タイプが<code>JRF</code>の場合:</span></p>
-<ul>
-<li>
-<p><span class="merged" id="index.2aNQmO" title="原文 : Back up the JRF database.">JRFデータベースをバックアップします。</span></p>
-</li>
-<li>
-<p><span class="merged" id="index.nKeOn" title="原文 : Back up the OPSS wallet file, this allows you to reuse the same JRF database schemas if you need to recreate the domain.">OPSSウォレット・ファイルをバックアップします。これにより、ドメインを再作成する必要がある場合は、同じJRFデータベース・スキーマを再利用できます。</span></p>
-<p><span class="merged" id="index.3St5qg.spl1" title="原文 : The operator provides a helper script, the OPSS wallet utility, for extracting the wallet file and storing it in a Kubernetes walletFileSecret.">オペレータは、ウォレット・ファイルを抽出してKubernetes <code>walletFileSecret</code>に格納するためのヘルパー・スクリプト<a href="https://github.com/oracle/weblogic-kubernetes-operator/blob/main/kubernetes/samples/scripts/domain-lifecycle/opss-wallet.sh">「OPSSウォレット・ユーティリティ」</a>を提供します。</span> <span class="merged" id="index.3St5qg.spl2" title="原文 : In addition, you should save the wallet file in a safely backed-up location, outside of Kubernetes.">また、ウォレット・ファイルは、Kubernetesの外部で安全にバックアップされたロケーションに保存する必要があります。</span> <span class="merged" id="index.3St5qg.spl3" title="原文 : For example, the following command saves the OPSS wallet for the sample-domain1 domain in the sample-ns namespace to a file named ewallet.p12 in the /tmp directory and also stores it in the wallet secret named sample-domain1-opss-walletfile-secret.">たとえば、次のコマンドは、<code>sample-ns</code>ネームスペースの<code>sample-domain1</code>ドメインのOPSSウォレットを<code>/tmp</code>ディレクトリの<code>ewallet.p12</code>という名前のファイルに保存し、<code>sample-domain1-opss-walletfile-secret</code>という名前のウォレット・シークレットにも格納します。</span> </p>
-<pre tabindex="0"><code>$ opss-wallet.sh -n sample-ns -d sample-domain1 -s -r -wf /tmp/ewallet.p12 -ws sample-domain1-opss-walletfile-secret
-</code></pre></li>
-</ul>
-</li>
-<li>
-<p><span class="merged" id="index.3z3IGO" title="原文 : Make sure nothing else is accessing the database.">他にデータベースにアクセスしていないことを確認してください。</span></p>
-</li>
-<li>
-<p><span class="merged" id="index.1jwipC" title="原文 : Do not delete the domain resource.">ドメイン・リソースを<strong>「削除しない」</strong>でくださ。</span></p>
-</li>
+	
+
+
+
+
+
+
+<ul class="children children-h4">
+	
+
+	
+		
+	
+
+	
+
+	
+		
+	
+		
+			
+				
+					
+					
+
+<h4>
+<span class="merged" id="index.2weUDq" title="原文 : Upgrade managed domains"><a href="upgrade-major/index.html">管理対象ドメインのアップグレード</a></span>
+</h4>
+
+				
+
+				
+					
+<p><span class="merged" id="index.2PivLV" title="原文 : Upgrade managed domains to a higher, major version.">管理対象ドメインを上位のメジャー・バージョンにアップグレードします。</span></p>
+					
+				
+			
+			
+		
+	
+
+	
 </ul>
 
-<div class="notices note" ><p><span class="merged" id="index.1qQpEJ.spl1" title="原文 : According to My Oracle Support Doc ID 2752458.1, if you are using an FMW/JRF domain and upgrading from 12.2.1.3 to 12.2.1.4, then before upgrading, you do not need to run the Upgrade Assistant or Reconfiguration Wizard, but we recommend moving the domain to a persistent volume.">My Oracle Support <a href="https://support.oracle.com/epmos/faces/DocumentDisplay?id=2752458.1">「ドキュメントID 2752458.1」</a>によると、FMW/JRFドメインを使用し、12.2.1.3から12.2.1.4にアップグレードしている場合は、アップグレード前にアップグレード・アシスタントまたは再構成ウィザードを実行する必要はありませんが、ドメインを永続ボリュームに移動することをお薦めします。</span> <span class="merged" id="index.1qQpEJ.spl2" title="原文 : See Move MII/JRF domains to PV."><a href="../model-in-image/move-to-pv/index.html">「MII/JRFドメインをPVに移動」</a>を参照してください。</span> </p>
-</div>
 
-<p><span class="merged" id="index.KtOQn" title="原文 : To upgrade WLS and FMW/JRF infrastructure domains, use the following procedure.">WLSおよびFMW/JRFインフラストラクチャ・ドメインをアップグレードするには、次の手順を使用します。</span></p>
-<ol>
-<li>
-<p><span class="merged" id="index.3jBtXV.spl1" title="原文 : Shut down the domain by patching the domain and/or cluster spec serverStartPolicy to Never.">ドメインまたはクラスタ仕様<code>serverStartPolicy</code>(あるいはその両方)にパッチを適用して、ドメインを<code>Never</code>に停止します。</span> <span class="merged" id="index.3jBtXV.spl2"  title="原文:: For example:">例えば:</span> </p>
-<pre tabindex="0"><code>$ kubectl -n sample-domain1-ns patch domain sample-domain1 --type=json -p=&#39;[ {&#34;op&#34;: &#34;replace&#34;, &#34;path&#34;: &#34;/spec/serverStartPolicy&#34;, &#34;value&#34;: &#34;Never&#34;}]&#39;
-</code></pre></li>
-<li>
-<p><span class="merged" id="index.4e6n3h" title="原文 : After the shutdown completes, upgrade the base image in the domain resource YAML file and redeploy the domain.">停止が完了したら、ドメイン・リソースYAMLファイルのベース・イメージをアップグレードし、ドメインを再デプロイします。</span></p>
-<p><span class="merged" id="index.2kHiQi" title="原文 : You can patch the domain resource YAML file, update the base image and change serverStartPolicy to IfNeeded again, as follows:">次のように、ドメイン・リソースのYAMLファイルにパッチを適用し、ベース・イメージを更新して、<code>serverStartPolicy</code>を<code>IfNeeded</code>に再度変更できます:</span></p>
-<pre tabindex="0"><code>$ kubectl -n sample-domain1-ns patch domain sample-domain1 --type=json -p=&#39;[ {&#34;op&#34;: &#34;replace&#34;, &#34;path&#34;: &#34;/spec/serverStartPolicy&#34;, &#34;value&#34;: &#34;IfNeeded&#34;}, {&#34;op&#34;: &#34;replace&#34;, &#34;path&#34;:&#34;/spec/image&#34;, &#34;value&#34;:&#34;&lt;New WebLogic or Fusion Middleware base image&gt;&#34;]&#39;
-</code></pre></li>
-</ol>
 
 
 
@@ -3983,9 +4013,6 @@
                     
 
                     
-            
-        
-                    
                         
             
             
@@ -3993,6 +4020,25 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -5995,7 +6041,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="../prepare/index.html" > <i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="../domain-on-pv/index.html" style="margin-right: 0px;" ><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-prev" href="../prepare/index.html" > <i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="upgrade-major/index.html" style="margin-right: 0px;" ><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -6005,19 +6051,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1703128864"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1703128864"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1703128864"></script>
-    <script src="../../js/jquery.sticky.js?1703128864"></script>
-    <script src="../../js/featherlight.min.js?1703128864"></script>
-    <script src="../../js/highlight.pack.js?1703128864"></script>
+    <script src="../../js/clipboard.min.js?1720668207"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1720668207"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1720668207"></script>
+    <script src="../../js/jquery.sticky.js?1720668207"></script>
+    <script src="../../js/featherlight.min.js?1720668207"></script>
+    <script src="../../js/highlight.pack.js?1720668207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1703128864"></script>
-    <script src="../../js/learn.js?1703128864"></script>
-    <script src="../../js/hugo-learn.js?1703128864"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1720668207"></script>
+    <script src="../../js/learn.js?1720668207"></script>
+    <script src="../../js/hugo-learn.js?1720668207"></script>
     
         
-            <script src="../../mermaid/mermaid.js?1703128864"></script>
+            <script src="../../mermaid/mermaid.js?1720668207"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
