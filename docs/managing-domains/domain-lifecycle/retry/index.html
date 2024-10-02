@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.108.0">
+    <meta name="generator" content="Hugo 0.133.0">
     <meta content="This document describes domain failure retry processing in the Oracle WebLogic Server in Kubernetes environment." name="description">
 
 
@@ -12,20 +12,20 @@
     <title>ドメイン失敗の再試行処理 :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../../css/nucleus.css?1720668206" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1720668206" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1720668206" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1720668206" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1720668206" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1720668206" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1720668206" rel="stylesheet">
-    <link href="../../../css/theme.css?1720668206" rel="stylesheet">
-    <link href="../../../css/tabs.css?1720668206" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1720668206" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1727580283" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1727580283" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1727580283" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1727580283" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1727580283" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1727580283" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1727580283" rel="stylesheet">
+    <link href="../../../css/theme.css?1727580283" rel="stylesheet">
+    <link href="../../../css/tabs.css?1727580283" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1727580283" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.6.0.min.js?1720668206"></script>
+    <script src="../../../js/jquery-3.6.0.min.js?1727580283"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -47,7 +47,7 @@
 
   <div id="header-wrapper">
     <div id="header">
-      <span class="merged" id="index.3cwfzX"  title="原文::  WebLogic Kubernetes Operator "><a href="https://oracle.github.io/weblogic-kubernetes-operator" id="logo"> <img height="90" src="../../../images/logo.png"><br /> WebLogic Kubernetes Operator </a></span>
+      <span class="merged" id="index.3HADlB"  title="原文::  WebLogic Kubernetes Operator "><a href="../../../index.html" id="logo"> <img height="90" src="../../../images/logo.png"><br /> WebLogic Kubernetes Operator </a></span>
 
     </div>
     
@@ -57,21 +57,21 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1720668206"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1720668206"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1727580283"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1727580283"></script>
 <script type="text/javascript">
     
-        var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator";
+        var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator\/";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1720668206"></script>
+<script type="text/javascript" src="../../../js/search.js?1727580283"></script>
 
     
   </div>
 
     <div class="highlightable">
     <ul class="topics">
-      <li><span class="merged" id="index.2t7Bid"  title="原文:: Home"><a class="padding" href="https://oracle.github.io/weblogic-kubernetes-operator">ホーム</a></span></li>
+      <li><span class="merged" id="index.40pwEN"  title="原文:: Home"><a class="padding" href="../../../index.html">ホーム</a></span></li>
         
           
           
@@ -1714,15 +1714,10 @@
  
   
     
-    <li class="dd-item
-        
-        
-        
-        " data-nav-id="/managing-domains/managing-fmw-domains/" title="FMW Infrastructureドメインの管理">
-      <span class="merged" id="index.j7ZWf" title="原文 :  Manage FMW Infrastructure domains "><a href="../../managing-fmw-domains/index.html">FMW Infrastructureドメインの管理</a></span>
-      
-      
+      <li class="dd-item " data-nav-id="/managing-domains/managing-fmw-domains/" title="FMW Infrastructureドメインの管理">
+        <span class="merged" id="index.j7ZWf" title="原文 :  Manage FMW Infrastructure domains "><a href="../../managing-fmw-domains/index.html">FMW Infrastructureドメインの管理</a></span>
     </li>
+     
   
  
 
@@ -3072,7 +3067,7 @@
   
     
       <li class="dd-item " data-nav-id="/security/openshift/" title="OpenShift">
-        <span class="merged" id="index.1LoQ4z" title="原文 :  OpenShift "><a href="../../../security/openshift/index.html"> OpenShift </a></span>
+        <span class="merged" id="index.1LoQ4z"  title="原文::  OpenShift "><a href="../../../security/openshift/index.html"> OpenShift </a></span>
     </li>
      
   
@@ -3519,35 +3514,35 @@
 </thead>
 <tbody>
 <tr>
-<td><span class="merged" id="index.2jEDKn"  title="原文: DomainInvalid"><code>DomainInvalid</code></span></td>
+<td><code>DomainInvalid</code></td>
 <td><span class="merged" id="index.3nxRp2" title="原文 : One of more configuration validation errors in the Domain resource, such as the domainUID is too long, or configuration overrides are used in a Model In Image domain.">ドメイン・リソース内の1つ以上の構成バリデーション・エラー(<code>domainUID</code>など)が長すぎるか、構成オーバーライドがイメージ・ドメインのモデルで使用されています。</span></td>
 </tr>
 <tr>
-<td><span class="merged" id="index.axkGt"  title="原文: Introspection"><code>Introspection</code></span></td>
+<td><code>Introspection</code></td>
 <td><span class="merged" id="index.4Ag22m" title="原文 : One or more SEVERE log messages is found in the introspector’s log file.">1つ以上の<code>SEVERE</code>ログ・メッセージがイントロスペクタのログ・ファイルにあります。</span></td>
 </tr>
 <tr>
-<td><span class="merged" id="index.2lnSTL"  title="原文: Kubernetes"><code>Kubernetes</code></span></td>
+<td><code>Kubernetes</code></td>
 <td><span class="merged" id="index.Z90kp" title="原文 : Unrecoverable response code received from a Kubernetes API call.">Kubernetes APIコールから受信したリカバリ不能なレスポンス・コード。</span></td>
 </tr>
 <tr>
-<td><span class="merged" id="index.2jSMsn"  title="原文: ServerPod"><code>ServerPod</code></span></td>
+<td><code>ServerPod</code></td>
 <td><span class="merged" id="index.3FtnXw" title="原文 : One or more WebLogic Server pods failed or did not get into the ready state within a predefined maximum wait time as configured in spec.serverPod.maxReadyWaitTimeSeconds in the Domain resource, or the introspector job pod did not complete.">1つ以上のWebLogic Serverポッドが失敗したか、ドメイン・リソースの<code>spec.serverPod.maxReadyWaitTimeSeconds</code>で構成された事前定義済の最大待機時間内に準備完了状態になりませんでした。そうしないと、イントロスペクタ・ジョブ・ポッドが完了しませんでした。</span></td>
 </tr>
 <tr>
-<td><span class="merged" id="index.18dhZ4"  title="原文: ReplicasTooHigh"><code>ReplicasTooHigh</code></span></td>
+<td><code>ReplicasTooHigh</code></td>
 <td><span class="merged" id="index.4eselN" title="原文 : The replicas field is set or changed to a value that exceeds the maximum number of servers in the WebLogic cluster configuration.">レプリカ・フィールドは、WebLogicクラスタ構成内のサーバーの最大数を超える値に設定または変更されます。</span></td>
 </tr>
 <tr>
-<td><span class="merged" id="index.2uE1gW"  title="原文: Internal"><code>Internal</code></span></td>
+<td><code>Internal</code></td>
 <td><span class="merged" id="index.bqNtC" title="原文 : The operator encountered an internal exception while processing the Domain resource.">ドメイン・リソースの処理中にオペレータで内部例外が発生しました。</span></td>
 </tr>
 <tr>
-<td><span class="merged" id="index.RBsUS"  title="原文: TopologyMismatch"><code>TopologyMismatch</code></span></td>
+<td><code>TopologyMismatch</code></td>
 <td><span class="merged" id="index.3alIeE" title="原文 : One or more servers or clusters configured in the domain resource do not exist in the WebLogic domain configuration, or the monitoring exporter port is specified and it conflicts with a server port.">ドメイン・リソースに構成された1つ以上のサーバーまたはクラスタがWebLogicドメイン構成に存在しないか、モニタリング・エクスポータ・ポートが指定され、サーバー・ポートと競合しています。</span></td>
 </tr>
 <tr>
-<td><span class="merged" id="index.41z568"  title="原文: Aborted"><code>Aborted</code></span></td>
+<td><code>Aborted</code></td>
 <td><span class="merged" id="index.3HCD5a" title="原文 : The introspector encountered a fatal error or the operator has exceeded the maximum retry time.">イントロスペクタで致命的なエラーが発生したか、オペレータが最大再試行時間を超えました。</span></td>
 </tr>
 </tbody>
@@ -6158,19 +6153,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1720668206"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1720668206"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1720668206"></script>
-    <script src="../../../js/jquery.sticky.js?1720668206"></script>
-    <script src="../../../js/featherlight.min.js?1720668206"></script>
-    <script src="../../../js/highlight.pack.js?1720668206"></script>
+    <script src="../../../js/clipboard.min.js?1727580283"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1727580283"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1727580283"></script>
+    <script src="../../../js/jquery.sticky.js?1727580283"></script>
+    <script src="../../../js/featherlight.min.js?1727580283"></script>
+    <script src="../../../js/highlight.pack.js?1727580283"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1720668206"></script>
-    <script src="../../../js/learn.js?1720668206"></script>
-    <script src="../../../js/hugo-learn.js?1720668206"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1727580283"></script>
+    <script src="../../../js/learn.js?1727580283"></script>
+    <script src="../../../js/hugo-learn.js?1727580283"></script>
     
         
-            <script src="../../../mermaid/mermaid.js?1720668206"></script>
+            <script src="../../../mermaid/mermaid.js?1727580283"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
