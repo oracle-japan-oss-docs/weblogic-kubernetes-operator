@@ -12,20 +12,20 @@
     <title>Kubernetesの設定 :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../css/nucleus.css?1736306628" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1736306628" rel="stylesheet">
-    <link href="../../css/hybrid.css?1736306628" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1736306628" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1736306628" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1736306628" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1736306628" rel="stylesheet">
-    <link href="../../css/theme.css?1736306628" rel="stylesheet">
-    <link href="../../css/tabs.css?1736306628" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1736306628" rel="stylesheet">
+    <link href="../../css/nucleus.css?1744255601" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1744255601" rel="stylesheet">
+    <link href="../../css/hybrid.css?1744255601" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1744255601" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1744255601" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1744255601" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1744255601" rel="stylesheet">
+    <link href="../../css/theme.css?1744255601" rel="stylesheet">
+    <link href="../../css/tabs.css?1744255601" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1744255601" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.6.0.min.js?1736306628"></script>
+    <script src="../../js/jquery-3.6.0.min.js?1744255601"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1736306628"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1736306628"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1744255601"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1744255601"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1736306628"></script>
+<script type="text/javascript" src="../../js/search.js?1744255601"></script>
 
     
   </div>
@@ -741,6 +741,24 @@
     
       <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
         <span class="merged" id="index.e22m" title="原文 :  Upgrade managed domains "><a href="../../managing-domains/major-weblogic-version-upgrade/upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-14210/" title="管理対象ドメインをv14.1.2.0にアップグレード">
+        <span class="merged" id="index.32y4YP" title="原文 :  Upgrade managed domains to v14.1.2.0 "><a href="../../managing-domains/major-weblogic-version-upgrade/upgrade-14210/index.html"><b></b>管理対象ドメインをv14.1.2.0にアップグレード</a></span>
     </li>
      
   
@@ -3503,17 +3521,17 @@ $ cd terraformmodule
 <p><span class="merged" id="index.Si6ya" title="原文 : For example, on Oracle Linux servers outside a cloud.">たとえば、クラウド外のOracle Linuxサーバーの場合。</span></p>
 <p><span class="merged" id="index.23NhGE.spl1" title="原文 : These instructions are for Oracle Linux 7u2+.">これらの手順はOracle Linux 7u2+用です。</span> <span class="merged" id="index.23NhGE.spl2" title="原文 : If you are using a different flavor of Linux, you will need to adjust them accordingly.">別のフレーバのLinuxを使用している場合は、それに応じて調整する必要があります。</span> </p>
 
-<div class="notices note" ><p><span class="merged" id="index.2O3MJN.spl1" title="原文 : These steps must be run with the root user, until specified otherwise!">これらのステップは、特に指定しないかぎり、<code>root</code>ユーザーで実行する必要があります。</span> <span class="merged" id="index.2O3MJN.spl2" title="原文 : Any time you see YOUR_USERID in a command, you should replace it with your actual userid.">コマンドに<code>YOUR_USERID</code>が表示されている場合は、それを実際の<code>userid</code>に置き換える必要があります。</span> </p>
+<div class="notices note" ><p><span class="merged" id="index.2O3MJN.spl1" title="原文 : These steps must be run with the root user, until specified otherwise!">これらのステップは、特に指定しないかぎり、<code>root</code>ユーザーで実行する必要があります。</span> <span class="merged" id="index.2O3MJN.spl2"  title="原文: Any time you see YOUR_USERID in a command, you should replace it with your actual userid.">コマンドに<code>YOUR_USERID</code>が表示されている場合は、それを実際の<code>userid</code>に置き換える必要があります。</span> </p>
 </div>
 
 <ol>
 <li>
-<p><span class="merged" id="index.1YOKb4.spl1" title="原文 : Choose the directories where your Docker and Kubernetes files will be stored.">DockerおよびKubernetesファイルが格納されるディレクトリを選択します。</span> <span class="merged" id="index.1YOKb4.spl2" title="原文 : The Docker directory should be on a disk with a lot of free space (more than 100GB) because it will be used for the /var/lib/docker file system, which contains all of your images and containers.">Dockerディレクトリは、すべてのイメージおよびコンテナを含む<code>/var/lib/docker</code>ファイル・システムに使用されるため、多くの空き領域(100GBを超える)があるディスクに配置する必要があります。</span> <span class="merged" id="index.1YOKb4.spl3" title="原文 : The Kubernetes directory will be used for the /var/lib/kubelet file system and persistent volume storage.">Kubernetesディレクトリは、<code>/var/lib/kubelet</code>ファイル・システムおよび永続ボリューム・ストレージに使用されます。</span> </p>
+<p><span class="merged" id="index.1YOKb4.spl1"  title="原文: Choose the directories where your Docker and Kubernetes files will be stored.">DockerおよびKubernetesファイルが格納されるディレクトリを選択します。</span> <span class="merged" id="index.1YOKb4.spl2" title="原文 : The Docker directory should be on a disk with a lot of free space (more than 100GB) because it will be used for the /var/lib/docker file system, which contains all of your images and containers.">Dockerディレクトリは、すべてのイメージおよびコンテナを含む<code>/var/lib/docker</code>ファイル・システムに使用されるため、多くの空き領域(100GBを超える)があるディスクに配置する必要があります。</span> <span class="merged" id="index.1YOKb4.spl3" title="原文 : The Kubernetes directory will be used for the /var/lib/kubelet file system and persistent volume storage.">Kubernetesディレクトリは、<code>/var/lib/kubelet</code>ファイル・システムおよび永続ボリューム・ストレージに使用されます。</span> </p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ export docker_dir<span style="color:#f92672">=</span>/scratch/docker
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ export k8s_dir<span style="color:#f92672">=</span>/scratch/k8s_dir
 </span></span></code></pre></div></li>
 <li>
-<p><span class="merged" id="index.4cYYGF.spl1" title="原文 : Create a shell script that sets up the necessary environment variables.">必要な環境変数を設定するシェル・スクリプトを作成します。</span> <span class="merged" id="index.4cYYGF.spl2" title="原文 : You should probably just append this to the user’s .bashrc so that it will get executed at login.">ログイン時に実行されるように、これをユーザーの<code>.bashrc</code>に追加するだけでよいでしょう。</span> <span class="merged" id="index.4cYYGF.spl3" title="原文 : You will also need to configure your proxy settings here if you are behind an HTTP proxy:">HTTPプロキシの背後にいる場合は、ここでプロキシ設定を構成する必要もあります:</span> </p>
+<p><span class="merged" id="index.4cYYGF.spl1"  title="原文: Create a shell script that sets up the necessary environment variables.">必要な環境変数を設定するシェル・スクリプトを作成します。</span> <span class="merged" id="index.4cYYGF.spl2" title="原文 : You should probably just append this to the user’s .bashrc so that it will get executed at login.">ログイン時に実行されるように、これをユーザーの<code>.bashrc</code>に追加するだけでよいでしょう。</span> <span class="merged" id="index.4cYYGF.spl3" title="原文 : You will also need to configure your proxy settings here if you are behind an HTTP proxy:">HTTPプロキシの背後にいる場合は、ここでプロキシ設定を構成する必要もあります:</span> </p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>export PATH<span style="color:#f92672">=</span>$PATH:/sbin:/usr/sbin
 </span></span><span style="display:flex;"><span>pod_network_cidr<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10.244.0.0/16&#34;</span>
@@ -4314,6 +4332,22 @@ To further debug and diagnose cluster problems, use &#39;kubectl cluster-info du
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6350,19 +6384,19 @@ To further debug and diagnose cluster problems, use &#39;kubectl cluster-info du
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1736306628"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1736306628"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1736306628"></script>
-    <script src="../../js/jquery.sticky.js?1736306628"></script>
-    <script src="../../js/featherlight.min.js?1736306628"></script>
-    <script src="../../js/highlight.pack.js?1736306628"></script>
+    <script src="../../js/clipboard.min.js?1744255601"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1744255601"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1744255601"></script>
+    <script src="../../js/jquery.sticky.js?1744255601"></script>
+    <script src="../../js/featherlight.min.js?1744255601"></script>
+    <script src="../../js/highlight.pack.js?1744255601"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1736306628"></script>
-    <script src="../../js/learn.js?1736306628"></script>
-    <script src="../../js/hugo-learn.js?1736306628"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1744255601"></script>
+    <script src="../../js/learn.js?1744255601"></script>
+    <script src="../../js/hugo-learn.js?1744255601"></script>
     
         
-            <script src="../../mermaid/mermaid.js?1736306628"></script>
+            <script src="../../mermaid/mermaid.js?1744255601"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

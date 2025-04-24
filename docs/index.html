@@ -12,20 +12,20 @@
     <title> :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="css/nucleus.css?1736306627" rel="stylesheet">
-    <link href="css/fontawesome-all.min.css?1736306627" rel="stylesheet">
-    <link href="css/hybrid.css?1736306627" rel="stylesheet">
-    <link href="css/featherlight.min.css?1736306627" rel="stylesheet">
-    <link href="css/perfect-scrollbar.min.css?1736306627" rel="stylesheet">
-    <link href="css/auto-complete.css?1736306627" rel="stylesheet">
-    <link href="css/atom-one-dark-reasonable.css?1736306627" rel="stylesheet">
-    <link href="css/theme.css?1736306627" rel="stylesheet">
-    <link href="css/tabs.css?1736306627" rel="stylesheet">
-    <link href="css/hugo-theme.css?1736306627" rel="stylesheet">
+    <link href="css/nucleus.css?1744255600" rel="stylesheet">
+    <link href="css/fontawesome-all.min.css?1744255600" rel="stylesheet">
+    <link href="css/hybrid.css?1744255600" rel="stylesheet">
+    <link href="css/featherlight.min.css?1744255600" rel="stylesheet">
+    <link href="css/perfect-scrollbar.min.css?1744255600" rel="stylesheet">
+    <link href="css/auto-complete.css?1744255600" rel="stylesheet">
+    <link href="css/atom-one-dark-reasonable.css?1744255600" rel="stylesheet">
+    <link href="css/theme.css?1744255600" rel="stylesheet">
+    <link href="css/tabs.css?1744255600" rel="stylesheet">
+    <link href="css/hugo-theme.css?1744255600" rel="stylesheet">
     
     
 
-    <script src="js/jquery-3.6.0.min.js?1736306627"></script>
+    <script src="js/jquery-3.6.0.min.js?1744255600"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="js/lunr.min.js?1736306627"></script>
-<script type="text/javascript" src="js/auto-complete.js?1736306627"></script>
+<script type="text/javascript" src="js/lunr.min.js?1744255600"></script>
+<script type="text/javascript" src="js/auto-complete.js?1744255600"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator\/";
     
 </script>
-<script type="text/javascript" src="js/search.js?1736306627"></script>
+<script type="text/javascript" src="js/search.js?1744255600"></script>
 
     
   </div>
@@ -741,6 +741,24 @@
     
       <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
         <span class="merged" id="index.4ASlcT" title="原文 :  Upgrade managed domains "><a href="managing-domains/major-weblogic-version-upgrade/upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-14210/" title="管理対象ドメインをv14.1.2.0にアップグレード">
+        <span class="merged" id="index.4br47v" title="原文 :  Upgrade managed domains to v14.1.2.0 "><a href="managing-domains/major-weblogic-version-upgrade/upgrade-14210/index.html"><b></b>管理対象ドメインをv14.1.2.0にアップグレード</a></span>
     </li>
      
   
@@ -3376,7 +3394,7 @@
 <div style="width:100%"> <div title="免責事項: ここに記載されているドキュメントは、お客様の利便性のために翻訳ソフトウエアにより機械的に翻訳(機械翻訳)したものです。オリジナルの英語版もあわせてご確認ください。" style="width:150px;padding-left:5px;padding-right:5px;border:#ff0000 solid 1px;border-color: gray;font-size: small;color:gray;margin: 0 auto 0 auto;text-align:center"><a href="https://docs.oracle.com/cd/E85181_01/mt_disclaimer.html">機械翻訳について</a></div> </div>
 <h3 id="weblogic-kubernetes-operator"><span class="merged" id="index.27JERd"  title="原文:: WebLogic Kubernetes Operator">WebLogic Kubernetes Operator</span></h3>
 <p><span class="merged" id="index.3Mvx91.spl1" title="原文 : The WebLogic Kubernetes Operator (the “operator”) supports running your WebLogic Server and Fusion Middleware Infrastructure domains on Kubernetes, an industry standard, cloud neutral deployment platform.">WebLogic Kubernetes Operator (オペレータ)は、業界標準のクラウド・ニュートラル・デプロイメント・プラットフォームであるKubernetesでのWebLogic ServerおよびFusion Middleware Infrastructureドメインの実行をサポートします。</span> <span class="merged" id="index.3Mvx91.spl2" title="原文 : It lets you encapsulate your entire WebLogic Server installation and layered applications into a portable set of cloud neutral images and simple resource description files.">これにより、WebLogic Serverインストールおよびレイヤー化されたアプリケーション全体を、クラウドの中立イメージおよび単純なリソース記述ファイルの移植可能なセットにカプセル化できます。</span> <span class="merged" id="index.3Mvx91.spl3" title="原文 : You can run them on any on-premises or public cloud that supports Kubernetes where you’ve deployed the operator.">オペレータをデプロイしたKubernetesをサポートするオンプレミスまたはパブリック・クラウドで実行できます。</span> </p>
-<p><span class="merged" id="index.21VqvO.spl1" title="原文 : Furthermore, the operator is well suited to CI/CD processes.">さらに、オペレータはCI/CDプロセスに適しています。</span> <span class="merged" id="index.21VqvO.spl2" title="原文 : You can easily inject changes when moving between environments, such as from test to production.">テストから本番など、環境間で移動するときに、変更を簡単にインジェクトできます。</span> <span class="merged" id="index.21VqvO.spl3" title="原文 : For example, you can externally inject database URLs and credentials during deployment or you can inject arbitrary changes to most WebLogic configurations.">たとえば、デプロイメント中にデータベースのURLおよび資格証明を外部で挿入したり、ほとんどのWebLogic構成に対する任意の変更をインジェクトできます。</span> </p>
+<p><span class="merged" id="index.3N15il.spl1" title="原文 : Furthermore, the operator is well suited to CI/CD processes.">さらに、オペレータはCI/CDプロセスに適しています。</span> <span class="merged" id="index.3N15il.spl2" title="原文 : You can easily inject changes when moving between environments, such as from test to production.">テストから本番など、環境間で移動するときに、変更を簡単にインジェクトできます。</span> <span class="merged" id="index.3N15il.spl3" title="原文 : For example, you can externally inject database URLs and credentials during deployment, or you can inject arbitrary changes to most WebLogic configurations.">たとえば、デプロイメント中にデータベースURLと資格証明を外部で注入したり、ほとんどのWebLogic構成に任意の変更を注入できます。</span> </p>
 <p><span class="merged" id="index.2nvmF5.spl1" title="原文 : The operator takes advantage of the Kubernetes operator pattern, which means that it uses Kubernetes APIs to provide support for operations, such as: provisioning, lifecycle management, application versioning, product patching, scaling, and security.">オペレータは<a href="https://kubernetes.io/docs/concepts/extend-kubernetes/operator/">「Kubernetesオペレータ・パターン」</a>を利用します。つまり、Kubernetes APIを使用して、プロビジョニング、ライフサイクル管理、アプリケーションバージョニング、プロダクトのパッチ適用、スケーリング、セキュリティなどの操作に対するサポートを提供します。</span> <span class="merged" id="index.2nvmF5.spl2" title="原文 : The operator also enables the use of tooling that is native to this infrastructure for monitoring, logging, tracing, and security.">また、オペレータは、モニタリング、ロギング、トレース、およびセキュリティのためにこのインフラストラクチャにネイティブなツールを使用することもできます。</span> </p>
 <p><span class="merged" id="index.2jfgmF"  title="原文:: You can:">次のことが可能です。</span></p>
 <ul>
@@ -3393,7 +3411,7 @@
 <li><span class="merged" id="index.VnrMr.spl1" title="原文 : NOTE: The Domain in Image domain home source type is deprecated in WebLogic Kubernetes Operator version 4.0."><strong>ノート</strong>:&nbsp;Domain in Image <a href="managing-domains/choosing-a-model/index.html">ドメイン・ホーム・ソース・タイプ</a>は、WebLogic Kubernetes Operatorバージョン4.0では非推奨です。</span> <span class="merged" id="index.VnrMr.spl2" title="原文 : Oracle recommends that you choose either Domain on PV or Model in Image, depending on your needs.">Oracleでは、必要に応じてDomain on PVまたはModel in Imageを選択することをお薦めします。</span> </li>
 </ul>
 </li>
-<li><span class="merged" id="index.J5e0G.spl1" title="原文 : Domain on PV: Locates WebLogic domain homes in a Kubernetes PersistentVolume (PV)."><em>Domain on PV</em>: WebLogicドメイン・ホームをKubernetes PersistentVolume (PV)に配置します。</span> <span class="merged" id="index.J5e0G.spl2" title="原文 : This PV can reside in an NFS file system or other Kubernetes volume types.">このPVは、NFSファイル・システムまたはその他のKubernetesボリューム・タイプに存在できます。</span> </li>
+<li><span class="merged" id="index.J5e0G.spl1" title="原文 : Domain on PV: Locates WebLogic domain homes in a Kubernetes PersistentVolume (PV)."><em>Domain on PV</em>: WebLogicドメイン・ホームをKubernetes PersistentVolume (PV)に配置します。</span> <span class="merged" id="index.J5e0G.spl2"  title="原文: This PV can reside in an NFS file system or other Kubernetes volume types.">このPVは、NFSファイル・システムまたはその他のKubernetesボリューム・タイプに存在できます。</span> </li>
 </ul>
 </li>
 <li><span class="merged" id="index.2rO7Qy" title="原文 : Configure deployment of WebLogic domains as Kubernetes resources (using Kubernetes custom resource definitions).">WebLogicドメインのデプロイメントをKubernetesリソースとして構成します(Kubernetesカスタム・リソース定義を使用)。</span></li>
@@ -3410,10 +3428,10 @@
 </div>
 
 <hr>
-<h4 id="current-production-release"><span class="merged" id="index.2TH3oE" title="原文 : Current production release">現行本番リリース</span></h4>
+<h4 id="current-production-release"><span class="merged" id="index.2TH3oE"  title="原文:: Current production release">現行本番リリース</span></h4>
 <p><span class="merged" id="index.1khOkQ.spl1" title="原文 : This is the current release of the operator.">これは<a href="https://github.com/oracle/weblogic-kubernetes-operator/releases">「オペレータの現在のリリース」</a>です。</span> <span class="merged" id="index.1khOkQ.spl2" title="原文 : See the operator prerequisites and supported environments."><a href="introduction/prerequisites/introduction/index.html">「オペレータの前提条件」</a>および<a href="introduction/platforms/environments/index.html">「サポートされている環境」</a>を参照してください。</span> </p>
 <hr>
-<h4 id="recent-changes-and-known-issues"><span class="merged" id="index.2TIlmb" title="原文 : Recent changes and known issues">最近の変更および既知の問題</span></h4>
+<h4 id="recent-changes-and-known-issues"><span class="merged" id="index.2TIlmb"  title="原文: Recent changes and known issues">最近の変更および既知の問題</span></h4>
 <p><span class="merged" id="index.LXURv" title="原文 : See the Release Notes for recent changes to the operator and Known Limitations for the current set of known issues.">オペレータに対する最近の変更については<a href="https://github.com/oracle/weblogic-kubernetes-operator/releases">「リリース・ノート」</a>、既知の問題の現在のセットについては<a href="known-limitations/index.html">「既知の制限事項」</a>を参照してください。</span></p>
 <h4 id="operator-earlier-versions"><span class="merged" id="index.1Hcd7V" title="原文 : Operator earlier versions">オペレータの以前のバージョン</span></h4>
 
@@ -3427,12 +3445,12 @@
 <p><span class="merged" id="index.3yIhu6" title="原文 : See Get help."><a href="introduction/get-help/index.html">「ヘルプの表示」</a>を参照してください。</span></p>
 <h4 id="related-projects"><span class="merged" id="index.3YVRkO" title="原文 : Related projects">関連プロジェクト</span></h4>
 <ul>
-<li><span class="merged" id="index.ASHt6" title="原文 : Oracle Fusion Middleware on Kubernetes"><a href="https://oracle.github.io/fmw-kubernetes/">KubernetesのOracle Fusion Middleware</a></span></li>
+<li><span class="merged" id="index.ASHt6"  title="原文: Oracle Fusion Middleware on Kubernetes"><a href="https://oracle.github.io/fmw-kubernetes/">KubernetesのOracle Fusion Middleware</a></span></li>
 <li><span class="merged" id="index.1JF3yC"  title="原文:: WebLogic Deploy Tooling"><a href="https://oracle.github.io/weblogic-deploy-tooling/">WebLogic Deploy Tooling</a></span></li>
 <li><span class="merged" id="index.2cyFw0"  title="原文:: WebLogic Image Tool"><a href="https://oracle.github.io/weblogic-image-tool/">WebLogic Image Tool</a></span></li>
 <li><span class="merged" id="index.1I8jkj"  title="原文:: WebLogic Monitoring Exporter"><a href="https://github.com/oracle/weblogic-monitoring-exporter">WebLogic Monitoring Exporter</a></span></li>
 <li><span class="merged" id="index.17VJdR"  title="原文:: WebLogic Remote Console"><a href="https://oracle.github.io/weblogic-remote-console/">WebLogic Remote Console</a></span></li>
-<li><span class="merged" id="index.32L8J" title="原文 : WebLogic Kubernetes Toolkit UI"><a href="https://oracle.github.io/weblogic-toolkit-ui/">WebLogic Kubernetes Toolkit UI</a></span></li>
+<li><span class="merged" id="index.32L8J"  title="原文:: WebLogic Kubernetes Toolkit UI"><a href="https://oracle.github.io/weblogic-toolkit-ui/">WebLogic Kubernetes Toolkit UI</a></span></li>
 </ul>
 	
   
@@ -3988,6 +4006,22 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6025,19 +6059,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="js/clipboard.min.js?1736306627"></script>
-    <script src="js/perfect-scrollbar.min.js?1736306627"></script>
-    <script src="js/perfect-scrollbar.jquery.min.js?1736306627"></script>
-    <script src="js/jquery.sticky.js?1736306627"></script>
-    <script src="js/featherlight.min.js?1736306627"></script>
-    <script src="js/highlight.pack.js?1736306627"></script>
+    <script src="js/clipboard.min.js?1744255601"></script>
+    <script src="js/perfect-scrollbar.min.js?1744255601"></script>
+    <script src="js/perfect-scrollbar.jquery.min.js?1744255601"></script>
+    <script src="js/jquery.sticky.js?1744255601"></script>
+    <script src="js/featherlight.min.js?1744255601"></script>
+    <script src="js/highlight.pack.js?1744255601"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="js/modernizr.custom-3.6.0.js?1736306627"></script>
-    <script src="js/learn.js?1736306627"></script>
-    <script src="js/hugo-learn.js?1736306627"></script>
+    <script src="js/modernizr.custom-3.6.0.js?1744255601"></script>
+    <script src="js/learn.js?1744255601"></script>
+    <script src="js/hugo-learn.js?1744255601"></script>
     
         
-            <script src="mermaid/mermaid.js?1736306627"></script>
+            <script src="mermaid/mermaid.js?1744255601"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

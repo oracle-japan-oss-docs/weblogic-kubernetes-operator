@@ -12,20 +12,20 @@
     <title>インストレーションの準備 :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../css/nucleus.css?1736306628" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1736306628" rel="stylesheet">
-    <link href="../../css/hybrid.css?1736306628" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1736306628" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1736306628" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1736306628" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1736306628" rel="stylesheet">
-    <link href="../../css/theme.css?1736306628" rel="stylesheet">
-    <link href="../../css/tabs.css?1736306628" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1736306628" rel="stylesheet">
+    <link href="../../css/nucleus.css?1744255601" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1744255601" rel="stylesheet">
+    <link href="../../css/hybrid.css?1744255601" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1744255601" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1744255601" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1744255601" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1744255601" rel="stylesheet">
+    <link href="../../css/theme.css?1744255601" rel="stylesheet">
+    <link href="../../css/tabs.css?1744255601" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1744255601" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.6.0.min.js?1736306628"></script>
+    <script src="../../js/jquery-3.6.0.min.js?1744255601"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1736306628"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1736306628"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1744255601"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1744255601"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1736306628"></script>
+<script type="text/javascript" src="../../js/search.js?1744255601"></script>
 
     
   </div>
@@ -741,6 +741,24 @@
     
       <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
         <span class="merged" id="index.e22m" title="原文 :  Upgrade managed domains "><a href="../../managing-domains/major-weblogic-version-upgrade/upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-14210/" title="管理対象ドメインをv14.1.2.0にアップグレード">
+        <span class="merged" id="index.32y4YP" title="原文 :  Upgrade managed domains to v14.1.2.0 "><a href="../../managing-domains/major-weblogic-version-upgrade/upgrade-14210/index.html"><b></b>管理対象ドメインをv14.1.2.0にアップグレード</a></span>
     </li>
      
   
@@ -3557,7 +3575,7 @@
 <h5 id="pulling-operator-image"><span class="merged" id="index.4JVS33" title="原文 : Pulling operator image">オペレータ・イメージのプル</span></h5>
 <p><span class="merged" id="index.16Xyd3" title="原文 : In most use cases, Kubernetes will automatically download (pull) the operator image, as needed, to the machines on its cluster nodes.">ほとんどの場合、Kubernetesは必要に応じて、クラスタ・ノードのマシンにオペレータ・イメージを自動的にダウンロード(プル)します。</span></p>
 <p><span class="merged" id="index.rBl5U.spl1" title="原文 : If you want to manually place an operator image in a particular machine’s container image pool, or test access to an image, then call docker pull.">特定のマシンのコンテナ・イメージ・プールにオペレータ・イメージを手動で配置するか、イメージへのアクセスをテストする場合は、<code>docker pull</code>をコールします。</span> <span class="merged" id="index.rBl5U.spl2"  title="原文:: For example:">例えば:</span> </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ docker pull ghcr.io/oracle/weblogic-kubernetes-operator:4.2.13
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ docker pull ghcr.io/oracle/weblogic-kubernetes-operator:4.2.16
 
 </span></span></code></pre></div><p><span class="merged" id="index.1Sjrye" title="原文 : Note that if the image registry you are using is a private registry that requires an image pull credential, then you will need to call docker login my-registry-dns-name.com before calling docker pull.">使用しているイメージ・レジストリがイメージ・プル資格証明を必要とするプライベート・レジストリである場合、<code>docker pull</code>をコールする前に<code>docker login my-registry-dns-name.com</code>をコールする必要があります。</span></p>
 <h5 id="customizing-operator-image-name-pull-secret-and-private-registry"><span class="merged" id="index.3FFHqN" title="原文 : Customizing operator image name, pull secret, and private registry">オペレータ・イメージ名、プル・シークレットおよびプライベート・レジストリのカスタマイズ</span></h5>
@@ -3609,7 +3627,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>helm repo add weblogic-operator https://oracle.github.io/weblogic-kubernetes-operator/charts
 </span></span><span style="display:flex;"><span>helm install weblogic-operator weblogic-operator/weblogic-operator --namespace weblogic-operator --set enableClusterRoleBinding<span style="color:#f92672">=</span>false --set domainNamespaceSelectionStrategy<span style="color:#f92672">=</span>Dedicated --set operatorOnly<span style="color:#f92672">=</span>true
 </span></span></code></pre></div>
-<div class="notices note" ><p><span class="merged" id="index.KB4NP" title="原文 : Since this combination of options omits installing the webhook deployment, customers must use the v9 schema version for Domain resources and manually uprade any v8 resources from the 3.x version of the operator.">このオプションの組合せではwebフック・デプロイメントのインストールが省略されるため、お客様はドメイン・リソースに<code>v9</code>スキーマ・バージョンを使用し、3.xバージョンのオペレータから<code>v8</code>リソースを手動で更新する必要があります。</span></p>
+<div class="notices note" ><p><span class="merged" id="index.1xmysK" title="原文 : Since this combination of options omits installing the webhook deployment, customers must use the v9 schema version for Domain resources and manually upgrade any v8 resources from the 3.x version of the operator.">このオプションの組合せではwebフック・デプロイメントのインストールが省略されるため、お客様はドメイン・リソースに<code>v9</code>スキーマ・バージョンを使用し、<code>v8</code>リソースを3.xバージョンのオペレータから手動でアップグレードする必要があります。</span></p>
 </div>
 
 <h4 id="choose-a-domain-namespace-selection-strategy"><span class="merged" id="index.3h3FCX" title="原文 : Choose a domain namespace selection strategy">ドメイン・ネームスペースの選択方法の選択</span></h4>
@@ -4228,6 +4246,22 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6264,19 +6298,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1736306628"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1736306628"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1736306628"></script>
-    <script src="../../js/jquery.sticky.js?1736306628"></script>
-    <script src="../../js/featherlight.min.js?1736306628"></script>
-    <script src="../../js/highlight.pack.js?1736306628"></script>
+    <script src="../../js/clipboard.min.js?1744255601"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1744255601"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1744255601"></script>
+    <script src="../../js/jquery.sticky.js?1744255601"></script>
+    <script src="../../js/featherlight.min.js?1744255601"></script>
+    <script src="../../js/highlight.pack.js?1744255601"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1736306628"></script>
-    <script src="../../js/learn.js?1736306628"></script>
-    <script src="../../js/hugo-learn.js?1736306628"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1744255601"></script>
+    <script src="../../js/learn.js?1744255601"></script>
+    <script src="../../js/hugo-learn.js?1744255601"></script>
     
         
-            <script src="../../mermaid/mermaid.js?1736306628"></script>
+            <script src="../../mermaid/mermaid.js?1744255601"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

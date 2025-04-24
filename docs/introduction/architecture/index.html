@@ -12,20 +12,20 @@
     <title>アーキテクチャ :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../css/nucleus.css?1736306627" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1736306627" rel="stylesheet">
-    <link href="../../css/hybrid.css?1736306627" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1736306627" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1736306627" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1736306627" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1736306627" rel="stylesheet">
-    <link href="../../css/theme.css?1736306627" rel="stylesheet">
-    <link href="../../css/tabs.css?1736306627" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1736306627" rel="stylesheet">
+    <link href="../../css/nucleus.css?1744255601" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1744255601" rel="stylesheet">
+    <link href="../../css/hybrid.css?1744255601" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1744255601" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1744255601" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1744255601" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1744255601" rel="stylesheet">
+    <link href="../../css/theme.css?1744255601" rel="stylesheet">
+    <link href="../../css/tabs.css?1744255601" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1744255601" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.6.0.min.js?1736306627"></script>
+    <script src="../../js/jquery-3.6.0.min.js?1744255601"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1736306627"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1736306627"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1744255601"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1744255601"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1736306627"></script>
+<script type="text/javascript" src="../../js/search.js?1744255601"></script>
 
     
   </div>
@@ -741,6 +741,24 @@
     
       <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
         <span class="merged" id="index.e22m" title="原文 :  Upgrade managed domains "><a href="../../managing-domains/major-weblogic-version-upgrade/upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-14210/" title="管理対象ドメインをv14.1.2.0にアップグレード">
+        <span class="merged" id="index.32y4YP" title="原文 :  Upgrade managed domains to v14.1.2.0 "><a href="../../managing-domains/major-weblogic-version-upgrade/upgrade-14210/index.html"><b></b>管理対象ドメインをv14.1.2.0にアップグレード</a></span>
     </li>
      
   
@@ -3428,7 +3446,7 @@
 <li><span class="merged" id="index.3o8sF3" title="原文 : Cluster resources that are referenced by domain resources and that reference WebLogic clusters to scale the cluster and to allow other cluster-specific configurations.">ドメイン・リソースによって参照され、WebLogicクラスタを参照してクラスタをスケーリングし、他のクラスタ固有の構成を許可するクラスタ・リソース。</span></li>
 </ul>
 <p><span class="merged" id="index.1ZpELG" title="原文 : The operator is packaged in a container image which you can access using the following docker pull commands:">オペレータは、次の<code>docker pull</code>コマンドを使用してアクセスできる<a href="https://github.com/orgs/oracle/packages/container/package/weblogic-kubernetes-operator">「コンテナ・イメージ」</a>にパッケージ化されています:</span></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ docker pull ghcr.io/oracle/weblogic-kubernetes-operator:4.2.13
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ docker pull ghcr.io/oracle/weblogic-kubernetes-operator:4.2.16
 
 </span></span></code></pre></div><p><span class="merged" id="index.2uOjuH" title="原文 : For more details on acquiring the operator image and prerequisites for installing the operator, consult the Quick Start guide.">オペレータ・イメージの取得およびオペレータをインストールするための前提条件の詳細は、<a href="../../quickstart/index.html">「クイック・スタート・ガイド」</a>を参照してください。</span></p>
 <p><span class="merged" id="index.d6hHk.spl1" title="原文 : The operator registers two Kubernetes custom resource definitions.">オペレータは、2つのKubernetesカスタム・リソース定義を登録します。</span> <span class="merged" id="index.d6hHk.spl2" title="原文 : The first is for the Domain resource and is named domain.weblogic.oracle (shortname domain, plural domains).">1つ目は<code>Domain</code>リソースで、<code>domain.weblogic.oracle</code>という名前が付けられます(短縮名<code>domain</code>、複数形<code>domains</code>)。</span> <span class="merged" id="index.d6hHk.spl3" title="原文 : The second is for the Cluster resource and is named cluster.weblogic.oracle (shortname cluster, plural clusters).">2つ目は<code>Cluster</code>リソース用で、<code>cluster.weblogic.oracle</code>という名前が付けられます(短縮名<code>cluster</code>、複数形<code>clusters</code>)。</span> <span class="merged" id="index.d6hHk.spl4" title="原文 : More details about the types defined by these CRDs, including their schema, are available here.">これらのCRDで定義されたタイプ(スキーマを含む)の詳細は、<a href="../../managing-domains/domain-resource/index.html">「こちら」</a>を参照してください。</span> </p>
@@ -3474,7 +3492,7 @@
 <p><span class="merged" id="index.gz0U0" title="原文 : This diagram shows the following details:">この図は、次の詳細を示しています:</span></p>
 <ul>
 <li><span class="merged" id="index.4eSvCp.spl1" title="原文 : An optional, persistent volume is created by the customer using one of the available providers.">オプションの永続ボリュームは、使用可能なプロバイダのいずれかを使用して顧客が作成します。</span> <span class="merged" id="index.4eSvCp.spl2" title="原文 : If the persistent volume is shared across the domain or members of a cluster, then the chosen provider must support “Read Write Many” access mode.">永続ボリュームがドメインまたはクラスタのメンバー間で共有されている場合、選択したプロバイダは「読取り/書込み(複数)」アクセス・モードをサポートしている必要があります。</span> <span class="merged" id="index.4eSvCp.spl3" title="原文 : The shared state on the persistent volume may include the domain directory, the applications directory, a directory for storing logs, and a directory for any file-based persistence stores.">永続ボリュームの共有状態には、<code>domain</code>ディレクトリ、<code>applications</code>ディレクトリ、ログを格納するディレクトリ、およびファイルベースの永続ストアのディレクトリが含まれます。</span> </li>
-<li><span class="merged" id="index.3mFaeZ.spl1" title="原文 : A pod is created for the WebLogic Server Administration Server.">WebLogic Server管理サーバーのポッドが作成されます。</span> <span class="merged" id="index.3mFaeZ.spl2" title="原文 : This pod is named DOMAIN_UID-wlservername and is labeled with weblogic.domainUID, weblogic.serverName, and weblogic.domainName.">このポッドは<code>DOMAIN_UID-wlservername</code>という名前で、<code>weblogic.domainUID</code>、<code>weblogic.serverName</code>および<code>weblogic.domainName</code>のラベルが付いています。</span> <span class="merged" id="index.3mFaeZ.spl3" title="原文 : One container runs in this pod.">1つのコンテナがこのポッドで実行されます。</span> <span class="merged" id="index.3mFaeZ.spl4" title="原文 : WebLogic Node Manager and Administration Server processes are run inside this container.">WebLogicノード・マネージャおよび管理サーバー・プロセスは、このコンテナ内で実行されます。</span> <span class="merged" id="index.3mFaeZ.spl5" title="原文 : The Node Manager process is used as an internal implementation detail for the liveness probe which we will descibe in more detail later, for patching, and to provide monitoring and control capabilities to the Administration Console.">ノード・マネージャ・プロセスは、リブネス・プローブの内部実装詳細として使用され、後でより詳細に説明し、パッチ適用のために、管理コンソールにモニタリングおよび制御機能を提供します。</span> <span class="merged" id="index.3mFaeZ.spl6" title="原文 : It is not intended to be used for other purposes, and it may be removed in some future release.">他の目的には使用されず、将来のリリースで削除される可能性があります。</span> </li>
+<li><span class="merged" id="index.4AYNTi.spl1" title="原文 : A pod is created for the WebLogic Server Administration Server.">WebLogic Server管理サーバーのポッドが作成されます。</span> <span class="merged" id="index.4AYNTi.spl2" title="原文 : This pod is named DOMAIN_UID-wlservername and is labeled with weblogic.domainUID, weblogic.serverName, and weblogic.domainName.">このポッドは<code>DOMAIN_UID-wlservername</code>という名前で、<code>weblogic.domainUID</code>、<code>weblogic.serverName</code>および<code>weblogic.domainName</code>のラベルが付いています。</span> <span class="merged" id="index.4AYNTi.spl3" title="原文 : One container runs in this pod.">1つのコンテナがこのポッドで実行されます。</span> <span class="merged" id="index.4AYNTi.spl4" title="原文 : WebLogic Node Manager and Administration Server processes are run inside this container.">WebLogicノード・マネージャおよび管理サーバー・プロセスは、このコンテナ内で実行されます。</span> <span class="merged" id="index.4AYNTi.spl5" title="原文 : The Node Manager process is used as an internal implementation detail for the liveness probe which we will describe in more detail later, for patching, and to provide monitoring and control capabilities to the Administration Console.">ノード・マネージャ・プロセスは、livenessプローブの内部実装詳細として使用されます。ここでは、後で詳細に説明し、パッチを適用し、管理コンソールにモニタリングおよび制御機能を提供します。</span> <span class="merged" id="index.4AYNTi.spl6" title="原文 : It is not intended to be used for other purposes, and it may be removed in some future release.">他の目的には使用されず、将来のリリースで削除される可能性があります。</span> </li>
 <li><span class="merged" id="index.2vIFuD.spl1" title="原文 : A ClusterIP type service is created for the Administration Server pod."><code>ClusterIP</code>タイプのサービスが管理サーバーポッド用に作成されます。</span> <span class="merged" id="index.2vIFuD.spl2" title="原文 : This service provides a stable, well-known network (DNS) name for the Administration Server.">このサービスは、管理サーバーに安定した既知のネットワーク(DNS)名を提供します。</span> <span class="merged" id="index.2vIFuD.spl3" title="原文 : This name is derived from the domainUID and the Administration Server name as described here, and it is known before starting up any pod.">この名前は、<code>domainUID</code>および<a href="index.html#network-name-predictability">「こちら」</a>で説明されている管理サーバー名から導出され、ポッドを起動する前に知られています。</span> <span class="merged" id="index.2vIFuD.spl4" title="原文 : The Administration Server ListenAddress is set to this well-known name.">管理サーバー<code>ListenAddress</code>は、この既知の名前に設定されます。</span> <span class="merged" id="index.2vIFuD.spl5" title="原文 : ClusterIP type services are only visible inside the Kubernetes cluster."><code>ClusterIP</code>タイプのサービスは、Kubernetesクラスタ内でのみ表示されます。</span> <span class="merged" id="index.2vIFuD.spl6" title="原文 : They are used to provide the well-known names that all of the servers in a domain use to communicate with each other.">これらは、ドメイン内のすべてのサーバーが相互に通信するために使用する既知の名前を指定するために使用されます。</span> <span class="merged" id="index.2vIFuD.spl7" title="原文 : This service is labeled with weblogic.domainUID and weblogic.domainName.">このサービスには、<code>weblogic.domainUID</code>および<code>weblogic.domainName</code>のラベルが付いています。</span> </li>
 <li><span class="merged" id="index.10tXHs.spl1" title="原文 : A NodePort type service is optionally created for the Administration Server pod."><code>NodePort</code>タイプのサービスは、オプションで管理サーバーポッド用に作成されます。</span> <span class="merged" id="index.10tXHs.spl2" title="原文 : This service provides HTTP access to the Administration Server to clients that are outside the Kubernetes cluster.">このサービスは、Kubernetesクラスタ外のクライアントに管理サーバーへのHTTPアクセスを提供します。</span> <span class="merged" id="index.10tXHs.spl3" title="原文 : This service is intended to be used to access the WebLogic Server Administration Console or for the T3 protocol for WLST connections.">このサービスは、WLST接続のためにWebLogic Server管理コンソールまたはT3プロトコルにアクセスするために使用されます。</span> <span class="merged" id="index.10tXHs.spl4" title="原文 : This service is labeled with weblogic.domainUID and weblogic.domainName.">このサービスには、<code>weblogic.domainUID</code>および<code>weblogic.domainName</code>のラベルが付いています。</span> </li>
 <li><span class="merged" id="index.Zx4Ej.spl1" title="原文 : A pod is created for each WebLogic Server Managed Server.">ポッドは、WebLogic Server管理対象サーバーごとに作成されます。</span> <span class="merged" id="index.Zx4Ej.spl2" title="原文 : These pods are named DOMAIN_UID-wlservername and are labeled with weblogic.domainUID, weblogic.serverName, and weblogic.domainName.">これらのポッドは<code>DOMAIN_UID-wlservername</code>という名前で、<code>weblogic.domainUID</code>、<code>weblogic.serverName</code>および<code>weblogic.domainName</code>のラベルが付いています。</span> <span class="merged" id="index.Zx4Ej.spl3" title="原文 : One container runs in each pod.">各ポッドで1つのコンテナが実行されます。</span> <span class="merged" id="index.Zx4Ej.spl4" title="原文 : WebLogic Node Manager and Managed Server processes are run inside each of these containers.">WebLogicノード・マネージャおよび管理対象サーバーのプロセスは、これらの各コンテナ内で実行されます。</span> <span class="merged" id="index.Zx4Ej.spl5" title="原文 : The Node Manager process is used as an internal implementation detail for the liveness probe which we will describe in more detail later.">ノード・マネージャ・プロセスは、後でより詳細に記述するリブネス・プローブの内部実装詳細として使用されます。</span> <span class="merged" id="index.Zx4Ej.spl6" title="原文 : It is not intended to be used for other purposes, and it may be removed in some future release.">他の目的には使用されず、将来のリリースで削除される可能性があります。</span> </li>
@@ -4083,6 +4101,22 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6119,19 +6153,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1736306627"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1736306627"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1736306627"></script>
-    <script src="../../js/jquery.sticky.js?1736306627"></script>
-    <script src="../../js/featherlight.min.js?1736306627"></script>
-    <script src="../../js/highlight.pack.js?1736306627"></script>
+    <script src="../../js/clipboard.min.js?1744255601"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1744255601"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1744255601"></script>
+    <script src="../../js/jquery.sticky.js?1744255601"></script>
+    <script src="../../js/featherlight.min.js?1744255601"></script>
+    <script src="../../js/highlight.pack.js?1744255601"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1736306627"></script>
-    <script src="../../js/learn.js?1736306627"></script>
-    <script src="../../js/hugo-learn.js?1736306627"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1744255601"></script>
+    <script src="../../js/learn.js?1744255601"></script>
+    <script src="../../js/hugo-learn.js?1744255601"></script>
     
         
-            <script src="../../mermaid/mermaid.js?1736306627"></script>
+            <script src="../../mermaid/mermaid.js?1744255601"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

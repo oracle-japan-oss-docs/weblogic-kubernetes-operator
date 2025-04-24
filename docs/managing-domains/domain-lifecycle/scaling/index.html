@@ -12,20 +12,20 @@
     <title>スケーリング :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../../css/nucleus.css?1736306628" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1736306628" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1736306628" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1736306628" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1736306628" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1736306628" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1736306628" rel="stylesheet">
-    <link href="../../../css/theme.css?1736306628" rel="stylesheet">
-    <link href="../../../css/tabs.css?1736306628" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1736306628" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1744255601" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1744255601" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1744255601" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1744255601" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1744255601" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1744255601" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1744255601" rel="stylesheet">
+    <link href="../../../css/theme.css?1744255601" rel="stylesheet">
+    <link href="../../../css/tabs.css?1744255601" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1744255601" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.6.0.min.js?1736306628"></script>
+    <script src="../../../js/jquery-3.6.0.min.js?1744255601"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1736306628"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1736306628"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1744255601"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1744255601"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator\/";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1736306628"></script>
+<script type="text/javascript" src="../../../js/search.js?1744255601"></script>
 
     
   </div>
@@ -741,6 +741,24 @@
     
       <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-major/" title="管理対象ドメインのアップグレード">
         <span class="merged" id="index.2hALNM" title="原文 :  Upgrade managed domains "><a href="../../major-weblogic-version-upgrade/upgrade-major/index.html"><b></b>管理対象ドメインのアップグレード</a></span>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li class="dd-item " data-nav-id="/managing-domains/major-weblogic-version-upgrade/upgrade-14210/" title="管理対象ドメインをv14.1.2.0にアップグレード">
+        <span class="merged" id="index.bW3pn" title="原文 :  Upgrade managed domains to v14.1.2.0 "><a href="../../major-weblogic-version-upgrade/upgrade-14210/index.html"><b></b>管理対象ドメインをv14.1.2.0にアップグレード</a></span>
     </li>
      
   
@@ -3773,7 +3791,7 @@ LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUR3akNDQXFxZ0F3SUJBZ0lFRzhYT1N6QU...
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">apiGroup</span>: <span style="color:#e6db74">&#34;rbac.authorization.k8s.io&#34;</span>
 </span></span><span style="display:flex;"><span>---
 </span></span></code></pre></div><h4 id="horizontal-pod-autoscaler-hpa-using-weblogic-exporter-metrics"><span class="merged" id="index.1YnxIi" title="原文 : Horizontal Pod Autoscaler (HPA) using WebLogic Exporter Metrics">WebLogicエクスポータ・メトリクスを使用したHorizontal Pod Autoscaler (HPA)</span></h4>
-<p><span class="merged" id="index.3dPu6b.spl1" title="原文 : Please read this blog post to learn how to scale a WebLogic cluster, based on WebLogic metrics provided by the Monitoring Exporter, using the Kubernetes Horizontal Pod Autoscaler (HPA).">このブログ投稿を読んで、Kubernetes Horizontal Pod Autoscaler (HPA)を使用して、Monitoring Exporterによって提供されるWebLogicメトリクスに基づいてWebLogicクラスタをスケーリングする方法を学習します。</span> <span class="merged" id="index.3dPu6b.spl2" title="原文 : We will use the Prometheus Adapter to gather the names of the available metrics from Prometheus at regular intervals.">Prometheusアダプタを使用して、使用可能なメトリクスの名前を定期的にPrometheusから収集します。</span> <span class="merged" id="index.3dPu6b.spl3" title="原文 : A custom configuration of the adapter will expose only metrics that follow specific formats.">アダプタのカスタム構成では、特定の形式に従うメトリクスのみが公開されます。</span> <span class="merged" id="index.3dPu6b.spl4" title="原文 : Horizontal Pod Autoscaler (HPA) using WebLogic Exporter Metrics."><a href="https://blogs.oracle.com/weblogicserver/post/horizontal-pod-autoscaler-hpausing-weblogic-exporter-metrics">「WebLogicエクスポータ・メトリクスを使用したHorizontal Pod Autoscaler (HPA)」</a>.</span> <span class="merged" id="index.3dPu6b.spl5" title="原文 : See this corresponding video for a demonstation of the blog post in action.">動作中のブログ投稿のデモについては、このビデオをご覧ください。</span> <span class="merged" id="index.3dPu6b.spl6" title="原文 : WebLogic Kubernetes Operator support for Kubernetes Horizontal Pod Autoscaling."><a href="https://www.youtube.com/watch?v=aKBG6yJ3sMg">「Kubernetes Horizontal Pod AutoscalingのWebLogic Kubernetes Operatorサポート」</a>。</span> </p>
+<p><span class="merged" id="index.3VVIj1.spl1" title="原文 : Please read this blog post to learn how to scale a WebLogic cluster, based on WebLogic metrics provided by the Monitoring Exporter, using the Kubernetes Horizontal Pod Autoscaler (HPA).">このブログ投稿を読んで、Kubernetes Horizontal Pod Autoscaler (HPA)を使用して、Monitoring Exporterによって提供されるWebLogicメトリクスに基づいてWebLogicクラスタをスケーリングする方法を学習します。</span> <span class="merged" id="index.3VVIj1.spl2" title="原文 : We will use the Prometheus Adapter to gather the names of the available metrics from Prometheus at regular intervals.">Prometheusアダプタを使用して、使用可能なメトリクスの名前を定期的にPrometheusから収集します。</span> <span class="merged" id="index.3VVIj1.spl3" title="原文 : A custom configuration of the adapter will expose only metrics that follow specific formats.">アダプタのカスタム構成では、特定の形式に従うメトリクスのみが公開されます。</span> <span class="merged" id="index.3VVIj1.spl4" title="原文 : Horizontal Pod Autoscaler (HPA) using WebLogic Exporter Metrics."><a href="https://blogs.oracle.com/weblogicserver/post/horizontal-pod-autoscaler-hpausing-weblogic-exporter-metrics">「WebLogicエクスポータ・メトリクスを使用したHorizontal Pod Autoscaler (HPA)」</a>.</span> <span class="merged" id="index.3VVIj1.spl5" title="原文 : See this corresponding video for a demonstration of the blog post in action.">実際のブログ投稿のデモについては、この対応するビデオを参照してください。</span> <span class="merged" id="index.3VVIj1.spl6" title="原文 : WebLogic Kubernetes Operator support for Kubernetes Horizontal Pod Autoscaling."><a href="https://www.youtube.com/watch?v=aKBG6yJ3sMg">「Kubernetes Horizontal Pod AutoscalingのWebLogic Kubernetes Operatorサポート」</a>。</span> </p>
 <h4 id="using-a-prometheus-alert-action-to-call-the-operators-rest-scale-api"><span class="merged" id="index.2sExil" title="原文 : Using a Prometheus alert action to call the operator’s REST scale API">Prometheusアラート・アクションを使用したオペレータのRESTスケールAPIのコール</span></h4>
 <p><span class="merged" id="index.284DII.spl1" title="原文 : In addition to using the WebLogic Diagnostic Framework for automatic scaling of a dynamic cluster, you can use a third-party monitoring application like Prometheus.">WebLogic診断フレームワークを使用した動的クラスタの自動スケーリングに加えて、Prometheusなどのサード・パーティのモニタリング・アプリケーションを使用できます。</span> <span class="merged" id="index.284DII.spl2" title="原文 : Please read the following blog for details about Using Prometheus to Automatically Scale WebLogic Clusters on Kubernetes."><a href="https://blogs.oracle.com/weblogicserver/using-prometheus-to-automatically-scale-weblogic-clusters-on-kubernetes-v5">「Prometheusを使用したKubernetesでのWebLogicクラスタの自動スケーリング」</a>の詳細は、次のブログを参照してください。</span> </p>
 <h3 id="helpful-tips"><span class="merged" id="index.4aNwf" title="原文 : Helpful tips">役立つヒント</span></h3>
@@ -4415,6 +4433,22 @@ LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUR3akNDQXFxZ0F3SUJBZ0lFRzhYT1N6QU...
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6459,19 +6493,19 @@ LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUR3akNDQXFxZ0F3SUJBZ0lFRzhYT1N6QU...
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1736306628"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1736306628"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1736306628"></script>
-    <script src="../../../js/jquery.sticky.js?1736306628"></script>
-    <script src="../../../js/featherlight.min.js?1736306628"></script>
-    <script src="../../../js/highlight.pack.js?1736306628"></script>
+    <script src="../../../js/clipboard.min.js?1744255601"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1744255601"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1744255601"></script>
+    <script src="../../../js/jquery.sticky.js?1744255601"></script>
+    <script src="../../../js/featherlight.min.js?1744255601"></script>
+    <script src="../../../js/highlight.pack.js?1744255601"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1736306628"></script>
-    <script src="../../../js/learn.js?1736306628"></script>
-    <script src="../../../js/hugo-learn.js?1736306628"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1744255601"></script>
+    <script src="../../../js/learn.js?1744255601"></script>
+    <script src="../../../js/hugo-learn.js?1744255601"></script>
     
         
-            <script src="../../../mermaid/mermaid.js?1736306628"></script>
+            <script src="../../../mermaid/mermaid.js?1744255601"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
