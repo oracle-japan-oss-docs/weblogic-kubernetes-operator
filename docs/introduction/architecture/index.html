@@ -12,20 +12,20 @@
     <title>アーキテクチャ :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../css/nucleus.css?1744255601" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1744255601" rel="stylesheet">
-    <link href="../../css/hybrid.css?1744255601" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1744255601" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1744255601" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1744255601" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1744255601" rel="stylesheet">
-    <link href="../../css/theme.css?1744255601" rel="stylesheet">
-    <link href="../../css/tabs.css?1744255601" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1744255601" rel="stylesheet">
+    <link href="../../css/nucleus.css?1748489659" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1748489659" rel="stylesheet">
+    <link href="../../css/hybrid.css?1748489659" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1748489659" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1748489659" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1748489659" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1748489659" rel="stylesheet">
+    <link href="../../css/theme.css?1748489659" rel="stylesheet">
+    <link href="../../css/tabs.css?1748489659" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1748489659" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.6.0.min.js?1744255601"></script>
+    <script src="../../js/jquery-3.6.0.min.js?1748489659"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1744255601"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1744255601"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1748489659"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1748489659"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1744255601"></script>
+<script type="text/javascript" src="../../js/search.js?1748489659"></script>
 
     
   </div>
@@ -3446,7 +3446,7 @@
 <li><span class="merged" id="index.3o8sF3" title="原文 : Cluster resources that are referenced by domain resources and that reference WebLogic clusters to scale the cluster and to allow other cluster-specific configurations.">ドメイン・リソースによって参照され、WebLogicクラスタを参照してクラスタをスケーリングし、他のクラスタ固有の構成を許可するクラスタ・リソース。</span></li>
 </ul>
 <p><span class="merged" id="index.1ZpELG" title="原文 : The operator is packaged in a container image which you can access using the following docker pull commands:">オペレータは、次の<code>docker pull</code>コマンドを使用してアクセスできる<a href="https://github.com/orgs/oracle/packages/container/package/weblogic-kubernetes-operator">「コンテナ・イメージ」</a>にパッケージ化されています:</span></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ docker pull ghcr.io/oracle/weblogic-kubernetes-operator:4.2.16
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ docker pull ghcr.io/oracle/weblogic-kubernetes-operator:4.2.17
 
 </span></span></code></pre></div><p><span class="merged" id="index.2uOjuH" title="原文 : For more details on acquiring the operator image and prerequisites for installing the operator, consult the Quick Start guide.">オペレータ・イメージの取得およびオペレータをインストールするための前提条件の詳細は、<a href="../../quickstart/index.html">「クイック・スタート・ガイド」</a>を参照してください。</span></p>
 <p><span class="merged" id="index.d6hHk.spl1" title="原文 : The operator registers two Kubernetes custom resource definitions.">オペレータは、2つのKubernetesカスタム・リソース定義を登録します。</span> <span class="merged" id="index.d6hHk.spl2" title="原文 : The first is for the Domain resource and is named domain.weblogic.oracle (shortname domain, plural domains).">1つ目は<code>Domain</code>リソースで、<code>domain.weblogic.oracle</code>という名前が付けられます(短縮名<code>domain</code>、複数形<code>domains</code>)。</span> <span class="merged" id="index.d6hHk.spl3" title="原文 : The second is for the Cluster resource and is named cluster.weblogic.oracle (shortname cluster, plural clusters).">2つ目は<code>Cluster</code>リソース用で、<code>cluster.weblogic.oracle</code>という名前が付けられます(短縮名<code>cluster</code>、複数形<code>clusters</code>)。</span> <span class="merged" id="index.d6hHk.spl4" title="原文 : More details about the types defined by these CRDs, including their schema, are available here.">これらのCRDで定義されたタイプ(スキーマを含む)の詳細は、<a href="../../managing-domains/domain-resource/index.html">「こちら」</a>を参照してください。</span> </p>
@@ -3521,7 +3521,7 @@
 <li><span class="merged" id="index.3MwHyB.spl1" title="原文 : The ENTRYPOINT is configured by a script that starts up a Node Manager process, and then uses WLST to request that Node Manager start the server."><code>ENTRYPOINT</code>は、ノード・マネージャ・プロセスを起動するスクリプトによって構成され、WLSTを使用してノード・マネージャによるサーバーの起動をリクエストします。</span> <span class="merged" id="index.3MwHyB.spl2" title="原文 : Node Manager is used to start servers so that the socket connection to the server will be available to obtain server status even when the server is unresponsive.">サーバーが応答しない場合でもサーバーへのソケット接続を使用してサーバー・ステータスを取得できるように、ノード・マネージャを使用してサーバーを起動します。</span> <span class="merged" id="index.3MwHyB.spl3" title="原文 : This is used by the liveness probe.">これは、リブネス・プローブで使用されます。</span> </li>
 <li><span class="merged" id="index.2kUx9r.spl1" title="原文 : The liveness probe is configured to check that a server is alive by querying the Node Manager process.">ノード・マネージャ・プロセスを問合せして、サーバーが稼働していることを確認するようにリブネス・プローブが構成されています。</span> <span class="merged" id="index.2kUx9r.spl2" title="原文 : By default, the liveness probe is configured to check liveness every 45 seconds and to timeout after 5 seconds.">デフォルトでは、リブネス・プローブは45秒ごとにlivenessをチェックし、5秒後にタイムアウトするように構成されています。</span> <span class="merged" id="index.2kUx9r.spl3" title="原文 : If a pod fails the liveness probe, Kubernetes will restart that container.">ポッドがリブネス・プローブに失敗すると、Kubernetesはそのコンテナを再起動します。</span> <span class="merged" id="index.2kUx9r.spl4" title="原文 : For details about liveness probe customization, see Liveness probe customization.">リブネス・プローブのカスタマイズの詳細については、<a href="../../managing-domains/domain-lifecycle/liveness-readiness-probe-customization/index.html#liveness-probe-customization">「リブネス・プローブのカスタマイズ」</a>を参照してください。</span> </li>
 <li><span class="merged" id="index.3EmKel.spl1" title="原文 : The readiness probe is configured to use the WebLogic Server ReadyApp framework.">レディネス・プローブは、WebLogic Server ReadyAppフレームワークを使用するように構成されます。</span> <span class="merged" id="index.3EmKel.spl2" title="原文 : The readiness probe determines if a server is ready to accept user requests.">レディネス・プローブは、サーバーがユーザー・リクエストを受け入れる準備ができているかどうかを判断します。</span> <span class="merged" id="index.3EmKel.spl3" title="原文 : The readiness probe is used to determine when a server should be included in a load balancer’s endpoints, in the case of a rolling restart, when a restarted server is fully started, and for various other purposes.">レディネス・プローブは、ロード・バランサのエンドポイントにサーバーを含めるタイミング、ローリング再起動の場合、再起動されたサーバーが完全に起動されたとき、および他の様々な目的で決定するために使用されます。</span> <span class="merged" id="index.3EmKel.spl4" title="原文 : For details about readiness probe customization, see Readiness probe customization.">レディネス・プローブのカスタマイズの詳細については、<a href="../../managing-domains/domain-lifecycle/liveness-readiness-probe-customization/index.html#readiness-probe-customization">「レディネス・プローブのカスタマイズ」</a>を参照してください。</span> </li>
-<li><span class="merged" id="index.2YCDhH.spl1" title="原文 : A shutdown hook is configured that will execute a script that performs a graceful shutdown of the server.">サーバーの正常なシャットダウンを実行するスクリプトを実行するシャットダウン・フックが構成されます。</span> <span class="merged" id="index.2YCDhH.spl2" title="原文 : This ensures that servers have an opportunity to shut down cleanly before they are killed.">これにより、サーバーを強制終了する前に正常に停止できます。</span> </li>
+<li><span class="merged" id="index.2YCDhH.spl1" title="原文 : A shutdown hook is configured that will execute a script that performs a graceful shutdown of the server.">サーバーの正常な停止を実行するスクリプトを実行する停止フックが構成されます。</span> <span class="merged" id="index.2YCDhH.spl2" title="原文 : This ensures that servers have an opportunity to shut down cleanly before they are killed.">これにより、サーバーを強制終了する前に正常に停止できます。</span> </li>
 </ul>
 <h3 id="network-name-predictability"><span class="merged" id="index.RYSlI" title="原文 : Network name predictability">ネットワーク名の予測可能性</span></h3>
 <p><span class="merged" id="index.26gdUm.spl1" title="原文 : The operator deploys services with predictable well-defined DNS names for each WebLogic server and cluster in your WebLogic configuration.">オペレータは、WebLogic構成の各WebLogic Serverおよびクラスタについて、予測可能な明確に定義されたDNS名を使用してサービスをデプロイします。</span> <span class="merged" id="index.26gdUm.spl2" title="原文 : The name of a WebLogic server service is DOMAIN_UID-wlservername and the name of a WebLogic server cluster is DOMAIN_UID-cluster-wlclustername, all in lowercase, with underscores _ converted to hyphens -.">WebLogic Serverサービスの名前は<code>DOMAIN_UID-wlservername</code>で、WebLogic Serverクラスタの名前は<code>DOMAIN_UID-cluster-wlclustername</code>で、すべて小文字で、アンダースコア<code>_</code>はハイフン<code>-</code>に変換されます。</span> </p>
@@ -6153,19 +6153,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1744255601"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1744255601"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1744255601"></script>
-    <script src="../../js/jquery.sticky.js?1744255601"></script>
-    <script src="../../js/featherlight.min.js?1744255601"></script>
-    <script src="../../js/highlight.pack.js?1744255601"></script>
+    <script src="../../js/clipboard.min.js?1748489659"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1748489659"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1748489659"></script>
+    <script src="../../js/jquery.sticky.js?1748489659"></script>
+    <script src="../../js/featherlight.min.js?1748489659"></script>
+    <script src="../../js/highlight.pack.js?1748489659"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1744255601"></script>
-    <script src="../../js/learn.js?1744255601"></script>
-    <script src="../../js/hugo-learn.js?1744255601"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1748489659"></script>
+    <script src="../../js/learn.js?1748489659"></script>
+    <script src="../../js/hugo-learn.js?1748489659"></script>
     
         
-            <script src="../../mermaid/mermaid.js?1744255601"></script>
+            <script src="../../mermaid/mermaid.js?1748489659"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -12,20 +12,20 @@
     <title>オペレータの前提条件 :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../../css/nucleus.css?1744255601" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1744255601" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1744255601" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1744255601" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1744255601" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1744255601" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1744255601" rel="stylesheet">
-    <link href="../../../css/theme.css?1744255601" rel="stylesheet">
-    <link href="../../../css/tabs.css?1744255601" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1744255601" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1748489659" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1748489659" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1748489659" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1748489659" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1748489659" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1748489659" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1748489659" rel="stylesheet">
+    <link href="../../../css/theme.css?1748489659" rel="stylesheet">
+    <link href="../../../css/tabs.css?1748489659" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1748489659" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.6.0.min.js?1744255601"></script>
+    <script src="../../../js/jquery-3.6.0.min.js?1748489659"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1744255601"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1744255601"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1748489659"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1748489659"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator\/";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1744255601"></script>
+<script type="text/javascript" src="../../../js/search.js?1748489659"></script>
 
     
   </div>
@@ -3413,22 +3413,26 @@
         
 
 
-<p><span class="merged" id="index.2rHVok" title="原文 : For the current production release 4.2.16 :">現在の本番リリースの4.2.16の場合 :</span></p>
+<p><span class="merged" id="index.2tGCAj" title="原文 : For the current production release 4.2.17 :">現在の本番リリースの4.2.17の場合 :</span></p>
+
+<div class="notices note" ><p><span class="merged" id="index.1N6vZR.spl1" title="原文 : Support for Kubernetes 1.32.1+ with Oracle WebLogic Server 12.2.1.4 or 14.1.1.0 requires that the WebLogic container images have patch 37788099.">Oracle WebLogic Server 12.2.1.4または14.1.1.0でのKubernetes 1.32.1+のサポートでは、WebLogicコンテナ・イメージにパッチ37788099が必要です。</span> <span class="merged" id="index.1N6vZR.spl2" title="原文 : No patch is required when using Oracle WebLogic Server 14.1.2.0.">Oracle WebLogic Server 14.1.2.0を使用する場合、パッチは必要ありません。</span> </p>
+</div>
+
 <ul>
 <li>
-<p><span class="merged" id="index.3kc4uw" title="原文 : Kubernetes 1.24.0+, 1.25.0+, 1.26.2+, 1.27.2+, 1.28.2+, 1.29.1+, 1.30.1+, and 1.31.1+ (check with kubectl version).">Kubernetes 1.24.0+、1.25.0+、1.26.2+、1.27.2+、1.28.2+、1.29.1+、1.30.1+、および1.31.1+ (<code>kubectl version</code>で確認)。</span></p>
+<p><span class="merged" id="index.ux5dB" title="原文 : Kubernetes 1.26.2+, 1.27.2+, 1.28.2+, 1.29.1+, 1.30.1+, 1.31.1+, 1.32.1+ (check with kubectl version).">Kubernetes 1.26.2+、1.27.2+、1.28.2+、1.29.1+、1.30.1+、1.31.1+、1.32.1+ (<code>kubectl version</code>で確認)。</span></p>
 </li>
 <li>
-<p><span class="merged" id="index.3Y0uKn" title="原文 : Flannel networking v0.13.0-amd64 or later (check with docker images | grep flannel), Calico networking v3.16.1 or later, or OpenShift SDN on OpenShift 4.3 systems.">Flannelネットワークv0.13.0-amd64以降(<code>docker images | grep flannel</code>でチェック)、<em>「または」</em>Calicoネットワークv3.16.1以降またはOpenShift 4.3システムでOpenShift SDN。</span></p>
+<p><span class="merged" id="index.1H1cMh" title="原文 : Flannel networking v0.26.7 or later (check with docker images | grep flannel), Calico networking v3.29.4 or later, or OpenShift SDN on OpenShift 4.3 systems.">Flannelネットワーキングv0.26.7以降(<code>docker images | grep flannel</code>で確認)、Calicoネットワーキングv3.29.4以降<em>または</em>OpenShift 4.3システムのOpenShift SDN。</span></p>
 </li>
 <li>
-<p><span class="merged" id="index.3FiSBy" title="原文 : Docker 19.03.1+ (check with docker version) or CRI-O 1.20.2+ (check with crictl version | grep RuntimeVersion).">Docker 19.03.1+ (<code>docker version</code>でチェック) <em>「または」</em>CRI-O 1.20.2+ (<code>crictl version | grep RuntimeVersion</code>でチェック)。</span></p>
+<p><span class="merged" id="index.4UrTKH" title="原文 : Docker 25.0.10+ (check with docker version) or CRI-O 1.26.2+ (check with crictl version | grep RuntimeVersion).">Docker 25.0.10+ (<code>docker version</code>で確認)またはCRI-O 1.26.2+ (<code>crictl version | grep RuntimeVersion</code>で確認)。</span></p>
 </li>
 <li>
-<p><span class="merged" id="index.aHbJY"  title="原文: Helm 3.3.4+ (check with helm version --client --short).">Helm 3.3.4+ (<code>helm version --client --short</code>でチェック)。</span></p>
+<p><span class="merged" id="index.3cOO7o"  title="原文: Helm 3.13.2+ (check with helm version --client --short).">Helm 3.13.2+ (<code>helm version --client --short</code>で確認)。</span></p>
 </li>
 <li>
-<p><span class="merged" id="index.4DTrYy" title="原文 : For domain home source type Model in Image, WebLogic Deploy Tooling 1.9.11+.">ドメイン・ホーム・ソース・タイプ<code>Model in Image</code>の場合、WebLogic Deploy Tooling 1.9.11+。</span></p>
+<p><span class="merged" id="index.4ebihC" title="原文 : For domain home source type Model in Image, WebLogic Deploy Tooling 4.3.4+.">ドメイン・ホームのソース・タイプ<code>Model in Image</code>の場合、WebLogic Deploy Tooling 4.3.4以上。</span></p>
 </li>
 <li>
 <p><span class="merged" id="index.uelke" title="原文 : Oracle WebLogic Server 12.2.1.4.0, Oracle WebLogic Server 14.1.1.0.0, or Oracle WebLogic Server 14.1.2.0.0.">Oracle WebLogic Server 12.2.1.4.0、Oracle WebLogic Server 14.1.1.0.0またはOracle WebLogic Server 14.1.2.0.0。</span></p>
@@ -6081,19 +6085,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1744255601"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1744255601"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1744255601"></script>
-    <script src="../../../js/jquery.sticky.js?1744255601"></script>
-    <script src="../../../js/featherlight.min.js?1744255601"></script>
-    <script src="../../../js/highlight.pack.js?1744255601"></script>
+    <script src="../../../js/clipboard.min.js?1748489659"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1748489659"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1748489659"></script>
+    <script src="../../../js/jquery.sticky.js?1748489659"></script>
+    <script src="../../../js/featherlight.min.js?1748489659"></script>
+    <script src="../../../js/highlight.pack.js?1748489659"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1744255601"></script>
-    <script src="../../../js/learn.js?1744255601"></script>
-    <script src="../../../js/hugo-learn.js?1744255601"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1748489659"></script>
+    <script src="../../../js/learn.js?1748489659"></script>
+    <script src="../../../js/hugo-learn.js?1748489659"></script>
     
         
-            <script src="../../../mermaid/mermaid.js?1744255601"></script>
+            <script src="../../../mermaid/mermaid.js?1748489659"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

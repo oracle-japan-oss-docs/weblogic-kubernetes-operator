@@ -12,20 +12,20 @@
     <title>Domain secret mismatch :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../css/nucleus.css?1744255601" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1744255601" rel="stylesheet">
-    <link href="../../css/hybrid.css?1744255601" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1744255601" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1744255601" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1744255601" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1744255601" rel="stylesheet">
-    <link href="../../css/theme.css?1744255601" rel="stylesheet">
-    <link href="../../css/tabs.css?1744255601" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1744255601" rel="stylesheet">
+    <link href="../../css/nucleus.css?1748489659" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1748489659" rel="stylesheet">
+    <link href="../../css/hybrid.css?1748489659" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1748489659" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1748489659" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1748489659" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1748489659" rel="stylesheet">
+    <link href="../../css/theme.css?1748489659" rel="stylesheet">
+    <link href="../../css/tabs.css?1748489659" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1748489659" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.6.0.min.js?1744255601"></script>
+    <script src="../../js/jquery-3.6.0.min.js?1748489659"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1744255601"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1744255601"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1748489659"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1748489659"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1744255601"></script>
+<script type="text/javascript" src="../../js/search.js?1748489659"></script>
 
     
   </div>
@@ -3443,8 +3443,8 @@
 <h4 id="domain-in-image"><span class="merged" id="index.CMey"  title="原文:: Domain in Image">Domain in Image</span></h4>
 <h5 id="rolling-to-an-image-containing-new-or-unrelated-domain-directory"><span class="merged" id="index.3od9RA" title="原文 : Rolling to an image containing new or unrelated domain directory">新規または関連のないドメイン・ディレクトリを含むイメージへのローリング</span></h5>
 <p><span class="merged" id="index.3LIP2r" title="原文 : The error occurs while rolling pods have containers based on a new container image that contains an entirely new or unrelated domain directory.">ローリング・ポッドに、完全に新規または関連のないドメイン・ディレクトリを含む新しいコンテナ・イメージに基づくコンテナがあるときにエラーが発生します。</span></p>
-<p><span class="merged" id="index.4S6FaB.spl1" title="原文 : The problem is that WebLogic cannot support server instances being part of the same WebLogic domain if the server instances do not all share the same domain-specific encryption key.">問題は、サーバー・インスタンスのすべてが同じドメイン固有の暗号化キーを共有していない場合、WebLogicが同じWebLogicドメインの一部であるサーバー・インスタンスをサポートできないことです。</span> <span class="merged" id="index.4S6FaB.spl2" title="原文 : Additionally, operator introspection currently happens only when starting servers following a total shutdown.">また、オペレータのイントロスペクションは現在、完全シャットダウン後にサーバーを起動する場合にのみ発生します。</span> <span class="merged" id="index.4S6FaB.spl3" title="原文 : Therefore, the boot.properties files generated from introspecting the image containing the original domain directory will be invalid when used with a container started with the updated container image containing the new or unrelated domain directory.">したがって、元のドメイン・ディレクトリを含むイメージのイントロスペクションから生成された<code>boot.properties</code>ファイルは、新規または関連のないドメイン・ディレクトリを含む更新されたコンテナ・イメージで起動されたコンテナで使用すると無効になります。</span> </p>
-<p><span class="merged" id="index.3JtLqS" title="原文 : The solution is to follow either the recommended CI/CD guidelines so that the original and new container images contain domain directories with consistent domain-specific encryption keys and bootstrapping security details, or to perform a total shutdown of the domain so that introspection reoccurs as servers are restarted.">解決策は、元のコンテナ・イメージと新しいコンテナ・イメージに一貫性のあるドメイン固有の暗号化キーとブートストラップ・セキュリティの詳細を含むドメイン・ディレクトリが含まれるように推奨される<a href="../../managing-domains/cicd/index.html">「CI/CDガイドライン」</a>に従うか、サーバーの再起動時にイントロスペクションが再起動されるようにドメインの<a href="../../managing-domains/domain-lifecycle/startup/index.html#starting-and-stopping-servers">「完全シャットダウンの実行」</a>にすることです。</span></p>
+<p><span class="merged" id="index.4S6FaB.spl1" title="原文 : The problem is that WebLogic cannot support server instances being part of the same WebLogic domain if the server instances do not all share the same domain-specific encryption key.">問題は、サーバー・インスタンスのすべてが同じドメイン固有の暗号化キーを共有していない場合、WebLogicが同じWebLogicドメインの一部であるサーバー・インスタンスをサポートできないことです。</span> <span class="merged" id="index.4S6FaB.spl2" title="原文 : Additionally, operator introspection currently happens only when starting servers following a total shutdown.">また、オペレータのイントロスペクションは現在、完全停止後にサーバーを起動する場合にのみ発生します。</span> <span class="merged" id="index.4S6FaB.spl3" title="原文 : Therefore, the boot.properties files generated from introspecting the image containing the original domain directory will be invalid when used with a container started with the updated container image containing the new or unrelated domain directory.">したがって、元のドメイン・ディレクトリを含むイメージのイントロスペクションから生成された<code>boot.properties</code>ファイルは、新規または関連のないドメイン・ディレクトリを含む更新されたコンテナ・イメージで起動されたコンテナで使用すると無効になります。</span> </p>
+<p><span class="merged" id="index.3JtLqS" title="原文 : The solution is to follow either the recommended CI/CD guidelines so that the original and new container images contain domain directories with consistent domain-specific encryption keys and bootstrapping security details, or to perform a total shutdown of the domain so that introspection reoccurs as servers are restarted.">解決策は、元のコンテナ・イメージと新しいコンテナ・イメージに一貫性のあるドメイン固有の暗号化キーとブートストラップ・セキュリティの詳細を含むドメイン・ディレクトリが含まれるように推奨される<a href="../../managing-domains/cicd/index.html">「CI/CDガイドライン」</a>に従うか、サーバーの再起動時にイントロスペクションが再起動されるようにドメインの<a href="../../managing-domains/domain-lifecycle/startup/index.html#starting-and-stopping-servers">「完全停止の実行」</a>にすることです。</span></p>
 <h5 id="full-domain-shutdown-and-restart"><span class="merged" id="index.3mTcGH" title="原文 : Full domain shutdown and restart">ドメインの完全な停止と再起動</span></h5>
 <p><span class="merged" id="index.4Rt8wP" title="原文 : The error occurs while starting servers after a full domain shutdown.">ドメインが完全に停止した後、サーバーの起動中にエラーが発生します。</span></p>
 <p><span class="merged" id="index.2Kaylk" title="原文 : If your development model generates new container images with new and unrelated domain directories and then tags those images with the same tag, then different Kubernetes worker nodes may have different images under the same tag in their individual, local container repositories.">開発モデルで、新しい関連のないドメイン・ディレクトリを使用して新しいコンテナ・イメージを生成し、それらのイメージに同じタグを付けた場合、個々のローカル・コンテナ・リポジトリの同じタグの下に、異なるKubernetesワーカー・ノードのイメージが存在する可能性があります。</span></p>
@@ -6072,19 +6072,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1744255601"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1744255601"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1744255601"></script>
-    <script src="../../js/jquery.sticky.js?1744255601"></script>
-    <script src="../../js/featherlight.min.js?1744255601"></script>
-    <script src="../../js/highlight.pack.js?1744255601"></script>
+    <script src="../../js/clipboard.min.js?1748489659"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1748489659"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1748489659"></script>
+    <script src="../../js/jquery.sticky.js?1748489659"></script>
+    <script src="../../js/featherlight.min.js?1748489659"></script>
+    <script src="../../js/highlight.pack.js?1748489659"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1744255601"></script>
-    <script src="../../js/learn.js?1744255601"></script>
-    <script src="../../js/hugo-learn.js?1744255601"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1748489659"></script>
+    <script src="../../js/learn.js?1748489659"></script>
+    <script src="../../js/hugo-learn.js?1748489659"></script>
     
         
-            <script src="../../mermaid/mermaid.js?1744255601"></script>
+            <script src="../../mermaid/mermaid.js?1748489659"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

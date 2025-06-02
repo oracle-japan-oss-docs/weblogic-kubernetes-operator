@@ -12,20 +12,20 @@
     <title>レイヤー化が重要な理由 :: WebLogic Kubernetes Operator</title>
 
     
-    <link href="../../../css/nucleus.css?1744255601" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1744255601" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1744255601" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1744255601" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1744255601" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1744255601" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1744255601" rel="stylesheet">
-    <link href="../../../css/theme.css?1744255601" rel="stylesheet">
-    <link href="../../../css/tabs.css?1744255601" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1744255601" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1748489660" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1748489660" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1748489660" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1748489660" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1748489660" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1748489660" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1748489660" rel="stylesheet">
+    <link href="../../../css/theme.css?1748489660" rel="stylesheet">
+    <link href="../../../css/tabs.css?1748489660" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1748489660" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.6.0.min.js?1744255601"></script>
+    <script src="../../../js/jquery-3.6.0.min.js?1748489660"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1744255601"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1744255601"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1748489660"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1748489660"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/oracle.github.io\/weblogic-kubernetes-operator\/";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1744255601"></script>
+<script type="text/javascript" src="../../../js/search.js?1748489660"></script>
 
     
   </div>
@@ -3449,7 +3449,7 @@
 
 <p><span class="merged" id="index.4JSZ8t.spl1" title="原文 : This means that technically, it is a “different” domain for Domain in Image type domains.">つまり、技術的には、Domain in Imageタイプのドメインとは異なるドメインです。</span> <span class="merged" id="index.4JSZ8t.spl2" title="原文 : Does this matter?">これは問題ですか。</span> <span class="merged" id="index.4JSZ8t.spl3" title="原文 : Maybe, maybe not.">おそらくそうではありません。</span> <span class="merged" id="index.4JSZ8t.spl4"  title="原文:: It depends.">これは依存します。</span> <span class="merged" id="index.4JSZ8t.spl5" title="原文 : If you want to do a rolling restart of your domain, then yes, it matters.">ドメインのローリング再起動を実行する場合は、必須です。</span> <span class="merged" id="index.4JSZ8t.spl6" title="原文 : First of all, the “new” servers will fail to start because the operator will be trying to inject credentials to start the server which were encrypted with the “old” domain encryption key.">最初に、オペレータは古いドメイン暗号化キーで暗号化されたサーバーを起動するための資格証明をインジェクトしようとするため、新しいサーバーの起動に失敗します。</span> </p>
 <p><span class="merged" id="index.1e3ngs.spl1" title="原文 : But even if this did not prevent Domain in Image pods from starting, there would still be a problem.">ただし、これによってDomain in Imageポッドの起動が妨げられなかった場合でも、問題が発生します。</span> <span class="merged" id="index.1e3ngs.spl2" title="原文 : You cannot have members of a domain with different encryption keys.">暗号化キーが異なるドメインのメンバーを持つことはできません。</span> <span class="merged" id="index.1e3ngs.spl3" title="原文 : If WebLogic saw a new member trying to join the domain with a different key, it would consider it to be an intruder and refuse to accept it into the domain.">WebLogicが別のキーを使用してドメインに参加しようとする新しいメンバーを見つけた場合、それは侵入者とみなされ、ドメインへの受入れが拒否されます。</span> <span class="merged" id="index.1e3ngs.spl4" title="原文 : Client HTTP sessions would not work across the two different sets of servers, so clients could see errors and need to retry.">クライアントHTTPセッションは2つの異なるサーバー・セット間で動作しないため、クライアントにエラーが表示され、再試行が必要になる可能性があります。</span> <span class="merged" id="index.1e3ngs.spl5" title="原文 : Worse, if these two different sets of servers tried to access the same resources this could lead to data corruption.">この2つの異なるサーバー・セットが同じリソースにアクセスしようとすると、データが破損する可能性があります。</span> </p>
-<p><span class="merged" id="index.3bYuqi.spl1" title="原文 : So what can we do?">それでは、何ができるでしょうか。</span> <span class="merged" id="index.3bYuqi.spl2" title="原文 : Well, we could not roll the domain, but instead completely shut down the old version first, and then start up the new one.">ドメインをロール・ダウンできませんでしたが、まず古いバージョンを完全にシャットダウンしてから、新しいバージョンを起動してください。</span> <span class="merged" id="index.3bYuqi.spl3" title="原文 : This way we avoid any issues with incompatibilities, but we do introduce a brief outage.">このようにして、非互換性に関する問題を回避しますが、簡単な停止を導入します。</span> <span class="merged" id="index.3bYuqi.spl4" title="原文 : This may be acceptable, or it may not.">これは許容される場合もあれば、許容されない場合もあります。</span> </p>
+<p><span class="merged" id="index.3bYuqi.spl1" title="原文 : So what can we do?">それでは、何ができるでしょうか。</span> <span class="merged" id="index.3bYuqi.spl2" title="原文 : Well, we could not roll the domain, but instead completely shut down the old version first, and then start up the new one.">ドメインをロール・ダウンできませんでしたが、まず古いバージョンを完全に停止してから、新しいバージョンを起動してください。</span> <span class="merged" id="index.3bYuqi.spl3" title="原文 : This way we avoid any issues with incompatibilities, but we do introduce a brief outage.">このようにして、非互換性に関する問題を回避しますが、簡単な停止を導入します。</span> <span class="merged" id="index.3bYuqi.spl4" title="原文 : This may be acceptable, or it may not.">これは許容される場合もあれば、許容されない場合もあります。</span> </p>
 <p><span class="merged" id="index.3ueSBi" title="原文 : Another option is to find a way to keep the “same” domain, that is, the same domain encryption key, so that we can still roll the domain and there will be no conflicts.">別のオプションは、同じドメイン、つまり同じドメイン暗号化キーを保持する方法を見つけることで、ドメインをロールして競合が発生しないようにすることです。</span></p>
 <h4 id="mutating-domain-in-image-domain-home-configuration-without-losing-encryption-keys"><span class="merged" id="index.3dOorZ" title="原文 : Mutating Domain in Image domain home configuration without losing encryption keys">暗号化キーを失うことなくDomain in Imageドメイン・ホーム構成を変更しています</span></h4>
 <p><span class="merged" id="index.3TcTNO" title="原文 : If we want to make a change in a lower layer in Domain in Image domains without losing our domain encryption keys, then we need to find a way to “save” the domain and then put it back into a new layer, later, on top of the other new (lower) layers, as depicted in the following image:">ドメイン暗号化キーを失うことなく、Domain in Imageドメインの下位レイヤーに変更を加える場合は、次のイメージに示すように、ドメインを「保存」し、後で新しいレイヤー(下位)レイヤーの上に新しいレイヤーに戻す方法を見つける必要があります:</span></p>
@@ -6083,19 +6083,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1744255601"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1744255601"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1744255601"></script>
-    <script src="../../../js/jquery.sticky.js?1744255601"></script>
-    <script src="../../../js/featherlight.min.js?1744255601"></script>
-    <script src="../../../js/highlight.pack.js?1744255601"></script>
+    <script src="../../../js/clipboard.min.js?1748489660"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1748489660"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1748489660"></script>
+    <script src="../../../js/jquery.sticky.js?1748489660"></script>
+    <script src="../../../js/featherlight.min.js?1748489660"></script>
+    <script src="../../../js/highlight.pack.js?1748489660"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1744255601"></script>
-    <script src="../../../js/learn.js?1744255601"></script>
-    <script src="../../../js/hugo-learn.js?1744255601"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1748489660"></script>
+    <script src="../../../js/learn.js?1748489660"></script>
+    <script src="../../../js/hugo-learn.js?1748489660"></script>
     
         
-            <script src="../../../mermaid/mermaid.js?1744255601"></script>
+            <script src="../../../mermaid/mermaid.js?1748489660"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
